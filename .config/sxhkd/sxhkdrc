@@ -1,0 +1,37 @@
+super + x
+        exec /home/sh/.config/.script/img_txt_net.sh
+
+{XF86AudioLowerVolume,XF86AudioRaiseVolume,XF86AudioMute}
+       {pamixer -u && pamixer -d 5,pamixer -u && pamixer -i 5,pamixer --toggle-mute}
+
+super + q 
+         st -f "TerminessTTF Nerd Font:style=Medium:size=15" -n scpad -g 100x30
+
+super + s
+        flameshot gui
+
+super + v 
+        sakura -e nvim
+
+super + shift + l 
+                slock
+
+alt + space
+	pkill -USR1 -x sxhkd
+
+
+#super + Return     
+#             alacritty      
+
+super + p
+         dmenu_run -fn "JetBrains Mono Bold-12" 
+
+super + {f,c}
+       	{firefox,chromium}
+
+
+super + t 
+        st
+
+#Print 
+#maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
