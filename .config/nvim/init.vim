@@ -56,19 +56,19 @@ vmap <S-Tab> <
 vnoremap < <gv
 vnoremap > >gv
 " f8 vérifer le orthographique 
+" f8 vérifer le orthographique 
 map <F8> :setlocal spell! spelllang=en_gb<CR>
-" ctrl+m = make
 "nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :Files<CR>
-nnoremap <TAB> :bnext<CR>
-nnoremap <C-s> :vsplit<CR>
-nnoremap <C-m> :make<CR>
+nnoremap <C-f> :Files<CR> "ctrl+f
+nnoremap <TAB> :bnext<CR> "TAB
+nnoremap <C-s> :vsplit<CR> "ctrl +s 
+nnoremap <C-m> :make<CR>   "ctrl +m => $ make
 "tab stuff tested
-nnoremap tn :tabnew<Space>
-nnoremap tk :tabnext<cr>
-nnoremap tj :tabprev<cr>
-nnoremap th :tabfirst<cr>
-nnoremap tl :tablast<cr>
+nnoremap tn :tabnew<Space> "t+n
+nnoremap tk :tabnext<cr> "t+k
+nnoremap tj :tabprev<cr> "t+j
+nnoremap th :tabfirst<cr> "t+h
+nnoremap tl :tablast<cr> "t+l
 " trak changer
 set undofile
 set undodir=/tmp
