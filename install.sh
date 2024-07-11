@@ -83,8 +83,7 @@ sudo xbps-install -Syu mesa-vulkan-intel # free
 sudo xbps-install -Syu mesa-vaapi # free #video acceleration
 
 clear
-# nvidia
-sudo xbps-install -S nvidia
+#nvidia & intel
 sudo xbps-install -Syu nvidia  # nonfree 
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
