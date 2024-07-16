@@ -11,7 +11,7 @@ sudo xbps-install -Syu neovim fastfetch most sxhkd aria2 git htop opendoas base-
 clear
 
 sudo xbps-install -Syu dunst notify-send.sh numlockx bash-completion gcolor2 colordiff
-sudo xbps-install -Syu xsetroot  yaru # papirus-icon-theme # icons
+sudo xbps-install -Syu xsetroot xbanish  yaru # papirus-icon-theme # icons
 sudo xbps-install -Syu tealdeer  # tldr en rust
 clear
 
@@ -29,7 +29,7 @@ sudo xbps-install -Syu unrar # free
 clear
 
 sudo xbps-install -Syu terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
-sudo xbps-install -Syu NetworkManager vscode eclipse xbanish 
+sudo xbps-install -Syu NetworkManager vscode eclipse 
 sudo xbps-install -Syu mpv python3-pip  
 sudo xbps-install -Syu megatools
 
