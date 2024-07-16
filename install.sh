@@ -27,11 +27,6 @@ sudo xbps-install -Syu p7zip # free
 sudo xbps-install -Syu unrar # free
 #sudo xbps-install -Syu p7zip-unrar # nonfree
 clear
-# bluetooth && pipewire		
-sudo xbps-install -Syu rfkill util-linux bluez libspa-bluetooth blueman
-
-
-clear
 
 sudo xbps-install -Syu terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
 sudo xbps-install -Syu NetworkManager vscode eclipse xbanish 
