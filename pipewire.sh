@@ -1,4 +1,4 @@
-sudo xbps-install -Syu pipewire pamixer alsa-pipewire pipewire-devel libjack-pipewire wireplumber wireplumber-devel pavucontrol  
+sudo xbps-install -Syu util-linux pipewire pamixer alsa-pipewire pipewire-devel libjack-pipewire wireplumber wireplumber-devel pavucontrol  
 # active
 sudo ln -s /etc/sv/dbus/ /var/service/
 sudo mkdir -p /etc/pipewire/pipewire.conf.d
