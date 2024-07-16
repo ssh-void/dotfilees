@@ -40,7 +40,7 @@ sudo xbps-install -Syu megatools
 
 clear
 
-sudo xbps-install -Syu kdenlive krita  # video editor
+#sudo xbps-install -Syu kdenlive krita  # video editor
 
 # firefox
 
@@ -61,7 +61,7 @@ xbps-query -L
 #intel
 
 clear
-
+echo "=====""""""" NVIDIA """""""" ===== "
 sudo xbps-install -Syu intel-ucode # nonfree 
 sudo xbps-install -Syu linux-firmware-intel # free 
 sudo xbps-install -Syu intel-video-accel # free 
