@@ -10,7 +10,7 @@ sudo xbps-install -Syu neovim fastfetch most sxhkd aria2 git htop opendoas base-
 
 clear
 
-sudo xbps-install -Syu dunst notify-send.sh numlockx xautolock bash-completion gcolor2 colordiff
+sudo xbps-install -Syu dunst notify-send.sh numlockx bash-completion gcolor2 colordiff
 sudo xbps-install -Syu redshift # Night light
 sudo xbps-install -Syu xsetroot  yaru # papirus-icon-theme # icons
 sudo xbps-install -Syu tealdeer  # tldr en rust
