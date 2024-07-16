@@ -1,5 +1,4 @@
 mkdir Videos Images Downloads Documents Music 
-mkdir -p Downloads/YouTube 
 
 echo "Updating The System"
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
@@ -7,13 +6,14 @@ sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
 
 # You install the following package 
-sudo xbps-install -Syu neovim fastfetch most sxhkd aria2 git htop opendoas base-devel tmux feh sxiv chromium yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers ufetch xrdb xmodmap  #octoxbps 
+sudo xbps-install -Syu neovim fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv chromium yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers  xrdb xmodmap  #octoxbps 
 
 clear
 
 sudo xbps-install -Syu dunst notify-send.sh numlockx xautolock bash-completion gcolor2 colordiff
 sudo xbps-install -Syu redshift # Night light
-sudo xbps-install -Syu xsetroot papirus-icon-theme # icons
+sudo xbps-install -Syu xsetroot  yaru # papirus-icon-theme # icons
+sudo xbps-install -Syu tealdeer  # tldr en rust
 clear
 
 echo "Installing The Necessary Stuff"
@@ -30,8 +30,6 @@ sudo xbps-install -Syu unrar # free
 clear
 # bluetooth && pipewire		
 sudo xbps-install -Syu rfkill util-linux bluez libspa-bluetooth blueman
-#sudo ln -s /etc/sv/  /var/service
-sudo xbps-install -Syu pipewire pamixer alsa-pipewire pipewire-devel libjack-pipewire wireplumber wireplumber-devel pavucontrol  
 
 clear
 
