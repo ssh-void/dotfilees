@@ -1,0 +1,127 @@
+#================================= alias ===============================#
+### SET VI MODE ###
+set -o vi
+set editing-mode vi
+set keymap vi
+
+# XBPS:
+alias qvs="xbps-query -vs"
+alias q="xbps-query -Rs"
+alias u="doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Su"
+alias i="doas xbps-install -S"
+alias c="doas xbps-remove -RoO && doas vkpurge rm all"
+alias d="doas xbps-remove -Rv"
+
+# runit
+alias start="cd /var/service/ ; doas sv start "
+alias stop="doas sv stop "
+alias restart="cd /var/service/ ; doas sv restart "
+
+#xbps-src
+#alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src bootstrap-update && ./xbps-src update-sys && cd -"
+alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && cd -"
+alias cxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src clean && ./xbps-src clean-repocache && cd -"
+alias ixbps="doas  xbps-install --repository=hostdir/binpkgs/nonfree "
+
+# Other:
+alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
+alias suvi="doas vim"
+alias disk="duf -sort size"
+alias neofetch="fastfetch"
+alias mkdir="mkdir -pv"
+
+# Search command history
+alias perms="doas chmod 664"
+alias td='tree -d -h --du' 
+alias tf='tree -i -f -s -h'
+alias tsh='tree -P "*.sh" --prune -s -h'
+alias ts='tree -s -h --du'
+#alias h="history | cut -c 8- | fzf --tac | xclip -selection clipboard"
+alias h="history | cut -c 8- | fzy | xclip -selection clipboard"
+# Saved my place in my videos :)
+alias mpv="mpv --save-position-on-quit"
+alias xp="xclip -selection clipboard"
+alias fontlist="fc-list : family | sort | uniq"
+alias pdf="zathura"
+#alias ram="ps -ely | tr -s ' ' |cut -d ' ' -f8,13 | grep"
+alias tldr="tealdeer"
+alias sb="source ~/.bashrc"
+#alias sz='source ~/.zshrc'
+alias rm="rm -r"
+alias T="du -sh"
+alias cal="cal --twelve"
+alias cl="clear"
+alias rsync="rsync -P"
+alias rg="ranger"
+alias m="man"
+alias pweroff="doas shutdown -P now"
+alias rboot="doas shutdown -r now"
+alias ls="ls --color=auto"
+alias l="eza -l --color=always --group-directories-first"  # long format
+alias ll="eza -dlg .* --color=auto"
+alias v="nvim"
+alias vi="nvim"
+alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
+
+# cd 
+alias ..="cd .."
+alias ...="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
+
+#git
+alias gs="git status"
+alias gp="git push origin"
+alias gpull="git pull origin"
+alias gcm="git commit -m"
+alias ga="git add . && git add *"
+alias gi="git init"
+alias gitlog="git log --all --decorate --oneline --graph"
+alias gcl="git clone --depth=1"
+alias grt="git reset --hard HEAD"
+#alias grt="git reset --hard origin/main"
+alias tag="git tag"
+alias newtag="git tag -a"
+alias fetch="git fetch"
+alias checkout="git checkout"
+alias branch="git branch"
+
+#tmux
+#alias qemu="qemu-system-x86_64"
+alias ta="tmux a"
+
+#yt
+#Download:
+alias yl='yt-dlp -F' # affichez le tableaux
+alias y='yt-dlp -o "%(title)s.%(ext)s" ' # par défaux la qalité maxi
+alias ya='yt-dlp -o "%(title)s.%(ext)s" -f 140' # pour mpa 
+alias yb='yt-dlp -o "%(title)s.%(ext)s" -f "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4' # la mileur vidio 
+alias yt='yt-dlp --skip-download --write-thumbnail'
+alias yp='yt-dlp -i -o "%(playlist_title)s/%(playlist_index)s - %(title)s.%(ext)s" --format "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4'
+
+# For recording.
+alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
+alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
+alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
+alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
+
+#suckless
+#alias nf='clear && neofetch'
+alias rmsuckless="doas rm *.o config.h"
+alias makesuckless="make && doas make clean install"
+
+# python
+alias apy="source env/bin/activate"
+alias pipi="pip install"
+alias pipuni="pip uninstall"
+alias pipls="pip list"
+alias pips="pip search"
+alias pipshow="pip show"
+alias pipout="pip list --outdated"
+alias pipreq="pip freeze > requirements.txt"
+alias pipfrom="pip install -r requirements.txt" # -r , --requirement	
+alias pipup="pip install -U pip" # -U, --upgrade
+# ssd
+alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
+alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
