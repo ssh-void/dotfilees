@@ -6,11 +6,11 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
-static const char *splitdelim        = ";";       /* Character used for separating status */
-static const char *fonts[]          = { "monospace:size=12" };
-static const char dmenufont[]       = "monospace:size=12";
+static const char *splitdelim       = ";";       /* Character used for separating status */
+static const char *fonts[]          = {"Ubuntu Mono:size=15:weight=regular:pixelsize=22:antialias=true:autohint=true","JoyPixels:style=Bold:pixelsize=16:antialias=true:autohint=true"};
+//static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#008ED3";
+static const char col_gray2[]       = "#2067B0";
 static const char col_gray3[]       = "#bbbbbb";
 static const char col_gray4[]       = "#ffffff";
 static const char col_cyan[]        = "#005577";
@@ -60,17 +60,17 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char  *dmenucmd[] = { "dmenu_run", "-m", dmenumon, NULL };
-static const char *termcmd[]  = { "sakura",NULL };
+static const char *termcmd[]  = { "st",NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
-//	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_b,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} }, /* bat off or on */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_j,      pushdown,       {0} },
-	{ MODKEY|ShiftMask,             XK_k,      pushup,         {0} },
+	{ MODKEY|ShiftMask,             XK_l,      pushup,         {0} },
+	{ MODKEY|ShiftMask,             XK_k,      pushdown,       {0} },
 //	{ MODKEY|ShiftMask,             XK_i,      incnmaster,     {.i = +1 } }, /*vers le master  */
 //	{ MODKEY|ShiftMask,             XK_o,      incnmaster,     {.i = -1 } }, /* l*/
 	{ MODKEY,                       XK_j,      setmfact,       {.f = -0.03} },
@@ -81,9 +81,9 @@ static const Key keys[] = {
 //	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 //	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 //	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} }, /* monocle*/
-//  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },/*switch btwn mounitor*/
+//      { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },/*switch btwn mounitor*/
 	{ MODKEY,                       XK_semicolon, focusmon,    {.i = +1 } },/*switch btwn mounitor*/
-//  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },/*envery un fentre  btwn mounitor*/
+//      { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },/*envery un fentre  btwn mounitor*/
 	{ MODKEY|ShiftMask,             XK_semicolon, tagmon,      {.i = +1 } },/*envery un fentre  btwn mounitor*/
 	TAGKEYS(                        XK_ampersand,              0)
 	TAGKEYS(                        XK_eacute,                 1)
