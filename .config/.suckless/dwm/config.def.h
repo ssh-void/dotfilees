@@ -8,7 +8,6 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim       = ";";       /* Character used for separating status */
 static const char *fonts[]          = {"Ubuntu Mono:size=15:weight=regular:pixelsize=22:antialias=true:autohint=true","JoyPixels:style=Bold:pixelsize=16:antialias=true:autohint=true"};
-//static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#2067B0";
 static const char col_gray3[]       = "#bbbbbb";
