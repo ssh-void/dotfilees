@@ -41,7 +41,7 @@ clear
 
 sudo xbps-install -Syu chromium firefox firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr ipafont-fonts-otf  
 sudo xbps-install -Syu duf eza # lsd exa 
-sudo xbps-install -Syu tor obfs4proxy  # tor
+sudo xbps-install -Syu tor obfs4proxy torsocks # tor
 sudo ln -s /etc/sv/tor /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -f fontconfig
