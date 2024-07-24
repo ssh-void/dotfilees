@@ -16,7 +16,7 @@ sudo xbps-install -Syu tealdeer  # tldr en rust
 clear
 
 echo "Installing The Necessary Stuff"
-sudo xbps-install -Syu xorg base-devel xrandr arandr xdotool xdo xrdb xf86-input-synaptics dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel lm_sensors tree man fzy inxi	
+sudo xbps-install -Syu xorg base-devel xrandr arandr xdotool xdo xrdb xf86-input-synaptics dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel lm_sensors tree man man-db fzy inxi	
 
 clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
