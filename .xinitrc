@@ -1,7 +1,7 @@
-#!/bin/sh 2024-06-04 | 08:19:46 PM tested 
+#!/bin/sh 2024-06-04 
 #==================================== X servers ======================================
-xrdb -load ~/.config/X11/.Xresources & # -merge not propli worked
-xmodmap  ~/.config/X11/.Xmodmap &
+xrdb -load ~/.config/X11/Xresources & # -merge not propli worked
+xmodmap  ~/.config/X11/Xmodmap &
 #=====================================================================================
 # start some nice programs
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
