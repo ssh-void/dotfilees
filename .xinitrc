@@ -1,21 +1,18 @@
-#!/bin/sh 2024-06-04 
-#==================================== X servers ======================================
-xrdb -load ~/.config/X11/Xresources & # -merge not propli worked
-xmodmap  ~/.config/X11/Xmodmap &
-#=====================================================================================
-# start some nice programs
-if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
-fi
-#=============================== Launches programs ====================================
 numlockx on &
-feh --bg-fill ~/Images/evning.png &
+brightnessctl set 80%
+st &
+xrdb -load $HOME/.config/X11/Xresources &
+#xmodmap  $HOME/.config/X11/Xmodmap &
+picom --backend glx --vsync --dbus &
+feh --bg-fill $HOME/Images/sh.png &
+xbanish &
+#xrandr --output DP-1 --off --output HDMI-2 --off &
+#xrandr --output HDMI-1 --mode 1920x1080 --pos 1307x0 --rotate right --rate 50 --brightness 0.7 &
+#xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 &
+pipewire &
+pipewire-pulse &
 sxhkd & 
 dunst &
 slstatus &
-exec xset r rate 225 75 & # Allows for faster output when holding down a key, very useful for vim
-#===== Exec dwm through dbus makes some things work, like notifications ================
+exec xset r rate 225 75 &
 dbus-run-session dwm 
