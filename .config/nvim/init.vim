@@ -56,7 +56,6 @@ vmap <S-Tab> <
 vnoremap < <gv
 vnoremap > >gv
 " f8 vérifer le orthographique 
-" f8 vérifer le orthographique 
 map <F8> :setlocal spell! spelllang=en_gb<CR>
 "nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :Files<CR> "ctrl+f
