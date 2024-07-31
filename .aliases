@@ -16,6 +16,8 @@ alias d="doas xbps-remove -Rv"
 alias start="cd /var/service/ ; doas sv start "
 alias stop="doas sv stop "
 alias restart="cd /var/service/ ; doas sv restart "
+alias py="python"
+alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
 
 #xbps-src
 #alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src bootstrap-update && ./xbps-src update-sys && cd -"
@@ -31,13 +33,14 @@ alias neofetch="fastfetch"
 alias mkdir="mkdir -pv"
 
 # Search command history
+alias blkid="doas blkid -o list"
 alias perms="doas chmod 664"
-alias td='tree -d -h --du' 
+alias td='tree -d -h --du'
 alias tf='tree -i -f -s -h'
 alias tsh='tree -P "*.sh" --prune -s -h'
 alias ts='tree -s -h --du'
 #alias h="history | cut -c 8- | fzf --tac | xclip -selection clipboard"
-alias h="history | cut -c 8- | fzy | xclip -selection clipboard"
+alias h="history | cut -c 8- | fzy -l 15  | xclip -selection clipboard"
 # Saved my place in my videos :)
 alias mpv="mpv --save-position-on-quit"
 alias xp="xclip -selection clipboard"
@@ -47,7 +50,7 @@ alias pdf="zathura"
 alias tldr="tealdeer"
 alias sb="source ~/.bashrc"
 #alias sz='source ~/.zshrc'
-alias rm="rm -r"
+alias rrm="doas rm -rf"
 alias T="du -sh"
 alias cal="cal --twelve"
 alias cl="clear"
@@ -59,11 +62,12 @@ alias rboot="doas shutdown -r now"
 alias ls="ls --color=auto"
 alias l="eza -l --color=always --group-directories-first"  # long format
 alias ll="eza -dlg .* --color=auto"
+alias ld="ls -d */"
 alias v="nvim"
 alias vi="nvim"
 alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 
-# cd 
+# cd
 alias ..="cd .."
 alias ...="cd ../.."
 alias .3="cd ../../.."
@@ -90,13 +94,14 @@ alias branch="git branch"
 #tmux
 #alias qemu="qemu-system-x86_64"
 alias ta="tmux a"
+alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 #yt
 #Download:
 alias yl='yt-dlp -F' # affichez le tableaux
-alias y='yt-dlp -o "%(title)s.%(ext)s" ' # par défaux la qalité maxi
-alias ya='yt-dlp -o "%(title)s.%(ext)s" -f 140' # pour mpa 
-alias yb='yt-dlp -o "%(title)s.%(ext)s" -f "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4' # la mileur vidio 
+alias y='yt-dlp --restrict-filenames ' # par défaux la qalité maxi
+alias ya='yt-dlp --restrict-filenames -f 140' # pour mpa
+alias yb='yt-dlp --restrict-filenames -f "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4' # la mileur vidio
 alias yt='yt-dlp --skip-download --write-thumbnail'
 alias yp='yt-dlp -i -o "%(playlist_title)s/%(playlist_index)s - %(title)s.%(ext)s" --format "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4'
 
@@ -111,6 +116,18 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 alias rmsuckless="doas rm *.o config.h"
 alias makesuckless="make && doas make clean install"
 
+### SHOPT
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s dotglob #Inclutlesfichiers,etrépertoires,commençantpar,unpoint,dans,lesrésultats,desglobbing
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+shopt -s checkwinsize # checks term size when bash regains control
+shopt -s histreedit # ermet de rééditer une commande après une recherche dans l'historique (si READLINE est activé
+shopt -s histverify # Permet de vérifier et éditer une commande après une recherche dans l'historique.
+
+
+
 # python
 alias apy="source env/bin/activate"
 alias pipi="pip install"
@@ -120,8 +137,10 @@ alias pips="pip search"
 alias pipshow="pip show"
 alias pipout="pip list --outdated"
 alias pipreq="pip freeze > requirements.txt"
-alias pipfrom="pip install -r requirements.txt" # -r , --requirement	
+alias pipfrom="pip install -r requirements.txt" # -r , --requirement
 alias pipup="pip install -U pip" # -U, --upgrade
 # ssd
 alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
 alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
+# microsd
+alias mountmicrossd="mkdir $HOME/ssd ; sleep 1; doas mount -t ntfs-3g -o rw UUID=79B17F9A24153F42 /home/sh/ssd/"
