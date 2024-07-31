@@ -4,18 +4,18 @@
 # Exports:
 export TERMINAL="st"
 export READER="zathura"
-export VIDEO="mpv"
+export VIDEO="vlc"
 export TERM="xterm-256color"   # getting proper colors
 export HISTCONTROL=ignoredups:erasedups   # no duplicate entries
 export FILE="ranger"
 export BROWSER="firefox"
+export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!" # manpages
-export LANG=en_US.UTF-8
+export LANG="en_US.UTF-8"
 export SUDO_EDITOR="nvim"
 #export PATH=$HOME/.scripts:$PATH
-export PATH="$HOME/.local/bin:$PATH" ### PATH
 export PAGER="most" # export PAGER="less"
 export IMGVIEWER="sxiv"
 export IMAGE="sxiv"
@@ -25,12 +25,12 @@ HISTIGNORE="cd:&:ls:[bf]g:exit"
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-[ -f ~/.xprofile ] && source ~/.xprofile
 
 GRC_ALIASES=true
 [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
 
-bind 'set completion-ignore-case on'
+#ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
 
 # Source the aliases file
 if [ -f ~/.aliases ]; then
@@ -52,6 +52,11 @@ fi
 # Comment this line out to enable default emacs-like bindings
 bind -m vi-command 'Control-l: clear-screen' # sup by def in zsh	
 bind -m vi-insert 'Control-l: clear-screen'
+bind -m vi-insert "\C-l":clear-screen
+bind -m vi-insert "\C-e":end-of-line
+bind -m vi-insert "\C-a":beginning-of-line
+bind -m vi-insert "\C-h":backward-kill-word
+bind -m vi-insert "\C-k":kill-line
 
 #PS1="\w > "
 PS1="\[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
