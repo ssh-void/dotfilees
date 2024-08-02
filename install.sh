@@ -6,7 +6,7 @@ sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
 
 # You install the following package 
-sudo xbps-install -Syu neovim fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv chromium yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers  xrdb xmodmap  #octoxbps 
+sudo xbps-install -Syu neovim fastfetch most sxhkd aria2 git htop opensudo base-devel tmux sxiv chromium yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers  xrdb xmodmap  #octoxbps 
 
 clear
 
@@ -73,10 +73,10 @@ sudo xbps-install -Syu vulkan-loader # free
 sudo xbps-install -Syu mesa-vdpau  # free #video acceleration
 ##################################################################
 cd /opt/
-git clone --depth=1 https://github.com/garabik/grc.git
-git clone --depth=1 https://github.com/void-linux/void-packages
+sudo git clone --depth=1 https://github.com/garabik/grc.git
+sudo git clone --depth=1 https://github.com/void-linux/void-packages
 sudo xbps-install -Syu xtools  python3 # xi ...
-doas chown -R sh:sh .
+sudo chown -R sh:sh .
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
