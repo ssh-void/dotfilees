@@ -31,7 +31,7 @@ clear
 sudo xbps-install -Syu terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
 sudo xbps-install -Syu NetworkManager vscode eclipse 
 sudo xbps-install -Syu mpv python3-pip  
-sudo xbps-install -Syu megatools
+sudo xbps-install -Syu MEGAsdk
 
 clear
 
