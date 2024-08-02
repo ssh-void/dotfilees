@@ -38,7 +38,6 @@ clear
 #sudo xbps-install -Syu kdenlive krita  # video editor
 
 # firefox
-
 sudo xbps-install -Syu chromium firefox firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr ipafont-fonts-otf  
 sudo xbps-install -Syu duf eza # lsd exa 
 sudo xbps-install -Syu tor obfs4proxy torsocks w3m # tor
