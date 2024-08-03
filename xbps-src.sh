@@ -1,6 +1,6 @@
 #sudo xbps-install -Syu xtools git
 #=============================================================#
-cd /opt/
+#cd /opt/
 #sudo chown -R $(whoami):$(whoami) .
 cd /opt/void-packages/
 git clean -fd && git reset --hard && git pull
