@@ -7,4 +7,5 @@ sudo echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 ./xbps-src pkg google-chrome &&  xi google-chrome
 ./xbps-src pkg discord && xi discord
 ./xbps-src bootstrap-update
+./xbps-src update-sys
 ./xbps-src clean-repocache
