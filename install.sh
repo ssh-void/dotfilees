@@ -6,7 +6,7 @@ sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
 
 # You install the following package 
-sudo xbps-install -Syu neovim picom fastfetch most sxhkd aria2 git htop opensudo base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers  xrdb xmodmap  #octoxbps 
+sudo xbps-install -Syu neovim man picom fastfetch most sxhkd aria2 git htop opensudo base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers  xrdb xmodmap  #octoxbps 
 
 clear
 
