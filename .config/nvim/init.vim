@@ -99,7 +99,7 @@ autocmd FileType sxhkd setlocal syntax=on
 colorscheme gruvbox
 "colorscheme catppuccin
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'one',
       \ }
 " Always show statusline
 set laststatus=2
