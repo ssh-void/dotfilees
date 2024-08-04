@@ -1,8 +1,8 @@
 #!/bin/bash
 #flameshot gui --raw | tesseract-ocr stdin stdout | xclip -in -selection clipboard 
-maim -s | tesseract-ocr stdin stdout | xsel --clipboard --input 
+#maim -s | tesseract-ocr stdin stdout | xsel --clipboard --input 
 #flameshot gui --raw | tesseract-ocr stdin stdout | xsel --clipboard --input 
-#maim -s | tesseract-ocr stdin stdout | xclip -selection clipboard 
+maim -s | tesseract-ocr stdin stdout | xclip -selection clipboard &> /dev/null 
 
 #wait
 
