@@ -41,7 +41,3 @@ do
     read -r dev2
 	
 done
-
-
-     
-
