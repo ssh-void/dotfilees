@@ -38,7 +38,7 @@ clear
 #sudo xbps-install -Syu kdenlive krita  # video editor
 
 # firefox
-sudo xbps-install -Syu firefox firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr  font-fira-otf
+sudo xbps-install -Syu firefox firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-fira-otf
 sudo xbps-install -Syu duf eza # lsd exa 
 sudo xbps-install -Syu tor obfs4proxy torsocks w3m # tor
 sudo ln -s /etc/sv/tor /var/service/
@@ -48,7 +48,7 @@ sudo xbps-reconfigure -f fontconfig
 
 clear
 echo "===== pdf ===== "
-sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g
+sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g exfat-utils
 # non free répo
 sudo xbps-install -S void-repo-nonfree # add void-repo-multilib-nonfree
 xbps-query -L
