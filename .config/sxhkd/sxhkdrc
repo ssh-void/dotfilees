@@ -14,8 +14,8 @@ super + p
 
 super + shift + l 
                 slock
-super + {f,c}
-       	{firefox,chromium}
+super + {f,G}
+       	    {firefox,brave-browser-stable}
 
 super + t 
         st
