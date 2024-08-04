@@ -69,8 +69,6 @@ set signcolumn=yes
 set incsearch
 set hlsearch
 filetype indent on
-" f8 vérifer le orthographique
-map <F8> :setlocal spell! spelllang=en_gb<CR>
 "nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-s> :vsplit<CR> "ctrl +s
 nnoremap <C-m> :make<CR>   "ctrl +m => $ make
@@ -148,3 +146,11 @@ augroup ManPage
   autocmd FileType man setlocal laststatus=0        " Supprimer la barre de statut pour les pages man
   autocmd FileType man colorscheme catppuccin          " Appliquer le thème manpage
 augroup END
+
+" Désactiver les fichiers de swap
+set noswapfile
+" Désactiver les fichiers de sauvegarde
+"set nobackup
+"set nowritebackup
+" Désactiver les fichiers temporaires
+"set noundofile
