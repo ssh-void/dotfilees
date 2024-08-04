@@ -12,26 +12,11 @@ alt + {Up,Down}
 super + p
         flameshot gui &< /dev/null
 
-super + v 
-        sakura -e nvim
-
 super + shift + l 
                 slock
-
-alt + space
-	pkill -USR1 -x sxhkd
-
-
-#super + Return     
-#             alacritty      
-
-
 super + {f,c}
        	{firefox,chromium}
-
 
 super + t 
         st
 
-#Print 
-#maim -u -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
