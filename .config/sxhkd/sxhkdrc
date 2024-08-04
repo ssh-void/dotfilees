@@ -8,6 +8,8 @@ super + s
 
 alt + {Up,Down}
               exec ~/.config/.script/brightnessctl.sh {up,down}
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+                                       ~/.config/.script/pamixer.sh {up,down,toggle}
 
 super + p
         flameshot gui &< /dev/null
@@ -16,7 +18,3 @@ super + shift + l
                 slock
 super + {f,G}
        	    {firefox,brave-browser-stable}
-
-super + t 
-        st
-
