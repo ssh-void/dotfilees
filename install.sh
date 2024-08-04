@@ -22,14 +22,14 @@ clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
 sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng flameshot maim xclip cloc 
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
-sudo xbps-install -Syu net-tools # ifconfig netstat .. 
+sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
 sudo xbps-install -Syu p7zip # free
 sudo xbps-install -Syu unrar # free
 #sudo xbps-install -Syu p7zip-unrar # nonfree
 clear
 
 sudo xbps-install -Syu ttf-ubuntu-font-family # terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
-sudo xbps-install -Syu NetworkManager vscode eclipse 
+sudo xbps-install -Syu vscode eclipse 
 sudo xbps-install -Syu mpv python3-pip  
 sudo xbps-install -Syu MEGAsdk
 
