@@ -1,14 +1,16 @@
 super + x
         exec /home/sh/.config/.script/img_txt_net.sh
+super + d 
+         dmenu_run -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' 
 
-{XF86AudioLowerVolume,XF86AudioRaiseVolume,XF86AudioMute}
-       {pamixer -u && pamixer -d 5,pamixer -u && pamixer -i 5,pamixer --toggle-mute}
+super + s 
+	exec ~/.config/.script/scratchpad.sh
 
-super + q 
-         st -f "TerminessTTF Nerd Font:style=Medium:size=15" -n scpad -g 100x30
+alt + {Up,Down}
+              exec ~/.config/.script/brightnessctl.sh {up,down}
 
-super + s
-        flameshot gui
+super + p
+        flameshot gui &< /dev/null
 
 super + v 
         sakura -e nvim
@@ -23,8 +25,6 @@ alt + space
 #super + Return     
 #             alacritty      
 
-super + p
-         dmenu_run -fn "JetBrains Mono Bold-12" 
 
 super + {f,c}
        	{firefox,chromium}
