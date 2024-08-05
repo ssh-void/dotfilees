@@ -45,7 +45,6 @@ sudo ln -s /etc/sv/tor /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -f fontconfig
 
-
 clear
 echo "===== pdf ===== "
 sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g exfat-utils
@@ -82,6 +81,7 @@ sudo cp /etc/profile.d/grc.sh /etc/
 ####################################################################
 sudo xbps-reconfigure -fa
 fc-cache -fv
+#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""#
 sudo sv down dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
