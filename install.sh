@@ -11,7 +11,7 @@ sudo xbps-install -Syu neovim picom fastfetch most sxhkd aria2 git htop opensudo
 clear
 
 sudo xbps-install -Syu dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl   
-sudo xbps-install -Syu xsetroot xbanish  yaru # papirus-icon-theme # icons
+sudo xbps-install -Syu xsetroot xbanish yaru # papirus-icon-theme # icons
 sudo xbps-install -Syu tealdeer  # tldr en rust
 clear
 
@@ -40,7 +40,7 @@ clear
 # firefox
 sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-fira-otf
 sudo xbps-install -Syu duf eza # lsd exa 
-sudo xbps-install -Syu tor obfs4proxy torsocks w3m # tor
+sudo xbps-install -Syu tor obfs4proxy torsocks w3m w3m-img # tor
 sudo ln -s /etc/sv/tor /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -f fontconfig
