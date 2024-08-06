@@ -39,7 +39,7 @@ clear
 
 # firefox
 sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-fira-otf
-sudo xbps-install -Syu qBittorrent
+sudo xbps-install -Syu qbittorrent
 sudo xbps-install -Syu duf eza # lsd exa 
 sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo ln -s /etc/sv/tor /var/service/
