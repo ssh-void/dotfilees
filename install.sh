@@ -63,14 +63,14 @@ sudo xbps-install -Syu intel-video-accel # free
 sudo xbps-install -Syu intel-media-driver # free 
 sudo xbps-install -Syu libva-intel-driver # free 
 sudo xbps-install -Syu mesa-vulkan-intel # free
-sudo xbps-install -Syu mesa-vaapi # free #video acceleration
+sudo xbps-install -Syu mesa-vaapi # free # video acceleration
 
 clear
-#nvidia & intel
+# nvidia & intel
 sudo xbps-install -Syu nvidia  # nonfree 
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
-sudo xbps-install -Syu mesa-vdpau  # free #video acceleration
+sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
 ##################################################################
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
