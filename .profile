@@ -51,6 +51,7 @@ xrandr \
     --output HDMI-1 --mode 1920x1080 --pos 1417x0 --rotate right  --rate 50 \
     --output DP-1 --off \
     --output HDMI-2 --off
+
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
