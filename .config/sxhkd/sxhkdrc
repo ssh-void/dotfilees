@@ -1,20 +1,26 @@
 super + x
-        exec /home/sh/.config/.script/img_txt_net.sh
-super + d 
-         dmenu_run -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' 
+        exec ~/.config/.script/img_txt_net.sh
 
-super + s 
-	exec ~/.config/.script/scratchpad.sh
+super + c
+        exec ~/.config/.script/img_txt.sh  
+
+super + d
+        dmenu_run -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' 
+
+super + s
+        exec ~/.config/.script/scratchpad.sh
 
 alt + {Up,Down}
               exec ~/.config/.script/brightnessctl.sh {up,down}
+
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-                                       ~/.config/.script/pamixer.sh {up,down,toggle}
+                                      ~/.config/.script/pamixer.sh {up,down,toggle}
 
 super + p
         flameshot gui &< /dev/null
 
 super + shift + l 
                 slock
-super + {f,G}
-       	    {firefox,brave-browser-stable}
+
+super + {f,t,b}
+              {firefox,torbrowser-launcher,brave-browser-stable}
