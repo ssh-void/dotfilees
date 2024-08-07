@@ -8,6 +8,7 @@ if [ -z "$XDG_RUNTIME_DIR" ]; then
 fi
 
 # Exports:
+export PATH="$HOME/.local/bin:$PATH"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
@@ -27,16 +28,6 @@ export PAGER="most" # export PAGER="less"
 export IMGVIEWER="sxiv"
 export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
-
-# Set PATH so it includes user's private bin if it exists:
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-# Set PATH so it includes user's private bin if it exists:
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
 
 ## No screensaver
 xset -dpms # Disable DPMS
