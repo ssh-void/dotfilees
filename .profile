@@ -46,7 +46,8 @@ fi
 xset -dpms # Disable DPMS
 xset s off # Disable screensaver
 xset s noblank # Disable screen blank
-xset r off # Disables key repeat
+#xset r off # Disables key repeat
+xset r rate 225 75 &
 
 ## xrandr
 xrandr \
