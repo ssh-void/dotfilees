@@ -31,6 +31,7 @@ alias suvi="doas vim"
 alias disk="duf -sort size"
 alias neofetch="fastfetch"
 alias mkdir="mkdir -pv"
+alias xhkd="pkill -USR1 -x sxhkd"
 
 # Search command history
 alias blkid="doas blkid -o list"
@@ -48,7 +49,7 @@ alias fontlist="fc-list : family | sort | uniq"
 alias pdf="zathura"
 #alias ram="ps -ely | tr -s ' ' |cut -d ' ' -f8,13 | grep"
 alias tldr="tealdeer"
-alias sb="source ~/.bashrc"
+alias sb="source ~/.bashrc && source ~/.profile && source ~/.bash_profile && source ~/.aliases"
 #alias sz='source ~/.zshrc'
 alias rrm="doas rm -rf"
 alias T="du -sh"
