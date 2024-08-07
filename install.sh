@@ -23,7 +23,7 @@ sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk db
 
 clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
-sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng  
+sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara  
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
 sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
 sudo xbps-install -Syu p7zip # free
