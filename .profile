@@ -38,13 +38,15 @@ xset s noblank # Disable screen blank
 xset r rate 225 75 &
 
 ## xrandr
+## xrandr
 xrandr \
     --dpi 96 \
-    --output eDP-1 --primary --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 \
-    --output HDMI-1 --mode 1920x1080 --pos 1417x0 --rotate right  --rate 50 \
-    --output DP-1 --off \
-    --output HDMI-2 --off
-
+    --output HDMI1  --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 \
+    --mode 1920x1080 --pos 1417x0 --rotate right --rate 50 --brightness 0.8 \
+    --output HDMI2 --off \
+    --output DP1 --off \
+    --output HDMI2 --off  \
+    --output VIRTUAL1 --off
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
