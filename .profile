@@ -1,8 +1,7 @@
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
-
+# XDG_RUNTIME_DIR:
 if [ -z "$XDG_RUNTIME_DIR" ]; then
 	XDG_RUNTIME_DIR="/tmp/$(id -u)-runtime-dir"
-
 	mkdir -pm 0700 "$XDG_RUNTIME_DIR"
 	export XDG_RUNTIME_DIR
 fi
@@ -28,18 +27,14 @@ export IMGVIEWER="sxiv"
 export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
 
-# set PATH so it includes user's private bin if it exists
+# Set PATH so it includes user's private bin if it exists:
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# set PATH so it includes user's private bin if it exists
+# Set PATH so it includes user's private bin if it exists:
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
-fi
-
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-  exec startx
 fi
 
 ## No screensaver
@@ -56,3 +51,7 @@ xrandr \
     --output HDMI-1 --mode 1920x1080 --pos 1417x0 --rotate right  --rate 50 \
     --output DP-1 --off \
     --output HDMI-2 --off
+# startx 
+if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+  exec startx
+fi
