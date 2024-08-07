@@ -18,12 +18,12 @@ clear
 echo "Installing The Necessary Stuff"
 
 sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics
-sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi	
+sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc	
 sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 
 clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
-sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng flameshot maim xclip cloc 
+sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng  
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
 sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
 sudo xbps-install -Syu p7zip # free
