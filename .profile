@@ -38,7 +38,6 @@ xset s noblank # Disable screen blank
 xset r rate 225 75 &
 
 ## xrandr
-## xrandr
 xrandr \
     --dpi 96 \
     --output HDMI1  --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 \
