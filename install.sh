@@ -16,7 +16,7 @@ sudo xbps-install -Syu tealdeer  # tldr en rust
 clear
 
 echo "Installing The Necessary Stuff"
-sudo xbps-install -Syu xorg base-devel xrandr arandr xdotool xdo xrdb xf86-input-synaptics dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel lm_sensors tree man man-db fzy inxi	
+sudo xbps-install -Syu xorg-minimal ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk base-devel xrandr arandr xdotool xdo xrdb xf86-input-synaptics dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel lm_sensors tree man man-db fzy inxi	
 
 clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
@@ -28,7 +28,7 @@ sudo xbps-install -Syu unrar # free
 #sudo xbps-install -Syu p7zip-unrar # nonfree
 clear
 
-sudo xbps-install -Syu ttf-ubuntu-font-family # terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
+sudo xbps-install -Syu dejavu-fonts-ttf noto-fonts-ttf # terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
 sudo xbps-install -Syu vscode eclipse 
 sudo xbps-install -Syu mpv python3-pip  
 sudo xbps-install -Syu MEGAsdk
@@ -38,8 +38,7 @@ clear
 #sudo xbps-install -Syu kdenlive krita  # video editor
 
 # firefox
-sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-fira-otf
-sudo xbps-install -Syu noto-fonts-emoji noto-fonts-cjk
+sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr 
 sudo xbps-install -Syu qbittorrent
 sudo xbps-install -Syu duf eza # lsd exa 
 sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
@@ -53,10 +52,9 @@ sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g exfat-utils
 # non free répo
 sudo xbps-install -S void-repo-nonfree # add void-repo-multilib-nonfree
 xbps-query -L
-#intel
 
 clear
-echo "=====""""""" NVIDIA """""""" ===== "
+echo "=====""""""" NVIDIA intel """""""" ===== "
 sudo xbps-install -Syu intel-ucode # nonfree 
 sudo xbps-install -Syu linux-firmware-intel # free 
 sudo xbps-install -Syu intel-video-accel # free 
@@ -67,11 +65,14 @@ sudo xbps-install -Syu mesa-vaapi # free # video acceleration
 
 clear
 # nvidia & intel
+echo "=====""""""" NVIDIA intel """""""" ===== "
 sudo xbps-install -Syu nvidia  # nonfree 
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
 sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
+
 ##################################################################
+
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
 sudo git clone --depth=1 https://github.com/void-linux/void-packages
@@ -80,10 +81,13 @@ sudo chown -R sh:sh .
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
+
 ####################################################################
+
 sudo xbps-reconfigure -fa
 fc-cache -fv
-#"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""#
+
+####################################################################
 sudo sv down dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
