@@ -75,7 +75,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_semicolon, focusmon,    {.i = +1 } },/*switch btwn mounitor*/
 //      { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },/*envery un fentre  btwn mounitor*/
 	{ MODKEY|ShiftMask,             XK_semicolon, tagmon,      {.i = +1 } },/*envery un fentre  btwn mounitor*/
-	{ MODKEY|ControlMask|ShiftMask, XK_q,           quit,             {0} },
+	{ MODKEY|ControlMask|ShiftMask, XK_q,           quit,      {0} },
 	TAGKEYS(                        XK_ampersand,              0)
 	TAGKEYS(                        XK_eacute,                 1)
 	TAGKEYS(                        XK_quotedbl,               2)
