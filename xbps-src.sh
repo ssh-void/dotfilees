@@ -8,6 +8,8 @@ sudo git clean -fd && git reset --hard && git pull
 #=============================================================#
 ./xbps-src binary-bootstrap # xbps-src cannot be used as root
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
+#echo XBPS_CHROOT_CMD=uchroot >> etc/conf
+#echo XBPS_CHROOT_CMD_ARGS=-t >> etc/conf
 #=============================================================#
 ./xbps-src pkg torbrowser-launcher && xi torbrowser-launcher
 #./xbps-src pkg google-chrome &&  xi google-chrome
