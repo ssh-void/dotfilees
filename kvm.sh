@@ -2,8 +2,8 @@ sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bri
 sudo usermod -aG kvm $(whoami) 
 sudo modprobe kvm-intel  
 sudo usermod -aG libvirt $(whoami) 
-sudo sed -i 's/auth_unix_ro = "polkit"/auth_unix_ro = "none"/' /etc/libvirt/libvirtd.conf  # tested
-sudo sed -i 's/auth_unix_rw = "polkit"/auth_unix_rw = "none"/' /etc/libvirt/libvirtd.conf # tested
+sudo sed -i 's/^#auth_unix_ro = "polkit"/auth_unix_ro = "none"/' /etc/libvirt/libvirtd.conf # tested
+sudo sed -i 's/^#auth_unix_rw = "polkit"/auth_unix_rw = "none"/' /etc/libvirt/libvirtd.conf # tested
 sudo sed -i 's/user = ".*"/user = "'"$(whoami)"'"/' /etc/libvirt/qemu.conf # tested
 sudo xbps-install -Syu NetworkManager
 sudo sv down dhcpcd # runit
