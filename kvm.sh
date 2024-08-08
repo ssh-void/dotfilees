@@ -12,4 +12,4 @@ sudo rm /var/service/dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
 #sudo nmcli device wifi connect SSID password PASSWORD
-#sudo reboot
+sudo reboot
