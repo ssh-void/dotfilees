@@ -5,6 +5,8 @@ sudo usermod -aG libvirt $(whoami)
 sudo sed -i 's/^#auth_unix_ro = "polkit"/auth_unix_ro = "none"/' /etc/libvirt/libvirtd.conf # tested
 sudo sed -i 's/^#auth_unix_rw = "polkit"/auth_unix_rw = "none"/' /etc/libvirt/libvirtd.conf # tested
 sudo sed -i 's/^#\?user = ".*"/user = "'"$(whoami)"'"/' /etc/libvirt/qemu.conf  # tested
+doas ln -s /etc/sv/libvirtd /var/service/
+doas ln -s /etc/sv/virtlogd /var/service/
 sudo sv down dhcpcd # runit
 sudo rm /var/service/dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
