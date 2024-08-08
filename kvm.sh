@@ -1,4 +1,4 @@
-sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils
+sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
 sudo usermod -a -G libvirt $(whoami) 
 sudo modprobe kvm-intel  
 sudo usermod -a -G libvirt $(whoami)  
