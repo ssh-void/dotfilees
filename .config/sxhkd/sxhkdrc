@@ -1,26 +1,31 @@
 super + x
-        exec ~/.config/.script/img_txt_net.sh
+        exec $HOME/.config/.script/img_txt_net.sh
 
 super + c
-        exec ~/.config/.script/img_txt.sh  
+        exec $HOME/.config/.script/img_txt.sh  
 
 super + d
         dmenu_run -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' 
 
 super + s
-        exec ~/.config/.script/scratchpad.sh
+        exec $HOME/.config/.script/scratchpad.sh
 
 alt + {Up,Down}
-              exec ~/.config/.script/brightnessctl.sh {up,down}
+              exec $HOME/.config/.script/brightnessctl.sh {up,down}
 
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-                                      ~/.config/.script/pamixer.sh {up,down,toggle}
+                                     exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
 super + p
-        flameshot gui &< /dev/null
+        flameshot gui
+
+super + v
+	 virt-manager
 
 super + shift + l 
                 slock
 
 super + {f,t,b}
-              {firefox,torbrowser-launcher,brave-browser-stable}
+              {firefox &> /dev/null,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null}
+super + alt + b
+	      blueman-manager
