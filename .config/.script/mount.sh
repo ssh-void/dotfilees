@@ -1,5 +1,4 @@
 # ! /bin/sh
-
 uid=$(id -u)
 gid=$(id -g)
 
