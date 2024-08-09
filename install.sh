@@ -12,6 +12,7 @@ clear
 
 sudo xbps-install -Syu dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl   
 sudo xbps-install -Syu xsetroot xbanish yaru # papirus-icon-theme # icons
+sudo xbps-install -Syu lxappearance qt5ct # conf the themes
 sudo xbps-install -Syu tealdeer  # tldr en rust
 clear
 
