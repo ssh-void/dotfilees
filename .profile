@@ -13,6 +13,11 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
+# QT5 Fix
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_PLATFORM_PLUGIN="qt5ct"
+export QT_AUTO_SCREEN_SCALE_FACTOR=0
+export QT_SCALE_FACTOR=1
 export TERMINAL="st"
 export READER="zathura"
 export VIDEO="vlc"
@@ -41,11 +46,11 @@ xset r rate 225 75 &
 xrandr \
     --dpi 96 \
     --output HDMI1  --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 \
-    --mode 1920x1080 --pos 1417x0 --rotate right --rate 50 --brightness 0.8 \  # [0...1]
+    --mode 1920x1080 --pos 1417x0 --rotate right --rate 50 --brightness 0.8 \
     --output HDMI2 --off \
     --output DP1 --off \
     --output HDMI2 --off  \
-    --output VIRTUAL1 --off## xrandr
+    --output VIRTUAL1 --off
 
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
