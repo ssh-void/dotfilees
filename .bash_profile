@@ -43,14 +43,9 @@ xset s noblank # Disable screen blank
 xset r rate 225 75 &
 
 ## xrandr
+#!/bin/sh
 echo "Xft.dpi: 90" | xrdb -merge
-xrandr \
-    --output HDMI1  --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 \
-    --mode 1920x1080 --pos 1417x0 --rotate right --rate 50 --brightness 0.8 \
-    --output HDMI2 --off \
-    --output DP1 --off \
-    --output HDMI2 --off  \
-    --output VIRTUAL1 --off
+xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1289x0 --rotate right --rate 50 --brightness 0.8 --output HDMI2 --off --output VIRTUAL1 --off
 
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
