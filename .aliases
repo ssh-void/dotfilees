@@ -39,7 +39,7 @@ alias perms="doas chmod 664"
 alias td='tree -d -h --du'
 alias tf='tree -i -f -s -h'
 alias tsh='tree -P "*.sh" --prune -s -h'
-alias ts='tree -s -h --du'
+alias trees='tree -s -h --du'
 #alias h="history | cut -c 8- | fzf --tac | xclip -selection clipboard"
 alias h="history | cut -c 8- | fzy -l 15  | xclip -selection clipboard"
 # Saved my place in my videos :)
@@ -49,7 +49,7 @@ alias fontlist="fc-list : family | sort | uniq"
 alias pdf="zathura"
 #alias ram="ps -ely | tr -s ' ' |cut -d ' ' -f8,13 | grep"
 alias tldr="tealdeer"
-alias sb="source ~/.bashrc && source ~/.profile && source ~/.bash_profile && source ~/.aliases"
+alias sprofile="source ~/.profile ; source ~/.bash_profile "
 #alias sz='source ~/.zshrc'
 alias rrm="doas rm -rf"
 alias T="du -sh"
@@ -69,8 +69,8 @@ alias vi="nvim"
 alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 
 # cd
-alias ..="cd .."
-alias ...="cd ../.."
+alias cd..='cd ..'
+alias .2="cd ../.."
 alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
