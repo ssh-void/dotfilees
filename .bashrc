@@ -1,28 +1,4 @@
-# PS1='[\u@\h \W]\$ '									
-# get current branch in git repo
-# get current branch in git repo
-# Exports:
-export TERMINAL="st"
-export READER="zathura"
-export VIDEO="vlc"
-export TERM="xterm-256color"   # getting proper colors
-export HISTCONTROL=ignoredups:erasedups   # no duplicate entries
-export FILE="ranger"
-export BROWSER="firefox"
-export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
-export EDITOR="nvim"
-export VISUAL="nvim"
-export MANPAGER="nvim +Man!" # manpages
-export LANG="en_US.UTF-8"
-export SUDO_EDITOR="nvim"
-#export PATH=$HOME/.scripts:$PATH
-export PAGER="most" # export PAGER="less"
-export IMGVIEWER="sxiv"
-export IMAGE="sxiv"
-export WM_NAME="LG3D" # contourner certains bogues matlab
-
 HISTIGNORE="cd:&:ls:[bf]g:exit"
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
