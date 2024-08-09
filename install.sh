@@ -17,7 +17,7 @@ clear
 
 echo "Installing The Necessary Stuff"
 
-sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics
+sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev 
 sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk	
 sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 
