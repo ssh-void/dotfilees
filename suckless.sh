@@ -20,10 +20,10 @@ mkdir -p ~/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-voi
 mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -O ~/.config/sxhkd/sxhkdrc
 mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -O ~/.config/nvim/init.vim
 
-sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf -O /etc/X11/xorg.conf.d/00-keyboard.conf
-sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
-sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
-sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf -O /etc/X11/xorg.conf.d/00-keyboard.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 sudo cp ~/.bashrc /root/.bashrc
 sudo cp ~/.aliases /root/.aliases
 sudo cp ~/.profile /root/.profile
