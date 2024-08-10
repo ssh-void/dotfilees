@@ -16,7 +16,7 @@ cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashr
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliases
-mkdir -p ~/.config/.script && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh -o ~/.config/.script/scratchpad.sh
+sudo mkdir -p ~/.config/.script && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh -o ~/.config/.script/scratchpad.sh
 mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -o ~/.config/sxhkd/sxhkdrc
 mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -o ~/.config/nvim/init.vim
 wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf
