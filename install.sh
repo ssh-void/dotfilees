@@ -87,13 +87,12 @@ cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
 sudo git clone --depth=1 https://github.com/void-linux/void-packages
 sudo xbps-install -Syu xtools python3 # xi ...
-sudo chown -R sh:sh .
+sudo chown -R $(whoami):$(whoami) .
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 
 ####################################################################
-
 sudo xbps-reconfigure -fa
 fc-cache -fv
 
