@@ -14,7 +14,7 @@ wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
 wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
 wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
 wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliases
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh -o ~/
+mkdir -p ~/.config/.script && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh -o ~/.config/.script/scratchpad.sh
 wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc
 wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim
 sudo echo "permit nopass $(whoami) as root" > /etc/doas.conf
