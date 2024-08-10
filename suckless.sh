@@ -24,7 +24,7 @@ sudo cp ~/.profile /root/.profile
 sudo cp ~/.bash_profile /root/.bash_profile
 sudo mkdir -p /root/.config/nvim
 sudo cp ~/.config/nvin/init.vin /root/.config/nvin/init.vin
-sudo echo "permit nopass $(whoami) as root" > /etc/doas.conf
+echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -f fontconfig
 cd /opt/
