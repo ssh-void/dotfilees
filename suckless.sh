@@ -10,11 +10,18 @@ sudo rm /var/service/agetty-tty3
 sudo rm /var/service/agetty-tty4
 sudo rm /var/service/agetty-tty5
 sudo rm /var/service/agetty-tty6
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliases
+cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
+cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
+cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
+cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliases
 mkdir -p ~/.config/.script && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh -o ~/.config/.script/scratchpad.sh
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim
+mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -o ~/.config/sxhkd/sxhkdrc
+mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -o ~/.config/nvim/init.vim
+sudo cp ~/.bashrc /root/.bashrc
+sudo cp ~/.aliases /root/.aliases
+sudo cp ~/.profile /root/.profile
+sudo cp ~/.bash_profile /root/.bash_profile
+sudo mkdir -p /root/.config/nvim
+sudo cp ~/.config/nvin/init.vin /root/.config/nvin/init.vin
+
 sudo echo "permit nopass $(whoami) as root" > /etc/doas.conf
