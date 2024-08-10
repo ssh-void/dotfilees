@@ -4,6 +4,7 @@ sudo xbps-install -Syu xorg-minimal xrdb base-devel xset xrandr arandr xdotool x
 sudo xbps-install -Syu ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk dbus picom sxhkd xbanish feh brightnessctl numlockx firefox eza most  
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
+sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo rm /var/service/agetty-tty3
 sudo rm /var/service/agetty-tty4
@@ -18,6 +19,10 @@ cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.alias
 mkdir -p ~/.config/.script && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh -o ~/.config/.script/scratchpad.sh
 mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -o ~/.config/sxhkd/sxhkdrc
 mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -o ~/.config/nvim/init.vim
+wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf
+wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf
+wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf
+wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf
 sudo cp ~/.bashrc /root/.bashrc
 sudo cp ~/.aliases /root/.aliases
 sudo cp ~/.profile /root/.profile
