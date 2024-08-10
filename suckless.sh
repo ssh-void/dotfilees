@@ -16,14 +16,14 @@ cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashr
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliases
-sudo mkdir -p ~/.config/.script/ && cd ~/.config/.script/ 
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh ; chmod +x scratchpad.sh
-mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -o ~/.config/sxhkd/sxhkdrc
-mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -o ~/.config/nvim/init.vim
-wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf
-wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf
+mkdir -p ~/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh  -O ~/.config/.script/scratchpad.sh && chmod +x ~/.config/.script/scratchpad.sh
+mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -O ~/.config/sxhkd/sxhkdrc
+mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -O ~/.config/nvim/init.vim
+
+sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf -O /etc/X11/xorg.conf.d/00-keyboard.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
+sudo mkdir -p /etc/X11/xorg.conf.d/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
 sudo cp ~/.bashrc /root/.bashrc
 sudo cp ~/.aliases /root/.aliases
 sudo cp ~/.profile /root/.profile
