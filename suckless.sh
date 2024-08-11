@@ -16,7 +16,7 @@ sleep 3s
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
 sleep 3s
-sudo xbps-install -Syu opendoas tealdeer neovim fzy xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel tree man man-db inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
+sudo xbps-install -Syu opendoas tealdeer elogind dnsmasq neovim fzy xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel tree man man-db inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
 echo "changer shell in bash"
 sleep 10s
 	sudo chsh -s /usr/bin/bash
@@ -63,7 +63,7 @@ echo "xbps-src && grc "
 sleep 3s
 cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git && sudo git clone --depth=1 https://github.com/void-linux/void-packages
 cd /opt/ && sudo xbps-install -Syu xtools python3 # xi ...
-cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
+#cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
 cd /opt/ && cd grc/ && sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 sudo xbps-reconfigure -fa && sudo update-grub
@@ -76,12 +76,19 @@ clear
 echo "grub && autologin"
 sleep 3s
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
-sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
+#sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
 sudo grub-mkconfig -o /boot/grub/grub.cfg && sudo update-grub
 sudo rm /var/service/agetty-tty{3,4,5,6}
 clear
 echo "fontconfig & fc-cache"
 sleep 3s
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
+echo "service ..."
+sleep 10s
+	sudo ln -s /etc/sv/dbus /var/service/
+	sudo ln -s /etc/sv/elogind /var/service/
+	sudo ln -s /etc/sv/dnsmasq /var/service/
+	sudo ln -s /etc/sv/NetworkManager /var/service/
+clear
 sudo shutdown -r now # reboot   
 clear
