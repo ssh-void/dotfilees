@@ -41,7 +41,7 @@ sudo xbps-reconfigure -fa
 fc-cache -fv
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
-sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo grub-mkconfig -o /boot/grub/grub.cfg && sudo update-grub
 sudo rm /var/service/agetty-tty3
 sudo rm /var/service/agetty-tty4
 sudo rm /var/service/agetty-tty5
