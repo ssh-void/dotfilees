@@ -1,7 +1,7 @@
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 sudo xbps-install -Syu xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev 
 sudo xbps-install -Syu ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
-sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk dbus wget curl opendoas picom sxhkd xbanish feh brightnessctl numlockx firefox eza most  
+sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk dbus wget curl opendoas picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git xtools  
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
@@ -16,6 +16,12 @@ sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://github.com/ssh-void/
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
+mkdir -p ~/.config/suckless && git clone https://github.com/ssh-void/suckless6.5.git ~/.config/suckless
+cd ~/.config/suckless/dwm/ && make && sudo make clean install
+cd ~/.config/suckless/dmenu/ && make && sudo make clean install
+cd ~/.config/suckless/st/ && make && sudo make clean install
+cd ~/.config/suckless/slstatus/ && make && sudo make clean install
+cd ~/.config/suckless/slock && make && sudo make clean install
 sudo cp ~/.bashrc /root/.bashrc
 sudo cp ~/.aliases /root/.aliases
 sudo cp ~/.profile /root/.profile
