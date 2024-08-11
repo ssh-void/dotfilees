@@ -9,7 +9,7 @@ cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.xinit
 # block 1
 mkdir -p $HOME/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh  -O $HOME/.config/.script/scratchpad.sh && chmod +x $HOME/.config/.script/scratchpad.sh
 mkdir -p $HOME/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrcvm -O $HOME/.config/sxhkd/sxhkdrc
-mkdir -p $HOME/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -O $HOME/.config/nvim/init.vim
+mkdir -p $HOME/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vimvm -O $HOME/.config/nvim/init.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 # block 1
@@ -32,6 +32,7 @@ sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
 sudo xbps-reconfigure -f fontconfig
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
+
 sudo chown -R  $(whoami): $(whoami) .
 cd grc/
 sudo ./install.sh
