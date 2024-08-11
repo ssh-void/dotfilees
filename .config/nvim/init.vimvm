@@ -89,7 +89,6 @@ Plug 'vim-python/python-syntax'
 Plug 'itchyny/lightline.vim'                       " Lightline statusbar
 Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " color theme
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox' " color theme
 
 call plug#end()
@@ -103,21 +102,8 @@ let g:lightline = {
       \ }
 " Always show statusline
 set laststatus=2
-"Coc
-let g:coc_global_extensions = [
-    \ 'coc-clangd' 
-    \  ]
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
-inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
-	    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-  
-" Désactiver la complétion native de Vim pour éviter les conflits
-set completeopt=menuone,noinsert,noselect
-set shortmess+=c
-" Déclencher automatiquement la complétion lors de la saisie
-inoremap <silent><expr> <A-Space> coc#refresh()
-" Configurer Coc pour utiliser l'autocomplétion dès que vous commencez à taper
-autocmd CursorHoldI * silent! call coc#float#hide()
+
+
 
 "xclip
 vnoremap <C-c> "+y
