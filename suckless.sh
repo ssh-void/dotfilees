@@ -16,13 +16,13 @@ sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://github.com/ssh-void/
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-mkdir -p ~/.config/suckless && git clone https://github.com/ssh-void/suckless6.5.git ~/.config/suckless
-cd ~/.config/suckless/dwm/ && make && sudo make clean install
-cd ~/.config/suckless/dmenu/ && make && sudo make clean install
-cd ~/.config/suckless/st/ && make && sudo make clean install
-cd ~/.config/suckless/slstatus/ && make && sudo make clean install
-cd ~/.config/suckless/slock && make && sudo make clean install
-sudo cp ~/.bashrc /root/.bashrc
+mkdir -p ~/.config/.suckless && git clone https://github.com/ssh-void/suckless6.5.git ~/.config/.suckless
+cd ~/.config/.suckless/dwm/ && make && sudo make clean install
+cd ~/.config/.suckless/dmenu/ && make && sudo make clean install
+cd ~/.config/.suckless/st/ && make && sudo make clean install
+cd ~/.config/.suckless/slstatus/ && make && sudo make clean install
+cd ~/.config/.suckless/slock && make && sudo make clean install
+sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc
 sudo cp ~/.aliases /root/.aliases
 sudo cp ~/.profile /root/.profile
 sudo cp ~/.bash_profile /root/.bash_profile
