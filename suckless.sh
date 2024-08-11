@@ -6,11 +6,11 @@ if [ $? -ne 0 ]; then echo "Erreur lors de la mise à jour de xbps."; exit 1; fi
 
 # Installer les paquets nécessaires
 sudo xbps-install -Syu \
-    xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xf86-input-synaptics xf86-input-evdev \
+    xorg-minimal xrdb setxkbmap base-devel xset xrandr arandr xdotool xdo xf86-input-synaptics xf86-input-evdev \
     bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk \
     libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel \
     libXrandr-devel lm_sensors tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom \
-    sxhkd xbanish feh brightnessctl numlockx firefox eza most git
+    sxhkd xbanish feh brightnessctl numlockx firefox eza most git 
 if [ $? -ne 0 ]; then echo "Erreur lors de l'installation des paquets."; exit 1; fi
 
 # Télécharger et configurer les fichiers de configuration
