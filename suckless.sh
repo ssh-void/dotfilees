@@ -16,7 +16,7 @@ sleep 3s
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
 sleep 3s
-sudo xbps-install -Syu opendoas neovim fzy xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
+sudo xbps-install -Syu opendoas tealdeer neovim fzy xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
 echo "changer shell in bash"
 sleep 10s
 	sudo chsh -s /usr/bin/bash
@@ -56,7 +56,7 @@ echo "root config & doas "
 sleep 3s
 sudo cp $HOME/.bash_profile /root/.bash_profile
 sudo mkdir -p /root/.config/nvim && sudo cp $HOME/.config/nvim/init.vim /root/.config/nvim/init.vim
-echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
+#echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 clear
 echo "xbps-src && grc "
