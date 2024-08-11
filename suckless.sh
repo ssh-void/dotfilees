@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Mettre à jour le système et les outils
-sudo xbps-install -Syu xbps
+sudo xbps-install -S && sudo xbps-install -u xbps
 if [ $? -ne 0 ]; then echo "Erreur lors de la mise à jour de xbps."; exit 1; fi
 
 # Installer les paquets nécessaires
