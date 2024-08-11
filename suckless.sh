@@ -29,7 +29,7 @@ sudo mkdir -p /root/.config/nvim
 sudo cp ~/.config/nvim/init.vim /root/.config/nvim/init.vim
 echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-sudo xbps-reconfigure -f fontconfig
+sudo xbps-reconfigure -f fontconfig && 
 
 cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git
 cd /opt/ && sudo git clone --depth=1 https://github.com/void-linux/void-packages
@@ -37,13 +37,9 @@ cd /opt/ && sudo xbps-install -Syu xtools python3 # xi ...
 cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
 cd /opt/ && cd grc/ && sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
-sudo xbps-reconfigure -fa
-fc-cache -fv
+sudo xbps-reconfigure -fa && sudo update-grub
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
 sudo grub-mkconfig -o /boot/grub/grub.cfg && sudo update-grub
-sudo rm /var/service/agetty-tty3
-sudo rm /var/service/agetty-tty4
-sudo rm /var/service/agetty-tty5
-sudo rm /var/service/agetty-tty6
+sudo rm /var/service/agetty-tty3 && sudo rm /var/service/agetty-tty4 && sudo rm /var/service/agetty-tty5 && sudo rm /var/service/agetty-tty6
 sudo shutdown -r now # reboot   
