@@ -23,8 +23,6 @@ cd ~/.config/.suckless/st/ && make && sudo make clean install
 cd ~/.config/.suckless/slstatus/ && make && sudo make clean install
 cd ~/.config/.suckless/slock && make && sudo make clean install
 sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc
-sudo cp ~/.aliases /root/.aliases
-sudo cp ~/.profile /root/.profile
 sudo cp ~/.bash_profile /root/.bash_profile
 sudo mkdir -p /root/.config/nvim
 sudo cp ~/.config/nvim/init.vim /root/.config/nvim/init.vim
