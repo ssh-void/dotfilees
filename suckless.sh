@@ -10,7 +10,7 @@ sudo xbps-install -Syu \
     bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk \
     libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel \
     libXrandr-devel lm_sensors tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom \
-    sxhkd xbanish feh brightnessctl numlockx firefox eza most git 
+    sxhkd xbanish feh brightnessctl numlockx firefox eza most git neovim 
 if [ $? -ne 0 ]; then echo "Erreur lors de l'installation des paquets."; exit 1; fi
 
 # Télécharger et configurer les fichiers de configuration
