@@ -10,6 +10,7 @@ mkdir -p $HOME/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh
 mkdir -p $HOME/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrcvm -O $HOME/.config/sxhkd/sxhkdrc
 mkdir -p $HOME/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vimvm -O $HOME/.config/nvim/init.vim
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/X11/Xresources -O $HOME/.Xresources
+cd $HOME/.config && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sh.png
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
