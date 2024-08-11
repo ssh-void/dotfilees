@@ -23,7 +23,6 @@ sleep 10s
 clear
 echo "changer shell in bash"
 sleep 3s
-cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profilevm -O $HOME/.profile && cp $HOME/.profile $HOME/.bash_profile
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliasesvm -O $HOME/.aliases
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.xinitrcvm -O $HOME/.xinitrc 
@@ -55,7 +54,6 @@ cd $HOME/.config/.suckless/slock/ && make && sudo make clean install
 clear
 echo "root config "
 sleep 3s
-sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc
 sudo cp $HOME/.bash_profile /root/.bash_profile
 sudo mkdir -p /root/.config/nvim && sudo cp $HOME/.config/nvim/init.vim /root/.config/nvim/init.vim
 echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
@@ -69,6 +67,11 @@ cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
 cd /opt/ && cd grc/ && sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 sudo xbps-reconfigure -fa && sudo update-grub
+clear 
+echo ".bashrccc "
+sleep 3s
+sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc
+cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
 clear 
 echo "grub && autologin"
 sleep 3s
