@@ -2,7 +2,6 @@ numlockx on &
 brightnessctl set 80% &
 st &
 xrdb -load $HOME/.Xresources &
-setxkbmap -layout fr  -option "caps:escape"
 picom --backend glx --vsync --dbus &
 feh --bg-fill $HOME/.config/sh.png &
 xbanish &
