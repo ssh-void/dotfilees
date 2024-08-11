@@ -1,7 +1,7 @@
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 sudo xbps-install -Syu xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev 
 sudo xbps-install -Syu bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
-sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk dbus wget curl opendoas picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git xtools  
+sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot xclip awk dbus wget curl opendoas picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profilevm -O $HOME/.profile && cp ~/.profile ~/.bash_profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliasesvm -O $HOME/.aliases
@@ -35,8 +35,7 @@ cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git
 cd /opt/ && sudo git clone --depth=1 https://github.com/void-linux/void-packages
 cd /opt/ && sudo xbps-install -Syu xtools python3 # xi ...
 cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
-cd /opt/ && cd grc/
-sudo ./install.sh
+cd /opt/ && cd grc/ && sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 sudo xbps-reconfigure -fa
 fc-cache -fv
