@@ -2,7 +2,7 @@
 
 *scrollBar: false
 *internalBorder: 2
-*font: xft:DejaVu Sans Mono:style=Bold:size=16
+*font: xft:DejaVu Sans Mono:style=Bold:size=14
 *transparent: true
 *shading: 8
 
