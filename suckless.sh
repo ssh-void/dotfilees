@@ -30,7 +30,7 @@ clear
 echo "scratchpad.sh && sxhkdrc init.vim .Xresources"
 sleep 3s
 mkdir -p $HOME/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh  -O $HOME/.config/.script/scratchpad.sh && chmod +x $HOME/.config/.script/scratchpad.sh
-mkdir -p $HOME/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrcvm -O $HOME/.config/sxhkd/sxhkdrc
+mkdir -p $HOME/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkrcvm -O $HOME/.config/sxhkd/sxhkdrc
 mkdir -p $HOME/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vimvm -O $HOME/.config/nvim/init.vim
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/X11/Xresources -O $HOME/.Xresources
 cd $HOME/.config && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sh.png
