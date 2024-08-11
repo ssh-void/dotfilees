@@ -1,41 +1,124 @@
-sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
-sudo xbps-install -Syu xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev 
-sudo xbps-install -Syu bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
-sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
-cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
-cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profilevm -O $HOME/.profile && cp $HOME/.profile $HOME/.bash_profile
-cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliasesvm -O $HOME/.aliases
-cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.xinitrcvm -O $HOME/.xinitrc 
-mkdir -p $HOME/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh  -O $HOME/.config/.script/scratchpad.sh && chmod +x $HOME/.config/.script/scratchpad.sh
-mkdir -p $HOME/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrcvm -O $HOME/.config/sxhkd/sxhkdrc
-mkdir -p $HOME/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vimvm -O $HOME/.config/nvim/init.vim
-cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/X11/Xresources -O $HOME/.Xresources
-cd $HOME/.config && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sh.png
-sudo xbps-install -Syu curl  && sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
-sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf -O /etc/X11/xorg.conf.d/00-keyboard.conf
-sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
-sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
-sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-mkdir -p $HOME/.config/.suckless && git clone https://github.com/ssh-void/suckless6.5.git $HOME/.config/.suckless
-cd $HOME/.config/.suckless/dwm/ && make && sudo make clean install
-cd $HOME/.config/.suckless/dmenu/ && make && sudo make clean install
-cd $HOME/.config/.suckless/st/ && make && sudo make clean install
-cd $HOME/.config/.suckless/slstatus/ && make && sudo make clean install
-cd $HOME/.config/.suckless/slock/ && make && sudo make clean install
-sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc
+#!/bin/bash
+
+set -e  # Arrêter le script en cas d'erreur
+
+# Mettre à jour le système et les outils
+echo "Mise à jour du système et des outils..."
+sudo xbps-install -S
+sudo xbps-install -u xbps
+sudo xbps-install -Syu
+
+# Installer les paquets nécessaires
+echo "Installation des paquets nécessaires..."
+sudo xbps-install -Syu \
+    xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xf86-input-synaptics xf86-input-evdev \
+    bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk \
+    libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel \
+    libXrandr-devel lm_sensors tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom \
+    sxhkd xbanish feh brightnessctl numlockx firefox eza most git
+
+# Télécharger et configurer les fichiers de configuration
+BASE_URL="https://raw.githubusercontent.com/ssh-void/dotfilees/main"
+FILES=(
+    ".bashrc"
+    ".profile"
+    ".aliases"
+    ".xinitrc"
+    ".config/.script/scratchpad.sh"
+    ".config/sxhkd/sxhkdrc"
+    ".config/nvim/init.vim"
+    ".Xresources"
+    ".config/sh.png"
+)
+
+echo "Téléchargement des fichiers de configuration..."
+for FILE in "${FILES[@]}"; do
+    wget -c "$BASE_URL/$FILE" -O "$HOME/$FILE"
+    if [ $? -ne 0 ]; then echo "Erreur lors du téléchargement de $FILE."; exit 1; fi
+done
+
+# Configurer les permissions et les liens
+chmod +x $HOME/.config/.script/scratchpad.sh
+cp $HOME/.profile $HOME/.bash_profile
 sudo cp $HOME/.bash_profile /root/.bash_profile
-sudo mkdir -p /root/.config/nvim && sudo cp $HOME/.config/nvim/init.vim /root/.config/nvim/init.vim
-sudo xbps-install -Syu opendoas && echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
+sudo cp $HOME/.config/nvim/init.vim /root/.config/nvim/init.vim
+
+# Installer vim-plug
+echo "Installation de vim-plug..."
+sudo xbps-install -Syu curl
+curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if [ $? -ne 0 ]; then echo "Erreur lors de l'installation de vim-plug."; exit 1; fi
+
+# Configurer les fichiers Xorg
+echo "Configuration des fichiers Xorg..."
+XORG_CONF_URLS=(
+    "00-keyboard.conf"
+    "10-evdev.conf"
+    "40-libinput.conf"
+    "50-mouse-acceleration.conf"
+)
+sudo mkdir -p /etc/X11/xorg.conf.d/
+for CONF in "${XORG_CONF_URLS[@]}"; do
+    sudo wget -c "$BASE_URL/xorg.conf.d/$CONF" -O "/etc/X11/xorg.conf.d/$CONF"
+    if [ $? -ne 0 ]; then echo "Erreur lors du téléchargement de $CONF."; exit 1; fi
+done
+
+# Cloner et installer les outils suckless
+echo "Installation des outils suckless..."
+SUCKLESS_REPO="https://github.com/ssh-void/suckless6.5.git"
+mkdir -p $HOME/.config/.suckless
+git clone $SUCKLESS_REPO $HOME/.config/.suckless
+if [ $? -ne 0 ]; then echo "Erreur lors du clonage du dépôt suckless."; exit 1; fi
+
+SUCKLESS_DIRS=("dwm" "dmenu" "st" "slstatus" "slock")
+for DIR in "${SUCKLESS_DIRS[@]}"; do
+    cd $HOME/.config/.suckless/$DIR
+    make && sudo make clean install
+    if [ $? -ne 0 ]; then echo "Erreur lors de la compilation de $DIR."; exit 1; fi
+done
+
+# Configurer doas
+echo "Configuration de doas..."
+sudo xbps-install -Syu opendoas
+echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
+if [ $? -ne 0 ]; then echo "Erreur lors de la configuration de doas."; exit 1; fi
+
+# Configurer les polices
+echo "Configuration des polices..."
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
-cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git && sudo git clone --depth=1 https://github.com/void-linux/void-packages
-cd /opt/ && sudo xbps-install -Syu xtools python3 # xi ...
-cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
-cd /opt/ && cd grc/ && sudo ./install.sh
+
+# Installer et configurer grc
+echo "Installation et configuration de grc..."
+cd /opt/
+sudo git clone --depth=1 https://github.com/garabik/grc.git
+sudo git clone --depth=1 https://github.com/void-linux/void-packages
+if [ $? -ne 0 ]; then echo "Erreur lors du clonage des dépôts."; exit 1; fi
+
+sudo xbps-install -Syu xtools python3
+if [ $? -ne 0 ]; then echo "Erreur lors de l'installation des outils xtools et python3."; exit 1; fi
+
+sudo chown -R $(whoami):$(whoami) .
+cd grc/
+sudo ./install.sh
+if [ $? -ne 0 ]; then echo "Erreur lors de l'installation de grc."; exit 1; fi
+
 sudo cp /etc/profile.d/grc.sh /etc/
 sudo xbps-reconfigure -fa && sudo update-grub
+if [ $? -ne 0 ]; then echo "Erreur lors de la configuration de grub."; exit 1; fi
+
+# Configurer grub et agetty
+echo "Configuration de grub et agetty..."
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
+
 sudo grub-mkconfig -o /boot/grub/grub.cfg && sudo update-grub
-sudo rm /var/service/agetty-tty3 && sudo rm /var/service/agetty-tty4 && sudo rm /var/service/agetty-tty5 && sudo rm /var/service/agetty-tty6
-sudo shutdown -r now # reboot   
+if [ $? -ne 0 ]; then echo "Erreur lors de la mise à jour de grub."; exit 1; fi
+
+# Supprimer les services agetty non nécessaires
+sudo rm -f /var/service/agetty-tty{3,4,5,6}
+
+# Redémarrer le système
+echo "Redémarrage du système..."
+sudo shutdown -r now
