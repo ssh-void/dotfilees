@@ -70,7 +70,7 @@ sudo xbps-reconfigure -fa && sudo update-grub
 clear 
 echo ".bashrccc "
 sleep 3s
-sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc -O /root/.bashrc'
+sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc'
 test -f "$HOME/.bashrc" && > "$HOME/.bashrc" && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc -O "$HOME/.bashrc"
 clear 
 echo "grub && autologin"
