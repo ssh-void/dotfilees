@@ -1,0 +1,11 @@
+numlockx on &
+brightnessctl set 80% &
+st &
+xrdb -load $HOME/.config/Xresources &
+picom --backend glx --vsync --dbus &
+feh --bg-fill $HOME/.config/sh.png &
+xbanish &
+pipewire &
+sxhkd & 
+slstatus &
+dbus-run-session dwm 
