@@ -7,8 +7,16 @@ bypass() {
 		kill -0 "$$" || exit
 	done 2>/dev/null &
 }
+sleep 3s
+bypass
+clear
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
+sleep 3s
+clear
 sudo xbps-install -Syu xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel tree man man-db fzy inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
+sleep 10s
+	sudo chsh -s /usr/bin/bash
+clear
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profilevm -O $HOME/.profile && cp $HOME/.profile $HOME/.bash_profile
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliasesvm -O $HOME/.aliases
