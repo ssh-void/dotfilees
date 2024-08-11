@@ -109,4 +109,5 @@ sudo rm /var/service/dhcpcd
 echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+sudo update-grub
 sudo shutdown -r now # reboot   
