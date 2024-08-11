@@ -87,7 +87,7 @@ cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
 sudo git clone --depth=1 https://github.com/void-linux/void-packages
 sudo xbps-install -Syu xtools python3 # xi ...
-sudo chown -R $(whoami):$(whoami) .
+#sudo chown -R $(whoami):$(whoami) .
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
@@ -98,13 +98,10 @@ sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 sudo sv down dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
-sudo rm /var/service/agetty-tty3
-sudo rm /var/service/agetty-tty4
-sudo rm /var/service/agetty-tty5
-sudo rm /var/service/agetty-tty6
+sudo rm /var/service/agetty-tty{3,4,5,6}
 sudo rm /var/service/wpa_supplicant
 sudo rm /var/service/dhcpcd
-echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
+#echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
