@@ -1,0 +1,103 @@
+#================================= alias ===============================#
+### SET VI MODE ###
+set -o vi
+set editing-mode vi
+set keymap vi
+
+# XBPS:
+alias qvs="xbps-query -vs"
+alias q="xbps-query -Rs"
+alias u="doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Su"
+alias i="doas xbps-install -S"
+alias c="doas xbps-remove -RoO && doas vkpurge rm all"
+alias d="doas xbps-remove -Rv"
+
+# runit
+alias start="cd /var/service/ ; doas sv start "
+alias stop="doas sv stop "
+alias restart="cd /var/service/ ; doas sv restart "
+alias py="python"
+
+#xbps-src
+#alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src bootstrap-update && ./xbps-src update-sys && cd -"
+alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && cd -"
+alias cxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src clean && ./xbps-src clean-repocache && cd -"
+alias ixbps="doas  xbps-install --repository=hostdir/binpkgs/nonfree "
+
+# Other:
+alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
+alias suvi="doas vim"
+alias disk="duf -sort size"
+alias neofetch="fastfetch"
+alias mkdir="mkdir -pv"
+alias xhkd="pkill -USR1 -x sxhkd"
+
+# Search command history
+alias blkid="doas blkid -o list"
+alias perms="doas chmod 664"
+alias td='tree -d -h --du'
+alias tf='tree -i -f -s -h'
+alias tsh='tree -P "*.sh" --prune -s -h'
+alias trees='tree -s -h --du'
+#alias h="history | cut -c 8- | fzf --tac | xclip -selection clipboard"
+alias h="history | cut -c 8- | fzy -l 15  | xclip -selection clipboard"
+# Saved my place in my videos :)
+alias mpv="mpv --save-position-on-quit"
+alias xp="xclip -selection clipboard"
+alias fontlist="fc-list : family | sort | uniq"
+alias pdf="zathura"
+#alias ram="ps -ely | tr -s ' ' |cut -d ' ' -f8,13 | grep"
+alias tldr="tealdeer"
+alias sprofile="source ~/.profile ; source ~/.bash_profile "
+#alias sz='source ~/.zshrc'
+alias rrm="doas rm -rf"
+alias T="du -sh"
+alias cal="cal --twelve"
+alias cl="clear"
+alias rsync="rsync -P"
+alias rg="ranger"
+alias m="man"
+alias pweroff="doas shutdown -P now"
+alias rboot="doas shutdown -r now"
+alias ls="ls --color=auto"
+alias l="eza -l --color=always --group-directories-first"  # long format
+alias ll="eza -dlg .* --color=auto"
+alias ld="ls -d */"
+alias v="nvim"
+alias vi="nvim"
+alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
+
+# cd
+alias cd..='cd ..'
+alias .2="cd ../.."
+alias .3="cd ../../.."
+alias .4="cd ../../../.."
+alias .5="cd ../../../../.."
+
+#git
+alias gs="git status"
+alias gp="git push origin"
+alias gpull="git pull origin"
+alias gcm="git commit -m"
+alias ga="git add . && git add *"
+alias gi="git init"
+alias gitlog="git log --all --decorate --oneline --graph"
+alias gcl="git clone --depth=1"
+alias grt="git reset --hard HEAD"
+#alias grt="git reset --hard origin/main"
+alias tag="git tag"
+alias newtag="git tag -a"
+alias fetch="git fetch"
+alias checkout="git checkout"
+alias branch="git branch"
+
+#tmux
+#alias qemu="qemu-system-x86_64"
+alias ta="tmux a"
+alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
+
+
+#suckless
+#alias nf='clear && neofetch'
+alias rmsuckless="doas rm *.o config.h"
+alias makesuckless="make && doas make clean install"
