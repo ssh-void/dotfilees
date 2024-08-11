@@ -54,7 +54,7 @@ sudo xbps-install -Syu duf eza # lsd exa
 sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo ln -s /etc/sv/tor /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-sudo xbps-reconfigure -f fontconfig
+
 
 clear
 echo "===== pdf ===== "
@@ -93,9 +93,7 @@ sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 
 ####################################################################
-sudo xbps-reconfigure -fa
-fc-cache -fv
-
+sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 ####################################################################
 sudo sv down dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
