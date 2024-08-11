@@ -30,11 +30,12 @@ sudo cp ~/.config/nvim/init.vim /root/.config/nvim/init.vim
 echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 sudo xbps-reconfigure -f fontconfig
-cd /opt/
-sudo git clone --depth=1 https://github.com/garabik/grc.git
 
-sudo chown -R  $(whoami): $(whoami) .
-cd grc/
+cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git
+cd /opt/ && sudo git clone --depth=1 https://github.com/void-linux/void-packages
+cd /opt/ && sudo xbps-install -Syu xtools python3 # xi ...
+cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
+cd /opt/ && cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 sudo xbps-reconfigure -fa
