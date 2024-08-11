@@ -27,7 +27,7 @@ FILES=(
     ".config/sh.png"
 )
 for FILE in "${FILES[@]}"; do
-    wget -c "$BASE_URL/$FILE" -O "$HOME/$FILE"
+    curl -fLo "$HOME/$FILE" "$BASE_URL/$FILE"
     if [ $? -ne 0 ]; then echo "Erreur lors du téléchargement de $FILE."; exit 1; fi
 done
 
@@ -53,7 +53,7 @@ XORG_CONF_URLS=(
 )
 sudo mkdir -p /etc/X11/xorg.conf.d/
 for CONF in "${XORG_CONF_URLS[@]}"; do
-    sudo wget -c "$BASE_URL/xorg.conf.d/$CONF" -O "/etc/X11/xorg.conf.d/$CONF"
+    sudo curl -fLo "/etc/X11/xorg.conf.d/$CONF" "$BASE_URL/xorg.conf.d/$CONF"
     if [ $? -ne 0 ]; then echo "Erreur lors du téléchargement de $CONF."; exit 1; fi
 done
 
