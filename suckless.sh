@@ -52,7 +52,7 @@ cd $HOME/.config/.suckless/st/ && make && sudo make clean install
 cd $HOME/.config/.suckless/slstatus/ && make && sudo make clean install
 cd $HOME/.config/.suckless/slock/ && make && sudo make clean install
 clear
-echo "root config "
+echo "root config & doas "
 sleep 3s
 sudo cp $HOME/.bash_profile /root/.bash_profile
 sudo mkdir -p /root/.config/nvim && sudo cp $HOME/.config/nvim/init.vim /root/.config/nvim/init.vim
