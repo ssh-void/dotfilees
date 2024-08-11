@@ -3,27 +3,26 @@ sudo xbps-install -Syu xorg-minimal xrdb base-devel xset xrandr arandr xdotool x
 sudo xbps-install -Syu bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk dbus wget curl opendoas picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git xtools  
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrc
-cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bash_profile
-cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profile
+cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profilevm -O $HOME/.profile && cp ~/.profile ~/.bash_profile
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliasesvm -O $HOME/.aliases
 cd ~ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.xinitrcvm -O $HOME/.xinitrc 
-mkdir -p ~/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh  -O ~/.config/.script/scratchpad.sh && chmod +x ~/.config/.script/scratchpad.sh
-mkdir -p ~/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -O ~/.config/sxhkd/sxhkdrc
-mkdir -p ~/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -O ~/.config/nvim/init.vim
+mkdir -p $HOME/.config/.script/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/.script/scratchpad.sh  -O $HOME/.config/.script/scratchpad.sh && chmod +x $HOME/.config/.script/scratchpad.sh
+mkdir -p $HOME/.config/sxhkd/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/sxhkd/sxhkdrc -O $HOME/.config/sxhkd/sxhkdrc
+mkdir -p $HOME/.config/nvim/ && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.config/nvim/init.vim -O $HOME/.config/nvim/init.vim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://github.com/ssh-void/dotfilees/main/xorg.conf.d/00-keyboard.conf -O /etc/X11/xorg.conf.d/00-keyboard.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/10-evdev.conf -O /etc/X11/xorg.conf.d/10-evdev.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/40-libinput.conf -O /etc/X11/xorg.conf.d/40-libinput.conf
 sudo mkdir -p /etc/X11/xorg.conf.d/ && sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/xorg.conf.d/50-mouse-acceleration.conf -O /etc/X11/xorg.conf.d/50-mouse-acceleration.conf
-mkdir -p ~/.config/.suckless && git clone https://github.com/ssh-void/suckless6.5.git ~/.config/.suckless
-cd ~/.config/.suckless/dwm/ && make && sudo make clean install
-cd ~/.config/.suckless/dmenu/ && make && sudo make clean install
-cd ~/.config/.suckless/st/ && make && sudo make clean install
-cd ~/.config/.suckless/slstatus/ && make && sudo make clean install
-cd ~/.config/.suckless/slock && make && sudo make clean install
+mkdir -p $HOME/.config/.suckless && git clone https://github.com/ssh-void/suckless6.5.git $HOME/.config/.suckless
+cd $HOME/.config/.suckless/dwm/ && make && sudo make clean install
+cd $HOME/.config/.suckless/dmenu/ && make && sudo make clean install
+cd $HOME/.config/.suckless/st/ && make && sudo make clean install
+cd $HOME/.config/.suckless/slstatus/ && make && sudo make clean install
+cd $HOME/.config/.suckless/slock/ && make && sudo make clean install
 sudo wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc
-sudo cp ~/.bash_profile /root/.bash_profile
+sudo cp $HOME/.bash_profile /root/.bash_profile
 sudo mkdir -p /root/.config/nvim
 sudo cp ~/.config/nvim/init.vim /root/.config/nvim/init.vim
 echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
