@@ -4,6 +4,10 @@ st &
 xrdb -load $HOME/.Xresources &
 picom --backend glx --vsync --dbus &
 feh --bg-fill $HOME/.config/sh.png &
+xset -dpms &
+xset s off &
+xset s noblank &
+xset r rate 225 75 &
 xbanish &
 xrandr --output Virtual-1 --mode 1920x1080 &
 sxhkd & 
