@@ -5,6 +5,7 @@ xrdb -load $HOME/.Xresources &
 picom --backend glx --vsync --dbus &
 feh --bg-fill $HOME/.config/sh.png &
 xbanish &
+xrandr --output Virtual-1 --mode 1920x1080 &
 sxhkd & 
 slstatus &
 dbus-run-session dwm 
