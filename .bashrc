@@ -5,7 +5,7 @@ HISTIGNORE="cd:&:ls:[bf]g:exit"
 GRC_ALIASES=true
 [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
 
-#ignore upper and lowercase when TAB completion
+# ignore upper and lowercase when TAB completion
 bind "set completion-ignore-case on"
 
 # Source the aliases file
@@ -43,31 +43,3 @@ PS1="\[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
 #export PS1='\[\e[91m\]\[\e[92m\][\W]\$\[\e[0m\] '
 #PS1="\[\e[1;30m\]\W \[\e[0m\] "
 #export PS1="\[\e[1;33m\][\[\e[m\]\[\e[1;33m\]\u\[\e[m\]\[\e[1;33m\]]\[\e[m\]\[\e[1;34m\][\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;34m\]]\[\e[m\]\[\e[1;31m\]-\[\e[m\]\[\e[1;31m\]>\[\e[m\] "
-#======================== fon =========================#
-ex()
-{
-    if [ -f "$1" ] ; then
-        case "$1" in
-            *.tar.bz2)   tar xjf "$1"   ;;
-            *.tar.gz)    tar xzf "$1"   ;;
-            *.bz2)       bunzip2 "$1"   ;;
-            *.rar)       unrar x "$1"   ;;
-            *.gz)        gunzip "$1"    ;;
-            *.tar)       tar xf "$1"    ;;
-            *.tbz2)      tar xjf "$1"   ;;
-            *.tgz)       tar xzf "$1"   ;;
-            *.zip)       unzip "$1"     ;;
-            *.Z)         uncompress "$1";;
-            *.7z)        7za e x "$1"   ;;
-            *.deb)       ar x "$1"      ;;
-            *.tar.xz)    tar xf "$1"    ;;
-            *.tar.zst)   unzstd "$1"    ;;
-            *.xz)        unxz -k "$1"    ;;
-            *)           echo "'$1' cannot be extracted via ex()" ;;
-        esac
-    elif [ -f "$1" ] && [[ "$1" == *.rar ]]; then
-        unrar x "$1"
-    else
-        echo "'$1' is not a valid file"
-    fi
-}
