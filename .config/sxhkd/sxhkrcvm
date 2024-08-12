@@ -5,4 +5,7 @@ super + s
         exec $HOME/.config/.script/scratchpad.sh
 
 super + p
-        flameshot gui
+        flameshot gui &> /dev/null
+
+super + p 
+        firefox --private-window &> /dev/null 
