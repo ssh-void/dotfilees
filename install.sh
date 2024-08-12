@@ -42,6 +42,8 @@ sudo xbps-install -Syu mpv python3-pip
 sudo xbps-install -Syu MEGAsdk 
 # KVM & qemu...
 sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
+# tar
+sudo xbps-install -Syu unzip tar xz bzip2 bsdtar gzip
 
 clear
 
