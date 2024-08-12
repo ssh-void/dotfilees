@@ -27,5 +27,7 @@ super + shift + l
 
 super + {f,t,b}
               {firefox &> /dev/null,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null}
-super + alt + b
-	      blueman-manager
+alt + b
+	      blueman-manager &> /dev/null
+alt + p 
+	pavucontrol &> /dev/null
