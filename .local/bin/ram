@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Vérifie si au moins un argument est fourni
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <process_name1> <process_name2> ..."
+    exit 1
+fi
+# Parcours de chaque argument (nom de processus)
+for process_name in "$@"; do
+    ps -ely | tr -s ' ' | cut -d ' ' -f8,13 | grep "$process_name" | awk '{print $1/1024 " Mo", $2}'
+done
