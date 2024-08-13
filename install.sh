@@ -9,7 +9,7 @@ clear
 sudo xbps-install -Syu neovim picom fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb # xmodmap  # octoxbps 
 
 clear
-
+#sudo xbps-install -Syu ipafont-fonts-otf # japnis lang
 sudo xbps-install -Syu dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl   
 sudo xbps-install -Syu xsetroot xbanish yaru # papirus-icon-theme # icons
 sudo xbps-install -Syu lxappearance qt5ct # conf the themes
