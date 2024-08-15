@@ -1,4 +1,5 @@
 mkdir Videos Images Downloads Documents Music 
+mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
 echo "Updating The System"
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
