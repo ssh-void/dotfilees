@@ -45,7 +45,6 @@ sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
 sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara  
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
 sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
-#sudo xbps-install -Syu p7zip-unrar # nonfree
 clear
 
 sudo xbps-install -Syu dejavu-fonts-ttf noto-fonts-ttf # terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
@@ -63,9 +62,9 @@ clear
 
 # firefox
 sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-sil-doulos font-liberation-narrow-ttf
+sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo xbps-install -Syu qbittorrent
 sudo xbps-install -Syu duf eza # lsd exa 
-sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo ln -s /etc/sv/tor /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
