@@ -45,7 +45,6 @@ sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
 sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara  
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
 sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
-sudo xbps-install -Syu p7zip # free
 #sudo xbps-install -Syu p7zip-unrar # nonfree
 clear
 
@@ -56,7 +55,7 @@ sudo xbps-install -Syu megatools
 # KVM & qemu...
 sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
 # tar
-sudo xbps-install -Syu unzip tar xz bzip2 bsdtar gzip
+sudo xbps-install -Syu p7zip unzip tar xz bzip2 bsdtar gzip
 
 clear
 
