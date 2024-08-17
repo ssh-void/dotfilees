@@ -53,7 +53,7 @@ clear
 sudo xbps-install -Syu dejavu-fonts-ttf noto-fonts-ttf # terminus-font cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
 sudo xbps-install -Syu vscode eclipse 
 sudo xbps-install -Syu mpv python3-pip  
-sudo xbps-install -Syu MEGAsdk 
+sudo xbps-install -Syu megatools 
 # KVM & qemu...
 sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
 # tar
