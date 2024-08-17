@@ -14,8 +14,7 @@ clear
 echo "Updating The System"
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
-sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk neovim picom dnsmasq openresolv tealdeer elogind fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct 
-mkdir Videos Images Downloads Documents Music 
+sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk neovim picom dnsmasq openresolv tealdeer elogind fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct  ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
 # You install the following package 
@@ -24,11 +23,6 @@ mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 sudo ln -s /etc/sv/elogind /var/service/
 sudo ln -s /etc/sv/dnsmasq /var/service/
 
-echo "Installing The Necessary Stuff"
-
-sudo xbps-install -Syu 
-sudo xbps-install -Syu lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk	
-sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus bind libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 
 clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
