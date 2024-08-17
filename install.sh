@@ -46,7 +46,6 @@ sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
 sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
 sudo xbps-install -Syu p7zip # free
-sudo xbps-install -Syu unrar # free
 #sudo xbps-install -Syu p7zip-unrar # nonfree
 clear
 
