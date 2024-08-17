@@ -1,3 +1,16 @@
+bypass() {
+	sudo -v
+	while true;
+	do
+		sudo -n true
+		sleep 45
+		kill -0 "$$" || exit
+	done 2>/dev/null &
+}
+sleep 3s
+bypass
+clear
+
 mkdir Videos Images Downloads Documents Music 
 mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
