@@ -40,8 +40,7 @@ alias td='tree -d -h --du'
 alias tf='tree -i -f -s -h'
 alias tsh='tree -P "*.sh" --prune -s -h'
 alias trees='tree -s -h --du'
-#alias h="history | cut -c 8- | fzf --tac | xclip -selection clipboard"
-alias h="history | cut -c 8- | fzy -l 15  | xclip -selection clipboard"
+alias h='history | cut -c 8- | tac | fzy -l 15 | xclip -selection clipboard'
 # Saved my place in my videos :)
 alias mpv="mpv --save-position-on-quit"
 alias xp="xclip -selection clipboard"
