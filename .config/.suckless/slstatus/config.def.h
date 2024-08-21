@@ -66,9 +66,9 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
     { datetime,"%s;","%A|%F|%r"},
-  //{ run_command ,"brt:%s%% ","xbacklight -get"}
+//  { run_command ,"brt:%s%% ","xbacklight -get"}
     { alsa_master_vol ,"vol:%s|",NULL},
-    { run_command ,"xbps:%s|","doas xbps-query -l | wc -l"},
+//   { run_command ,"xbps:%s|","doas xbps-query -l | wc -l"},
 //  { netspeed_tx, "up %s%|", "wlo1"  },
     { cpu_perc,"cpu:%s%% ",NULL },
     { run_command, "%s|","sensors coretemp-isa-0000 | awk '/+(.*)/ {print $3}' | awk 'NR==2'"},
