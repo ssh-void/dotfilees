@@ -22,6 +22,8 @@ clear
 # You install the following package 
 sudo xbps-install -Syu neovim curl picom fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb # xmodmap  # octoxbps 
 
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
 clear
 #sudo xbps-install -Syu ipafont-fonts-otf # japnis lang
 sudo xbps-install -Syu dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl   
