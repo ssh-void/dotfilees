@@ -45,4 +45,4 @@ alias ll="ls -dlh .* --color=auto"
 alias v="nvim"
 alias vi="nvim"
 alias ipq="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
-alias h="history | cut -c 8- | fzy | xclip -selection clipboard"
+alias h='history | cut -c 8- | tac | fzy -l 15 | xclip -selection clipboard'
