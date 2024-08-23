@@ -42,7 +42,7 @@ alias tsh='tree -P "*.sh" --prune -s -h'
 alias trees='tree -s -h --du'
 alias h='history | cut -c 8- | tac | fzy -l 15 | xclip -selection clipboard'
 # Saved my place in my videos :)
-alias mpvtor='torsocks mpv --no-video --volume=130 --af-add="volume=10" --audio-device=pipewire --msg-level=all=v --term-osd-bar'
+alias mpvtor='torsocks mpv --no-config --no-video --term-osd-bar --ytdl-format="bestaudio"'
 alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
 alias pdf="zathura"
