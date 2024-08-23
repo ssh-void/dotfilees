@@ -6,7 +6,8 @@ GRC_ALIASES=true
 [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
 
 echo -e -n "\x1b[\x35 q"
-
+# ignore upper and lowercase when TAB completion
+bind "set completion-ignore-case on"
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
   if [ -f /usr/share/bash-completion/bash_completion ]; then
