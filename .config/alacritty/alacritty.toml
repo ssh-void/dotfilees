@@ -29,7 +29,7 @@ thickness = 0.23
 vi_mode_style = {shape = "Beam", blinking = "Always"}
 #=========================[font]==================================#
 [font]
-size = 15
+size = 18
 [font.normal] # normal 
 family = "Ubuntu Mono"
 #family = "JetBrains"

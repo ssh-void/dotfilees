@@ -4,7 +4,8 @@ draw_bold_text_with_bright_colors = true
 [colors.primary] # color de klfya # 5varoable
 foreground = "#f8f8f2"
 #background = "#282a36"
-background = "#333333"
+#background = "#333333"
+background = "#300A24"
 bright_foreground = "#ffffff"
 [colors.cursor]
 cursor = "#0dbc79"
