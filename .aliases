@@ -34,6 +34,7 @@ alias disk="duf -sort size"
 alias neofetch="fastfetch"
 alias mkdir="mkdir -pv"
 alias xhkd="pkill -USR1 -x sxhkd"
+alias vlcnv="prime-run vlc"
 
 # Search command history
 alias blkid="doas blkid -o list"
