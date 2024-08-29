@@ -45,7 +45,7 @@ xset r rate 225 75 &
 
 ## xrandr
 #!/bin/sh
-echo "Xft.dpi: 90" | xrdb -merge
+echo "Xft.dpi: 100" | xrdb -merge
 xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1289x0 --rotate right --rate 50 --brightness 0.8 --output HDMI2 --off --output VIRTUAL1 --off
 
 # startx 
