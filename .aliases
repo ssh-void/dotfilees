@@ -130,7 +130,7 @@ shopt -s histreedit # ermet de rééditer une commande après une recherche dans
 shopt -s histverify # Permet de vérifier et éditer une commande après une recherche dans l'historique.
 
 
-
+#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 # python
 alias apy="source env/bin/activate"
 alias pipi="pip install"
