@@ -101,7 +101,7 @@ alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 #yt
 #Download:
-alias yl='yt-dlp -F' # affichez le tableaux
+alias yv='yt-dlp --config-locations  $HOME/.config/yt-dlp/yv.conf '
 alias y='yt-dlp --restrict-filenames ' # par défaux la qalité maxi
 alias ya='yt-dlp --restrict-filenames -f 140' # pour mpa
 alias yb='yt-dlp --restrict-filenames -f "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4' # la mileur vidio
