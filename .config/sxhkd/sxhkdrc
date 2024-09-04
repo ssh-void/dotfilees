@@ -6,7 +6,7 @@ super + c
         exec $HOME/.config/.script/img_txt.sh  &> /dev/null &
 
 super + d
-        dmenu_run -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' &> /dev/null &
+        dmenu_run -i -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' &> /dev/null &
 
 super + s
         exec $HOME/.config/.script/scratchpad.sh &> /dev/null &
