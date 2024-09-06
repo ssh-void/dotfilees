@@ -145,7 +145,7 @@ alias pipshow="pip show"
 alias pipout="pip list --outdated"
 alias pipreq="pip freeze > requirements.txt"
 alias pipfrom="pip install -r requirements.txt" # -r , --requirement
-alias pipup="pip install -U pip" # -U, --upgrade
+alias pipup="pip install --upgrade pip " # -U, --upgrade
 # ssd
 #alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
 #alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
