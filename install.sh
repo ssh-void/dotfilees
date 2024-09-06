@@ -20,7 +20,7 @@ sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 clear
 
 # You install the following package 
-sudo xbps-install -Syu neovim curl picom fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb # xmodmap  # octoxbps 
+sudo xbps-install -Syu neovim curl picom fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp instaloader ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb # xmodmap  # octoxbps 
 
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
