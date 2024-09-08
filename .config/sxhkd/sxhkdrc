@@ -40,3 +40,5 @@ alt + m
 
 super + e 
         thunar &>/dev/null &
+alt + v  
+	blueman-manager &>/dev/null &
