@@ -106,7 +106,7 @@ sudo xbps-install -Syu xtools python3 # xi ...
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
-
+#source .bashrc
 ####################################################################
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 ####################################################################
