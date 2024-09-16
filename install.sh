@@ -32,8 +32,8 @@ sudo xbps-install -Syu lxappearance qt5ct # conf the themes
 sudo xbps-install -Syu tealdeer  # tldr en rust
 sudo xbps-install -Syu elogind
 sudo ln -s /etc/sv/elogind /var/service/
-sudo xbps-install -Syu dnsmasq openresolv
-sudo ln -s /etc/sv/dnsmasq /var/service/
+#sudo xbps-install -Syu dnsmasq openresolv
+#sudo ln -s /etc/sv/dnsmasq /var/service/
 clear
 
 echo "Installing The Necessary Stuff"
