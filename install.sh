@@ -11,7 +11,7 @@ sleep 3s
 bypass
 clear
 
-mkdir Videos Images Downloads Documents Music 
+mkdir Videos Images Downloads Documents Music  # 4 dossier  
 mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
 echo "Updating The System"
