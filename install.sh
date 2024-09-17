@@ -121,4 +121,5 @@ sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
 chsh -s /usr/bin/bash
+sudo chsh -s /bin/bash root
 sudo shutdown -r now # reboot   
