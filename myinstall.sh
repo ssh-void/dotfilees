@@ -50,6 +50,7 @@ sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo xbps-install -Syu qbittorrent
 sudo xbps-install -Syu duf eza # lsd exa 
 sudo ln -s /etc/sv/tor /var/service/
+sudo ln -s /etc/sv/ufw /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 
