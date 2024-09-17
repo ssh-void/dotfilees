@@ -10,7 +10,8 @@ bypass() {
 sleep 3s
 bypass
 clear
-
+chsh -s /usr/bin/bash
+sleep 3s
 echo "Update && package..."
 sleep 3s
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
