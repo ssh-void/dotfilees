@@ -20,8 +20,8 @@ mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 # You install the following package 
 
 
-sudo ln -s /etc/sv/elogind /var/service/
-sudo ln -s /etc/sv/dnsmasq /var/service/
+#sudo ln -s /etc/sv/elogind /var/service/
+#sudo ln -s /etc/sv/dnsmasq /var/service/
 
 
 clear
