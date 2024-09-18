@@ -1,10 +1,3 @@
-#!/bin/bash
-## Void Linux Automatic Desktop
-## Author: Nazion Linux
-## Site: https://www.nazionlinux.com/
-## Source: https://github.com/nazionlinux/Void-Linux-Automatic-Desktop
-## License: GNU General Public License v3.0
-
 bypass() {
 	sudo -v
 	while true;
@@ -23,26 +16,21 @@ clear
 
 echo "Aggiornamento VOID LINUX..."
 sleep 3s
-	sudo xbps-install -Syu
-
-clear
-
-echo "Aggiornamento XBPS..."
-sleep 3s
-	sudo xbps-install -u xbps
+	sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
 
 clear
 
 echo "Configurazione VOID LINUX..."
 sleep 10s
-	sudo chsh -s /usr/bin/bash
-	sudo loadkeys it
+	sudo chsh -s /usr/bin/bash sh
+        sudo chsh -s /usr/bin/bash root
+	sudo loadkeys fr
 
 clear
 
 echo "Installazione XORG & NETWORK MANAGER..."
 sleep 3s
-	sudo xbps-install -Sy nano xorg-minimal xterm xcalc fonts-roboto-ttf ipafont-fonts-otf xf86-input-synaptics NetworkManager network-manager-applet dnsmasq
+	sudo xbps-install -Sy neovim xorg-minimal fonts-roboto-ttf ipafont-fonts-otf xf86-input-synaptics NetworkManager network-manager-applet dnsmasq
 
 clear
 
