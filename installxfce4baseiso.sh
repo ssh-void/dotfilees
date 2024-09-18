@@ -17,7 +17,7 @@ clear
 echo "Aggiornamento VOID LINUX..."
 sleep 3s
 	sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
-
+        mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 clear
 
 echo "Configurazione VOID LINUX..."
