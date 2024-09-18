@@ -31,7 +31,7 @@ clear
 echo "Installazione XORG & NETWORK MANAGER..."
 sleep 3s
 	sudo xbps-install -Sy neovim xorg-minimal fonts-roboto-ttf ipafont-fonts-otf xf86-input-synaptics NetworkManager network-manager-applet dnsmasq
-
+        sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk neovim picom dnsmasq openresolv tealdeer elogind fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 clear
 
 echo "Instalation PIPEWIRE & ALSA..."
@@ -59,7 +59,7 @@ clear
 
 echo "Installazione programmi navigare..."
 sleep 3s
-	sudo xbps-install -Sy firefox firefox-i18n-it
+	sudo xbps-install -Sy firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-sil-doulos font-liberation-narrow-ttf
 
 clear
 
@@ -100,12 +100,11 @@ sleep 3s
 
 clear
 
-echo "Installazione programmi non free (UNRAR)..."
+echo "Installazione programmi non free (nvidia)..."
 sleep 3s
 	sudo xbps-install -Sy void-repo-nonfree
 	sudo xbps-install -Syuv
-	sudo xbps-install -Sy unrar
-
+        sudo xbps-install -Syu p7zip unzip tar xz bzip2 bsdtar gzip
 clear
 
 echo "Ottimizzazioni..."
