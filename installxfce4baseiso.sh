@@ -34,7 +34,7 @@ sleep 3s
 
 clear
 
-echo "Installazione PIPEWIRE & ALSA..."
+echo "Instalation PIPEWIRE & ALSA..."
 sleep 3s
        sudo xbps-install -Syu util-linux pipewire pamixer alsa-pipewire pipewire-devel libjack-pipewire wireplumber wireplumber-devel pavucontrol  
        # active
