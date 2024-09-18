@@ -75,6 +75,25 @@ sleep 3s
 
 clear
 
+echo "Installazione programmi grafica..."
+sleep 3s
+        sudo xbps-install -Syu NetworkManager virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
+        sudo usermod -aG kvm $(whoami) 
+        sudo modprobe kvm-intel  
+        sudo usermod -aG libvirt $(whoami) 
+        sudo sed -i 's/^#auth_unix_ro = "polkit"/auth_unix_ro = "none"/' /etc/libvirt/libvirtd.conf # tested
+        sudo sed -i 's/^#auth_unix_rw = "polkit"/auth_unix_rw = "none"/' /etc/libvirt/libvirtd.conf # tested
+        #sudo sed -i 's/^#\?user = ".*"/user = "'"$(whoami)"'"/' /etc/libvirt/qemu.conf  # tested
+        sudo ln -s /etc/sv/libvirtd /var/service/
+        sudo ln -s /etc/sv/virtlogd /var/service/
+        sudo sv down dhcpcd # runit
+        sudo rm /var/service/dhcpcd
+        sudo ln -s /etc/sv/NetworkManager /var/service/
+        sudo ln -s /etc/sv/dbus /var/service/
+        #sudo nmcli device wifi connect SSID password PASSWORD
+        #sudo reboot
+clear
+
 echo "Installazione programmi utilità..."
 sleep 3s
 	sudo xbps-install -Sy atom aria2 file-roller p7zip ldm whois testdisk filezilla leafpad gparted gvfs qarma rsync
