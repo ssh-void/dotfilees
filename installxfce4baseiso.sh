@@ -34,6 +34,10 @@ sleep 3s
         sudo xbps-install -Syu xorg-minimal base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk neovim picom dnsmasq openresolv tealdeer elogind fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 clear
 
+echo "xfce4 ..."
+sleep 3s
+	sudo xbps-install -Sy xfce4-plugins lightdm-gtk-greeter-settings papirus-folders papirus-icon-theme xfce4-panel-profiles
+clear
 echo "Instalation PIPEWIRE & ALSA..."
 sleep 3s
        sudo xbps-install -Syu util-linux pipewire pamixer alsa-pipewire pipewire-devel libjack-pipewire wireplumber wireplumber-devel pavucontrol  
