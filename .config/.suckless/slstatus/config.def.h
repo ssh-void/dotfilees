@@ -67,7 +67,8 @@ static const char unknown_str[] = "n/a";
 static const struct arg args[] = {
     { datetime,"%s;","%A|%F|%r"},
 //  { run_command ,"brt:%s%% ","xbacklight -get"}
-    { run_command ,"vol:%s|","pamixer --get-volume-human"},
+//  { alsa_master_vol ,"vol:%s|",NULL},
+    { run_command ,"vol:%s|","pamixer --get-volume-human"}, 
 //  { run_command ,"xbps:%s|","doas xbps-query -l | wc -l"},
 //  { netspeed_tx, "up %s%|", "wlo1"  },
     { cpu_perc,"cpu:%s%% ",NULL },
