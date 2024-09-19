@@ -16,7 +16,6 @@ alias d="doas xbps-remove -Rv"
 alias start="cd /var/service/ ; doas sv start "
 alias stop="doas sv stop "
 alias restart="cd /var/service/ ; doas sv restart "
-alias py="python"
 alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
 
 #xbps-src
@@ -67,9 +66,7 @@ alias ls="ls --color=auto"
 alias l="eza -l --color=always --group-directories-first"  # long format
 alias ll="eza -dlg .* --color=auto"
 alias ld="ls -d */"
-alias v="nvim"
-alias vim="nvim"
-alias vi="nvim"
+alias v="nvim" vim="nvim" vi="nvim"
 alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 
 # cd
@@ -138,6 +135,7 @@ shopt -s histverify # Permet de vérifier et éditer une commande après une rec
 
 #alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 # python
+alias py="python"
 alias apy="source env/bin/activate"
 alias pipi="pip install"
 alias pipuni="pip uninstall"
