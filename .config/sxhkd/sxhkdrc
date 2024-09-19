@@ -1,7 +1,9 @@
 super+ KP_Enter
             alacritty &> /dev/null &
+
 super + x
         exec $HOME/.config/.script/img_txt_net.sh &> /dev/null & 
+
 super + c
         exec $HOME/.config/.script/img_txt.sh  &> /dev/null &
 
@@ -15,13 +17,13 @@ alt + {Up,Down}
               exec $HOME/.config/.script/brightnessctl.sh {up,down}
 
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-                                     exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
+                                      exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
 super + p
         flameshot gui &> /dev/null
 
 super + v
-	 virt-manager &> /dev/null
+	virt-manager &> /dev/null
 
 super + shift + l 
                 slock
@@ -30,15 +32,13 @@ super + {f,t,b}
               {firefox &> /dev/null &,torbrowser-launcher &> /dev/null &,brave-browser-stable &> /dev/null &}
 
 alt + b
-	      blueman-manager &> /dev/null &
+      blueman-manager &> /dev/null &
 
 alt + p 
-	pavucontrol &> /dev/null &
+      pavucontrol &> /dev/null &
 
 alt + m 
       thunderbird &>/dev/null &
 
 super + e 
         thunar &>/dev/null &
-alt + v  
-	blueman-manager &>/dev/null &
