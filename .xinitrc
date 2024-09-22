@@ -1,9 +1,9 @@
 numlockx on &
-brightnessctl set 80%
+brightnessctl set 75%
 st &
 xrdb -load $HOME/.config/X11/Xresources &
-nvidia-settings --load-config-only &
-picom --backend glx --vsync --dbus &
+#nvidia-settings --load-config-only &
+picom --config $HOME/.config/picom/picom.conf &
 feh --bg-fill $HOME/.config/sh.png &
 xbanish &
 pipewire &
