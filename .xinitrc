@@ -4,7 +4,7 @@ st &
 xrdb -load $HOME/.config/X11/Xresources &
 nvidia-settings --load-config-only &
 picom --backend glx --vsync --dbus &
-feh --bg-fill $HOME/Images/sh.png &
+feh --bg-fill $HOME/.config/sh.png &
 xbanish &
 pipewire &
 pipewire-pulse &
