@@ -139,6 +139,9 @@ shopt -s histverify # Permet de vérifier et éditer une commande après une rec
 # python
 alias py="python"
 alias apy="source env/bin/activate"
+alias ve="python -m venv" 
+alias va="source $HOME/.venv/devtool/bin/activate" 
+alias vd="deactivate"
 alias pipi="pip install"
 alias pipuni="pip uninstall"
 alias pipls="pip list"
