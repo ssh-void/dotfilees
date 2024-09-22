@@ -27,8 +27,8 @@ alias ixbps="doas  xbps-install --repository=hostdir/binpkgs/nonfree "
 # Other:
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
 alias dvi='doas vim' dvim='doas vim'
-alias dcp='doas cp'
-alias dmv='doas mv'
+alias dcp='doas cp -iv'
+alias dmv='doas mv -iv'
 alias disk="duf -sort size"
 alias neofetch="fastfetch"
 alias mkdir="mkdir -pv"
@@ -56,6 +56,7 @@ alias drm="doas rm -rf"
 alias T="du -sh"
 alias cal="cal --twelve"
 alias cl="clear"
+alias rm="rm -vI"
 alias rsync="rsync -P"
 alias rg="ranger"
 alias m="man"
@@ -112,6 +113,7 @@ alias yl='yt-dlp -F '
 #alias yt='yt-dlp --skip-download --write-thumbnail'
 
 # For recording.
+alias ffmpeg="ffmpeg -hide_banner" 
 alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
 alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
 alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
