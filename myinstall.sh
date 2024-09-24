@@ -58,7 +58,7 @@ clear
 echo "===== pdf ===== "
 sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g exfat-utils
 # non free répo
-sudo xbps-install -S void-repo-nonfree # add void-repo-multilib-nonfree
+sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
 xbps-query -L
 
 clear
