@@ -84,7 +84,7 @@ sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
 sudo git clone --depth=1 https://github.com/void-linux/void-packages
-sudo xbps-install -Syu xtools python3 # xi ...
+#sudo xbps-install -Syu xtools python3 # xi ...
 #sudo chown -R $(whoami):$(whoami) .
 cd grc/
 sudo ./install.sh
