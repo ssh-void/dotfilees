@@ -69,7 +69,7 @@ sudo xbps-install -Syu intel-media-driver # free
 sudo xbps-install -Syu libva-intel-driver # free 
 sudo xbps-install -Syu mesa-vulkan-intel # free
 sudo xbps-install -Syu mesa-vaapi # free # video acceleration
-sudo xbps-install -Syu mesa-dri # OpenGL
+sudo xbps-install -Syu mesa-dri # OpenGL (alacritty)
 
 clear
 # nvidia & intel
@@ -79,6 +79,7 @@ sudo xbps-install -Syu nvidia  # nonfree
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
 sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
+sudo xbps-install -Syu mesa-vulkan-intel
 
 ##################################################################
 
