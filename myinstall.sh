@@ -70,6 +70,7 @@ sudo xbps-install -Syu intel-media-driver # free
 sudo xbps-install -Syu libva-intel-driver # free 
 sudo xbps-install -Syu mesa-vulkan-intel # free
 sudo xbps-install -Syu mesa-vaapi # free # video acceleration
+sudo xbps-install -Syu mesa-dri # OpenGL
 
 clear
 # nvidia & intel
