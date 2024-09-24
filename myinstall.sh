@@ -80,6 +80,7 @@ sudo xbps-install -Syu nvidia-opencl # nonfree
 sudo xbps-install -Syu vulkan-loader # free  
 sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
 sudo xbps-install -Syu mesa-vulkan-intel
+sudo xbps-install -Syu xf86-video-intel
 
 ##################################################################
 
