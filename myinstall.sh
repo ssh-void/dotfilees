@@ -19,7 +19,7 @@ mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 # You install the following package 
 
 
-#sudo ln -s /etc/sv/elogind /var/service/
+sudo ln -s /etc/sv/elogind /var/service/
 #sudo ln -s /etc/sv/dnsmasq /var/service/
 
 
@@ -88,7 +88,7 @@ sudo xbps-install -Syu xf86-video-intel
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
 sudo git clone --depth=1 https://github.com/void-linux/void-packages
-#sudo xbps-install -Syu xtools python3 # xi ...
+#sudo xbps-install -Syu xtools-minimal python3 # xi ...
 #sudo chown -R $(whoami):$(whoami) .
 cd grc/
 sudo ./install.sh
