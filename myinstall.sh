@@ -1,4 +1,3 @@
-
 bypass() {
 	sudo -v
 	while true;
