@@ -75,6 +75,7 @@ sudo xbps-install -Syu mesa-dri # OpenGL
 clear
 # nvidia & intel
 echo "=====""""""" NVIDIA intel """""""" ===== "
+sudo xbps-install -Syu intel-video-accel
 sudo xbps-install -Syu nvidia  # nonfree 
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
