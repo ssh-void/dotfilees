@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
     static char *font = "Ubuntu Mono:size=12:weight=regular:pixelsize=22:antialias=true:autohint=true";
-static int borderpx = 4;
+static int borderpx = 0; /* 4 by default */
 
 /*
  * What program is execed by st depends of these precedence rules:
