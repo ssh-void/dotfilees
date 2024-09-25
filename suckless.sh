@@ -68,7 +68,6 @@ cd /opt/ && sudo xbps-install -Syu xtools python3 # xi ...
 #cd /opt/ && sudo chown -R  $(whoami): $(whoami) .
 cd /opt/ && cd grc/ && sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
-sudo xbps-reconfigure -fa && sudo update-grub
 clear 
 echo ".bashrccc "
 sleep 3s
