@@ -107,4 +107,5 @@ sudo rm /var/service/dhcpcd
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
+git clone https://github.com/elbachir-one/st.git
 sudo shutdown -r now # reboot   
