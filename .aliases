@@ -37,6 +37,7 @@ alias vlcnv="prime-run vlc"
 
 # Search command history
 alias blkid="doas blkid -o list"
+alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias perms="doas chmod 664"
 alias td='tree -d -h --du'
 alias tf='tree -i -f -s -h'
