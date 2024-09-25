@@ -1,5 +1,5 @@
 /* See LICENSE file for copyright and license details. */
-
+/*https://github.com/elbachir-one/st/tree/main*/
 #include "colors/stuck.h"
 
 /*
