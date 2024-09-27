@@ -12,6 +12,7 @@ bypass
 clear
 echo "Updating The System"
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
+sudo xbps-install -Syu umbrello # uml systeme
 clear
 sudo xbps-install -Syu xorg-minimal pkg-config base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk neovim picom dnsmasq openresolv tealdeer elogind fastfetch most sxhkd aria2 git htop opendoas base-devel tmux sxiv feh yt-dlp ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus python3-dbus libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 mkdir -p $HOME/Downloads/{Aria2c,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
