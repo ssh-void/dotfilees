@@ -26,6 +26,7 @@ sudo ln -s /etc/sv/elogind /var/service/
 
 clear
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
+sudo xbps-install -Syu xdg-utils 
 sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara  
 sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
 sudo xbps-install -Syu net-tools NetworkManager # ifconfig netstat .. 
