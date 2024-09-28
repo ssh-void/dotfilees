@@ -1,6 +1,6 @@
 sudo xbps-install -Syu qemu-img qemu-system-amd64 qemu-common qemu-firmware  #  x86_64
-sudo xbps-install -Syu xf86-video-qxl
-sudo xbps-install -Syu NetworkManager virt-manager libvirt openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
+sudo xbps-install -Syu xf86-video-qxl spice-vdagent
+sudo xbps-install -Syu NetworkManager virt-manager libvirt openbsd-netcat dnsmasq vde2 bridge-utils 
 #sudo xbps-install -Syu qemu
 sudo usermod -aG kvm $(whoami) 
 sudo modprobe kvm-intel  
