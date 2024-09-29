@@ -1,7 +1,8 @@
-#!/bin/sh
-# Update void-package.
-
-cd /home/${USER}/.config/dev/void-packages
+#!/bin/bash 
+# Update void-package
+cd /opt/void-packages
 git pull --autostash --rebase
-./xbps-src show-sys-updates
-./xbps-src update-sys
+./xbps-src show-sys-updates # update
+./xbps-src update-sys 
+./xbps-src clean  # clean
+./xbps-src clean-repocache
