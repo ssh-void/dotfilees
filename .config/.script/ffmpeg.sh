@@ -5,7 +5,7 @@
 url=$1
 [ -d youtube_folder ] || mkdir youtube_folder
 cd youtube_folder || exit
-yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/best[ext=mp4]/best" --merge-output-format mp4 "$url"
+yt-dlp -f "bv+ba" --merge-output-format mp4 "$url"
 for i in *; do
    echo "file '$i'" >> list.txt
 done
