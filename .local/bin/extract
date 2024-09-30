@@ -5,7 +5,7 @@ if [ -f "$1" ]; then
         *.tar.bz2)   tar xjvf "$1"   ;;
         *.tar.gz)    tar xzvf "$1"   ;;
         *.bz2)       bunzip2 -v "$1"   ;;
-        *.rar)       bsdtar -xvf "$1"   ;;
+        *.rar)       unrar x -v "$1"   ;;
         *.gz)        gunzip -v "$1"    ;;
         *.tar)       tar xvf "$1"    ;;
         *.tbz2)      tar xjvf "$1"   ;;
