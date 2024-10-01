@@ -3,6 +3,6 @@
 cd /opt/void-packages
 git pull --autostash --rebase
 ./xbps-src show-sys-updates # update
-./xbps-src update-sys 
+#./xbps-src update-sys 
 ./xbps-src clean  # clean
 ./xbps-src clean-repocache
