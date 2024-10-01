@@ -42,6 +42,7 @@ sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bri
 # tar
 sudo xbps-install -Syu p7zip unzip tar xz bzip2 bsdtar gzip
 sudo xbps-install -Syu gtkedit # text editor
+sudo xbps-install -Syu zramen # zram
 
 
 clear
