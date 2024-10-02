@@ -44,6 +44,7 @@ sudo xbps-install -Syu p7zip unzip tar xz bzip2 bsdtar gzip
 sudo xbps-install -Syu gtkedit # text editor
 sudo xbps-install -Syu zramen # zram
 sudo xbps-install -Syu octave # matlab 
+#sudo xbps-install -Syu libreoffice xdg-user-dirs xdg-utils
 
 clear
 
