@@ -12,4 +12,8 @@ pipewire-pulse &
 sxhkd & 
 dunst &
 slstatus &
+xset -dpms # Disable DPMS
+xset s off # Disable screensaver
+xset s noblank # Disable screen blank
+xset r rate 225 75 & # mouvment vitesse
 dbus-run-session dwm 
