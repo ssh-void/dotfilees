@@ -36,6 +36,7 @@ alias xhkd="pkill -USR1 -x sxhkd"
 alias vlcnv="prime-run vlc"
 
 # Search command history
+alias ping='ping voidlinux.org'
 alias blkid="doas blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 # Runs the last command with doas
