@@ -37,11 +37,11 @@ export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
 
 ## No screensaver
-xset -dpms # Disable DPMS
-xset s off # Disable screensaver
-xset s noblank # Disable screen blank
+#xset -dpms # Disable DPMS
+#xset s off # Disable screensaver
+#xset s noblank # Disable screen blank
 #xset r off # Disables key repeat
-xset r rate 225 75 &
+#xset r rate 225 75 &
 
 ## xrandr
 #!/bin/sh
