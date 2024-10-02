@@ -26,6 +26,7 @@ alias ixbps="doas  xbps-install --repository=hostdir/binpkgs/nonfree "
 
 # Other:
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
+alias uuid="ls -l /dev/disk/by-uuid/"
 alias dvi='doas vim' dvim='doas vim'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
