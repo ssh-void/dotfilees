@@ -1,0 +1,36 @@
+2024/10/04-17:08:58.594 24eb Reusing MANIFEST /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/MANIFEST-000001
+2024/10/04-17:08:58.595 24eb Recovering log #217
+2024/10/04-17:08:58.595 24eb Reusing old log /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.notion.so_0.indexeddb.leveldb/000217.log 
+2024/10/04-17:08:58.595 24eb Delete type=2 #216
+2024/10/04-17:09:00.098 24f7 Level-0 table #222: started
+2024/10/04-17:09:00.101 24f7 Level-0 table #222: 538 bytes OK
+2024/10/04-17:09:00.104 24f7 Delete type=0 #217
+2024/10/04-17:09:00.104 24f7 Manual compaction at level-0 from '\x00I\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00J\x00\x00\x00' @ 0 : 0; will stop at '\x00I\x00\x00\x05' @ 38578 : 1
+2024/10/04-17:09:00.104 24f7 Compacting 1@0 + 1@1 files
+2024/10/04-17:09:00.126 24f7 Generated table #223@0: 13795 keys, 168687 bytes
+2024/10/04-17:09:00.126 24f7 Compacted 1@0 + 1@1 files => 168687 bytes
+2024/10/04-17:09:00.128 24f7 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/04-17:09:00.129 24f7 Delete type=2 #222
+2024/10/04-17:09:00.134 24ea Manual compaction at level-0 from '\x00I\x00\x00\x05' @ 38578 : 1 .. '\x00J\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/04-17:29:53.910 24ea Level-0 table #225: started
+2024/10/04-17:29:53.912 24ea Level-0 table #225: 539 bytes OK
+2024/10/04-17:29:53.914 24ea Delete type=2 #219
+2024/10/04-17:29:53.914 24ea Delete type=0 #221
+2024/10/04-17:29:53.914 24ea Manual compaction at level-0 from '\x00J\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00K\x00\x00\x00' @ 0 : 0; will stop at '\x00J\x00\x00\x05' @ 38597 : 1
+2024/10/04-17:29:53.915 24ea Compacting 1@0 + 1@1 files
+2024/10/04-17:29:53.923 24ea Generated table #226@0: 13799 keys, 168999 bytes
+2024/10/04-17:29:53.923 24ea Compacted 1@0 + 1@1 files => 168999 bytes
+2024/10/04-17:29:53.925 24ea compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/04-17:29:53.926 24ea Delete type=2 #225
+2024/10/04-17:29:53.926 24ea Manual compaction at level-0 from '\x00J\x00\x00\x05' @ 38597 : 1 .. '\x00K\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/04-17:36:42.786 24ec Level-0 table #228: started
+2024/10/04-17:36:42.788 24ec Level-0 table #228: 3422 bytes OK
+2024/10/04-17:36:42.791 24ec Delete type=2 #223
+2024/10/04-17:36:42.791 24ec Delete type=0 #224
+2024/10/04-17:36:42.791 24ea Manual compaction at level-0 from '\x00K\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00L\x00\x00\x00' @ 0 : 0; will stop at '\x00K\x00\x00\x05' @ 38694 : 1
+2024/10/04-17:36:42.791 24ea Compacting 1@0 + 1@1 files
+2024/10/04-17:36:42.805 24ea Generated table #229@0: 13829 keys, 169159 bytes
+2024/10/04-17:36:42.805 24ea Compacted 1@0 + 1@1 files => 169159 bytes
+2024/10/04-17:36:42.807 24ea compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/04-17:36:42.807 24ea Delete type=2 #228
+2024/10/04-17:36:42.807 24ea Manual compaction at level-0 from '\x00K\x00\x00\x05' @ 38694 : 1 .. '\x00L\x00\x00\x00' @ 0 : 0; will stop at (end)

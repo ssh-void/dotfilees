@@ -1,0 +1,27 @@
+[Default Applications]
+video/webm=vlc.desktop
+x-scheme-handler/http=userapp-Firefox-RDTSU2.desktop
+x-scheme-handler/https=userapp-Firefox-RDTSU2.desktop
+text/html=userapp-Firefox-RDTSU2.desktop
+x-scheme-handler/eclipse+command x-scheme-handler/eclipse+mpc=_usr_lib_eclipse_.desktop
+x-scheme-handler/chrome=userapp-Firefox-RDTSU2.desktop
+application/x-extension-htm=userapp-Firefox-RDTSU2.desktop
+application/x-extension-html=userapp-Firefox-RDTSU2.desktop
+application/x-extension-shtml=userapp-Firefox-RDTSU2.desktop
+application/xhtml+xml=userapp-Firefox-RDTSU2.desktop
+application/x-extension-xhtml=userapp-Firefox-RDTSU2.desktop
+application/x-extension-xht=userapp-Firefox-RDTSU2.desktop
+
+[Added Associations]
+video/webm=vlc.desktop;
+x-scheme-handler/http=userapp-Firefox-RDTSU2.desktop;
+x-scheme-handler/https=userapp-Firefox-RDTSU2.desktop;
+x-scheme-handler/chrome=userapp-Firefox-RDTSU2.desktop;
+text/html=userapp-Firefox-RDTSU2.desktop;
+application/x-extension-htm=userapp-Firefox-RDTSU2.desktop;
+application/x-extension-html=userapp-Firefox-RDTSU2.desktop;
+application/x-extension-shtml=userapp-Firefox-RDTSU2.desktop;
+application/xhtml+xml=userapp-Firefox-RDTSU2.desktop;
+application/x-extension-xhtml=userapp-Firefox-RDTSU2.desktop;
+application/x-extension-xht=userapp-Firefox-RDTSU2.desktop;
+video/mp4=vlc.desktop;

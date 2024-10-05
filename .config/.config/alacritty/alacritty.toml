@@ -1,0 +1,98 @@
+#=======https://alacritty.org/config-alacritty.html==========#
+import = [
+  #"C:/Users/hassa/AppData/Roaming/alacritty/color.toml",
+  "~/.config/alacritty/color.toml"
+]
+live_config_reload = true
+#working_directory = "C:\\"  # pour win
+[shell] #pour linux
+program = "/bin/bash"
+args = ["-l"]
+#==============================================================#
+[terminal] # One variable
+osc52 = "CopyPaste"
+#==============================================================#
+[env]
+TERM = "xterm-256color"
+#TERM = "alacritty"
+#==========================[window]============================#
+[window] # 14 variable
+decorations = "Full" 
+decorations_theme_variant = "dark" # "Dark"
+opacity = 1 
+padding = {x = 5, y = 5} 
+startup_mode = "Maximized"
+#===========================[cursor]===================================#
+[cursor] # 6variable
+style = {shape = "Beam", blinking = "Always"}
+thickness = 0.23
+vi_mode_style = {shape = "Beam", blinking = "Always"}
+#=========================[font]==================================#
+[font]
+size = 18
+[font.normal] # normal 
+family = "Ubuntu Mono"
+#family = "JetBrains"
+#family = "Cartograph CF"
+#family = "Anonymice Nerd Font"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+[font.bold]
+family = "Ubuntu Mono"
+#family = "Anonymice Nerd Font"
+#family = "Cartograph CF"
+#family = "JetBrainsMono Nerd Font"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+[font.italic]
+family = "Ubuntu Mono"
+#family = "JetBrainsMono Nerd Font"
+#family = "Anonymice Nerd Font"
+#family = "Cartograph CF"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+[font.bold_italic]
+family = "Ubuntu Mono"
+#family = "JetBrainsMono Nerd Font"
+#family = "Anonymice Nerd Font"
+#family = "Cartograph CF"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+#==============================================================#
+[scrolling]
+history = 10000
+multiplier = 10
+#==============================[mouse]================================#
+[mouse]
+bindings = [{mouse = "Left", mods = "Control", action = "Paste"}]
+hide_when_typing = true
+#==============================[keyboard]================================#
+[keyboard]
+bindings = [
+#  {key = 'Return', mods = 'Alt', action = 'ToggleFullscreen'},
+#  {key = 'Q', mods = 'Alt', action = 'Quit'},
+#  {key = 'N', mods = 'Command|Shift', action = 'SpawnNewInstance'}, # le meme peofi
+#  {key = 'N', mods = 'Control|Shift', action = 'CreateNewWindow'}, #{key = 'C', mods = 'Command|Shift', action = 'Quit'},  #{key = "Up", mods = "Control|Shift", action = "ScrollToTop" },  #{key = "Down", mods = "Control|Shift", action = "ScrollToBottom"},
+  {key = "K", mods = "Control|Shift", mode = "Vi|~Search", action = "ScrollToTop"}, # aller a l=0
+  {key = "J", mods = "Control|Shift", mode = "Vi|~Search", action = "ScrollToBottom"}, # aller a l=finale Mode vi
+  {key = "K", mods = "Control", mode = "Vi|~Search", action = "ScrollHalfPageUp"}, # aller 1/4 de page
+  {key = "J", mods = "Control", mode = "Vi|~Search", action = "ScrollHalfPageDown"},
+  {key = 'C', mods = 'Control|Shift', action = 'Copy'},
+  {key = 'V', mods = 'Control', action = 'Paste'},
+  {key = 'V', mods = 'Control|Shift', action = 'Paste'},
+  {key = '0', mods = 'Control', action = 'ResetFontSize'}, 
+  { key = 'V', mods = "Alt", action = 'ToggleViMode' },
+]
+#============================[selection]==================================#
+[selection] # 2 variable
+save_to_clipboard = true
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+#============================[debug]==================================#
+[debug] # 7 variable
+highlight_damage = false # by Default
+log_level = "Warn" # by Default
+persistent_logging = false # by Default
+prefer_egl = false # by Default
+print_events = false # by Default
+render_timer = false # by Default
+renderer = "None" # by Default

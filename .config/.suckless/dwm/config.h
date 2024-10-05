@@ -25,9 +25,14 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     iscentered   isfloating   monitor */
-	{ "st",       "scpad",       NULL,       0,            1,           1,           -1 },
-	{ "Xfce4-appfinder",       "xfce4-appfinder",       NULL,           0,           1,           1,           -1 },
+	/* class                   instance                   title          tags mask     iscentered   isfloating   monitor */
+	{ "st",                    "scpad",                    NULL,             0,            1,           1,           -1 },
+	{ "Xfce4-appfinder",       "xfce4-appfinder",          NULL,             0,            1,           1,           -1 },
+	{ "pavucontrol",           "pavucontrol",              NULL,             0,            1,           1,           -1 },
+	{ "Blueman-manager",       "blueman-manager",          NULL,             0,            1,           1,           -1 },
+	{ "Zathura",               "org.pwmt.zathura",         NULL,             0,            1,           1,           -1 },
+	{ "Rhythmbox",             "rhythmbox",                NULL,             0,            1,           1,           -1 },
+
 };
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */

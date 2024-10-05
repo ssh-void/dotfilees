@@ -1,0 +1,9 @@
+2024/10/04-17:08:42.311 24ea Reusing MANIFEST /home/sh/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/pkehgijcmpdhfbdbbnkijodmdjhbjlgp/MANIFEST-000001
+2024/10/04-17:08:42.311 24ea Recovering log #8
+2024/10/04-17:08:42.318 24ea Reusing old log /home/sh/.config/BraveSoftware/Brave-Browser/Default/Local Extension Settings/pkehgijcmpdhfbdbbnkijodmdjhbjlgp/000008.log 
+2024/10/04-18:03:46.433 24eb Compacting 1@1 + 1@2 files
+2024/10/04-18:03:46.444 24eb Generated table #13@1: 8 keys, 350067 bytes
+2024/10/04-18:03:46.444 24eb Compacted 1@1 + 1@2 files => 350067 bytes
+2024/10/04-18:03:46.446 24eb compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/10/04-18:03:46.446 24eb Delete type=2 #11
+2024/10/04-18:03:46.446 24eb Delete type=2 #5

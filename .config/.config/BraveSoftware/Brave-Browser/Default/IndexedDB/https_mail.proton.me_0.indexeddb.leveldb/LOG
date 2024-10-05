@@ -1,0 +1,40 @@
+2024/10/04-17:59:38.212 24ea Creating DB /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb since it was missing.
+2024/10/04-17:59:38.217 24ea Reusing MANIFEST /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_mail.proton.me_0.indexeddb.leveldb/MANIFEST-000001
+2024/10/04-17:59:40.079 24ec Level-0 table #5: started
+2024/10/04-17:59:40.086 24ec Level-0 table #5: 1303 bytes OK
+2024/10/04-17:59:40.089 24ec Delete type=0 #3
+2024/10/04-17:59:40.090 24ea Manual compaction at level-0 from '\x00\x02\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x03\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/04-17:59:40.682 24ea Level-0 table #7: started
+2024/10/04-17:59:40.684 24ea Level-0 table #7: 795 bytes OK
+2024/10/04-17:59:40.686 24ea Delete type=0 #4
+2024/10/04-17:59:40.688 24ea Manual compaction at level-0 from '\x00\x03\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x04\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/04-17:59:40.703 24ea Level-0 table #9: started
+2024/10/04-17:59:40.711 24ea Level-0 table #9: 782 bytes OK
+2024/10/04-17:59:40.713 24ea Delete type=0 #6
+2024/10/04-17:59:40.713 24ea Manual compaction at level-0 from '\x00\x04\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at '\x00\x04\x00\x00\x05' @ 85 : 1
+2024/10/04-17:59:40.713 24ea Compacting 1@0 + 1@1 files
+2024/10/04-17:59:40.715 24ea Generated table #10@0: 13 keys, 816 bytes
+2024/10/04-17:59:40.715 24ea Compacted 1@0 + 1@1 files => 816 bytes
+2024/10/04-17:59:40.717 24ea compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/04-17:59:40.717 24ea Delete type=2 #9
+2024/10/04-17:59:40.718 24ea Manual compaction at level-0 from '\x00\x04\x00\x00\x05' @ 85 : 1 .. '\x00\x05\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/10/04-17:59:42.712 24eb Level-0 table #12: started
+2024/10/04-17:59:42.714 24eb Level-0 table #12: 256 bytes OK
+2024/10/04-17:59:42.716 24eb Delete type=0 #8
+2024/10/04-17:59:42.717 24eb Delete type=2 #7
+2024/10/04-17:59:42.717 24eb Manual compaction at level-0 from (begin) .. (end); will stop at '\x00\x00\x00\x002\x02\x07\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 99 : 0
+2024/10/04-17:59:42.717 24eb Compacting 1@0 + 1@1 files
+2024/10/04-17:59:42.720 24eb Generated table #13@0: 15 keys, 828 bytes
+2024/10/04-17:59:42.720 24eb Compacted 1@0 + 1@1 files => 828 bytes
+2024/10/04-17:59:42.723 24eb compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/10/04-17:59:42.723 24eb Delete type=2 #12
+2024/10/04-17:59:42.723 24eb Delete type=2 #10
+2024/10/04-17:59:42.723 24eb Manual compaction at level-0 from '\x00\x00\x00\x002\x02\x07\x01\x00\x00\x00\x00\x00\x00\x00\x00' @ 99 : 0 .. (end); will stop at (end)
+2024/10/04-17:59:42.723 24eb Manual compaction at level-1 from (begin) .. (end); will stop at '\x00\x00\x00\x00\xc9\x18\x00h\x00t\x00t\x00p\x00s\x00_\x00m\x00a\x00i\x00l\x00.\x00p\x00r\x00o\x00t\x00o\x00n\x00.\x00m\x00e\x00_\x000\x00@\x001^\x00E\x00S\x00:\x00R\x00_\x00C\x00Y\x00U\x00r\x00j\x00V\x00K\x003\x00U\x00a\x00M\x00S\x008\x00c\x00I\x009\x00u\x00y\x00k\x00l\x00A\x00A\x001\x00M\x00r\x00o\x00H\x00Q\x00p\x00n\x00P\x00i\x00f\x00V\x00r\x007\x00M\x00f\x00h\x00q\x005\x00a\x00t\x00C\x002\x00H\x00F\x00N\x00a\x00t\x009\x002\x00u\x00E\x00e\x00H\x00d\x00X\x00C\x00y\x00E\x00Q\x00S\x00_\x002\x00B\x00S\x00a\x00Q\x00F\x00F\x00D\x00J\x009\x00V\x00y\x00U\x00x\x00N\x00b\x00s\x00Z\x00L\x00Q\x00=\x00=\x00:\x00D\x00B' @ 89 : 0
+2024/10/04-17:59:42.723 24eb Compacting 1@1 + 1@2 files
+2024/10/04-17:59:42.725 24eb Generated table #14@1: 19 keys, 499 bytes
+2024/10/04-17:59:42.725 24eb Compacted 1@1 + 1@2 files => 499 bytes
+2024/10/04-17:59:42.727 24eb compacted to: files[ 0 0 1 0 0 0 0 ]
+2024/10/04-17:59:42.727 24eb Delete type=2 #5
+2024/10/04-17:59:42.727 24eb Delete type=2 #13
+2024/10/04-17:59:42.727 24eb Manual compaction at level-1 from '\x00\x00\x00\x00\xc9\x18\x00h\x00t\x00t\x00p\x00s\x00_\x00m\x00a\x00i\x00l\x00.\x00p\x00r\x00o\x00t\x00o\x00n\x00.\x00m\x00e\x00_\x000\x00@\x001^\x00E\x00S\x00:\x00R\x00_\x00C\x00Y\x00U\x00r\x00j\x00V\x00K\x003\x00U\x00a\x00M\x00S\x008\x00c\x00I\x009\x00u\x00y\x00k\x00l\x00A\x00A\x001\x00M\x00r\x00o\x00H\x00Q\x00p\x00n\x00P\x00i\x00f\x00V\x00r\x007\x00M\x00f\x00h\x00q\x005\x00a\x00t\x00C\x002\x00H\x00F\x00N\x00a\x00t\x009\x002\x00u\x00E\x00e\x00H\x00d\x00X\x00C\x00y\x00E\x00Q\x00S\x00_\x002\x00B\x00S\x00a\x00Q\x00F\x00F\x00D\x00J\x009\x00V\x00y\x00U\x00x\x00N\x00b\x00s\x00Z\x00L\x00Q\x00=\x00=\x00:\x00D\x00B' @ 89 : 0 .. (end); will stop at (end)
