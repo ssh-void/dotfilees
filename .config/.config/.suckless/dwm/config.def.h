@@ -30,6 +30,7 @@ static const Rule rules[] = {
 	{ "Xfce4-appfinder",       "xfce4-appfinder",          NULL,             0,            1,           1,           -1 },
 	{ "pavucontrol",           "pavucontrol",              NULL,             0,            1,           1,           -1 },
 	{ "Blueman-manager",       "blueman-manager",          NULL,             0,            1,           1,           -1 },
+	{ "Thunar",                "Thunar",                   NULL,             0,            1,           1,           -1 },
 	{ "Zathura",               "org.pwmt.zathura",         NULL,             0,            1,           1,           -1 },
 	{ "Rhythmbox",             "rhythmbox",                NULL,             0,            1,           1,           -1 },
 
