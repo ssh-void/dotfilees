@@ -25,6 +25,7 @@ sudo ln -s /etc/sv/elogind /var/service/
 
 
 clear
+#sudo xbps-install -Syu jq # Command-line JSON processor
 sudo xbps-install -Syu rhythmbox # misque read
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
 sudo xbps-install -Syu xdg-utils 
