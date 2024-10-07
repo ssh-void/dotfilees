@@ -1,0 +1,15 @@
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
+sudo ln -s /etc/sv/acpid /var/service/acpid
