@@ -20,10 +20,6 @@ clear
 sleep 3s
 sudo xbps-install -Syu opendoas tealdeer elogind neovim fzy xorg-minimal xrdb base-devel xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev bash-completion ttf-ubuntu-font-family dejavu-fonts-ttf noto-fonts-emoji noto-fonts-cjk libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel tree man man-db inxi flameshot xclip awk dbus wget curl picom sxhkd xbanish feh brightnessctl numlockx firefox eza most git  
 echo "changer shell in bash"
-sleep 10s
-	sudo chsh -s /usr/bin/bash
-clear
-echo "changer shell in bash"
 sleep 3s
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.profilevm -O $HOME/.profile && cp $HOME/.profile $HOME/.bash_profile
 cd $HOME && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.aliasesvm -O $HOME/.aliases
