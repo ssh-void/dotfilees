@@ -86,7 +86,7 @@ sleep 3s
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 echo "service ..."
 sleep 10s
-        sudo ln -s /etc/sv/{dbus,elogind} /var/service/
+        sudo ln -s /etc/sv/dbus /var/service/
 clear
 sudo shutdown -r now # reboot   
 clear
