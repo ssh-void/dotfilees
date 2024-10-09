@@ -16,5 +16,6 @@ xset -dpms # Disable DPMS
 xset s off # Disable screensaver
 xset s noblank # Disable screen blank
 xset r rate 225 75 & # mouvment vitesse
+doas mount -a &
 doas zramen toss && doas zramen -s 8192 -m 8192 -a zstd make &
 dbus-run-session dwm 
