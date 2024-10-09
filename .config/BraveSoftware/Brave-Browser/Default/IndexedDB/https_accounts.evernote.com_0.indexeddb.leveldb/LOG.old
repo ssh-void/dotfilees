@@ -1,6 +1,0 @@
-2024/10/02-19:40:59.759 5455 Creating DB /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_accounts.evernote.com_0.indexeddb.leveldb since it was missing.
-2024/10/02-19:40:59.766 5455 Reusing MANIFEST /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_accounts.evernote.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/10/02-19:47:44.641 5455 Level-0 table #5: started
-2024/10/02-19:47:44.643 5455 Level-0 table #5: 1353 bytes OK
-2024/10/02-19:47:44.645 5455 Delete type=0 #3
-2024/10/02-19:47:44.645 5455 Manual compaction at level-0 from (begin) .. (end); will stop at (end)
