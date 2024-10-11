@@ -7,6 +7,7 @@ bypass() {
 		kill -0 "$$" || exit
 	done 2>/dev/null &
 }
+
 sleep 3s
 bypass
 clear
@@ -18,11 +19,7 @@ sudo xbps-install -Syu xorg-minimal pkg-config base-devel gcc gdb xset xrandr ar
 mkdir -p $HOME/Downloads/{Aria2,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
 # You install the following package 
-
-
 #sudo ln -s /etc/sv/dnsmasq /var/service/
-
-
 clear
 #sudo xbps-install -Syu jq # Command-line JSON processor
 sudo xbps-install -Syu rhythmbox # misque read
