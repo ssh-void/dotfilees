@@ -40,7 +40,7 @@ sudo xbps-install -Syu mpv python3-devel python3-pip
 sudo xbps-install -Syu megatools # mega
 sudo xbps-install -Syu libselinux # matlab 
 # KVM & qemu...
-sudo xbps-install -Syu virt-manager libvirt qemu openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
+sudo xbps-install -Syu virt-manager libvirt qemu-img qemu-system-amd64 qemu-common qemu-firmware openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
 # tar
 sudo xbps-install -Syu zip unzip
 sudo xbps-install -Syu p7zip tar xz bzip2 bsdtar gzip
