@@ -45,7 +45,7 @@ sudo xbps-install -Syu gtkedit # text editor
 sudo xbps-install -Syu zramen # zram
 sudo xbps-install -Syu octave # matlab 
 sudo xbps-install -Syu libreoffice xdg-utils
-sudo xbps-install -Syu android-tools android-file-transfer-linux
+sudo xbps-install -Syu android-tools
 sudo xbps-install -Syu cronie
 
 clear
