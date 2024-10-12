@@ -47,9 +47,6 @@ sudo xbps-install -Syu octave # matlab
 #sudo xbps-install -Syu libreoffice xdg-utils
 sudo xbps-install -Syu android-tools android-file-transfer-linux
 sudo xbps-install -Syu cronie
-sudo ln -s /etc/sv/crond /var/service
-
-
 
 clear
 
@@ -112,6 +109,7 @@ sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 sudo sv down dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
+sudo ln -s /etc/sv/crond /var/service/
 sudo rm /var/service/agetty-tty{3,4,5,6}
 sudo rm /var/service/wpa_supplicant
 sudo rm /var/service/dhcpcd
