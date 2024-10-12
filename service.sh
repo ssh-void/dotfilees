@@ -1,6 +1,7 @@
 sudo rm /var/service/agetty-tty{3,4,5,6}
 sudo rm /var/service/wpa_supplicant
 sudo rm /var/service/dhcpcd
+sudo ln -s /etc/sv/crond /var/service
 sudo ln -s /etc/sv/acpid/ /var/service/
 sudo ln -s /etc/sv/bluetoothd/ /var/service/
 sudo ln -s /etc/sv/chronyd/ /var/service/
