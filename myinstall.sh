@@ -120,6 +120,7 @@ sudo ln -s /etc/sv/virtlogd/ /var/service/
 sudo ln -s /etc/sv/zramen/ /var/service/
 #echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 echo "zram" | sudo tee /etc/modules-load.d/zram.conf > /dev/null
+sudo sed -i 's/^FONT=.*/FONT="ter-v22b"/' /etc/rc.conf
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
