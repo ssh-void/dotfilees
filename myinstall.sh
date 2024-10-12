@@ -44,7 +44,7 @@ sudo xbps-install -Syu p7zip tar xz bzip2 bsdtar gzip
 sudo xbps-install -Syu gtkedit # text editor
 sudo xbps-install -Syu zramen # zram
 sudo xbps-install -Syu octave # matlab 
-#sudo xbps-install -Syu libreoffice xdg-utils
+sudo xbps-install -Syu libreoffice xdg-utils
 sudo xbps-install -Syu android-tools android-file-transfer-linux
 sudo xbps-install -Syu cronie
 
@@ -57,21 +57,17 @@ sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n
 sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo xbps-install -Syu qbittorrent
 sudo xbps-install -Syu duf eza # lsd exa 
-sudo ln -s /etc/sv/tor /var/service/
-sudo ln -s /etc/sv/ufw /var/service/
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 
 clear
 echo "===== pdf ===== "
 sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g exfat-utils
-# non free répo
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
-xbps-query -L
+#xbps-query -L
 sudo xbps-install -Syu unrar # nonfree 
 
 clear
-echo "=====""""""" NVIDIA intel """""""" ===== "
 sudo xbps-install -Syu intel-ucode # nonfree 
 sudo xbps-install -Syu linux-firmware-intel # free 
 sudo xbps-install -Syu intel-video-accel # free 
@@ -83,39 +79,47 @@ sudo xbps-install -Syu mesa-dri # OpenGL (alacritty)
 
 clear
 # nvidia & intel
-echo "=====""""""" NVIDIA intel """""""" ===== "
 sudo xbps-install -Syu intel-video-accel
 sudo xbps-install -Syu nvidia  # nonfree 
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
 sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
-sudo xbps-install -Syu mesa-vulkan-intel
-sudo xbps-install -Syu xf86-video-intel
+sudo xbps-install -Syu mesa-vulkan-intel # free
+sudo xbps-install -Syu xf86-video-intel # free
 
 ##################################################################
 
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
 sudo git clone --depth=1 https://github.com/void-linux/void-packages
-#sudo xbps-install -Syu xtools-minimal python3 # xi ...
+sudo xbps-install -Syu xtools-minimal python3 # xi ...
 #sudo chown -R $(whoami):$(whoami) .
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 
-####################################################################
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
-####################################################################
+
 sudo sv down dhcpcd
-sudo ln -s /etc/sv/NetworkManager /var/service/
-sudo ln -s /etc/sv/dbus /var/service/
-sudo ln -s /etc/sv/crond /var/service/
 sudo rm /var/service/agetty-tty{3,4,5,6}
 sudo rm /var/service/wpa_supplicant
 sudo rm /var/service/dhcpcd
+sudo ln -s /etc/sv/crond /var/service
+sudo ln -s /etc/sv/acpid/ /var/service/
+sudo ln -s /etc/sv/bluetoothd/ /var/service/
+sudo ln -s /etc/sv/chronyd/ /var/service/
+sudo ln -s /etc/sv/crond/ /var/service/
+sudo ln -s /etc/sv/dbus/ /var/service/
+sudo ln -s /etc/sv/libvirtd/ /var/service/
+sudo ln -s /etc/sv/NetworkManager/ /var/service/
+sudo ln -s /etc/sv/sshd/ /var/service/
+sudo ln -s /etc/sv/tor/ /var/service/
+sudo ln -s /etc/sv/udevd/ /var/service/
+sudo ln -s /etc/sv/ufw/ /var/service/
+sudo ln -s /etc/sv/virtlogd/ /var/service/
+sudo ln -s /etc/sv/zramen/ /var/service/
 #echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
-git clone https://github.com/elbachir-one/st.git
 sudo shutdown -r now # reboot   
