@@ -16,6 +16,6 @@ sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
 #sudo nmcli device wifi connect SSID password PASSWORD
 cd /var/lib/libvirt/images && sudo qemu-img create -f qcow2 -o preallocation=off 50-disk.qcow2 50G # tested
-cd /var/lib/libvirt/images && doas qemu-img create -f qcow2 -o preallocation=off 20-disk.qcow2 20G # tested
+cd /var/lib/libvirt/images && sudo qemu-img create -f qcow2 -o preallocation=off 20-disk.qcow2 20G # tested
 cd /var/lib/libvirt/images && sudo qemu-img create -f qcow2 -o preallocation=off 70-disk.qcow2 70G # tested
 sudo reboot
