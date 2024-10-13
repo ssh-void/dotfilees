@@ -1,0 +1,20 @@
+[display]
+compact = true
+use_pager = true
+
+[style.command_name]
+foreground = "yellow"  # Changer "red" par "yellow"
+
+[style.example_text]
+foreground = "green"
+
+[style.example_code]
+foreground = "magenta"  # Changer "blue" par "white"
+
+[style.example_variable]
+foreground = "magenta"  # Changer "blue" par "white"
+underline = true
+
+[updates]
+auto_update = true
+auto_update_interval_hours = 24
