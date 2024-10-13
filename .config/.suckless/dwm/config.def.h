@@ -27,6 +27,7 @@ static const Rule rules[] = {
 	 */
 	/* class                   instance                   title          tags mask     iscentered   isfloating   monitor */
 	{ "st",                    "scpad",                    NULL,             0,            1,           1,           -1 },
+	{ "Thunar",               "Thunar",                   NULL,             0,            1,           1,           -1 },
 	{ "Xfce4-appfinder",       "xfce4-appfinder",          NULL,             0,            1,           1,           -1 },
 	{ "pavucontrol",           "pavucontrol",              NULL,             0,            1,           1,           -1 },
 	{ "Blueman-manager",       "blueman-manager",          NULL,             0,            1,           1,           -1 },
