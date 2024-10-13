@@ -128,7 +128,10 @@ sudo ln -s /etc/sv/zramen/ /var/service/
 echo "zram" | sudo tee /etc/modules-load.d/zram.conf > /dev/null
 sudo sed -i 's/^FONT=.*/FONT="ter-v20b"/' /etc/rc.conf
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
-sed -i 's/^APPARMOR=complain/APPARMOR=enforce/' /etc/default/apparmor
+sudo sed -i 's/^APPARMOR=complain/APPARMOR=enforce/' /etc/default/apparmor
+sudo mkdir -p /etc/apparmor.d/disable
+sudo ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
+sudo apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
 sudo shutdown -r now # reboot   
