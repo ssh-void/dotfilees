@@ -60,7 +60,6 @@ alias pdf="zathura"
 #alias ram="ps -ely | tr -s ' ' |cut -d ' ' -f8,13 | grep"
 alias tldr="tealdeer"
 alias sprofile="source ~/.profile ; source ~/.bash_profile "
-#alias sz='source ~/.zshrc'
 alias drm="doas rm -rf"
 alias T="du -sh"
 alias cal="cal --twelve"
