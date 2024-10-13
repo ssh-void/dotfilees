@@ -132,6 +132,7 @@ sudo sed -i 's/^APPARMOR=complain/APPARMOR=enforce/' /etc/default/apparmor
 sudo mkdir -p /etc/apparmor.d/disable
 sudo ln -s /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper /etc/apparmor.d/disable/
 sudo apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
+sudo sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=".*"|GRUB_CMDLINE_LINUX_DEFAULT="loglevel=0 udev.log_level=0 vt.global_cursor_default=0 page_alloc.shuffle=1 slub_debug=P page_poison=1 apparmor=1 security=apparmor"|' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
 sudo shutdown -r now # reboot   
