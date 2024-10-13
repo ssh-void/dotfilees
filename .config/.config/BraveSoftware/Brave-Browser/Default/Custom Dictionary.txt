@@ -1,2 +1,0 @@
-Udemy
-checksum_v1 = fe3cdf077ab90ad5b6543c165014ee86

@@ -1,6 +1,0 @@
-2024/10/03-01:41:46.042 5454 Creating DB /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.avira.com_0.indexeddb.leveldb since it was missing.
-2024/10/03-01:41:46.049 5454 Reusing MANIFEST /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_www.avira.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/10/03-01:41:46.468 5456 Level-0 table #5: started
-2024/10/03-01:41:46.474 5456 Level-0 table #5: 589 bytes OK
-2024/10/03-01:41:46.477 5456 Delete type=0 #3
-2024/10/03-01:41:46.479 5454 Manual compaction at level-0 from '\x00\x01\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x02\x00\x00\x00' @ 0 : 0; will stop at (end)

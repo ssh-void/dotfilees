@@ -1,6 +1,0 @@
-2024/10/03-23:51:44.728 d2d Reusing MANIFEST /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_web.telegram.org_0.indexeddb.leveldb/MANIFEST-000001
-2024/10/03-23:51:44.728 d2d Recovering log #3
-2024/10/03-23:51:44.741 d2d Reusing old log /home/sh/.config/BraveSoftware/Brave-Browser/Default/IndexedDB/https_web.telegram.org_0.indexeddb.leveldb/000003.log 
-2024/10/04-00:51:30.385 d2d Level-0 table #5: started
-2024/10/04-00:51:30.402 d2d Level-0 table #5: 1641987 bytes OK
-2024/10/04-00:51:30.405 d2d Delete type=0 #3
