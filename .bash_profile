@@ -15,7 +15,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export WGETRC=~/.config/wget/wgetrc
 # QT5 Fix
-export GDK_DPI_SCALE=1.04
+export GDK_DPI_SCALE=1.02
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_PLATFORM_PLUGIN="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
@@ -37,7 +37,7 @@ export IMGVIEWER="sxiv"
 export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
 
-echo "Xft.dpi: 104" | xrdb -merge
+echo "Xft.dpi: 102" | xrdb -merge
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
