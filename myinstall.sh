@@ -88,8 +88,8 @@ sudo xbps-install -Syu mesa-intel-dri libva-intel-driver sysfsutils # free
 clear
 # nvidia & intel
 sudo xbps-install -Syu intel-video-accel
-sudo xbps-install -Syu nvidia  # nonfree 
-sudo xbps-install -Syu nvidia-opencl # nonfree 
+sudo xbps-install -Syu nvidia  # nonfree  #You need non-free repo
+sudo xbps-install -Syu nvidia-opencl # nonfree  #You need non-free repo
 sudo xbps-install -Syu vulkan-loader # free  
 sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
 sudo xbps-install -Syu mesa-vulkan-intel # free
