@@ -1,0 +1,1 @@
+cd /etc/ && doas rm -rf hosts && doas wget -c https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts -O /etc/hosts
