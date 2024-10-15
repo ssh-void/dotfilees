@@ -1,4 +1,4 @@
-bypass() {
+sudo xbps-install -S mesa-intel-dri libva-intel-driver sysfsutilsbypass() {
 	sudo -v
 	while true;
 	do
@@ -83,6 +83,7 @@ sudo xbps-install -Syu libva-intel-driver # free
 sudo xbps-install -Syu mesa-vulkan-intel # free
 sudo xbps-install -Syu mesa-vaapi # free # video acceleration
 sudo xbps-install -Syu mesa-dri # free , OpenGL (alacritty)
+sudo xbps-install -Syu mesa-intel-dri libva-intel-driver sysfsutils # free
 
 clear
 # nvidia & intel
