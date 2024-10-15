@@ -15,6 +15,7 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export WGETRC=~/.config/wget/wgetrc
 # QT5 Fix
+export GDK_DPI_SCALE=1.04
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export QT_PLATFORM_PLUGIN="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
@@ -36,18 +37,7 @@ export IMGVIEWER="sxiv"
 export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
 
-## No screensaver
-#xset -dpms # Disable DPMS
-#xset s off # Disable screensaver
-#xset s noblank # Disable screen blank
-#xset r off # Disables key repeat
-#xset r rate 225 75 &
-
-## xrandr
-#!/bin/sh
-echo "Xft.dpi: 100" | xrdb -merge
-xrandr --output eDP1 --primary --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 --output DP1 --off --output HDMI1 --mode 1920x1080 --pos 1289x0 --rotate right --rate 50 --brightness 0.8 --output HDMI2 --off --output VIRTUAL1 --off
-#xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1920 --rotate normal --rate 60 --brightness 1 --output DP-1 --off --output HDMI-1 --mode 1920x1080 --pos 1289x0 --rotate right --rate 50 --brightness 0.8 --output HDMI-2 --off --output VIRTUAL1 --off
+echo "Xft.dpi: 104" | xrdb -merge
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
