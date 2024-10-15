@@ -1,6 +1,5 @@
 numlockx on &
 brightnessctl set 75%
-st &
 xrdb -load $HOME/.config/X11/Xresources &
 #nvidia-settings --load-config-only &
 #picom --config /home/${USER}/.config/picom/picom.conf &
