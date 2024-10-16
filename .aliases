@@ -79,6 +79,14 @@ alias ld="ls -d */"
 alias v="nvim" vim="nvim" vi="nvim"
 alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 
+# tar zip
+alias lzip="unzip -l"
+alias ltar="tar -ztvf"
+alias ctar="tar -cvzf"
+alias czip="zip -r"
+alias lxz="tar -Jtvf"
+alias cxz="tar -cvJf"
+
 # cd
 alias cd..='cd ..'
 alias .2="cd ../.."
