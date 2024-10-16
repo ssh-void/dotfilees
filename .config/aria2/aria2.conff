@@ -22,11 +22,15 @@ lowest-speed-limit=50K
 max-overall-download-limit=0
 max-overall-upload-limit=0
 
-# Gestion des Téléchargements
-max-concurrent-downloads=5
-max-connection-per-server=8
-min-split-size=5M
-split=16
+# Download Management
+max-concurrent-downloads=7
+max-connection-per-server=3
+min-split-size=4M
+split=8
+max-download-limit=0
+max-upload-limit=0
+max-overall-upload-limit=0
+max-overall-download-limit=0
 
 # Gestion des Erreurs
 max-tries=5
