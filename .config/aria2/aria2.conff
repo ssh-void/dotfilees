@@ -1,0 +1,47 @@
+daemon=false
+enable-mmap=true
+disk-cache=64M
+file-allocation=trunc
+
+# Performances et Fiabilité
+socket-recv-buffer-size=4M
+event-poll=epoll
+realtime-chunk-checksum=true
+allow-overwrite=true
+always-resume=true
+auto-file-renaming=false
+continue=true
+remote-time=true
+
+# Identification
+user-agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64; ) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.6478.61 Chrome/126.0.6478.61 Not/A)Brand/8 Safari/537.36"
+
+# Limites de Téléchargement et de Téléversement
+max-overall-upload-limit=128k
+lowest-speed-limit=50K
+max-overall-download-limit=0
+max-overall-upload-limit=0
+
+# Gestion des Téléchargements
+max-concurrent-downloads=5
+max-connection-per-server=8
+min-split-size=5M
+split=16
+
+# Gestion des Erreurs
+max-tries=5
+retry-wait=10
+timeout=60
+
+# Paramètres HTTP/FTP
+check-certificate=true
+conditional-get=true
+disable-ipv6=true
+http-accept-gzip=true
+ftp-pasv=true
+ftp-reuse-connection=true
+
+# Divers
+summary-interval=0
+console-log-level=warn
+log-level=notice
