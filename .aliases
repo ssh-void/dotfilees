@@ -13,9 +13,9 @@ alias c="doas xbps-remove -RoO && doas vkpurge rm all"
 alias d="doas xbps-remove -Rv"
 
 # runit
-alias start="cd /var/service/ ; doas sv start "
+alias start="doas sv start "
 alias stop="doas sv stop "
-alias restart="cd /var/service/ ; doas sv restart "
+alias restart="doas sv restart "
 alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
 
 #xbps-src
