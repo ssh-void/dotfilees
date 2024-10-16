@@ -21,7 +21,7 @@ yt-dlp -i -v --no-warnings --no-mtime --no-part --external-downloader aria2c --e
 ------------------------------------------------------------------------------------------------------------------------------
 #yvp
 --ignore-errors --ignore-config --force-ipv4 --geo-bypass-country US --verbose --no-mtime --no-part --no-embed-info-json --prefer-ffmpeg 
---external-downloader aria2c --external-downloader-args "-c -j 5 -x 5 -s 10 -k 1M --dns-server=8.8.8.8,8.8.4.4" 
+--external-downloader aria2c --external-downloader-args "-c -j 5 -x 5 -s 10 -k 1M" 
 --sponsorblock-mark all --sponsorblock-remove all
 --no-abort-on-error --retries 20 --retry-sleep exp=1:20 
 --embed-thumbnail --embed-chapters --embed-metadata 
