@@ -14,7 +14,7 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 export WGETRC="$HOME/.config/wget/wgetrc"
-export GTK2_RC_FILES="$HOME/.config/gtk-2.0/setting"
+export GTK2_RC_FILES="$HOME/.config/gtk-2.0/config"
 # QT5 Fix
 export GDK_DPI_SCALE=1.02
 export QT_QPA_PLATFORMTHEME="qt5ct"
