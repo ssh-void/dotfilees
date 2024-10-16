@@ -51,7 +51,7 @@ yt-dlp -i -v --no-warnings --no-mtime --no-part --external-downloader aria2c --e
 """"""""""""""""""""""""""""""""""
 --ignore-errors --ignore-config --force-ipv4 --geo-bypass-country US --verbose --no-mtime --no-part --no-embed-info-json --prefer-ffmpeg --external-downloader aria2c --external-downloader-args "-c -j 5 -x 5 -s 10 -k 1M" --sponsorblock-mark all --sponsorblock-remove all --no-abort-on-error --retries 20 --retry-sleep exp=1:20 --embed-thumbnail --embed-chapters --embed-metadata --sub-format "ass/srt/best" --write-subs --write-auto-sub --sub-lang "en,fr,ar" --convert-subs srt -f "bv[ext=mp4]+ba[ext=m4a]/bv+ba" -o "/storage/emulated/0/seal/seal-video/%(title).70s.%(ext)s" --merge-output-format mp4
 """""""""""""""""
- --buffer-size 1M (by defaulte)
+--buffer-size 1M (by defaulte)
 yt-dlp --hls-prefer-ffmpeg --downloader "m3u8:ffmpeg" -f "bv+ba" --buffer-size 1M --no-abort-on-error --retries 20 --retry-sleep exp=1:20 --cookies "/storage/emulated/0/seal/cookies.txt" -o "/storage/emulated/0/seal/seal-video/%(title).50s.%(ext)s"
 --------------------------------
 ---------------------------------------------------------------------------------------------------------------------------
@@ -59,27 +59,22 @@ yt-dlp --hls-prefer-ffmpeg --downloader "m3u8:ffmpeg" -f "bv+ba" --buffer-size 1
 --ignore-errors --ignore-config --force-ipv4 --geo-bypass-country US --no-warnings --no-mtime --no-part --no-embed-info-json --prefer-ffmpeg --sponsorblock-mark all --sponsorblock-remove all --no-abort-on-error --retries 20 --retry-sleep exp=1:20 --embed-thumbnail --embed-chapters --embed-metadata --sub-format "ass/srt/best" --write-subs --write-auto-sub --sub-lang "en,fr,ar" --convert-subs srt -f "bv[ext=mp4]+ba[ext=m4a]/bv+ba" --merge-output-format mp4 
 -------------------------------------
 
- --external-downloader aria2c --external-downloader-args="--conf-path=~/.config/aria2/aria2.conff"
-  --external-downloader aria2c --external-downloader-args="--conf-path=/storage/emulated/0/seal/aria2.conff"
+--external-downloader aria2c --external-downloader-args="--conf-path=/storage/emulated/0/seal/aria2.conff"
 
- "/storage/emulated/0/seal/cookies.txt"
+"/storage/emulated/0/seal/cookies.txt"
 
- yflac
- yt-dlp -i --no-mtime --no-part --quiet --embed-thumbnail --no-warnings --sponsorblock-remove default --downloader aria2c --external-downloader-args aria2c:'-c -j 3 -x 3 -s 3 -k 1M'  -o "/storage/emulated/0/seal/seal-audio/%(title).50s.%(ext)s" -x --audio-format flac
- ypfalc
- yt-dlp -i --no-mtime --no-part --quiet --yes-playlist --embed-thumbnail --no-warnings --sponsorblock-remove default --downloader aria2c --external-downloader-args aria2c:'-c -j 3 -x 3 -s 3 -k 1M'  -o "/storage/emulated/0/seal/seal-audio/%(playlist_title)s/%(playlist_index)s - %(title).50s.%(ext)s" -x --audio-format flac   
+yflac
+yt-dlp -i --no-mtime --no-part --quiet --embed-thumbnail --no-warnings --sponsorblock-remove default --downloader aria2c --external-downloader-args aria2c:'-c -j 3 -x 3 -s 3 -k 1M'  -o "/storage/emulated/0/seal/seal-audio/%(title).50s.%(ext)s" -x --audio-format flac
+ypfalc
+yt-dlp -i --no-mtime --no-part --quiet --yes-playlist --embed-thumbnail --no-warnings --sponsorblock-remove default --downloader aria2c --external-downloader-args aria2c:'-c -j 3 -x 3 -s 3 -k 1M'  -o "/storage/emulated/0/seal/seal-audio/%(playlist_title)s/%(playlist_index)s - %(title).50s.%(ext)s" -x --audio-format flac   
 
 
- yt-dlp --config-locations "/home/hassan/.config/yt-dlp/yv.conf" 
- yt-dlp -i --no-mtime --no-part --quiet --yes-playlist --embed-thumbnail --no-warnings --sponsorblock-remove default --external-downloader aria2c --external-downloader-args aria2c:'-c -j 5 -x 5 -s 10 -k 1M' --perfer-ffmpeg --embed-metadata --embed-subs --write-auto-sub --sub-lang en.*,fr.*,ar.*  -o "/storage/emulated/0/seal/seal-video/%(playlist_title)s/%(playlist_index)s - %(title).50s.%(ext)s" --merge-output-format mp4
-
+yt-dlp --config-locations "/home/hassan/.config/yt-dlp/yv.conf" 
+yt-dlp -i --no-mtime --no-part --quiet --yes-playlist --embed-thumbnail --no-warnings --sponsorblock-remove default --external-downloader aria2c --external-downloader-args aria2c:'-c -j 5 -x 5 -s 10 -k 1M' --perfer-ffmpeg --embed-metadata --embed-subs --write-auto-sub --sub-lang en.*,fr.*,ar.*  -o "/storage/emulated/0/seal/seal-video/%(playlist_title)s/%(playlist_index)s - %(title).50s.%(ext)s" --merge-output-format mp4
 --yes-playlist --ignore-errors --ignore-config --force-ipv4 --geo-bypass-country US --no-warnings --no-mtime --no-part --no-embed-info-json --prefer-ffmpeg --external-downloader aria2c --external-downloader-args="--conf-path=/storage/emulated/0/seal/aria2.conff" --downloader-args ffmpeg:"-loglevel warning -stats" --sponsorblock-mark all --sponsorblock-remove all --no-abort-on-error --retries 20 --retry-sleep exp=1:20 --embed-thumbnail --embed-chapters --embed-metadata --sub-format "ass/srt/best" --write-subs --write-auto-sub --sub-lang "en.*,fr.*,ar.*" --convert-subs srt -o "/storage/emulated/0/seal/seal-video/%(playlist_title)s/%(playlist_index|3)03d - %(title).70s.%(ext)s" 
 
-
 --ignore-errors --ignore-config --force-ipv4 --geo-bypass-country US --no-warnings --no-mtime --no-part --no-embed-info-json --prefer-ffmpeg --external-downloader aria2c --external-downloader-args="--conf-path=/storage/emulated/0/seal/aria2.conff" --downloader-args ffmpeg:"-loglevel warning -stats" --sponsorblock-mark all --sponsorblock-remove all --no-abort-on-error --retries 20 --retry-sleep exp=1:20 --embed-thumbnail --embed-chapters --embed-metadata --sub-format "ass/srt/best" --write-subs --write-auto-sub --sub-lang "en.*,fr.*,ar.*" --convert-subs srt -o "/storage/emulated/0/seal/seal-audio/%(title).70s.%(ext)s" -x --audio-format flac --audio-quality 0 
-
 --concat-playlist always --recode-video "mp4" --ignore-errors --ignore-config --force-ipv4 --geo-bypass-country US --no-warnings --no-mtime --no-part --no-embed-info-json --prefer-ffmpeg --external-downloader aria2c --external-downloader-args="--conf-path=/storage/emulated/0/seal/aria2.conff" --downloader-args ffmpeg:"-loglevel warning -stats" --sponsorblock-mark all --sponsorblock-remove all --no-abort-on-error --retries 20 --retry-sleep exp=1:20 --embed-thumbnail --embed-chapters --embed-metadata 
-
 -----------------------------
 #--cookies /path/to/cookies. txt
 --cookies-from-browser firefox
@@ -112,4 +107,3 @@ yt-dlp --hls-prefer-ffmpeg --downloader "m3u8:ffmpeg" -f "bv+ba" --buffer-size 1
 -o "/home/hassan/Downloads/yt-dlp/video/%(title).70s.%(ext)s"
 -f "bv+ba" 
 --merge-output-format mp4 
-
