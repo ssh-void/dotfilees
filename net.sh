@@ -8,5 +8,5 @@ sudo vim /etc/resolv.conf
 #domain fastwebnet.it
 #nameserver 127.0.0.1
 sudo ln -s /etc/sv/dnsmasq /var/service/
-sv restart /var/service/dnsmasq
+sudo sv restart /var/service/dnsmasq
 sudo reboot
