@@ -18,12 +18,6 @@ alias stop="doas sv stop "
 alias restart="doas sv restart "
 alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
 
-#xbps-src
-#alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src bootstrap-update && ./xbps-src update-sys && cd -"
-alias uxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && cd -"
-alias cxbps="cd /opt/void-packages && git clean -fd && git reset --hard && git pull && ./xbps-src clean && ./xbps-src clean-repocache && cd -"
-alias ixbps="doas  xbps-install --repository=hostdir/binpkgs/nonfree "
-
 # Other:
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
 alias uuid="ls -l /dev/disk/by-uuid/"
@@ -45,8 +39,8 @@ alias reconf='sudo xbps-reconfigure -fv'
 alias xx='startx'
 alias blkid="doas blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
-# Runs the last command with doas
-alias pls='doas $(fc -ln -1)'
+
+alias pls='doas $(fc -ln -1)' # Runs the last command with doas
 alias perms="doas chmod 664"
 alias td='tree -d -h --du'
 alias tf='tree -i -f -s -h'
@@ -116,7 +110,6 @@ alias branch="git branch"
 alias ta="tmux a"
 alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
-#yt
 #Download:
 alias mpvyt="mpv --ytdl-format=bestvideo+bestaudio/best/bestvideo/bestaudio"
 alias yv='yt-dlp --config-locations  $HOME/.config/yt-dlp/yv.conf '
@@ -169,6 +162,7 @@ alias pipout="pip list --outdated"
 alias pipreq="pip freeze > requirements.txt"
 alias pipfrom="pip install -r requirements.txt" # -r , --requirement
 alias pipup="pip install --upgrade pip " # -U, --upgrade
+
 # ssd
 #alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
 #alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
