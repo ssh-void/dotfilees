@@ -1,6 +1,7 @@
 #!/bin/bash 
-# Update void-package
+#Update void-package
 cd /opt/void-packages
+#git clean -fd && git reset --hard && git pull
 git pull --autostash --rebase
 ./xbps-src show-sys-updates # update
 #./xbps-src update-sys 
