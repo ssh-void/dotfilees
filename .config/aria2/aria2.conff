@@ -23,7 +23,7 @@ max-overall-download-limit=0
 max-overall-upload-limit=0
 
 # Download Management
-max-concurrent-downloads=7
+max-concurrent-downloads=10
 max-connection-per-server=10
 min-split-size=4M
 split=8
