@@ -112,7 +112,6 @@ alias ta="tmux a"
 alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 #Download:
-alias mpvyt="mpv --ytdl-format=bestvideo+bestaudio/best/bestvideo/bestaudio"
 alias yv='yt-dlp --config-locations  $HOME/.config/yt-dlp/yv.conf '
 alias yvc='yt-dlp --config-locations  $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations  $HOME/.config/yt-dlp/yvp.conf '
