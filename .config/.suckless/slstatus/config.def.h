@@ -74,8 +74,10 @@ static const struct arg args[] = {
     { cpu_perc,"cpu:%s%% ",NULL },
     { run_command, "%s|","sensors coretemp-isa-0000 | awk '/+(.*)/ {print $3}' | awk 'NR==2'"},
     { run_command, "%s", "nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk '{ printf \"GPU:%d%% %d°C|\", $1, $2 }'" },
-    { ram_free,"ram:%s|",NULL},
-    { disk_free,"/: %s","/"},
+//  { ram_free,"ram:%s|",NULL},
+    { ram_perc,"ram:%s%%|",NULL},
+//  { disk_free,"/: %s","/"},
+    { disk_perc,"/:%s%%","/"},
 //  { disk_perc, "/HOME: %s%%|",  "/home"  },
 //  { battery_perc, "bat:%s%%|", "BAT1"}, /*hp bat1*/
 //  { keymap, "%s", NULL},
