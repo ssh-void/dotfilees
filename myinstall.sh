@@ -1,5 +1,3 @@
-sudo xbps-install -S mesa-intel-dri libva-intel-driver sysfsutils
-
 bypass() {
 	sudo -v
 	while true;
