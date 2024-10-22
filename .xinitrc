@@ -13,6 +13,6 @@ xset s off &
 xset s noblank &
 xset r rate 225 75 & 
 doas mount -a &
-while true; do picom --backend glx --vsync --dbus &>/dev/null; sleep 2; done &
+while true; do picom --backend glx --glx-no-stencil --vsync --use-damage &>/dev/null; sleep 2; done &
 doas zramen toss && doas zramen -s 8192 -m 8192 -a zstd make &
 exec dbus-run-session dwm 
