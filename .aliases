@@ -66,7 +66,7 @@ alias rg="ranger"
 alias m="man"
 alias pweroff="doas shutdown -P now"
 alias rboot="doas shutdown -r now"
-alias off='shutdown -h'
+alias tfi="doas shutdown -h"
 alias ls="ls --color=auto"
 alias l="eza -l --color=always --group-directories-first"  # long format
 alias ll="eza -dlg .* --color=auto"
