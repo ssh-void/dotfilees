@@ -14,6 +14,7 @@ sudo sv down dhcpcd # runit
 sudo rm /var/service/dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
+sudo cp /etc/libvirt/libvirt.conf ~/.config/libvirt/
 #sudo nmcli device wifi connect SSID password PASSWORD
 cd /var/lib/libvirt/images && sudo qemu-img create -f qcow2 -o preallocation=off 50-disk.qcow2 50G # tested
 cd /var/lib/libvirt/images && sudo qemu-img create -f qcow2 -o preallocation=off 20-disk.qcow2 20G # tested
