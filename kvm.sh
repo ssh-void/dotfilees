@@ -5,6 +5,12 @@ sudo xbps-install -Syu NetworkManager virt-manager libvirt openbsd-netcat dnsmas
 sudo usermod -aG kvm $(whoami) 
 sudo modprobe kvm-intel  
 sudo usermod -aG libvirt $(whoami) 
+sudo sed -i 's/^#\?user = ".*"/user = "'"$(whoami)"'"/' /etc/libvirt/qemu.conf  # tested
+sudo sed -i 's/^#listen_tls =.*/listen_tls = 0/' /etc/libvirt/libvirtd.conf # tested
+sudo sed -i 's/^#unix_sock_group =.*/unix_sock_group = "libvirt"/' /etc/libvirt/libvirtd.conf # tested
+sudo sed -i 's/^#unix_sock_ro_perms =.*/unix_sock_ro_perms = "0777"/' /etc/libvirt/libvirtd.conf # tested 
+sudo sed -i 's/^#unix_sock_rw_perms =.*/unix_sock_rw_perms = "0770"/' /etc/libvirt/libvirtd.conf # tested
+sudo sed -i 's|^#unix_sock_dir =.*|unix_sock_dir = "/run/libvirt"|' /etc/libvirt/libvirtd.conf # tested
 sudo sed -i 's/^#auth_unix_ro = "polkit"/auth_unix_ro = "none"/' /etc/libvirt/libvirtd.conf # tested
 sudo sed -i 's/^#auth_unix_rw = "polkit"/auth_unix_rw = "none"/' /etc/libvirt/libvirtd.conf # tested
 sudo sed -i 's/^#\?user = ".*"/user = "'"$(whoami)"'"/' /etc/libvirt/qemu.conf  # tested
