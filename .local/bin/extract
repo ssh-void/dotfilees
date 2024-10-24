@@ -12,7 +12,7 @@ if [ -f "$1" ]; then
         *.tgz)       tar xzvf "$1"   ;;
         *.zip)       bsdtar -xvf "$1" ;;
         *.Z)         uncompress -v "$1";;
-        *.7z)        7z e -v "$1"      ;;
+        *.7z)        7z e "$1"      ;;
         *.deb)       bsdtar -xvf "$1" ;;
         *.tar.xz)    tar xvf "$1"    ;;
         *.tar.zst)   tar --use-compress-program=unzstd -xvf "$1" ;;
