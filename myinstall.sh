@@ -46,8 +46,8 @@ sudo xbps-install -Syu libselinux # matlab
 sudo xbps-install -Syu virt-manager libvirt qemu-img qemu-system-amd64 qemu-common qemu-firmware openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
 # sudo xbps-install -Syu swtpm edk2-ovmf # tpm and ufei
 # tar
-sudo xbps-install -Syu zip unzip
-sudo xbps-install -Syu p7zip tar xz bzip2 bsdtar gzip
+sudo xbps-install -Syu zip unzip # current
+sudo xbps-install -Syu p7zip tar xz bzip2 bsdtar gzip # current
 sudo xbps-install -Syu gtkedit # text editor
 sudo xbps-install -Syu zramen # zram
 sudo xbps-install -Syu octave # matlab 
