@@ -1,0 +1,1 @@
+*/10 * * * * doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Syu && doas xbps-remove -RoyO && sleep 5 &&doas vkpurge rm all
