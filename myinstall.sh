@@ -74,7 +74,7 @@ sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
 sleep 3
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
 #xbps-query -L
-sudo xbps-install -Syu 7zip-unrar # nonfree 
+sudo xbps-install -Syu unrar # nonfree 
 
 clear
 sudo xbps-install -Syu intel-ucode # nonfree 
