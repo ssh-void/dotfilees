@@ -10,10 +10,14 @@ fi
 
 # Exports:
 export PATH="$HOME/.local/bin:$PATH"
+# XDG defaults
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
+#
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/config"
 # QT5 Fix
@@ -33,8 +37,7 @@ export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export EDITOR="nvim"
 export VISUAL="nvim"
 export MANPAGER="nvim +Man!" # manpages
-export LANG="en_US.UTF-8"
-export PAGER="most" # export PAGER="less"
+export PAGER="most" 
 export IMGVIEWER="sxiv"
 export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
