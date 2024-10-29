@@ -29,7 +29,7 @@ mkdir -p $HOME/Downloads/{Aria2,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 clear
 #sudo xbps-install -Syu jq # Command-line JSON processor
 sudo xbps-install -Syu rhythmbox # misque read
-sudo xbps-install -Syu Thunar thunar-archive-plugin xfce4-appfinder
+sudo xbps-install -Syu Thunar thunar-archive-plugin xarchiver xfce4-appfinder
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
 sudo xbps-install -Syu xdg-utils slock
 sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara  
