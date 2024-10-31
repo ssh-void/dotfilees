@@ -1,0 +1,31 @@
+#=============================[font]==================================#
+[font]
+size = 18
+[font.normal] # normal 
+family = "Ubuntu Mono"
+#family = "JetBrains"
+#family = "Cartograph CF"
+#family = "Anonymice Nerd Font"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+[font.bold]
+family = "Ubuntu Mono"
+#family = "Anonymice Nerd Font"
+#family = "Cartograph CF"
+#family = "JetBrainsMono Nerd Font"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+[font.italic]
+family = "Ubuntu Mono"
+#family = "JetBrainsMono Nerd Font"
+#family = "Anonymice Nerd Font"
+#family = "Cartograph CF"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"
+[font.bold_italic]
+family = "Ubuntu Mono"
+#family = "JetBrainsMono Nerd Font"
+#family = "Anonymice Nerd Font"
+#family = "Cartograph CF"
+#family = "UbuntuSansMono Nerd Font"
+style = "Regular"	
