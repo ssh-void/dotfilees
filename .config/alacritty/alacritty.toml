@@ -1,3 +1,11 @@
+[general]
+live_config_reload = true
+#===you would be seeing : https://alacritty.org/config-alacritty.html====#
+import = [
+         #"C:/Users/hassa/AppData/Roaming/alacritty/color.toml",
+         "~/.config/alacritty/color.toml",
+	 "~/.config/alacritty/fonts.toml",
+]
 #working_directory = "C:\\"  # pour win
 [terminal.shell] #pour linux
 program = "/bin/bash"
@@ -60,12 +68,3 @@ prefer_egl = false # by Default
 print_events = false # by Default
 render_timer = false # by Default
 renderer = "None" # by Default
-
-[general]
-live_config_reload = true
-#===you would be seeing : https://alacritty.org/config-alacritty.html====#
-import = [
-         #"C:/Users/hassa/AppData/Roaming/alacritty/color.toml",
-         "~/.config/alacritty/color.toml",
-	 "~/.config/alacritty/fonts.toml",
-]
