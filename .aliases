@@ -1,22 +1,22 @@
-#================================= alias ===============================#
+#============================================== aliases ==================================================#
 ### SET VI MODE ###
 set -o vi
 set editing-mode vi
 set keymap vi
 
-# XBPS:
-alias qvs="xbps-query -vs"
+# XBPS-*
+alias qi="xbps-query -vs"
 alias q="xbps-query -Rs"
 alias u="doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Su"
 alias i="doas xbps-install -S"
 alias c="doas xbps-remove -RoO && doas vkpurge rm all"
 alias d="doas xbps-remove -Rv"
+alias pkgxbps="doas xbps-reconfigure -fa"
 
-# runit
+# runit:
 alias start="doas sv start "
 alias stop="doas sv stop "
 alias restart="doas sv restart "
-alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
 
 # Other:
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
@@ -25,62 +25,77 @@ alias font="fc-list : family | sort | uniq"
 alias dvi='doas vim' dvim='doas vim'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
-alias img="sxiv"
-alias disk="duf -sort size"
-alias neofetch="fastfetch"
+alias cp='cp -iv'
+alias cpp="rsync -rvphWP --info=progress2"
+alias rm="rm -vI"
+alias mv='mv -iv'
 alias mkdir="mkdir -pv"
 alias dtouch="doas touch"
-alias xhkd="pkill -USR1 -x sxhkd"
-alias vlcnv="prime-run vlc"
+alias img="sxiv"
+alias neofetch="fastfetch"
+#alias xhkd="pkill -USR1 -x sxhkd"
 
-# Search command history
-alias ping='ping voidlinux.org'
-alias reconf='sudo xbps-reconfigure -fv'
+#
 alias xx='startx'
 alias blkid="doas blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
-
+alias logk="doas dmesg --clear &&  doas dmesg --ctime --follow"
 alias pls='doas $(fc -ln -1)' # Runs the last command with doas
 alias perms="doas chmod 664"
-alias td='tree -d -h --du'
-alias tf='tree -i -f -s -h'
-alias tsh='tree -P "*.sh" --prune -s -h'
-alias trees='tree -s -h --du -a'
+alias chownuser="doas chown -R $(whoami):$(whoami) ."
 alias h='history | cut -c 8- | tac | fzy -l 15 | xclip -selection clipboard'
-# mpv
-alias mpvtor="torsocks mpv --no-config --no-video --term-osd-bar --ytdl-format="bestaudio" --loop=inf"
-alias mpv="mpv --save-position-on-quit"
 alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
 alias pdf="zathura"
-#alias ram="ps -ely | tr -s ' ' |cut -d ' ' -f8,13 | grep"
 alias tldr="tealdeer"
-alias sprofile="source ~/.profile ; source ~/.bash_profile "
-#alias drm="doas rm -rf" #attesion
-alias T="du -sh"
+alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
+
+
+# cp mv ...
 alias cal="cal --twelve"
 alias cl="clear"
 alias rm="rm -vI"
-alias rsync="rsync -Pav"
-alias rg="ranger"
+
+#alias drm="doas rm -rf" #attesion
 alias m="man"
+alias zconf="vim $HOME/.zshrc"
+alias bconf="vim $HOME/.bashrc"
+
+# ls
+alias ls="ls --color=auto"
+alias l="eza -F -l --color=always --group-directories-first"  # long format
+alias ll="eza -F -dlg .* --color=auto"
+alias ld="ls -d */"
+#alias l="ls -Flh --color=auto"
+#alias ll="ls -F -dlh .* --color=auto"
+
+# neovim
+alias v="nvim" vim="nvim" vi="nvim"
+alias dvi='doas nvim' dvim='doas nvim'
+
+# reboot && poweroff
 alias pweroff="doas shutdown -P now"
 alias rboot="doas shutdown -r now"
 alias tfi="doas shutdown -h"
-alias ls="ls --color=auto"
-alias l="eza -l --color=always --group-directories-first"  # long format
-alias ll="eza -dlg .* --color=auto"
-alias ld="ls -d */"
-alias v="nvim" vim="nvim" vi="nvim"
-alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 
-# tar zip
+# Archives
 alias lzip="unzip -l"
 alias ltar="tar -ztvf"
 alias ctar="tar -cvzf"
 alias czip="zip -r"
 alias lxz="tar -Jtvf"
 alias cxz="tar -cvJf"
+
+
+# ls eza
+alias ls="ls --color=auto"
+alias l="eza -F -l --color=always --group-directories-first"  # long format
+alias ll="eza -F -dlg .* --color=auto" # show hidden files
+alias ld="ls -d */"
+
+# android
+alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
+
 
 # cd
 alias cd..='cd ..'
@@ -89,7 +104,30 @@ alias .3="cd ../../.."
 alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 
-#git
+# tree
+alias td="tree -d -h --du "
+alias tf="tree -i -f -s -h "
+alias tsh="tree -P "*.sh" --prune -s -h "
+alias trees="tree -s -h --du -a "
+
+# du 
+alias T="du -sh"
+alias duf="du -sh *"
+alias dud="du -d 1 -h"
+alias disk="duf -sort size"
+
+# find
+alias fd="find ~/ -type d -name"
+alias ff="find ~/ -type f -name"
+
+# net
+alias ping="ping voidlinux.org"
+alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
+alias wifilist="nmcli device wifi list | more"
+alias wifistatus="nmcli device status"
+alias wifishow="nmcli connection show "
+
+# git
 alias gs="git status"
 alias gp="git push origin"
 alias gpull="git pull origin"
@@ -106,12 +144,12 @@ alias fetch="git fetch"
 alias checkout="git checkout"
 alias branch="git branch"
 
-#tmux
+# tmux
 #alias qemu="qemu-system-x86_64"
 alias ta="tmux a"
-alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
+#alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
-#Download:
+# Download:
 alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
@@ -124,33 +162,30 @@ alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
 alias yl='yt-dlp -F '
 #alias yt='yt-dlp --skip-download --write-thumbnail'
 
+# mpv
+alias mpvtor="torsocks mpv --no-config --no-video --term-osd-bar --ytdl-format="bestaudio" --loop=inf"
+alias mpvmp3="mpv --no-video --save-position-on-quit"
+alias vlcnv="prime-run vlc"
+alias mpvnv="prime-run mpv"
+
 # For recording.
 alias ffmpeg="ffmpeg -hide_banner" 
-alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
+#alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
 alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
 alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
 alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 
 #suckless
-#alias nf='clear && neofetch'
-alias rmsuckless="doas rm *.o *.orig config.h"
+alias nf='clear && neofetch'
+alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
 alias makesuckless="doas make && doas make clean install"
 
-### SHOPT
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s dotglob #Inclutlesfichiers,etrépertoires,commençantpar,unpoint,dans,lesrésultats,desglobbing
-shopt -s histappend # do not overwrite history
-shopt -s expand_aliases # expand aliases
-shopt -s checkwinsize # checks term size when bash regains control
-shopt -s histreedit # ermet de rééditer une commande après une recherche dans l'historique (si READLINE est activé
-shopt -s histverify # Permet de vérifier et éditer une commande après une recherche dans l'historique.
 
 
 #alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 # python
 alias py="python"
-alias apy="source env/bin/activate"
+alias apy="source $HOME/env/bin/activate"
 alias ve="python -m venv" 
 alias va="source $HOME/.venv/devtool/bin/activate" 
 alias vd="deactivate"
