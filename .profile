@@ -1,3 +1,4 @@
+
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 [ -f $XDG_CONFIG_HOME/X11/Xresources ] && xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 
@@ -29,9 +30,9 @@ export QT_SCALE_FACTOR=1
 export TERMINAL="sakura"
 export READER="zathura"
 export VIDEO="vlc"
-export TERM="xterm-256color" #getting proper colors
-export HISTCONTROL=ignoredups:erasedups #no duplicate entries
-export FILE="ranger"
+export TERM="xterm-256color" # getting proper colors
+export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
+export FILE="Thunar"
 export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|pwd|exit|sudo reboot|history|cd -|cd ..)"
 export EDITOR="nvim"
