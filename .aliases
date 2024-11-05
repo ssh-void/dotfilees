@@ -50,7 +50,6 @@ alias pdf="zathura"
 alias tldr="tealdeer"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 
-
 # cp mv ...
 alias cal="cal --twelve"
 alias cl="clear"
@@ -86,16 +85,8 @@ alias czip="zip -r"
 alias lxz="tar -Jtvf"
 alias cxz="tar -cvJf"
 
-
-# ls eza
-alias ls="ls --color=auto"
-alias l="eza -F -l --color=always --group-directories-first"  # long format
-alias ll="eza -F -dlg .* --color=auto" # show hidden files
-alias ld="ls -d */"
-
 # android
 alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
-
 
 # cd
 alias cd..='cd ..'
@@ -175,12 +166,10 @@ alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 
 alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
 alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 
-#suckless
+# suckless
 alias nf='clear && neofetch'
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
 alias makesuckless="doas make && doas make clean install"
-
-
 
 #alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 # python
