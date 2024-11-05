@@ -66,7 +66,7 @@ alias ls="ls --color=auto"
 alias l="eza -F -l --color=always --group-directories-first"  # long format
 alias ll="eza -F -dlg .* --color=auto"
 alias ld="ls -d */"
-#alias l="ls -Flh --color=auto"
+#alias l="ls -Flh --group-directories-first --color=auto"
 #alias ll="ls -F -dlh .* --color=auto"
 
 # neovim
