@@ -136,7 +136,6 @@ map <leader>o :setlocal spell! spelllang=en_us<CR>
 " Configuration spécifique aux fichiers de type man
 augroup ManPage
   autocmd!
-  autocmd FileType man setlocal number relativenumber
   autocmd FileType man setlocal nowrap              " Désactiver le retour à la ligne automatique
   autocmd FileType man setlocal syntax=man          " Activer la coloration syntaxique pour les pages man
   autocmd FileType man setlocal foldenable          " Activer le pliage de code pour les pages man
@@ -150,7 +149,7 @@ augroup END
 " Désactiver les fichiers de swap
 set noswapfile
 " Désactiver les fichiers de sauvegarde
-"set nobackup
-"set nowritebackup
+set nobackup
+set nowritebackup
 " Désactiver les fichiers temporaires
-"set noundofile
+set noundofile
