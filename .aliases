@@ -64,7 +64,7 @@ alias bconf="vim $HOME/.bashrc"
 alias ls="ls --color=auto"
 alias l="eza -F -l --color=always --group-directories-first"  # long format
 alias ll="eza -F -dlg .* --group-directories-first --color=auto"
-alias ld="ls -d */"
+alias ld="ls --color=auto -d */"
 #alias l="ls -Flh --group-directories-first --color=auto"
 #alias ll="ls -F -dlh .* --group-directories-first --color=auto"
 
