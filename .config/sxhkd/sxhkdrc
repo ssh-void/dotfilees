@@ -25,8 +25,6 @@ super + p
 super + v
 	virt-manager &> /dev/null
 
-super + shift + l 
-                slock
 
 super + {f,t,b}
               {firefox &> /dev/null &,torbrowser-launcher &> /dev/null &,brave-browser-stable &> /dev/null &}
@@ -40,5 +38,9 @@ alt + p
 alt + m 
       thunderbird &>/dev/null &
 
-super + e 
+super + l 
+        lock &>/dev/null &
+
+super + e
         thunar &>/dev/null &
+ 
