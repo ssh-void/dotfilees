@@ -40,7 +40,7 @@ set incsearch
 set hlsearch
 set bs=2
 set nobackup
-set scrolloff=10
+set scrolloff=5
 set splitright
 set cursorline
 set cursorcolumn
@@ -56,7 +56,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 set nocompatible
 set encoding=utf-8
-set number relativenumber
+"set number relativenumber
 set wildmode=longest,list,full
 set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set undofile
@@ -66,6 +66,7 @@ set nowritebackup
 set updatetime=300
 set signcolumn=yes
 " Recherche incrémentielle
+set number
 set incsearch
 set hlsearch
 filetype indent on
@@ -85,10 +86,13 @@ endif
 " Plugins
 call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"'))
 
+Plug 'luochen1990/rainbow'                         " Parenthéses arc-en-ciel
+Plug 'majutsushi/tagbar'                           " Tag viewer for navigating code structures
+Plug 'sheerun/vim-polyglot'                        " Syntax highlighting for multiple programming 
 Plug 'vim-python/python-syntax'
 Plug 'itchyny/lightline.vim'                       " Lightline statusbar
 Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' } " color theme
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }     " color theme
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'morhetz/gruvbox' " color theme
 
