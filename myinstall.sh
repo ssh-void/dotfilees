@@ -64,7 +64,7 @@ clear
 sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-sil-doulos font-liberation-narrow-ttf
 sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
 sudo xbps-install -Syu qbittorrent
-sudo xbps-install -Syu duf eza # lsd exa 
+sudo xbps-install -Syu eza 
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 
 
