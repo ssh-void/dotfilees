@@ -22,7 +22,7 @@ clear
 sudo xbps-install -Syu xorg xorg-server-devel xorg-fonts pkg-config base-devel gcc gdb xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xclip cloc awk neovim picom dnsmasq openresolv tealdeer fastfetch most sxhkd htop opendoas base-devel tmux sxiv ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion readline gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct qt6ct 
 sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus python3-dbus libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 sudo xbps-install -Syu fontmanager 
-sudo xbps-install -Syu yt-dlp aria2 wget curl git patch rsync 
+sudo xbps-install -Syu yt-dlp aria2 wget curl git delta patch rsync 
 mkdir -p $HOME/Downloads/{Aria2,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
 # You install the following package 
