@@ -117,23 +117,6 @@ alias wifilist="nmcli device wifi list | more"
 alias wifistatus="nmcli device status"
 alias wifishow="nmcli connection show | more"
 
-# git
-alias gs="git status"
-alias gp="git push origin"
-alias gpull="git pull origin"
-alias gcm="git commit -m"
-alias ga="git add . && git add *"
-alias gi="git init"
-alias gitlog="git log --all --decorate --oneline --graph"
-alias gcl="git clone --depth=1"
-alias grt="git reset --hard HEAD"
-#alias grt="git reset --hard origin/main"
-alias tag="git tag"
-alias newtag="git tag -a"
-alias fetch="git fetch"
-alias checkout="git checkout"
-alias branch="git branch"
-
 # tmux
 #alias qemu="qemu-system-x86_64"
 alias ta="tmux a"
