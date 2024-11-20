@@ -56,8 +56,8 @@ alias cl="clear"
 
 #alias drm="doas rm -rf" #attesion
 alias m="man"
-alias zconf="vim $HOME/.zshrc"
-alias bconf="vim $HOME/.bashrc"
+alias zconf="nvim $HOME/.zshrc"
+alias bconf="nvim $HOME/.bashrc"
 
 # ls
 alias ls="ls --color=auto"
