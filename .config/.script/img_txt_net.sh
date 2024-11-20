@@ -2,11 +2,11 @@
 #flameshot gui --raw | tesseract-ocr stdin stdout | xclip -in -selection clipboard 
 #maim -s | tesseract-ocr stdin stdout | xsel --clipboard --input 
 #flameshot gui --raw | tesseract-ocr stdin stdout | xsel --clipboard --input 
-maim -s | tesseract-ocr stdin stdout | xclip -selection secondary &> /dev/null 
+maim -s | tesseract-ocr stdin stdout | xclip -selection primary &> /dev/null 
 
 #wait
 
-x=$(xclip -o -selection secondary) 
+x=$(xclip -o -selection primary) 
 
 #brave-browser-stable "https://context.reverso.net/traduction/anglais-francais/$x" 
 #firefox "https://context.reverso.net/traduction/anglais-francais/$x" 
