@@ -74,7 +74,7 @@ clear
 echo "grub && autologin"
 sleep 3s
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
-#sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin $(whoami)"/' /etc/runit/runsvdir/current/agetty-tty1/conf
+#sudo sed -i 's/GETTY_ARGS="--noclear"/GETTY_ARGS="--noclear --autologin sh"/' /etc/runit/runsvdir/current/agetty-tty1/conf  # changer sh by user name # tested
 sudo grub-mkconfig -o /boot/grub/grub.cfg && sudo update-grub
 sudo rm /var/service/agetty-tty{3,4,5,6}
 clear
