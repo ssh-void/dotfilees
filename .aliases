@@ -27,7 +27,7 @@ alias dtouch="doas touch"
 alias img="sxiv"
 alias neofetch="fastfetch"
 #alias xhkd="pkill -USR1 -x sxhkd"
-alias taillog="tail -n 5 -v -s -f "
+alias taillog="tail -n 5 -v -f "
 
 # log ...
 alias xx='startx'
