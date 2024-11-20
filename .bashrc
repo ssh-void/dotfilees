@@ -1,3 +1,4 @@
+
 HISTIGNORE="cd:&:ls:[bf]g:exit"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -5,15 +6,17 @@ HISTIGNORE="cd:&:ls:[bf]g:exit"
 GRC_ALIASES=true
 [[ -s "/etc/profile.d/grc.sh" ]] && source /etc/grc.sh
 
+echo -e -n "\x1b[\x35 q"
+
 # ignore upper and lowercase when TAB completion
-bind "set completion-ignore-case on"
+bind -f ~/.inputrc
 
 # Source the aliases file
 if [ -f ~/.aliases ]; then
     . ~/.aliases
 fi
 
-# enable programmable completion features (you don't need to enable
+# enable programmable completion features (you don't need to enable)
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if ! shopt -oq posix; then
@@ -34,12 +37,20 @@ bind -m vi-insert "\C-a":beginning-of-line
 bind -m vi-insert "\C-h":backward-kill-word
 bind -m vi-insert "\C-k":kill-line
 
-#PS1="\w > "
-PS1="\[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
-#export PS1="\[\e[91m\]\[\e[92m\][\W]\$\[\e[0m\] "
-#export PS1="\[\e[91m\]\[\e[91m\][\W]\$\[\e[0m\] "
-#export PS1="\[\e[91m\]:\[\e[92m\][\W]\$\[\e[0m\] "
-#PS1="\[\e[32m\][\[\e[m\]\[\e[32m\]\d\[\e[m\] \[\e[32m\]\A\[\e[m\]\[\e[32m\]]\[\e[m\] \u@\h \w\\$ "
-#export PS1='\[\e[91m\]\[\e[92m\][\W]\$\[\e[0m\] '
-#PS1="\[\e[1;30m\]\W \[\e[0m\] "
-#export PS1="\[\e[1;33m\][\[\e[m\]\[\e[1;33m\]\u\[\e[m\]\[\e[1;33m\]]\[\e[m\]\[\e[1;34m\][\[\e[m\]\[\e[1;34m\]\w\[\e[m\]\[\e[1;34m\]]\[\e[m\]\[\e[1;31m\]-\[\e[m\]\[\e[1;31m\]>\[\e[m\] "
+### SHOPT  ###
+shopt -s cdspell # autocorrects cd misspellings
+shopt -s cmdhist # save multi-line commands in history as single line
+shopt -s histappend # do not overwrite history
+shopt -s expand_aliases # expand aliases
+shopt -s checkwinsize # checks term size when bash regains control
+shopt -s histreedit # append to the history file, don't overwrite it
+shopt -s histverify # load results of history substitution into the readline editing buffer
+shopt -s extglob #  !() ..
+
+#### Autocompletion ####
+# cycle through all matches with 'TAB' key
+bind 'TAB:menu-complete'
+
+# PS1
+#export PS1="\[\e[38;5;207m\]\$(date +'%I:%M:%S') \[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
+export PS1="\[\e[38;5;118m\]\$(date +'%I:%M:%S') \[\e[38;5;212m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
