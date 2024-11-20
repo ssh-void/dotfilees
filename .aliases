@@ -53,7 +53,6 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 # cp mv ...
 alias cal="cal --twelve"
 alias cl="clear"
-alias rm="rm -vI"
 
 #alias drm="doas rm -rf" #attesion
 alias m="man"
