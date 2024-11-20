@@ -37,7 +37,7 @@ alias neofetch="fastfetch"
 
 #
 alias xx='startx'
-alias blkid="doas blkid -o list"
+alias blkidl="doas blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias logk="doas dmesg --clear &&  doas dmesg --ctime --follow"
 alias pls='doas $(fc -ln -1)' # Runs the last command with doas
