@@ -24,6 +24,7 @@ alias img="sxiv"
 alias neofetch="fastfetch"
 #alias xhkd="pkill -USR1 -x sxhkd"
 alias taillog="tail -n 5 -v -f "
+alias fr="free -h"
 
 # log ...
 alias xx='startx'
