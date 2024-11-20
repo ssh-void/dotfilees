@@ -46,7 +46,6 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 # cp mv ...
 alias rm="rm -vI"
 alias mv='mv -iv'
-alias dvi='doas nvim' dvim='doas nvim'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
 alias mkdir="mkdir -pv"
@@ -140,7 +139,7 @@ alias branch="git branch"
 alias ta="tmux a"
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
-# Download:
+# Download
 alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
@@ -152,6 +151,7 @@ alias yap='yt-dlp --config-locations $HOME/.config/yt-dlp/yap.conf '
 alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
 alias yl='yt-dlp -F '
 #alias yt='yt-dlp --skip-download --write-thumbnail'
+#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 
 # mpv
 alias mpvtor="torsocks mpv --no-config --no-video --term-osd-bar --ytdl-format="bestaudio" --loop=inf"
@@ -159,7 +159,7 @@ alias mpvmp3="mpv --no-video --save-position-on-quit"
 alias vlcnv="prime-run vlc"
 alias mpvnv="prime-run mpv"
 
-# For recording.
+# For recording
 alias ffmpeg="ffmpeg -hide_banner" 
 #alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
 alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
@@ -171,7 +171,6 @@ alias nf='clear && neofetch'
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
 alias makesuckless="doas make -j 8 && doas make clean install"
 
-#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 # python
 alias py="python"
 alias apy="source $HOME/env/bin/activate"
@@ -188,10 +187,9 @@ alias pipreq="pip freeze > requirements.txt"
 alias pipfrom="pip install -r requirements.txt" # -r , --requirement
 alias pipup="pip install --upgrade pip " # -U, --upgrade
 
-# ssd
+# ssd && hdd && microsd
 #alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
 #alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
 #alias monter_ssd='doas mkdir -p /mnt/mon_ssd_exfat && sleep 1 &&doas mount -t exfat -o uid=1000,gid=1000,umask=0022 UUID=052D-4755 /mnt/mon_ssd_exfat'
 #alias demonter_ssd='doas umount /mnt/mon_ssd_exfat && sleep 1 && doas rm -rf /mnt/mon_ssd_exfat'
-# microsd
 #alias mountmicrossd="mkdir $HOME/ssd ; sleep 1; doas mount -t ntfs-3g -o rw UUID=79B17F9A24153F42 /home/sh/ssd/"
