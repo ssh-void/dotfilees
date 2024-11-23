@@ -1,3 +1,17 @@
+# Use LSCOLORS when tab-completing.
+set colored-stats on
+
+# Use ^. (or ^N, it's the same) to expand aliases in the current line. This can
+# be used as a workaround for bash not understanding that an alias should have
+# the same completions as the command it's pointing to. (There is
+# `shopt -s progcomp_alias`, but it only works when no default completion is set
+# up, but with the bash-completion package active, there usually is one. See
+# <https://github.com/scop/bash-completion/issues/521> for a summary.)
+# Note that I've tried simply making <Tab> do the equivalent of
+# `alias-expand-line` followed by `complete`, but this leads to bash expanding
+# recursive aliases (like `ls`) over and over again. m(
+"\C-o": alias-expand-line
+
 # Make Tab autocomplete regardless of filename case
 set completion-ignore-case on
 
