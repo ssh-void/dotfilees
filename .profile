@@ -22,6 +22,8 @@ export XDG_STATE_HOME="$HOME/.local/state"
 # UTF
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
+export USER=$(id -un)
+export SHELL="bash"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/config"
 # QT5 Fix
