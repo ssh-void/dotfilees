@@ -61,7 +61,8 @@ alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
 
 # ls
-alias ls="ls --color=auto"
+#alias ls="ls --color=auto"
+alias ls='eza --icons -a --group-directories-first'
 alias l="eza -F -l --color=always --group-directories-first"  # long format
 alias ll="eza -F -dlg .* --group-directories-first --color=auto"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ "
