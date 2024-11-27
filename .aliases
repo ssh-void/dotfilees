@@ -128,7 +128,7 @@ alias .5="cd ../../../../.."
 # -------------------------------- #
 alias td="tree -d -h --du "
 alias tf="tree -i -f -s -h "
-alias tsh="tree -P "*.sh" --prune -s -h "
+alias tsh='tree -P "*.sh" --prune -s -h '
 alias trees="tree -s -h --du -a "
 
 # -------------------------------- #
