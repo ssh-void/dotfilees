@@ -48,7 +48,6 @@ mkdir -p $HOME/.config/.suckless && git clone https://github.com/ssh-void/suckle
 cd $HOME/.config/.suckless/dwm/ && make && sudo make clean install
 cd $HOME/.config/.suckless/dmenu/ && make && sudo make clean install
 cd $HOME/.config/.suckless/st/ && make && sudo make clean install
-cd $HOME/.config/.suckless/slstatus/ && make && sudo make clean install
 cd $HOME/.config/.suckless/slock/ && make && sudo make clean install
 clear
 echo "root config & doas "
