@@ -28,7 +28,8 @@ mkdir -p $HOME/Downloads/{Aria2,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 # You install the following package 
 #sudo ln -s /etc/sv/dnsmasq /var/service/
 clear
-#sudo xbps-install -Syu jq # Command-line JSON processor
+sudo xbps-install -Syu lynis # System Audit
+sudo xbps-install -Syu jq # Command-line JSON processor
 sudo xbps-install -Syu rhythmbox # misque read
 sudo xbps-install -Syu Thunar thunar-archive-plugin xarchiver xfce4-appfinder
 sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
