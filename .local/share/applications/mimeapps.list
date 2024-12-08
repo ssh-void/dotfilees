@@ -11,3 +11,7 @@ video/x-matroska=mpv.desktop;
 video/mp4=mpv.desktop;
 application/json=editor.desktop;
 application/pdf=org.pwmt.zathura.desktop;
+
+[Added Associations]
+x-scheme-handler/http=userapp-Firefox-8AE6V2.desktop;
+x-scheme-handler/https=userapp-Firefox-8AE6V2.desktop;
