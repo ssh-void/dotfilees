@@ -50,7 +50,7 @@ shopt -s extglob #  !() ..
 #### Autocompletion ####
 # cycle through all matches with 'TAB' key
 bind 'TAB:menu-complete'
-
+umask 0027
 # PS1
 #export PS1="\[\e[38;5;207m\]\$(date +'%I:%M:%S') \[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
 export PS1="\[\e[38;5;118m\]\$(date +'%I:%M:%S') \[\e[38;5;212m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
