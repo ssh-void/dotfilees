@@ -7,13 +7,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Ubuntu Mono:size=12:weight=regular:pixelsize=22:antialias=true:autohint=true";
+static char *font = "Ubuntu Mono:size=12:weight=SemiBold:pixelsize=22:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"JoyPixels:style=Regular:pixelsize=18:antialias=true:autohint=true",
+	"JoyPixels:style=Regular:pixelsize=18:antialias=true:autohint=true"
 };
 
-static int borderpx  = 0;
+static int borderpx  = 2;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -33,8 +33,8 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 char *vtiden = "\033[?6c";
 
 /* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
-static float chscale = 1.0;
+static float cwscale = 1.1;
+static float chscale = 1.1;
 
 /*
  * word delimiter string

@@ -6,7 +6,8 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim       = ";";       /* Character used for separating status */
-static const char *fonts[]          = {"Ubuntu Mono:size=15:weight=regular:pixelsize=22:antialias=true:autohint=true","JoyPixels:style=Bold:pixelsize=16:antialias=true:autohint=true"};
+static const char *fonts[]          = {"Ubuntu Mono:size=10:weight=SemiBold:pixelsize=22:antialias=true:autohint=true",
+                                       "JoyPixels:style=Bold:pixelsize=15:antialias=true:autohint=true"};
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#2067B0";
 static const char col_gray3[]       = "#bbbbbb";
@@ -19,7 +20,7 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { evening, col_gray3, col_gray2},
 };
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "f", "b", "t", "v", "s", "6", "7", "8", "q" };
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -27,7 +28,8 @@ static const Rule rules[] = {
 	 */
 	/* class                   instance                   title          tags mask     iscentered   isfloating   monitor */
 	{ "st",                    "scpad",                    NULL,             0,            1,           1,           -1 },
-	{ "Thunar",               "Thunar",                   NULL,             0,            1,           1,           -1 },
+	{ "Thunar",                "thunar",                   NULL,             0,            1,           1,           -1 },
+	{ "qBittorrent",           "qbittorrent",              NULL,             0,            1,           1,           -1 },
 	{ "Xfce4-appfinder",       "xfce4-appfinder",          NULL,             0,            1,           1,           -1 },
 	{ "pavucontrol",           "pavucontrol",              NULL,             0,            1,           1,           -1 },
 	{ "Blueman-manager",       "blueman-manager",          NULL,             0,            1,           1,           -1 },
@@ -78,9 +80,9 @@ static const Key keys[] = {
 //	{ MODKEY|ShiftMask,             XK_t,      setlayout,      {.v = &layouts[0]} },
 //	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 //	{ MODKEY|ShiftMask,             XK_m,      setlayout,      {.v = &layouts[2]} }, /* monocle*/
-//      { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },/*switch btwn mounitor*/
+//  { MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },/*switch btwn mounitor*/
 	{ MODKEY,                       XK_semicolon, focusmon,    {.i = +1 } },/*switch btwn mounitor*/
-//      { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },/*envery un fentre  btwn mounitor*/
+//  { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },/*envery un fentre  btwn mounitor*/
 	{ MODKEY|ShiftMask,             XK_semicolon, tagmon,      {.i = +1 } },/*envery un fentre  btwn mounitor*/
 	{ MODKEY|ControlMask|ShiftMask, XK_q,           quit,      {0} },
 	TAGKEYS(                        XK_ampersand,              0)
