@@ -2,7 +2,7 @@
 #flameshot gui --raw | tesseract-ocr stdin stdout | xclip -in -selection clipboard 
 #maim -s | tesseract-ocr stdin stdout | xsel --clipboard --input 
 #flameshot gui --raw | tesseract-ocr stdin stdout | xsel --clipboard --input 
-maim --select | tesseract-ocr stdin stdout | xclip -selection primary &> /dev/null 
+maim -s | tesseract-ocr stdin stdout | xclip -selection primary &> /dev/null 
 
 #wait
 

@@ -2,7 +2,7 @@
 #flameshot gui --raw | tesseract-ocr stdin stdout | xclip -in -selection clipboard 
 #maim -s | tesseract-ocr stdin stdout | xsel --clipboard --input 
 #flameshot gui --raw | tesseract-ocr stdin stdout | xsel --clipboard --input 
-maim --select | tesseract-ocr stdin stdout | xclip -selection clipboard &> /dev/null	
+maim -s -c 1,0,0,1 | tesseract-ocr stdin stdout | xclip -selection clipboard &> /dev/null	
 #wait
 x=$(xclip -o -selection clipboard) 
 #brave-browser-stable "https://context.reverso.net/traduction/anglais-francais/$x" 
