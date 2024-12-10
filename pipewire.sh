@@ -11,4 +11,4 @@ sudo xbps-install -Syu rfkill util-linux bluez libspa-bluetooth blueman
 sudo rfkill unblock bluetooth
 sudo useradd -G bluetooth ${USER}
 sudo ln -s /etc/sv/bluetoothd/ /var/service/
-sudo shutdown -r now
+#sudo shutdown -r now
