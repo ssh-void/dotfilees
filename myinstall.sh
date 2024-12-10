@@ -23,7 +23,7 @@ sudo xbps-install -Syu xorg xorg-server-devel xorg-fonts pkg-config base-devel g
 sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus python3-dbus libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
 sudo xbps-install -Syu fontmanager 
 sudo xbps-install -Syu yt-dlp aria2 wget curl git delta patch rsync 
-mkdir -p $HOME/Downloads/{Aria2,Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
+mkdir -p $HOME/Downloads/{Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 
 # You install the following package 
 #sudo ln -s /etc/sv/dnsmasq /var/service/
