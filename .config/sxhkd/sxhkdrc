@@ -23,8 +23,7 @@ super + p
         flameshot gui &> /dev/null
 
 super + v
-	virt-manager &> /dev/null
-
+      	virt-manager &> /dev/null
 
 super + {f,t,b}
               {firefox &> /dev/null &,torbrowser-launcher &> /dev/null &,brave-browser-stable &> /dev/null &}
@@ -35,12 +34,11 @@ alt + b
 alt + p 
       pavucontrol &> /dev/null &
 
-alt + m 
-      thunderbird &>/dev/null &
-
 super + l 
         lock &>/dev/null &
 
 super + e
         thunar &>/dev/null &
- 
+
+super + shift  + p
+        $HOME/.config/.script/screenshot_region.sh &> /dev/null &
