@@ -141,4 +141,4 @@ sudo apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 sudo sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=".*"|GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 i915.enable_guc=3 apparmor=1 security=apparmor"|' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
-sudo shutdown -r now # reboot   
+#sudo shutdown -r now # reboot   
