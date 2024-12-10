@@ -138,4 +138,4 @@ sleep 10s
 clear
 
 read -p "Fine! Premi INVIO e riavvia!"
-	sudo shutdown -r now
+#sudo shutdown -r now
