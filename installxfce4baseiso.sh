@@ -136,6 +136,4 @@ sleep 10s
 	sudo ln -s /etc/sv/lightdm /var/service/
 
 clear
-
-read -p "Fine! Premi INVIO e riavvia!"
 #sudo shutdown -r now
