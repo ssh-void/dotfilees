@@ -9,4 +9,4 @@ sudo vim /etc/resolv.conf
 #nameserver 127.0.0.1
 sudo ln -s /etc/sv/dnsmasq /var/service/
 sudo sv restart /var/service/dnsmasq
-sudo reboot
+#sudo reboot
