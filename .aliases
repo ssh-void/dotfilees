@@ -155,6 +155,7 @@ alias myipp='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name
 alias wifilist="nmcli device wifi list | more"
 alias wifistatus="nmcli device status"
 alias wifishow="nmcli connection show | more"
+alias wgetall="wget -r -np -nH --cut-dirs=1 -R index.html "
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 # --------------------------------------------------------------------------------------- #
