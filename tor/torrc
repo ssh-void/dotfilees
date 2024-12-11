@@ -258,6 +258,8 @@ User tor
 ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
 ServerTransportListenAddr obfs4 0.0.0.0:25644 ## 1024-65535
 ExtORPort auto
-EntryNodes {dk}{es}{de}{sk}{fr}{se}{no}{nl}{lu}{at}{it}
-ExitNodes {dk}{fr}{es}{sk}{de}{se}{no}{nl}{lu}{at}{it}
+EntryNodes {dk}{es}{de}{sk}{fr}{se}{no}{nl}{lu}{at}{it} #Denmark,Spain,Germany,Slovakia,France,Sweden,Norway,Netherlands,Luxembourg,Austria,Italy
+ExcludeNodes {us},{au},{ca},{nz},{gb},{il},{ru} # Australia,Canada,New Zealand,United Kingdom,Israel,Russia
+ExitNodes {dk}{fr}{es}{sk}{de}{se}{no}{nl}{lu}{at}{it} #Denmark,France,Spain,Slovakia,Germany,Sweden,Norway,Netherlands,Luxembourg,Austria,Italy
+ExcludeExitNodes {us},{au},{ca},{nz},{gb},{il},{ru} # Australia,Canada,New Zealand,United Kingdom,Israel,Russia
 StrictNodes 1
