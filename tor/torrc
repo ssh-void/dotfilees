@@ -254,3 +254,4 @@ BridgeRelay 1
 ## On startup, setuid to this user and setgid to their primary group.
 ## Can not be changed while tor is running.
 User tor
+ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
