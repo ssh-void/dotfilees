@@ -181,10 +181,10 @@ alias yt='yt-dlp --skip-download --write-thumbnail '
 # -------------------------------- #
 # ------->    mpv & vlc   <------- #
 # -------------------------------- #
-alias mpvtor="torsocks mpv --no-config --no-video --term-osd-bar --ytdl-format="bestaudio" --loop=inf"
-alias mpvmp3="mpv --no-video --save-position-on-quit"
-alias vlcnv="prime-run vlc"
-alias mpvnv="prime-run mpv"
+alias mpvtor="torsocks mpv --no-config --no-video  --af-add="volume=2"  --term-osd-bar --ytdl-format=bestaudio --loop=inf "
+alias mpvmp3="mpv --no-video --save-position-on-quit "
+alias vlcnv="prime-run vlc "
+alias mpvnv="prime-run mpv "
 
 # -------------------------------- #
 # ------->     ffmpeg     <------- #
