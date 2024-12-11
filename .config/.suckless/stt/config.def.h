@@ -10,7 +10,7 @@
 static char *font = "Ubuntu Mono:size=12:weight=SemiBold:pixelsize=22:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
-	"JoyPixels:style=Regular:pixelsize=18:antialias=true:autohint=true"
+	"JoyPixels:style=Regular:pixelsize=12:antialias=true:autohint=true"
 };
 
 static int borderpx  = 2;
