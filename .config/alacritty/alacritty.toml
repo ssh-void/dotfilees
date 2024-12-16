@@ -4,7 +4,7 @@ live_config_reload = true
 import = [
          #"C:/Users/hassa/AppData/Roaming/alacritty/color.toml",
          "~/.config/alacritty/color.toml",
-	 "~/.config/alacritty/fonts.toml",
+         "~/.config/alacritty/fonts.toml",
 ]
 #working_directory = "C:\\"  # pour win
 [terminal.shell] #pour linux
