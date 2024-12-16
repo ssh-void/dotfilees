@@ -26,7 +26,7 @@ set mark-symlinked-directories on
 "\e[B": history-search-forward
 "\e[A": history-search-backward
 
-# ctrl left, ctrl right for moving on the readline by word
+# Move foreward/backward by word
 "\e[1;5C": forward-word
 "\e[1;5D": backward-word
 
