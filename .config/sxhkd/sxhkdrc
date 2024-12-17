@@ -35,7 +35,7 @@ alt + p
       pavucontrol &> /dev/null 
 
 super + l 
-        lock &>/dev/null 
+        xset dpms force suspend && slock  &> /dev/null 
 
 super + e
         thunar &>/dev/null 
