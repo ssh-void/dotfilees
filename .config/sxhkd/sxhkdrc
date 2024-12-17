@@ -1,17 +1,17 @@
 super+ KP_Enter
-            alacritty &> /dev/null &
+              st &> /dev/null 
 
 super + x
-        exec $HOME/.config/.script/img_txt_net.sh &> /dev/null & 
+        exec $HOME/.config/.script/img_txt_net.sh &> /dev/null  
 
 super + c
-        exec $HOME/.config/.script/img_txt.sh  &> /dev/null &
+        exec $HOME/.config/.script/img_txt.sh  &> /dev/null 
 
 super + d
-        dmenu_run -i -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' &> /dev/null &
+        dmenu_run -i -fn "Ubunto Font:style=Medium:size=15" -nb '#333333' -nf '#ffffff' -sb '#c61169' -sf '#f9f102' &> /dev/null 
 
 super + s
-        exec $HOME/.config/.script/scratchpad.sh &> /dev/null &
+        exec $HOME/.config/.script/scratchpad.sh &> /dev/null 
 
 alt + {Up,Down}
               exec $HOME/.config/.script/brightnessctl.sh {up,down}
@@ -26,19 +26,19 @@ super + v
       	virt-manager &> /dev/null
 
 super + {f,t,b}
-              {firefox &> /dev/null &,torbrowser-launcher &> /dev/null &,brave-browser-stable &> /dev/null &}
+              {firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null }
 
 alt + b
-      blueman-manager &> /dev/null &
+      blueman-manager &> /dev/null 
 
 alt + p 
-      pavucontrol &> /dev/null &
+      pavucontrol &> /dev/null 
 
 super + l 
-        lock &>/dev/null &
+        lock &>/dev/null 
 
 super + e
-        thunar &>/dev/null &
+        thunar &>/dev/null 
 
 super + shift  + p
-        $HOME/.config/.script/screenshot_region.sh &> /dev/null &
+        $HOME/.config/.script/screenshot_region.sh &> /dev/null 
