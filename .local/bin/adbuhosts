@@ -1,0 +1,4 @@
+adb root
+cp /etc/hosts ~/hosts
+adb push hosts /etc/hosts
+rm -rf ~/hosts
