@@ -29,13 +29,15 @@ fi
 
 ### SET VI MODE ###
 # Comment this line out to enable default emacs-like bindings
-bind -m vi-command 'Control-l: clear-screen' # sup by def in zsh	
-bind -m vi-insert 'Control-l: clear-screen'
-bind -m vi-insert "\C-l":clear-screen
-bind -m vi-insert "\C-e":end-of-line
-bind -m vi-insert "\C-a":beginning-of-line
-bind -m vi-insert "\C-h":backward-kill-word
-bind -m vi-insert "\C-k":kill-line
+bind -m vi-command 'Control-l: clear-screen' # Clear the screen in vi-command mode
+bind -m vi-insert 'Control-l: clear-screen'  # Clear the screen in vi-insert mode
+bind -m vi-insert "\C-l":clear-screen        # Clear the screen
+bind -m vi-insert "\C-e":end-of-line         # Move the cursor to the end of the line
+bind -m vi-insert "\C-a":beginning-of-line   # Move the cursor to the beginning of the line
+bind -m vi-insert "\C-h":backward-kill-word  # Delete the previous word
+bind -m vi-insert "\C-k":kill-line           # Delete the text to the right of the cursor
+bind -m vi-insert "\C-w":backward-kill-word  # Delete the previous word
+bind -m vi-insert "\C-u":unix-line-discard   # Delete the text to the left of the cursor
 
 ### SHOPT  ###
 shopt -s cdspell # autocorrects cd misspellings
