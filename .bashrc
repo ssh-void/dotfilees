@@ -8,7 +8,6 @@ GRC_ALIASES=true
 
 echo -e -n "\x1b[\x35 q"
 
-# ignore upper and lowercase when TAB completion
 bind -f ~/.inputrc
 
 # Source the aliases file
