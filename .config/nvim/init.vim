@@ -92,9 +92,9 @@ Plug 'sheerun/vim-polyglot'                        " Syntax highlighting for mul
 Plug 'vim-python/python-syntax'
 Plug 'itchyny/lightline.vim'                       " Lightline statusbar
 Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
-Plug 'catppuccin/nvim', { 'as': 'catppuccin' }     " color theme
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'morhetz/gruvbox' " color theme
+Plug 'catppuccin/nvim',{'as': 'catppuccin' }       " color theme
+Plug 'neoclide/coc.nvim',{'branch': 'release'}
+Plug 'morhetz/gruvbox'                             " color theme
 
 call plug#end()
 
@@ -127,10 +127,6 @@ autocmd CursorHoldI * silent! call coc#float#hide()
 vnoremap <C-c> "+y
 map <C-v> "+v
 
-"==============================================
-" Save file as sudo on files that require root permission
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
 autocmd BufWritepre * %s/\n\+\%$//e
 autocmd BufWritePost files,directories !shortcuts
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
@@ -147,7 +143,7 @@ augroup ManPage
   autocmd FileType man setlocal foldlevel=1         " Niveau de pliage initial
   autocmd FileType man setlocal scrolloff=3         " Garder un espace de 3 lignes au-dessus et en dessous du curseur
   autocmd FileType man setlocal laststatus=0        " Supprimer la barre de statut pour les pages man
-  autocmd FileType man colorscheme catppuccin          " Appliquer le thème manpage
+  autocmd FileType man colorscheme catppuccin       " Appliquer le thème manpage
 augroup END
 
 " Désactiver les fichiers de swap
