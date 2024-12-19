@@ -21,6 +21,7 @@ sudo sv down dhcpcd # runit
 sudo rm /var/service/dhcpcd
 sudo ln -s /etc/sv/NetworkManager /var/service/
 sudo ln -s /etc/sv/dbus /var/service/
+sudo mkdir -p ~/.config/libvirt/
 sudo cp /etc/libvirt/libvirt.conf ~/.config/libvirt/
 #sudo nmcli device wifi connect SSID password PASSWORD
 # dyn disk
