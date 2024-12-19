@@ -110,6 +110,8 @@ cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 
+sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc' # tested
+
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 
 sudo sv down dhcpcd
