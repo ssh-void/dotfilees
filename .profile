@@ -37,6 +37,7 @@ export TERMINAL="st"
 export TERM="xterm-256color" # getting proper colors
 export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
+export INPUTRC="$HOME/.inputrc"
 export FILE="Thunar"
 export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
