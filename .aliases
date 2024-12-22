@@ -150,6 +150,7 @@ alias ff="find ~/ -type f -name"
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias ping="ping voidlinux.org"
+alias wgetall="wget -r -np -nH --cut-dirs=1 -R index.html "
 alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
 alias myipp='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
