@@ -14,7 +14,7 @@ text = "#282a36"
 cursor = "#ff49c6"
 text = "#83a598"
 [colors.selection]
-background = "#264f78"
+background = "#45403d"
 text = "#cccccc"
 [colors.normal]
 black = "#000000"
