@@ -56,7 +56,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 set nocompatible
 set encoding=utf-8
-"set number relativenumber
+"set rnu
 set wildmode=longest,list,full
 set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set undofile
@@ -89,17 +89,20 @@ call plug#begin(system('echo -n "${XDG_CONFIG_HOME:-$HOME/.config}/nvim/plugged"
 Plug 'luochen1990/rainbow'                         " Parenthéses arc-en-ciel
 Plug 'majutsushi/tagbar'                           " Tag viewer for navigating code structures
 Plug 'sheerun/vim-polyglot'                        " Syntax highlighting for multiple programming 
-Plug 'vim-python/python-syntax'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}     " Syntax highlighting
 Plug 'itchyny/lightline.vim'                       " Lightline statusbar
 Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
 Plug 'catppuccin/nvim',{'as': 'catppuccin' }       " color theme
-Plug 'neoclide/coc.nvim',{'branch': 'release'}     " Autocomplétion (LSP)
+Plug 'neoclide/coc.nvim',{'branch': 'release'}
+Plug 'norcalli/nvim-colorizer.lua'                 " color hexadécimaux
 Plug 'morhetz/gruvbox'                             " color theme
 
 call plug#end()
 
 let g:python_highlight_all = 1
 autocmd FileType sxhkd setlocal syntax=on
+
+" Themes
 colorscheme gruvbox
 "colorscheme catppuccin
 let g:lightline = {
@@ -107,10 +110,37 @@ let g:lightline = {
       \ }
 " Always show statusline
 set laststatus=2
-"Coc
+
+" Coc
 let g:coc_global_extensions = [
-    \ 'coc-clangd' 
-    \  ]
+			\ 'coc-tsserver',
+			\ 'coc-clangd',
+			\ 'coc-html',
+			\ 'coc-css',
+			\ 'coc-yaml',
+			\ 'coc-toml',
+			\ 'coc-pyright',
+			\ 'coc-zig',
+			\ 'coc-emmet',
+			\ 'coc-lua',
+			\ 'coc-texlab',
+			\ 'coc-json',
+			\ 'coc-sh',
+			\ 'coc-eslint',
+			\ 'coc-markdownlint'
+			\  ]
+
+" use <tab> to trigger completion and navigate to the next complete item
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+
 inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 	    \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
@@ -131,6 +161,14 @@ autocmd BufWritepre * %s/\n\+\%$//e
 autocmd BufWritePost files,directories !shortcuts
 autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
 autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
+"###############################################################
+" Active Coc.nvim pour les fichiers bash/shell
+autocmd FileType sh setlocal omnifunc=v:lua.vim.lsp.omnifunc
+" Configure Coc.nvim pour afficher les diagnostics en temps réel
+let g:coc_global_extensions = ['coc-sh']
+" Désactive la gestion des mots longs dans les diagnostics
+let g:coc_snippet_next = '<tab>'
+"################################################################
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Configuration spécifique aux fichiers de type man
@@ -153,3 +191,12 @@ set nobackup
 set nowritebackup
 " Désactiver les fichiers temporaires
 set noundofile
+
+"##### nvim-colorizer.lua
+lua << EOF
+require'colorizer'.setup({
+  '*'; -- Active sur tous les fichiers
+  css = { rgb_fn = true; }; -- Support pour les fonctions CSS (rgb, hsl, etc.)
+  html = { names = true; }; -- Active les noms de couleurs HTML
+})
+EOF
