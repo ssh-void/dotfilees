@@ -93,7 +93,7 @@ Plug 'vim-python/python-syntax'
 Plug 'itchyny/lightline.vim'                       " Lightline statusbar
 Plug 'kovetskiy/sxhkd-vim'                         " sxhkd highlighting
 Plug 'catppuccin/nvim',{'as': 'catppuccin' }       " color theme
-Plug 'neoclide/coc.nvim',{'branch': 'release'}
+Plug 'neoclide/coc.nvim',{'branch': 'release'}     " Autocomplétion (LSP)
 Plug 'morhetz/gruvbox'                             " color theme
 
 call plug#end()
