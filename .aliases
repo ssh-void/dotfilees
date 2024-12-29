@@ -46,7 +46,7 @@ alias fr="free -h"
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias xx='startx'
+alias xx='exit'
 alias blkidl="doas blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias logk="doas dmesg --clear &&  doas dmesg --ctime --follow"
@@ -64,7 +64,7 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 # --------------------------------->     cp mv ...    <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias rm="rm -vI"
-alias drm='rm -rf'
+alias drm="rm -rf"
 alias mv='mv -iv'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
@@ -76,6 +76,7 @@ alias cl="clear"
 alias m="man"
 alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
+alias vv="nvim ~/.tmux.conf"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
@@ -119,6 +120,7 @@ alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->       cd        <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
+alias cd-='cd -'
 alias cd..='cd ..'
 alias .2="cd ../.."
 alias .3="cd ../../.."
@@ -136,10 +138,11 @@ alias trees="tree -s -h --du -a "
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->      du       <------------------------------------ #
 # --------------------------------------------------------------------------------------- #
-alias T="du -sh"
-alias duf="du -sh *"
-alias dud="du -d 1 -h"
-alias disk="doas du -h --max-depth=1 ~/ | sort -rh"
+alias T='du -sh' 
+alias duf='du -sh * '
+alias dud='du -d 1 -h '
+alias du1='du -h --max-depth=1 '
+alias disk='doas du -h --max-depth=1 ~/ | sort -rh '
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->      find       <----------------------------------- #
@@ -157,14 +160,12 @@ alias myipp='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name
 alias wifilist="nmcli device wifi list | more"
 alias wifistatus="nmcli device status"
 alias wifishow="nmcli connection show | more"
-alias wgetall="wget -r -np -nH --cut-dirs=1 -R index.html "
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     tmux     <-------------------------------------- #
 # --------------------------------------------------------------------------------------- #
 #alias ta="tmux a"
-alias killtmux='tmux kill-server'
 
 # --------------------------------------------------------------------------------------- #
 # -------------------------------->     yt-dlp     <------------------------------------- #
