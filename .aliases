@@ -64,6 +64,7 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 # --------------------------------->     cp mv ...    <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias rm="rm -vI"
+alias drm='rm -rf'
 alias mv='mv -iv'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
