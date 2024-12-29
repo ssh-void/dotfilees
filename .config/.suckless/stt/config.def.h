@@ -7,7 +7,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-# static char *font = "Ubuntu Mono:size=12:weight=SemiBold:pixelsize=22:antialias=true:autohint=true";
+/* static char *font = "Ubuntu Mono:size=12:weight=SemiBold:pixelsize=22:antialias=true:autohint=true"; */
 static char *font = "Iosevka:size=14:weight=Regular:pixelsize=22:antialias=true:autohint=true";
 /* Spare fonts */
 static char *font2[] = {
