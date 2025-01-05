@@ -7,99 +7,21 @@ bypass() {
 		kill -0 "$$" || exit
 	done 2>/dev/null &
 }
-
-sudo chsh -s /bin/bash xxxx
+sudo chsh -s /bin/bash sh
 sudo chsh -s /bin/bash root
-
 sleep 3s
 bypass
 clear
 echo "Updating The System"
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
-sudo xbps-install -Syu umbrello # uml systeme
-sudo xbps-install -Syu alacritty pnpm # current
-clear
-sudo xbps-install -Syu xorg xorg-server-devel xorg-fonts pkg-config base-devel gcc gdb xset xrandr arandr xdotool xdo xrdb xf86-input-synaptics xf86-input-evdev lm_sensors tree man man-db fzy inxi flameshot maim xrectsel xclip cloc awk neovim sublime-text4 picom dnsmasq openresolv tealdeer fastfetch most sxhkd htop opendoas base-devel tmux sxiv ffmpeg alsa-plugins-ffmpeg nv-codec-headers xrdb dunst notify-send.sh numlockx bash-completion readline gcolor2 colordiff brightnessctl xsetroot xbanish yaru lxappearance qt5ct qt6ct 
-sudo xbps-install -Syu ttf-ubuntu-font-family noto-fonts-emoji noto-fonts-cjk dbus python3-dbus libinput-gestures libX11-devel libXft-devel libXinerama-devel fribidi-devel harfbuzz-devel libXrandr-devel 
-sudo xbps-install -Syu fontmanager 
-sudo xbps-install -Syu yt-dlp aria2 wget curl git delta patch rsync 
 mkdir -p $HOME/Downloads/{Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
-
-# You install the following package 
-#sudo ln -s /etc/sv/dnsmasq /var/service/
 clear
-sudo xbps-install -Syu lynis # System Audit
-sudo xbps-install -Syu jq # Command-line JSON processor
-sudo xbps-install -Syu rhythmbox # misque read
-sudo xbps-install -Syu Thunar thunar-archive-plugin xarchiver xfce4-appfinder
-sudo xbps-install -Syu socklog ufw gufw apparmor # seurtié
-sudo xbps-install -Syu xdg-utils slock
-sudo xbps-install -Syu tesseract-ocr tesseract-ocr-eng tesseract-ocr-ara  
-sudo xbps-install -Syu wmname # contourner certains bogues liés aux gestionnaires de fenêtres. 
-sudo xbps-install -Syu arp-scan net-tools NetworkManager # ifconfig netstat .. 
-clear
-
-sudo xbps-install -Syu dejavu-fonts-ttf noto-fonts-ttf terminus-font # cantarell-fonts noto-fonts-ttf fonts-roboto-ttf dejavu-fonts-ttf ttf-ubuntu-font-family
-sudo xbps-install -Syu vscode eclipse 
-sudo xbps-install -Syu mpv python3-devel python3-pip  
-sudo xbps-install -Syu megatools # mega
-sudo xbps-install -Syu libselinux # matlab 
-# KVM & qemu...
-sudo xbps-install -Syu virt-manager libvirt qemu-img qemu-system-amd64 qemu-common qemu-firmware openbsd-netcat dnsmasq vde2 bridge-utils spice-vdagent
-# sudo xbps-install -Syu swtpm edk2-ovmf # tpm and ufei
-# tar
-sudo xbps-install -Syu zip unzip # current
-sudo xbps-install -Syu p7zip tar xz bzip2 bsdtar gzip # current
-sudo xbps-install -Syu gtkedit # text editor
-sudo xbps-install -Syu zramen # zram
-sudo xbps-install -Syu octave # matlab 
-sudo xbps-install -Syu libreoffice xdg-utils
-sudo xbps-install -Syu android-tools android-udev-rules
-sudo xbps-install -Syu cronie
-
-clear
-
-#sudo xbps-install -Syu kdenlive krita  # video editor
 
 # firefox
-sudo xbps-install -Syu firefox speech-dispatcher firefox-i18n-en-US firefox-i18n-ar firefox-i18n-fr font-sil-doulos font-liberation-narrow-ttf
-sudo xbps-install -Syu tor obfs4proxy torsocks # w3m w3m-img # tor
-sudo xbps-install -Syu qbittorrent
-sudo xbps-install -Syu eza 
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-
-
-clear
-echo "===== pdf ===== "
-sudo xbps-install -Syu zathura zathura-pdf-mupdf ntfs-3g exfat-utils
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
-sleep 3
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
-#xbps-query -L
-sudo xbps-install -Syu unrar # nonfree 
 
-clear
-sudo xbps-install -Syu intel-ucode # nonfree 
-sudo xbps-install -Syu linux-firmware-intel # free 
-sudo xbps-install -Syu intel-video-accel # free 
-sudo xbps-install -Syu intel-media-driver # free 
-sudo xbps-install -Syu libva-intel-driver # free 
-sudo xbps-install -Syu mesa-vulkan-intel # free
-sudo xbps-install -Syu mesa-vaapi # free # video acceleration
-sudo xbps-install -Syu mesa-dri # free , OpenGL (alacritty)
-sudo xbps-install -Syu mesa-intel-dri libva-intel-driver sysfsutils # free
-
-clear
-# nvidia & intel
-sudo xbps-install -Syu intel-video-accel
-sudo xbps-install -Syu nvidia  # nonfree  #You need non-free repo
-sudo xbps-install -Syu nvidia-opencl # nonfree  #You need non-free repo
-sudo xbps-install -Syu vulkan-loader # free  
-sudo xbps-install -Syu mesa-vdpau  # free # video acceleration
-sudo xbps-install -Syu mesa-vulkan-intel # free
-sudo xbps-install -Syu xf86-video-intel # free
-
-##################################################################
 
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
