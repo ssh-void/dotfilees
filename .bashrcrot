@@ -52,12 +52,13 @@ alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
 
 # ls
-alias ls="ls --color=auto"
-alias l="ls -Flh --group-directories-first --color=auto"
-alias ll="ls -F -dlh .* --group-directories-first --color=auto"
-alias ld="ls --color=auto -d */"
-#alias l="eza -F -l --color=always --group-directories-first"  # long format
-#alias ll="eza -F -dlg .* --group-directories-first --color=auto"
+alias l="eza -F -l --color=always --group-directories-first"  # long format
+alias ll="eza -F -dlg .* --group-directories-first --color=auto"
+alias lls="ls --color=auto -a --group-directories-first"
+alias ls="ls --color=auto --group-directories-first"
+alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ "
+#alias l="ls -Flh --group-directories-first --color=auto"
+#alias ll="ls -F -dlh .* --group-directories-first --color=auto"
 
 # neovim
 alias v="nvim" vim="nvim" vi="nvim"
