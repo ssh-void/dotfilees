@@ -56,9 +56,10 @@ alias chownuser="doas chown -R $(whoami):$(whoami) ."
 alias h='history | cut -c 8- | tac | fzy -l 20 | xclip -selection clipboard'
 alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
-alias pdf="zathura"
+alias pdf="zathura "
 alias ppt="loimpress "
 alias worf="lowriter "
+alias exel="localc "
 alias tldr="tealdeer"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 
