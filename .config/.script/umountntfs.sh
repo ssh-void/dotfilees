@@ -1,2 +1,2 @@
-doas umount /mnt/xxxx && sleep 1 && doas rm -rf /mnt/xxxx
-doas umount /mnt/xxxxx && sleep 1 && doas rm -rf /mnt/xxxxx
+doas umount /mnt/hdd1 && sleep 1 && doas rm -rf /mnt/hdd1
+doas umount /mnt/hdd2 && sleep 1 && doas rm -rf /mnt/hdd2
