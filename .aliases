@@ -228,12 +228,3 @@ alias pipout="pip list --outdated"
 alias pipreq="pip freeze > requirements.txt"
 alias pipfrom="pip install -r requirements.txt" # -r , --requirement
 alias pipup="pip install --upgrade pip " # -U, --upgrade
-
-# --------------------------------------------------------------------------------------- #
-# ------------------------>      ssd && hdd && microsd        <-------------------------- #
-# --------------------------------------------------------------------------------------- #
-#alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
-#alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
-#alias monter_ssd='doas mkdir -p /mnt/mon_ssd_exfat && sleep 1 &&doas mount -t exfat -o uid=1000,gid=1000,umask=0022 UUID=052D-4755 /mnt/mon_ssd_exfat'
-#alias demonter_ssd='doas umount /mnt/mon_ssd_exfat && sleep 1 && doas rm -rf /mnt/mon_ssd_exfat'
-#alias mountmicrossd="mkdir $HOME/ssd ; sleep 1; doas mount -t ntfs-3g -o rw UUID=79B17F9A24153F42 /home/sh/ssd/"
