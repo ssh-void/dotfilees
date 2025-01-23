@@ -14,7 +14,7 @@ yt-dlp --match-title "(?i)$KEYWORD" \
   --sponsorblock-mark all --sponsorblock-remove all \
   --embed-thumbnail --embed-metadata --ignore-errors \
   --continue --retries 20 --retry-sleep exp=1:20 \
-  --geo-bypass-country US --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:133.0) Gecko/20100101 Firefox/133.0" \
+  --geo-bypass-country US --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:134.0) Gecko/20100101 Firefox/134.0" \
   --sub-format "ass/srt/best" --write-subs --write-auto-sub --sub-lang "en,fr,ar" --convert-subs srt \
   --downloader "m3u8:native" --concurrent-fragments 5 \
   --downloader aria2c \
