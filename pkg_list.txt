@@ -23,5 +23,5 @@ torsocks tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
 vde2 virt-manager void-docs-browse void-live-audio void-repo-nonfree
 vscode wget wireplumber wireplumber-devel wmname xarchiver xbanish xclip
 xdo xf86-video-intel xf86-video-qxl xfce4-appfinder xorg xorg-server-devel
-xrectsel xtools xtools-minimal xz yaru yt-dlp zathura zathura-pdf-mupdf
+xrectsel xtools xtools-minimal xz yaru zathura zathura-pdf-mupdf
 zip zramen zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
