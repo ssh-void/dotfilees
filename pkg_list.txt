@@ -17,7 +17,7 @@ pipewire pipewire-devel pkg-config pnpm python2 python3 python3-dbus python3-dev
 python3-pip qbittorrent qemu qemu-common qemu-firmware qemu-img
 qemu-system-amd64 qt5ct qt6ct readline rhythmbox rsync slock socklog
 speech-dispatcher spice-protocol spice-vdagent sublime-text4 sxhkd
-sxiv sysfsutils tealdeer terminus-font tesseract-ocr
+sxiv sysfsutils tealdeer terminus-font tesseract-ocr tesseract-ocr-ara tesseract-ocr-fra
 tesseract-ocr-eng thunar-archive-plugin tmux tor torbrowser-launcher
 torsocks tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
 vde2 virt-manager void-docs-browse void-live-audio void-repo-nonfree
