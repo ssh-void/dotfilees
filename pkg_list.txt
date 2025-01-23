@@ -13,7 +13,7 @@ megatools mesa-intel-dri mesa-vaapi mesa-vdpau mesa-vulkan-intel most mpv
 neovim notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
 ntfs-3g numlockx nv-codec-headers nvidia nvidia-opencl obfs4proxy
 octave openbsd-netcat opendoas p7zip pamixer patch pavucontrol picom
-pipewire pipewire-devel pkg-config pnpm python3-dbus python3-devel
+pipewire pipewire-devel pkg-config pnpm python2 python3 python3-dbus python3-devel
 python3-pip qbittorrent qemu qemu-common qemu-firmware qemu-img
 qemu-system-amd64 qt5ct qt6ct readline rhythmbox rsync slock socklog
 speech-dispatcher spice-protocol spice-vdagent sublime-text4 sxhkd
