@@ -1,3 +1,6 @@
+if [ -f ~/.bashrc ]; then  # load .inputrc
+    source ~/.bashrc
+fi
 
 [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 [ -f $XDG_CONFIG_HOME/X11/Xresources ] && xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
