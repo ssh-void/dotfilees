@@ -37,5 +37,42 @@ super + l
 super + e
         thunar &>/dev/null 
 
-super + shift  + p
-        $HOME/.config/.script/screenshot_region.sh &> /dev/null 
+super + shift + p
+                $HOME/.config/.script/screenshot_region.sh &> /dev/null 
+
+super + ctrl + y
+               firefox https://www.youtube.com/ &> /dev/null 
+
+super + ctrl + t
+               firefox https://chat.openai.com/ 
+super +ctrl + d
+              firefox https://chat.deepseek.com/
+
+super + ctrl + a
+               exec $HOME/.config/.script/translate.sh
+super + ctrl + i
+               firefox https://www.instagram.com/?hl=en
+
+# firfox fr && En
+super + ctrl + f
+               $HOME/.config/.script/sitefr.sh &> /dev/null
+super + ctrl + e
+               $HOME/.config/.script/siteen.sh &> /dev/null
+
+super + ctrl + o
+               firefox https://outlook.live.com/mail/0/
+super + ctrl + l
+               firefox https://www.linkedin.com/feed/
+super + ctrl + u
+               firefox https://www.udemy.com/home/my-courses/learning/
+super + ctrl + n
+               firefox https://www.notion.so
+super + ctrl + r
+               firefox https://www.reddit.com/
+
+super + ctrl + p
+              $HOME/.config/.script/projects.sh &> /dev/null
+super + ctrl + v
+               firefox https://voidlinux.org/packages/ &> /dev/null
+super + ctrl + m 
+               firefox https://mega.nz/login
