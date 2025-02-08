@@ -1,3 +1,4 @@
+$include /etc/inputrc
 # Use LSCOLORS when tab-completing.
 set colored-stats on
 
