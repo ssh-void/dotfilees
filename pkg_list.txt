@@ -1,3 +1,4 @@
+# xbps-query -m | xargs -n1 xbps-uhelper getpkgname | fmt > pkg_list.txt
 NetworkManager Thunar alacritty alsa-pipewire alsa-plugins-ffmpeg
 android-tools android-udev-rules apparmor arandr aria2 arp-scan base-devel
 base-system bash-completion blueman bluez bridge-utils brightnessctl
