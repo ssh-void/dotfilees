@@ -14,6 +14,7 @@ bypass
 clear
 echo "Updating The System"
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
+mkdir $HOME/Images/
 mkdir -p $HOME/Downloads/{Qbittorrent,Firefox,Brave,yt-dlp/{audio,video}}
 clear
 
