@@ -211,7 +211,7 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 # --------------------------------------------------------------------------------------- #
 alias nf='clear && neofetch'
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
-alias makesuckless="doas make -j 8 && doas make clean install"
+alias makesuckless="doas make -s -j 8 && doas make -s clean install"
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      python        <----------------------------------- #
