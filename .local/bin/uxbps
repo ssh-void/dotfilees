@@ -7,5 +7,5 @@ git pull --autostash --rebase
 #./xbps-src update-sys 
 ./xbps-src clean  # clean
 ./xbps-src clean-repocache
-rm -rvf /opt/void-package/hostdir/sources/*
-rm -rvf /opt/void-package/hostdir/binpkgs/*
+rm -rvf /opt/void-packages/hostdir/sources/*
+rm -rvf /opt/void-packages/hostdir/binpkgs/*
