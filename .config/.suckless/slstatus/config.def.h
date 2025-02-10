@@ -133,7 +133,7 @@ static const struct arg args[] = {
     { run_command, "%s|","sensors coretemp-isa-0000 | awk '/^Core/ {print $3}' | sed 's/+//' | awk 'NR==1' | cut -d'.' -f1 | sed 's/$/°C/'" },
     { run_command, "%s","nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk '{ printf \"GPU:%d%% %d°C|\", $1, $2 }'" },
     { ram_perc,"RAM:%s%%|",NULL},
-    { disk_perc,"~/:%s%%;","/"},
+    { disk_perc,"/:%s%%;","/"},
     { run_command ,"Vol:%s|","pamixer --get-volume-human"}, 
     { run_command ,"Brightness:%s|","xbacklight -get | awk '{printf \"%.0f%%\\n\", $1}'"},
     { run_command ,"pKg:%s|","doas xbps-query -l | wc -l"},
