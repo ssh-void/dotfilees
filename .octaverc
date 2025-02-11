@@ -1,0 +1,4 @@
+% Ajouter un chemin de recherche pour vos scripts
+addpath('~/.config/.script/octave-script/');
+% Personnaliser le prompt
+PS1('>> ');

@@ -1,0 +1,9 @@
+https://context.reverso.net/traduction/anglais-francais/good
+https://www.deepl.com/fr/translator#en/fr/good%0A
+https://www.wordreference.com/enfr/good
+https://www.dictionary.com/
+https://dictionary.cambridge.org/dictionary/english-arabic/shame?q=+shame
+https://www.merriam-webster.com/dictionary/good
+https://www.the-conjugation.com/english/verb/do.php
+https://www.oxfordlearnersdictionaries.com/
+https://www.linguee.com/english-french/search?source=auto&query=good

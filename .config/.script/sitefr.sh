@@ -1,0 +1,11 @@
+x=$(xclip -o -selection primary) 
+firefox "https://www.deepl.com/fr/translator#fr/ar/$x"
+firefox "https://context.reverso.net/traduction/francais-arabe/$x"
+firefox "https://www.dictionnaire-academie.fr/article/A9P3914"
+firefox "https://www.almaany.com/ar/dict/ar-fr/$x"
+firefox "https://www.larousse.fr/dictionnaires/francais/$x"
+firefox "https://ar.forvo.com/search/$x"
+firefox "https://www.le-dictionnaire.com/definition/$x"
+firefox "https://usito.usherbrooke.ca/d%C3%A9finitions/$x"
+firefox "https://dictionnaire.lerobert.com/definition/$x"
+firefox "https://leconjugueur.lefigaro.fr/php5/index.php?verbe=$x"
