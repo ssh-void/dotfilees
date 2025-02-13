@@ -1,4 +1,3 @@
-## man tor
 ## Configuration file for a typical Tor user
 ## Last updated 28 February 2019 for Tor 0.3.5.1-alpha.
 ## (may or may not work for much older or much newer versions of Tor.)
@@ -82,7 +81,7 @@ DataDirectory /var/lib/tor
 ## See https://community.torproject.org/relay for details.
 
 ## Required: what port to advertise for incoming Tor connections.
-ORPort 2589 ##  1024-65535
+#ORPort 9001
 ## If you want to listen on a port other than the one advertised in
 ## ORPort (e.g. to advertise 443 but bind to 9090), you can do it as
 ## follows.  You'll need to do ipchains or other port forwarding
@@ -235,7 +234,7 @@ ORPort 2589 ##  1024-65535
 ##
 ## Warning: when running your Tor as a bridge, make sure than MyFamily is
 ## NOT configured.
-BridgeRelay 1
+#BridgeRelay 1
 ## By default, Tor will advertise your bridge to users through various
 ## mechanisms like https://bridges.torproject.org/. If you want to run
 ## a private bridge, for example because you'll give out your bridge
@@ -255,13 +254,3 @@ BridgeRelay 1
 ## On startup, setuid to this user and setgid to their primary group.
 ## Can not be changed while tor is running.
 User tor
-ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-ServerTransportListenAddr obfs4 0.0.0.0:25644 ## 1024-65535
-ExtORPort auto
-EntryNodes {dk}{es}{de}{sk}{fr}{se}{no}{nl}{lu}{at}{it} #Denmark,Spain,Germany,Slovakia,France,Sweden,Norway,Netherlands,Luxembourg,Austria,Italy
-ExitNodes {dk}{fr}{es}{sk}{de}{se}{no}{nl}{lu}{at}{it} #Denmark,France,Spain,Slovakia,Germany,Sweden,Norway,Netherlands,Luxembourg,Austria,Italy
-## Excludes output relays located in specified countries ##
-ExcludeExitNodes {us},{au},{ca},{nz},{gb},{il},{ru} # Australia,Canada,New Zealand,United Kingdom,Israel,Russia
-## Completely excludes relays in special countries ##
-ExcludeNodes {us},{au},{ca},{nz},{gb},{il},{ru} # Australia,Canada,New Zealand,United Kingdom,Israel,Russia
-StrictNodes 1
