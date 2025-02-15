@@ -229,3 +229,8 @@ alias pipout="pip list --outdated"
 alias pipreq="pip freeze > requirements.txt"
 alias pipfrom="pip install -r requirements.txt" # -r , --requirement
 alias pipup="pip install --upgrade pip " # -U, --upgrade
+
+# ----------------------------------------------------------------------------------------#
+# --------------------------------------- ssh --------------------------------------------#
+# ----------------------------------------------------------------------------------------#
+alias rpi="ssh -tX pi@raspberrypi"
