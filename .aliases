@@ -23,10 +23,13 @@ alias pkgxbps="doas xbps-reconfigure -fa"
 # -------------------------------------------------------------------------------------- #
 # ---------------------------------->     runit     <----------------------------------- #
 # -------------------------------------------------------------------------------------- #
-alias start="doas sv start "
-alias stop="doas sv stop "
-alias restart="doas sv restart "
-
+alias runitstart="doas sv start "
+alias runitstop="doas sv stop "
+alias runitrestart="doas sv restart "
+alias runitstatus="doas sv status "
+alias runitup="doas sv up "
+alias runitdown="doas sv down "
+	
 # -------------------------------------------------------------------------------------- #
 # --------------------------------->     Other     <------------------------------------ #
 # -------------------------------------------------------------------------------------- #
