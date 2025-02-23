@@ -3,4 +3,5 @@ source /home/${USER}/env/bin/activate
 pip install --upgrade pip
 pip install --upgrade instaloader 
 pip install -U --pre "yt-dlp[default]"
+pip install --upgrade telethon
 source $HOME/.profile
