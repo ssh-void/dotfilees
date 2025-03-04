@@ -90,7 +90,7 @@ alias vv="nvim ~/.tmux.conf"
 # --------------------------------------------------------------------------------------- #
 alias l="eza -F -l --color=always --group-directories-first"  # long format
 alias ll="eza -F -dlg .* --group-directories-first --color=auto"
-alias lls="ls --color=auto -a --group-directories-first"
+alias lls="ls -F --color=auto -a --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
 #alias l="ls -Flh --group-directories-first --color=auto"
