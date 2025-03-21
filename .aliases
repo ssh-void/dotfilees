@@ -219,9 +219,9 @@ alias makesuckless="doas make -s -j 8 && doas make -s clean install"
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      python        <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias py="python"
+alias py="python3"
 alias apy="source $HOME/env/bin/activate"
-alias ve="python -m venv" 
+alias ve="python3 -m venv" 
 alias va="source $HOME/.venv/devtool/bin/activate" 
 alias vd="deactivate"
 alias pipi="pip install"
