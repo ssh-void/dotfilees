@@ -16,7 +16,7 @@ octave openbsd-netcat opendoas p7zip pamixer patch pavucontrol picom
 pipewire pipewire-devel pkg-config pnpm python2 python3 python3-dbus python3-devel
 python3-pip qbittorrent qemu qemu-common qemu-firmware qemu-img
 qemu-system-amd64 qt5ct qt6ct readline rhythmbox rsync slock socklog
-spice-protocol spice-vdagent sublime-text4 sxhkd
+spice-protocol spice-vdagent sublime-text4 sxhkd noto-fonts-ttf-extra
 sxiv sysfsutils tealdeer terminus-font tesseract-ocr tesseract-ocr-ara tesseract-ocr-fra
 tesseract-ocr-eng tesseract-ocr-rus thunar-archive-plugin tmux tor torbrowser-launcher
 torsocks tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
