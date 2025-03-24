@@ -9,7 +9,7 @@ gtkedit gufw harfbuzz-devel htop intel-ucode intel-video-accel
 inxi jq libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 libinput-gestures libjack-pipewire libreoffice libselinux libspa-bluetooth
 libvirt lm_sensors lvm2 lxappearance lynis maim man-db mdadm mdocml
-megatools mesa-intel-dri mesa-vaapi mesa-vdpau mesa-vulkan-intel most mpv
+megatools mesa-intel-dri mesa-vaapi mesa-vdpau mesa-vulkan-intel most mpv vlc
 neovim notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
 ntfs-3g numlockx nv-codec-headers nvidia nvidia-opencl obfs4proxy
 octave openbsd-netcat opendoas p7zip pamixer patch pavucontrol picom
