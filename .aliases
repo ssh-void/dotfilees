@@ -73,6 +73,7 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 # --------------------------------------------------------------------------------------- #
 alias rm="rm -vI"
 alias drm="rm -rf"
+alais rmyt="rm *.m4a-Frag* ; rm *.mp4.* ; rm *.aria2 ; rm *.mp4-*"
 alias mv='mv -iv'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
