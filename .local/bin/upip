@@ -4,4 +4,5 @@ pip install --upgrade pip
 pip install --upgrade instaloader 
 pip install -U --pre "yt-dlp[default]"
 pip install --upgrade telethon
+pip install --upgrade gTTS
 source $HOME/.profile
