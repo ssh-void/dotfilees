@@ -168,6 +168,7 @@ alias myipp='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name
 alias wifilist="nmcli device wifi list | more"
 alias wifistatus="nmcli device status"
 alias wifishow="nmcli connection show | more"
+alias ttor="curl --socks5 127.0.0.1:9050 -s https://check.torproject.org/api/ip | jq -r '.IsTor'"
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 # --------------------------------------------------------------------------------------- #
@@ -179,7 +180,9 @@ alias wifishow="nmcli connection show | more"
 # -------------------------------->     yt-dlp     <------------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
+alias yaria='yt-dlp --config-locations $HOME/.config/yt-dlp/yaria.conf '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
+alias yvtor='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtor.conf '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
 alias yvpc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpc.conf '
