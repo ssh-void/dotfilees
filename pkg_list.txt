@@ -3,7 +3,7 @@ android-tools android-udev-rules apparmor arandr aria2 arp-scan base-devel
 base-system bash-completion blueman bluez bridge-utils brightnessctl
 bsdtar chrony cloc colordiff cronie cryptsetup curl delta dnsmasq
 dunst eclipse exfat-utils eza fastfetch ffmpeg firefox firefox-i18n-ar
-firefox-i18n-en-US firefox-i18n-fr flameshot font-sil-doulos fontmanager
+firefox-i18n-en-US firefox-i18n-fr speech-dispatcher flameshot font-sil-doulos fontmanager
 fribidi-devel fzy gawk gcc gcolor2 gdb git grub-i386-efi grub-x86_64-efi
 gtkedit gufw harfbuzz-devel htop intel-ucode intel-video-accel
 inxi jq libX11-devel libXft-devel libXinerama-devel libXrandr-devel
