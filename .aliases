@@ -169,7 +169,8 @@ alias myipp='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name
 alias wifilist="nmcli device wifi list | more"
 alias wifistatus="nmcli device status"
 alias wifishow="nmcli connection show | more"
-alias ttor="curl --socks5 127.0.0.1:9050 -s https://check.torproject.org/api/ip | jq -r '.IsTor'"
+alias ttor="curl --socks5-hostname 127.0.0.1:9050 -s https://check.torproject.org/api/ip | jq -r '.IsTor'"
+alias curltor="curl --socks5-hostname 127.0.0.1:9050 -L -O --progress-bar -C - "
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 # --------------------------------------------------------------------------------------- #
