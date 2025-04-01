@@ -81,7 +81,6 @@ alias mkdir="mkdir -pv"
 alias cp='cp -iv'
 alias cal="cal --twelve"
 alias cl="clear"
-#alias drm="doas rm -rf" 
 alias m="man"
 alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
