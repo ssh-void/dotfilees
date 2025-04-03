@@ -1,8 +1,9 @@
-sudo xbps-install git base-devel xtools
+sudo xbps-install git base-devel xtools python3
 #=============================================================#
 cd /opt/
 sudo git clone --depth=1 https://github.com/void-linux/void-packages.git
 sudo chown -R $(whoami):$(whoami) .
+#sudo chown -R $(whoami):$(whoami) .
 #git clean -fd && git reset --hard && git pull
 #=============================================================#
 cd /opt/void-packages && ./xbps-src binary-bootstrap # xbps-src cannot be used as root
