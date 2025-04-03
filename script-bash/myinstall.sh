@@ -29,7 +29,10 @@ cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 
+# root user 
 sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc' # tested
+sudo mkdir -p /root/.config/nvim
+sudo cp ~/dotfilees/.config/nvim/init.vim /root/.config/nvim/init.vim
 
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 
