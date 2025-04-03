@@ -64,3 +64,4 @@ set convert-meta off
 
 # Bash Keybindings
 "\C-f":"cd /home/${USER}/.config/"
+"\C-y":"cd /home/${USER}/Downloads/yt-dlp/"
