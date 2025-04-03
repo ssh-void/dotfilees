@@ -1,4 +1,4 @@
-NetworkManager Thunar alacritty alsa-pipewire alsa-plugins-ffmpeg
+NetworkManager inetutils-ifconfig Thunar alacritty alsa-pipewire alsa-plugins-ffmpeg
 android-tools android-udev-rules apparmor arandr aria2 arp-scan base-devel
 base-system bash-completion blueman bluez bridge-utils brightnessctl
 bsdtar chrony cloc colordiff cronie cryptsetup curl delta dnsmasq
