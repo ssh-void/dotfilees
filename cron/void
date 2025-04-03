@@ -1,5 +1,5 @@
 # /var/spool/cron
-@hourly xbps-install -S && xbps-install -u xbps && xbps-install -Syu && xbps-remove -RoyO && sleep 5 && vkpurge rm all
-@reboot xbps-install -S && xbps-install -u xbps && xbps-install -Syu && xbps-remove -RoyO && sleep 5 && vkpurge rm all
+@hourly doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Syu 
+@hourly doas xbps-remove -RoO && doas vkpurge rm all
 @hourly doas du -h --max-depth=1 ~/ | sort -rh > $HOME/sizeofffile.txt
 @hourly xbps-query -p install-date -s '' | sort -k2 -r > $HOME/listpackage.txt
