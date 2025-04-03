@@ -7,7 +7,7 @@ bypass() {
 		kill -0 "$$" || exit
 	done 2>/dev/null &
 }
-sudo chsh -s /bin/bash sh
+sudo chsh -s /bin/bash void
 sudo chsh -s /bin/bash root
 sleep 3s
 bypass
