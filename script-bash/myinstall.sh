@@ -20,14 +20,11 @@ clear
 
 # firefox
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
-sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
+
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
 sudo  xbps-install -Suyf $(cat pkg_list.txt)
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
-sudo git clone --depth=1 https://github.com/void-linux/void-packages
-sudo xbps-install -Syu xtools-minimal python3 # xi ...
-#sudo chown -R $(whoami):$(whoami) .
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
