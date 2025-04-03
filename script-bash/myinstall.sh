@@ -42,7 +42,7 @@ sudo ln -s /etc/sv/bluetoothd/ /var/service/ && sudo ln -s /etc/sv/chronyd/ /var
 sudo ln -s /etc/sv/dbus/ /var/service/ && sudo ln -s /etc/sv/libvirtd/ /var/service/ && sudo ln -s /etc/sv/NetworkManager/ /var/service/
 sudo ln -s /etc/sv/sshd/ /var/service/ && sudo ln -s /etc/sv/tor/ /var/service/ && sudo ln -s /etc/sv/udevd/ /var/service/
 sudo ln -s /etc/sv/ufw/ /var/service/ && sudo ln -s /etc/sv/virtlogd/ /var/service/ && sudo ln -s /etc/sv/zramen/ /var/service/
-#echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
+# zram 
 echo "zram" | sudo tee /etc/modules-load.d/zram.conf > /dev/null
 sudo sed -i 's|^#\?FONT=.*|FONT="ter-v20b"|' /etc/rc.conf
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
