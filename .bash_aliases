@@ -67,6 +67,7 @@ alias worf="lowriter "
 alias exel="localc "
 alias tldr="tealdeer"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
+alias bmpsc="maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
