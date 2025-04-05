@@ -11,8 +11,8 @@ echo -e -n "\x1b[\x35 q"
 bind -f ~/.inputrc
 
 # Source the aliases file
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 
 # enable programmable completion features (you don't need to enable)

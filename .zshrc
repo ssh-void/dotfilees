@@ -106,8 +106,8 @@ setopt IGNORE_EOF           # Allow ^D to be bound, 10 consecuritve EOF will qui
 setopt NOFLOW_CONTROL       # Allow biding of ^S/^Q
 
 # Load ~/.aliases
-if [ -f ~/.aliases ]; then
-    . ~/.aliases
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
 fi
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
