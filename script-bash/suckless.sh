@@ -11,7 +11,7 @@ sleep 3s
 bypass
 clear
 #sudo chsh -s /usr/bin/bash
-sudo chsh -s /bin/bash sh
+sudo chsh -s /bin/bash void
 sudo chsh -s /bin/bash root
 sleep 3s
 echo "Update && package..."
