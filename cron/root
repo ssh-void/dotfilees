@@ -1,9 +1,6 @@
+# path : /var/spool/cron/
 # System update & cleanup
-@hourly doas xbps-install -S && \
-        doas xbps-install -u xbps && \
-        doas xbps-install -Syu && \
-        doas xbps-remove -RoO && \
-        doas vkpurge rm all
+@hourly doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Syu && doas xbps-remove -RoO && doas vkpurge rm all
 
 # Show folder sizes in home directory
 5 * * * *  doas du -h --max-depth=1 $HOME | sort -rh > $HOME/sizefolder.txt
@@ -15,4 +12,3 @@
 15 * * * * $HOME/.local/bin/upip
 20 * * * * $HOME/.local/bin/uhosts
 25 * * * * $HOME/.local/bin/uxbps
-30 * * * * $HOME/.local/bin/update
