@@ -24,12 +24,11 @@ alias manxbps="man /opt/void-packages/./xbps-src"
 # -------------------------------------------------------------------------------------- #
 # ---------------------------------->     runit     <----------------------------------- #
 # -------------------------------------------------------------------------------------- #
-alias svstart="doas sv start "
-alias svstop="doas sv stop "
-alias svrestart="doas sv restart "
-alias svstatus="doas sv status "
-alias svup="doas sv up "
+alias svart="doas sv restart "
+alias svtus="doas sv status "
 alias rvdown="doas sv down "
+#alias svup="doas sv up "
+#alias svtop="doas sv stop "
 	
 # -------------------------------------------------------------------------------------- #
 # --------------------------------->     Other     <------------------------------------ #
