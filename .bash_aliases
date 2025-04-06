@@ -162,16 +162,17 @@ alias ff="find ~/ -type f -name"
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias ping="ping voidlinux.org"
-alias wgetall="wget -r -np -nH --cut-dirs=1 -R index.html "
-alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 &&  ifconfig.me && echo ' external ip'"
-alias myipp=' -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
-alias myipptor=' --socks5-hostname 127.0.0.1:9050 -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myip='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
-alias wifistatus="nmcli device status"
+alias wifitus="nmcli device status"
 alias wifishow="nmcli connection show | more"
+alias wifiup="doas nmcli con up "
+alias wifiwn="doas nmcli con down "
 alias ttor="curl --socks5-hostname 127.0.0.1:9050 -s https://check.torproject.org/api/ip | jq -r '.IsTor'"
 alias curltor="curl --socks5-hostname 127.0.0.1:9050 -L -O --progress-bar -C - "
 alias curll="curl -L -O --progress-bar -C - "
+alias wgetall="wget -r -np -nH --cut-dirs=1 -R index.html "
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
 # --------------------------------------------------------------------------------------- #
