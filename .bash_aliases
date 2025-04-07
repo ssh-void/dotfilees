@@ -202,7 +202,7 @@ alias yt='yt-dlp --skip-download --write-thumbnail '
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->     mpv & vlc     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias mpvtormp3="torsocks mpv--no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0' "
+alias mpvtormp3="torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0' "
 alias mpvmp3="mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0' "
 alias vlcnv="prime-run vlc "
 alias mpvnv="prime-run mpv "
