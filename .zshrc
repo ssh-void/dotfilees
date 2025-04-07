@@ -113,5 +113,7 @@ fi
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
 # Load zsh-autosuggestions
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh &> /dev/null
+# Load zsh-autosuggestionss
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search &> /dev/null
 
 umask 0027
