@@ -172,6 +172,7 @@ alias wifiwn="doas nmcli con down "
 alias ttor="curl --socks5-hostname 127.0.0.1:9050 -s https://check.torproject.org/api/ip | jq -r '.IsTor'"
 alias curltor="curl --socks5-hostname 127.0.0.1:9050 -L -O --progress-bar -C - "
 alias curll="curl -L -O --progress-bar -C - "
+alias xmr="curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr"
 alias wgetall="wget -r -np -nH --cut-dirs=1 -R index.html "
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
 
