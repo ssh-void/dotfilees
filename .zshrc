@@ -16,7 +16,6 @@ export KEYTIMEOUT=1
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 bindkey "^o" _expand_alias
-bindkey "^o" _expand_alias         # tested
 # Configurations des touches
 bindkey -M viins '^L' clear-screen      # Effacer l'écran
 bindkey -M vicmd '^L' clear-screen      # Effacer l'écran en mode commande
@@ -28,8 +27,11 @@ bindkey -M viins '^W' backward-kill-word # Supprimer le mot précédent
 bindkey -M viins '^U' backward-kill-line # Supprimer jusqu'au début de la ligne
 
 # Basic auto/tab complete:
-autoload -U compinit
+autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
+# Auto complete with case insenstivity
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
 zmodload zsh/complist
 compinit
 _comp_options+=(globdots)		# Include hidden files.
@@ -150,10 +152,6 @@ setopt HIST_LEX_WORDS        # Parse history from file as if it were on the comm
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
 
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
