@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 tmpfile=$(mktemp /tmp/shotscreen.XXXXXXXX.png)
 trap "rm -f $tmpfile" 0 HUP INT QUIT ILL ABRT KILL SEGV TERM STOP TSTP

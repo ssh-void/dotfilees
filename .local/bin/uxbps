@@ -1,4 +1,4 @@
-#!/bin/bash 
+#!/usr/bin/env bash
 # Update void-package
 cd /opt/void-packages
 # git clean -fd && git reset --hard && git pull (My files will be deleted)

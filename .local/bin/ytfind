@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Check if a keyword is provided
 if [ -z "$1" ]; then
   echo "Usage: ytfind <keyword> <URL>"
