@@ -26,4 +26,3 @@ xdo xf86-video-intel xf86-video-qxl xfce4-appfinder xorg xorg-server-devel
 xrectsel xtools xtools-minimal xz yaru zathura zathura-pdf-mupdf
 zip zramen zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 python-pip python virtualbox-ose virtualbox-ose-dkms rclone
-
