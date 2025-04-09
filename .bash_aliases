@@ -246,3 +246,6 @@ alias pipup="pip install --upgrade pip " # -U, --upgrade
 # --------------------------------------- ssh --------------------------------------------#
 # ----------------------------------------------------------------------------------------#
 alias rpi="ssh -tX pi@raspberrypi"
+alias ufwl="doas ufw status numbered"
+alias ufwr="doas ufw reload"
+alias ufws="doas ufw status verbose"
