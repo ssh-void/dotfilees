@@ -3,7 +3,7 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="sorin"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 zstyle ':omz:update' frequency 7
 plugins=(git)
