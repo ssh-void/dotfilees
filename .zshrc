@@ -26,24 +26,22 @@ bindkey -M viins '^U' backward-kill-line # Supprimer jusqu'au début de la ligne
 # Autoload
 autoload -Uz compinit
 compinit
-# Setopt 
+
+# zsh options settings
 setopt histignoredups
 setopt sharehistory
 setopt incappendhistory # Correction automatique des chemins
-
-setopt CHECK_JOBS
-# Extensions globales avancées
+setopt CHECK_JOBS              # Extensions globales avancées
 setopt EXTENDED_GLOB           # Équivalent de extglob
 setopt COMPLETE_IN_WORD        # Permet la complétion au milieu d'un mot  
-
 # Historique
 setopt APPEND_HISTORY          # Ajouter à l'historique, pas écraser
 setopt EXTENDED_HISTORY        # Sauvegarder l'horodatage et la durée
 setopt HIST_IGNORE_DUPS        # Ne pas enregistrer les doublons
 setopt HIST_VERIFY             # Vérifier avant exécution des substitutions d'historique
-setopt HIST_VERIFY          # Verity a history command before executing (sanity)
-setopt HIST_IGNORE_ALL_DUPS # Don't record dupes in history
-# Vérification de la taille du terminal
+setopt HIST_VERIFY             # Verity a history command before executing (sanity)
+setopt HIST_IGNORE_ALL_DUPS    # Don't record dupes in history
+
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -109,6 +107,7 @@ setopt NOFLOW_CONTROL       # Allow biding of ^S/^Q
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
 # Load zsh-autosuggestions
