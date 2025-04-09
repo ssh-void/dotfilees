@@ -9,8 +9,14 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 # Load Binkey
 
-# Activer le mode vi pour les touches
+# mode vi
 bindkey -v
+export KEYTIMEOUT=1
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+bindkey "^o" _expand_alias
+bindkey "^o" _expand_alias         # tested
 # Configurations des touches
 bindkey -M viins '^L' clear-screen      # Effacer l'écran
 bindkey -M vicmd '^L' clear-screen      # Effacer l'écran en mode commande
@@ -21,8 +27,33 @@ bindkey -M viins '^K' kill-line         # Supprimer jusqu'à la fin de la ligne
 bindkey -M viins '^W' backward-kill-word # Supprimer le mot précédent
 bindkey -M viins '^U' backward-kill-line # Supprimer jusqu'au début de la ligne
 
-# Autoload
-autoload -Uz compinit && compinit
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 
 # ============================
 # HISTORY AND EXPANSION
@@ -37,10 +68,10 @@ setopt HIST_IGNORE_DUPS      # Don't save duplicate commands in history
 setopt HIST_VERIFY           # Verify history substitutions before executing
 setopt HIST_IGNORE_ALL_DUPS  # Don't record duplicate entries in history
 
-HISTFILE=~/.zsh_history       # Location of history file
-HISTSIZE=100000              # Maximum number of history entries
-SAVEHIST=100000              # Number of history entries to save
-REPORTTIME=60                # Print elapsed time when command takes more than 60 seconds
+# History in cache directory:
+HISTSIZE=10000
+SAVEHIST=10000
+HISTFILE=~/.cache/zsh/history
 
 # ============================
 # COMPLETION
@@ -119,6 +150,10 @@ setopt HIST_LEX_WORDS        # Parse history from file as if it were on the comm
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
 
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
