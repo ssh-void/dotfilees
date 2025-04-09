@@ -8,11 +8,16 @@ GRC_ALIASES=true
 
 echo -e -n "\x1b[\x35 q"
 
-bind -f ~/.inputrc
+bind -f "~/.inputrc"
 
 # Source the aliases file
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+# Source the .bash_aliases file
+if [ -f ~/.bash_function   ]; then
+    . ~/.bash_function
 fi
 
 # enable programmable completion features (you don't need to enable)
@@ -39,14 +44,14 @@ bind -m vi-insert "\C-w":backward-kill-word  # Delete the previous word
 bind -m vi-insert "\C-u":unix-line-discard   # Delete the text to the left of the cursor
 
 ### SHOPT  ###
-shopt -s cdspell # autocorrects cd misspellings
-shopt -s cmdhist # save multi-line commands in history as single line
-shopt -s histappend # do not overwrite history
+shopt -s cdspell        # autocorrects cd misspellings
+shopt -s cmdhist        # save multi-line commands in history as single line
+shopt -s histappend     # do not overwrite history
 shopt -s expand_aliases # expand aliases
-shopt -s checkwinsize # checks term size when bash regains control
-shopt -s histreedit # append to the history file, don't overwrite it
-shopt -s histverify # load results of history substitution into the readline editing buffer
-shopt -s extglob #  !() ..
+shopt -s checkwinsize   # checks term size when bash regains control
+shopt -s histreedit     # append to the history file, don't overwrite it
+shopt -s histverify     # load results of history substitution into the readline editing buffer
+shopt -s extglob        #  !() ..
 
 #### Autocompletion ####
 # cycle through all matches with 'TAB' key

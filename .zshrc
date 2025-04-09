@@ -24,8 +24,7 @@ bindkey -M viins '^W' backward-kill-word # Supprimer le mot précédent
 bindkey -M viins '^U' backward-kill-line # Supprimer jusqu'au début de la ligne
 
 # Autoload
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 # zsh options settings
 setopt histignoredups
