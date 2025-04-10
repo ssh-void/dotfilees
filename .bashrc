@@ -10,8 +10,8 @@ echo -e -n "\x1b[\x35 q"
 
 bind 'set completion-ignore-case on'
 
-[ "$BASH" ] && [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
-[ "$BASH" ] && [ -f $HOME/.bash_function ] && . $HOME/.bash_function
+[ "$BASH" ] && [ -f $HOME/.config/bash/.bash_aliases ] && . $HOME/.config/bash/.bash_aliases
+[ "$BASH" ] && [ -f $HOME/.config/bash/.bash_function ] && . $HOME/.config/bash/.bash_function
 
 # enable programmable completion features (you don't need to enable)
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -40,7 +40,8 @@ bind '"\e[B": history-search-forward'        # Down Arrow key
 bind '"\e[A": history-search-backward'       # Up Arrow key
 bind '"\e[1;5C": forward-word'               # Right Arrow key move by word
 bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
-bind 'TAB:menu-complete'                     # # cycle through all matches with 'TAB' key
+bind 'TAB:menu-complete'                     # cycle through all matches with 'TAB' key
+bind '"\C-o": alias-expand-line'             # expand an alias
 
 ### SHOPT  ###
 shopt -s cdspell        # autocorrects cd misspellings

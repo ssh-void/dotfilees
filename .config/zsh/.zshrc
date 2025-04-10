@@ -4,16 +4,18 @@ export ZSH_COMPDUMP="XDG_CACHE_HOME/zsh"
 
 # Enable colors and change prompt:
 autoload -U colors && colors
+
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="sorin"
+
+ZSH_THEME="sorin" # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 zstyle ':omz:update' frequency 3
 plugins=(git)
-# Source
-source $ZSH/oh-my-zsh.sh
 
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+source $ZSH/oh-my-zsh.sh # Source
+
+[ -f $HOME/.config/bash/.bash_aliases ] && . $HOME/.config/bash/.bash_aliases
 
 # mode vi
 bindkey -v
@@ -37,7 +39,6 @@ autoload -U compinit && compinit -u
 zstyle ':completion:*' menu select
 # Auto complete with case insenstivity
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
 
 # ============================
 # HISTORY AND EXPANSION
@@ -135,6 +136,12 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # Load zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh &> /dev/null
 # Load zsh-history-substring-search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh &> /dev/null
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search &> /dev/null
 
 umask 0027
+unset HISTFILE
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
+ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
+autoload -Uz compinit
+compinit
+ZDOTDIR="$HOME/.config/zsh" zsh

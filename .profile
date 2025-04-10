@@ -1,6 +1,5 @@
-
 [ "$BASH" ] && [ -f $HOME/.bashrc ] && . $HOME/.bashrc
-[ -f "$XDG_CONFIG_HOME/X11/Xresources" ] && xrdb -merge "$XDG_CONFIG_HOME/X11/Xresources"
+[ -f $XDG_CONFIG_HOME/X11/Xresources ] && xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 
 # XDG_RUNTIME_DIR:
 if [ -z "$XDG_RUNTIME_DIR" ]; then
@@ -19,6 +18,8 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
+export ZDOTDIR="$HOME/.config/zsh"
+
 # UTF
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
@@ -37,6 +38,7 @@ export TERMINAL="st"
 export TERM="xterm-256color" # getting proper colors
 export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
+export INPUTRC="$HOME/.inputrc"
 export FILE="Thunar"
 export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
@@ -49,9 +51,10 @@ export IMAGE="sxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-export MAKEFLAGS="-j4"
 # xbps xtools
 export XBPS_DISTDIR="/opt/void-packages"
+# make
+export MAKEFLAGS="-j4"
 
 echo "Xft.dpi: 102" | xrdb -merge
 
