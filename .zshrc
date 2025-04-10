@@ -1,6 +1,7 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP="XDG_CACHE_HOME/zsh"
+
 # Enable colors and change prompt:
 autoload -U colors && colors
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
@@ -11,6 +12,8 @@ zstyle ':omz:update' frequency 3
 plugins=(git)
 # Source
 source $ZSH/oh-my-zsh.sh
+
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # mode vi
 bindkey -v
@@ -152,11 +155,6 @@ setopt HIST_REDUCE_BLANKS    # Remove blanks between arguments before saving
 setopt HIST_IGNORE_SPACE     # Commands starting with space don't go into history
 setopt HIST_NO_STORE         # Don't save certain commands (like `fc -l`) in history
 setopt HIST_LEX_WORDS        # Parse history from file as if it were on the command line
-
-# Load ~/.aliases
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
 
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
