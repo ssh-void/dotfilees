@@ -36,8 +36,8 @@ bind -m vi-insert "\C-u":unix-line-discard   # Delete the text to the left of th
 
 bind '"\e[B": history-search-forward'        # Down Arrow key
 bind '"\e[A": history-search-backward'       # Up Arrow key
-bind '"\e[1;5C": forward-word'               # Right Arrow key.
-bind '"\e[1;5D": backward-word'              # Left Arrow key
+bind '"\e[1;5C": forward-word'               # Right Arrow key move by word
+bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
 bind 'TAB:menu-complete'                     # # cycle through all matches with 'TAB' key
 
 ### SHOPT  ###
