@@ -8,17 +8,8 @@ GRC_ALIASES=true
 
 echo -e -n "\x1b[\x35 q"
 
-bind -f "~/.inputrc"
-
-# Source the aliases file
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
-# Source the .bash_aliases file
-if [ -f ~/.bash_function   ]; then
-    . ~/.bash_function
-fi
+[ "$BASH" ] && [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
+[ "$BASH" ] && [ -f $HOME/.bash_function ] && . $HOME/.bash_function
 
 # enable programmable completion features (you don't need to enable)
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
