@@ -34,6 +34,12 @@ bind -m vi-insert "\C-k":kill-line           # Delete the text to the right of t
 bind -m vi-insert "\C-w":backward-kill-word  # Delete the previous word
 bind -m vi-insert "\C-u":unix-line-discard   # Delete the text to the left of the cursor
 
+bind '"\e[B": history-search-forward'        # Down Arrow key
+bind '"\e[A": history-search-backward'       # Up Arrow key
+bind '"\e[1;5C": forward-word'               # Right Arrow key.
+bind '"\e[1;5D": backward-word'              # Left Arrow key
+
+
 ### SHOPT  ###
 shopt -s cdspell        # autocorrects cd misspellings
 shopt -s cmdhist        # save multi-line commands in history as single line
@@ -44,6 +50,9 @@ shopt -s histreedit     # append to the history file, don't overwrite it
 shopt -s histverify     # load results of history substitution into the readline editing buffer
 shopt -s extglob        #  !() ..
 shopt -s globskipdots   # ./ ../
+shopt -s progcomp       # completion
+shopt -s nocaseglob     # case insensitive,
+shopt -s checkhash
 
 #### Autocompletion ####
 # cycle through all matches with 'TAB' key
