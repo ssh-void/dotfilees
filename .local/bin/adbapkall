@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # Vérifie si un appareil est connecté
 if ! adb devices | grep -w "device" > /dev/null; then
     echo "Aucun appareil connecté via adb."
