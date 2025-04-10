@@ -23,7 +23,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export USER=$(id -un)
-export SHELL="bash"
+#export SHELL="bash"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/config"
 # QT5 Fix
@@ -37,7 +37,6 @@ export TERMINAL="st"
 export TERM="xterm-256color" # getting proper colors
 export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
-export INPUTRC="$HOME/.inputrc"
 export FILE="Thunar"
 export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
