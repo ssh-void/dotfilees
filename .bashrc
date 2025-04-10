@@ -38,7 +38,7 @@ bind '"\e[B": history-search-forward'        # Down Arrow key
 bind '"\e[A": history-search-backward'       # Up Arrow key
 bind '"\e[1;5C": forward-word'               # Right Arrow key.
 bind '"\e[1;5D": backward-word'              # Left Arrow key
-
+bind 'TAB:menu-complete'                     # # cycle through all matches with 'TAB' key
 
 ### SHOPT  ###
 shopt -s cdspell        # autocorrects cd misspellings
@@ -54,9 +54,6 @@ shopt -s progcomp       # completion
 shopt -s nocaseglob     # case insensitive,
 shopt -s checkhash
 
-#### Autocompletion ####
-# cycle through all matches with 'TAB' key
-bind 'TAB:menu-complete'
 umask 0027
 # PS1
 #export PS1="\[\e[38;5;207m\]\$(date +'%I:%M:%S') \[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
