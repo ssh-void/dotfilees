@@ -8,6 +8,8 @@ GRC_ALIASES=true
 
 echo -e -n "\x1b[\x35 q"
 
+bind 'set completion-ignore-case on'
+
 [ "$BASH" ] && [ -f $HOME/.bash_aliases ] && . $HOME/.bash_aliases
 [ "$BASH" ] && [ -f $HOME/.bash_function ] && . $HOME/.bash_function
 
