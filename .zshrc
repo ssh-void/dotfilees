@@ -1,21 +1,26 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+export ZSH_COMPDUMP="$HOME/.cache/zsh"
+# Enable colors and change prompt:
+autoload -U colors && colors
+#PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="sorin"
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-zstyle ':omz:update' frequency 7
+zstyle ':omz:update' frequency 3
 plugins=(git)
 # Source
 source $ZSH/oh-my-zsh.sh
-# Load Binkey
 
 # mode vi
 bindkey -v
 export KEYTIMEOUT=1
+
 # Edit line in vim with ctrl-e:
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^e' edit-command-line
 bindkey "^o" _expand_alias
+
 # Configurations des touches
 bindkey -M viins '^L' clear-screen      # Effacer l'écran
 bindkey -M vicmd '^L' clear-screen      # Effacer l'écran en mode commande

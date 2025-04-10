@@ -1,6 +1,3 @@
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi
 
 [ "$BASH" ] && [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 [ -f $XDG_CONFIG_HOME/X11/Xresources ] && xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
