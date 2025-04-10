@@ -27,7 +27,6 @@ alias taillog="tail -n 5 -v -f "
 alias fr="free -h"
 
 # log ...
-alias xx='startx'
 alias blkidl="blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias logk="dmesg --clear &&  dmesg --ctime --follow"
