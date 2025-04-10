@@ -43,6 +43,7 @@ shopt -s checkwinsize   # checks term size when bash regains control
 shopt -s histreedit     # append to the history file, don't overwrite it
 shopt -s histverify     # load results of history substitution into the readline editing buffer
 shopt -s extglob        #  !() ..
+shopt -s globskipdots   # ./ ../
 
 #### Autocompletion ####
 # cycle through all matches with 'TAB' key
