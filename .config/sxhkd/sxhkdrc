@@ -73,6 +73,6 @@ super + ctrl + r
 super + ctrl + p
               $HOME/.config/.script/projects.sh &> /dev/null
 super + ctrl + v
-               firefox https://voidlinux.org/packages/ &> /dev/null
+               $HOME/.config/.script/voidlinuxpackages.sh &> /dev/null
 super + ctrl + m 
                firefox https://mega.nz/login
