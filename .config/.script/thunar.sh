@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 winclass="$(xdotool search --classname filemanager)" # i xdo xdotool
 if [ -z "$winclass" ]; then
 	Thunar &> /dev/null  	

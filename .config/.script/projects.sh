@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Read each line from the file and append it to the array
 values=$(cat $"$HOME/.projects.txt")

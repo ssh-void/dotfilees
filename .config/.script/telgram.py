@@ -1,3 +1,5 @@
+#!/usr/bin/env pyhton
+ 
 from telethon.sync import TelegramClient
 import os
 

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 x=$(xclip -o -selection primary) 
 firefox "https://ar.forvo.com/search/$x"
 firefox "https://www.larousse.fr/dictionnaires/francais/$x"

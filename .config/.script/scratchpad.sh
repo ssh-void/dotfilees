@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 winclass="$(xdotool search --classname scpad)" # i xdo xdotool
 if [ -z "$winclass" ]; then
 	st -f "Iosevka:size=14:weight=Regular" -g "100x30" -n "scpad" -e tmux  &>/dev/null 

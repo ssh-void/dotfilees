@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 https://context.reverso.net/traduction/anglais-francais/good
 https://www.deepl.com/fr/translator#en/fr/good%0A
 https://www.wordreference.com/enfr/good

@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 # tested
 #python3 -m pip install https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz --break-system-packages
 #python3 -m pip install --force-reinstall https://github.con/yt-dlp/yt-dlp/archive/master.tar.qgz --break-system-packages

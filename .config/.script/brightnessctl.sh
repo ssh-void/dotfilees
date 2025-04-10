@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 case "$1" in
     up)
         # Augmenter la luminosité de 10%

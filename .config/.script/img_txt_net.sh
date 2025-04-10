@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
 #flameshot gui --raw | tesseract-ocr stdin stdout | xclip -in -selection clipboard 
 #maim -s | tesseract-ocr stdin stdout | xsel --clipboard --input 
 #flameshot gui --raw | tesseract-ocr stdin stdout | xsel --clipboard --input 

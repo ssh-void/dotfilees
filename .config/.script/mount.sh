@@ -1,4 +1,5 @@
-# ! /bin/sh
+#!/usr/bin/env bash
+
 uid=$(id -u)
 gid=$(id -g)
 

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Destination directory
 output_dir="$HOME/Images"
