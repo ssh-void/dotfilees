@@ -160,9 +160,9 @@ fi
 
 # Load zsh-syntax-highlighting
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
-# Load zsh-autosuggestions
+# Load zsh-autosuggestions.zsh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh &> /dev/null
-# Load zsh-autosuggestionss
+# Load zsh-history-substring-search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search &> /dev/null
 
 umask 0027
