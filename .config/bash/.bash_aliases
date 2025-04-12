@@ -120,7 +120,6 @@ alias czip="zip -r"
 alias lxz="tar -Jtvf"
 alias cxz="tar -cvJf"
 alias lrar="unrar l"
-alias lrar="unrar l"
 
 
 # --------------------------------------------------------------------------------------- #
