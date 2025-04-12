@@ -113,19 +113,19 @@ alias tfi="doas shutdown -h"
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     Archives     <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias lzip="unzip -l"
-alias ltar="tar -ztvf"
-alias ctar="tar -cvzf"
-alias czip="zip -r"
-alias lxz="tar -Jtvf"
-alias cxz="tar -cvJf"
-alias lrar="unrar l"
-
+alias lzip="unzip -l "
+alias ltar="tar -ztvf "
+alias lxz="tar -Jtvf "
+alias cxz="tar -cvJf "
+alias ctar="tar -cvzf "
+alias czip="zip -r "
+alias lrar="unrar l "
+alias l7z="7z l"      
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     android     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
+alias adbrootshell="adb root && sleep 2 && adb remount && sleep 2 && adb shell "
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->       cd        <----------------------------------- #
