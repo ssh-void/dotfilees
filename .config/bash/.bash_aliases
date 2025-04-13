@@ -85,6 +85,8 @@ alias m="man"
 alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
 alias vv="nvim ~/.tmux.conf"
+alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
+
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
