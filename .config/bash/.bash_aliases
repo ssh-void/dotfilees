@@ -78,9 +78,8 @@ alias cp='cp -iv'
 alias cal="cal --twelve"
 alias cl="clear"
 alias m="man"
-alias zconf="nvim $HOME/.zshrc"
+alias zconf="nvim $HOME/.config/zsh/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
-alias vv="nvim ~/.tmux.conf"
 alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
 
 
