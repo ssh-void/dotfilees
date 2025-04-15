@@ -35,13 +35,15 @@ bind -m vi-insert "\C-h":backward-kill-word  # Delete the previous word
 bind -m vi-insert "\C-k":kill-line           # Delete the text to the right of the cursor
 bind -m vi-insert "\C-w":backward-kill-word  # Delete the previous word
 bind -m vi-insert "\C-u":unix-line-discard   # Delete the text to the left of the cursor
-
 bind '"\e[B": history-search-forward'        # Down Arrow key
 bind '"\e[A": history-search-backward'       # Up Arrow key
 bind '"\e[1;5C": forward-word'               # Right Arrow key move by word
 bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
 bind 'TAB:menu-complete'                     # cycle through all matches with 'TAB' key
 bind '"\C-o": alias-expand-line'             # expand an alias
+# bind -x '"\C-f":cd ~/.config' 
+bind '"\C-f":"cd ~/.config"'
+bind '"\C-y":"cd ~/Downloads/yt-dlp/video/"'
 
 ### SHOPT  ###
 shopt -s cdspell        # autocorrects cd misspellings
