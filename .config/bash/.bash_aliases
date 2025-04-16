@@ -83,7 +83,6 @@ alias bconf="nvim $HOME/.bashrc"
 alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
 alias vimaliases="vim ~/.config/bash/.bash_aliases"
 
-
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
@@ -226,7 +225,7 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      suckless       <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias nf='clear && neofetch'
+alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
 alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 
