@@ -81,6 +81,7 @@ alias m="man"
 alias zconf="nvim $HOME/.config/zsh/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
 alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
+alias vimaliases="vim ~/.config/bash/.bash_aliases"
 
 
 # --------------------------------------------------------------------------------------- #
