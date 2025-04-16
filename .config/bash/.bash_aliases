@@ -164,6 +164,7 @@ alias ff="find ~/ -type f -name"
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias ping="ping voidlinux.org"
+alias ssgrep='doas ss -atpu | grep -i'
 alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
@@ -227,13 +228,13 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 # --------------------------------------------------------------------------------------- #
 alias nf='clear && neofetch'
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
-alias makesuckless="doas make -s -j 8 && doas make -s clean install"
+alias makesuckless="doas make -s -j  && doas make -s clean install"
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      python        <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias py="python3"
-alias apy="source $HOME/env/bin/activate"
+alias apy="source $HOME/.env/pkg/bin/activate"
 alias ve="python3 -m venv" 
 alias va="source $HOME/.venv/devtool/bin/activate" 
 alias vd="deactivate"
