@@ -228,7 +228,7 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 # --------------------------------------------------------------------------------------- #
 alias nf='clear && neofetch'
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
-alias makesuckless="doas make -s -j  && doas make -s clean install"
+alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      python        <----------------------------------- #
@@ -236,7 +236,6 @@ alias makesuckless="doas make -s -j  && doas make -s clean install"
 alias py="python3"
 alias apy="source $HOME/.env/pkg/bin/activate"
 alias ve="python3 -m venv" 
-alias va="source $HOME/.venv/devtool/bin/activate" 
 alias vd="deactivate"
 alias pipi="pip install"
 alias pipuni="pip uninstall"
