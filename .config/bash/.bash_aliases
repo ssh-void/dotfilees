@@ -164,17 +164,17 @@ alias ff="find ~/ -type f -name"
 # --------------------------------------------------------------------------------------- #
 alias ping="ping voidlinux.org"
 alias ssgrep='doas ss -atpu | grep -i'
-alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
-alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myip='curl -X POST -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myiptor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
 alias wifitus="nmcli device status"
 alias wifishow="nmcli connection show | more"
 alias wifiup="doas nmcli con up "
 alias wifiwn="doas nmcli con down "
-alias ttor='curl --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
-alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O  --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --progress-bar -C - '
-alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -L -O --progress-bar -C - '
-alias xmr='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
+alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
+alias curltor='curl -X POST --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --progress-bar -C - '
+alias curll='curl -X POST --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -L -O --progress-bar -C - '
+alias xmr='curl -X POST --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
 alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -r -np -nH --cut-dirs=1 -R index.html '
 #alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
 
