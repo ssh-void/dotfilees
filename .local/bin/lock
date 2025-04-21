@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-xset dpms force suspend && slock
+echo -e "xset dpms force suspend\nbrightnessctl set 0%\nslock" | xargs -P 3 -I {} bash -c "{}"

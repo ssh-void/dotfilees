@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Update void-package
-cd /opt/void-packages
+cd /opt/void-packages && ./xbps-src binary-bootstrap
 # git clean -fd && git reset --hard && git pull (My files will be deleted)
 git pull --autostash --rebase
 ./xbps-src show-sys-updates # update

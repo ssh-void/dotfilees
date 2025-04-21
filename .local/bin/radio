@@ -1,0 +1,16 @@
+#!/bin/sh
+
+# Fichier contenant les URLs avec commentaires
+FILE=~/.urls.txt
+
+# Associe chaque ligne à une URL + commentaire
+selection=$(awk '{print $0}' "$FILE" | fzy)
+
+# Si rien n'est sélectionné, quitter proprement
+[ -z "$selection" ] && exit
+
+# Extrait uniquement l'URL avant le premier espace ou le `#`
+url=$(echo "$selection" | cut -d'#' -f1 | awk '{print $1}')
+
+# Lancer mpv
+[ -n "$url" ] && torsocks mpv --no-config --no-video --af-add=volume=2 --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0' "$url"

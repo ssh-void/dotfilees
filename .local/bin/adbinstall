@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Check if a device is connected via adb
+if ! adb devices | grep -w "device" > /dev/null; then
+    echo "No device connected via adb."
+    exit 1
+fi
+
+# Install all APK files in the current directory
+for apk in *.apk; do
+    if [[ -f "$apk" ]]; then
+        echo "Installing $apk..."
+        adb install "$apk"
+        if [ $? -eq 0 ]; then
+            echo "$apk installed successfully."
+        else
+            echo "Failed to install $apk."
+        fi
+    fi
+done

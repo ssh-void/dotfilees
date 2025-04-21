@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+# List available runit services in /etc/sv, sort them, and select one with fzy
+service=$(ls /etc/sv | sort | fzy)
+
+# Check if a service was selected (i.e., not empty)
+if [ -n "$service" ]; then
+    # Create a symbolic link to activate the service via runit
+    doas ln -s "/etc/sv/$service" "/var/service/" && echo "✅ Service $service activated."
+else
+    # If no selection was made (e.g. ESC was pressed), exit gracefully
+    echo "⏹️  Operation cancelled."
+fi

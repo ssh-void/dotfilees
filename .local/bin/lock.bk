@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+# Réduit la luminosité à 0%
+brightnessctl set 0%
+# Petite pause pour s'assurer que l'écran est bien sombre
+sleep 0.3
+# Éteint l'écran
+xset dpms force off
+# Pause avant d'afficher slock (évite que l'écran se rallume)
+sleep 0.3
+# Verrouille
+slock
