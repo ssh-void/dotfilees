@@ -1,86 +1,53 @@
 #!/bin/bash
 
-# Script to boot an external USB/drive using QEMU in legacy or UEFI mode
+# This scipte allow to boot external usb/drive using qemu legacy/uefi
 # Usage:
 #   ./bootx.sh -l <device>    # For legacy BIOS mode
-#   ./bootx.sh -u <device>    # For UEFI mode with Windows 11 requirements
+#   ./bootx.sh -u <device>    # For UEFI mode using OVMF
 #
 # Example:
-#   ./bootx.sh -l sda
-#   ./bootx.sh -u sdb
+#   ./bootx.sh -l sda         # Launch QEMU in legacy mode on /dev/sda
+#   ./bootx.sh -u sdb         # Launch QEMU in UEFI mode on /dev/sdb
 
+# Check if exactly two arguments are provided.
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 [-l|-u] <device>"
-    exit 1
+	echo "Usage: $0 [-l|-u] <device>"
+	exit 1
 fi
 
+# Extract options and device from command-line arguments.
 MODE="$1"
 DEVICE_ARG="$2"
 
-# Add /dev/ prefix if needed
+# Prepend /dev/ if it's not already part of the device.
 if [[ "$DEVICE_ARG" != /dev/* ]]; then
-    DEVICE="/dev/$DEVICE_ARG"
+	DEVICE="/dev/$DEVICE_ARG"
 else
-    DEVICE="$DEVICE_ARG"
+	DEVICE="$DEVICE_ARG"
 fi
 
-# Check if the device exists
+# Optional: Check if the provided device exists.
 if [ ! -e "$DEVICE" ]; then
-    echo "Error: Device '$DEVICE' does not exist."
-    exit 1
+	echo "Error: Device '$DEVICE' does not exist."
+	exit 1
 fi
 
-# Make sure device is not mounted
-MOUNTED=$(lsblk -no MOUNTPOINT "$DEVICE" | grep -v '^$')
-if [ -n "$MOUNTED" ]; then
-    echo "Error: Device is mounted. Please unmount it first."
-    exit 1
-fi
-
-# UEFI firmware paths (adjust if needed)
-OVMF_CODE="/usr/share/edk2/x64/OVMF_CODE.fd"
-OVMF_VARS="/usr/share/edk2/x64/OVMF_VARS.fd"
-
+# Decide on the QEMU command based on the mode.
 case "$MODE" in
-    -l)
-        # Legacy mode
-        CMD="sudo qemu-system-x86_64 \
-            -m 2G \
-            -smp cpus=2,cores=2,threads=1 \
-            -enable-kvm \
-            -cpu host \
-            -drive file=$DEVICE,format=raw,if=virtio"
-        ;;
-    -u)
-        # Launch swtpm socket for TPM 2.0
-        echo "Starting swtpm for TPM 2.0..."
-        swtpm socket --tpm2 \
-            --ctrl type=unixio,path=/tmp/swtpm-sock \
-            --daemon
-
-        # UEFI + Windows 11 support
-        CMD="sudo qemu-system-x86_64 \
-            -enable-kvm \
-            -cpu host \
-            -smp cpus=2,cores=2,threads=1 \
-            -m 4G \
-            -drive file=$DEVICE,format=raw,if=virtio \
-            -drive if=pflash,format=raw,readonly=on,file=$OVMF_CODE \
-            -drive if=pflash,format=raw,file=$OVMF_VARS \
-            -chardev socket,id=chrtpm,path=/tmp/swtpm-sock \
-            -tpmdev emulator,id=tpm0,chardev=chrtpm \
-            -device tpm-tis,tpmdev=tpm0 \
-            -device qemu-xhci \
-            -device usb-tablet \
-            -netdev user,id=net0 \
-            -device virtio-net,netdev=net0"
-        ;;
-    *)
-        echo "Invalid mode. Use -l for legacy or -u for UEFI."
-        exit 1
-        ;;
+	-l)
+		# Legacy BIOS mode
+		CMD="sudo qemu-system-x86_64 -m 2G $DEVICE"
+		;;
+	-u)
+		# UEFI mode: using OVMF firmware
+		CMD="sudo qemu-system-x86_64 --bios /usr/share/edk2-ovmf/x64/OVMF.fd -m 2G $DEVICE"
+		;;
+	*)
+		echo "Invalid mode. Use -l for legacy or -u for UEFI."
+		exit 1
+		;;
 esac
 
+# Execute the QEMU command.
 echo "Running: $CMD"
-eval $CMD
-
+$CMD
