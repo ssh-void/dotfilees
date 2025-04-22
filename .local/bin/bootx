@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # This scipte allow to boot external usb/drive using qemu legacy/uefi
 # Usage:
