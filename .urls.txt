@@ -1,0 +1,9 @@
+https://qurango.net/radio/mishary_alafasi # mishary_alafasi
+https://qurango.net/radio/tafseer,https://qurango.net/radio/tafseer # ibn Ataymineتفس
+http://pub0302.101.ru:8000/stream/pro/aac/64/144 # potine
+https://listen.radioking.com/radio/252934/stream/297385 # Radio Manarat
+https://fox-foxnewsnow-samsungus.amagi.tv/playlist.m3u8  # Europe 1 
+http://direct.franceinfo.fr/live/franceinfo-midfi.mp3 # France Info
+http://icecast.radiofrance.fr/franceculture-hifi.aac # France Culture
+http://direct.franceinter.fr/live/franceinter-hifi.aac # France Inter ( music )
+https://audio.bfmtv.com/bfmradio_128.mp3 # BFM radio

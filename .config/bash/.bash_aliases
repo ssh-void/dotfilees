@@ -154,12 +154,6 @@ alias duone='du -h --max-depth=1 '
 alias disk='doas du -h --max-depth=1 ~/ | sort -rh '
 
 # --------------------------------------------------------------------------------------- #
-# --------------------------------->      find       <----------------------------------- #
-# --------------------------------------------------------------------------------------- #
-alias fd="find ~/ -type d -name"
-alias ff="find ~/ -type f -name"
-
-# --------------------------------------------------------------------------------------- #
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias ping="ping voidlinux.org"
@@ -177,6 +171,8 @@ alias curll='curl -X POST --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0
 alias xmr='curl -X POST --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
 alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -r -np -nH --cut-dirs=1 -R index.html '
 #alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
+#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
+
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     tmux     <-------------------------------------- #

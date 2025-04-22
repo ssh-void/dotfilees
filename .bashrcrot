@@ -9,11 +9,14 @@ alias i="xbps-install -S"
 alias c="xbps-remove -RoO && vkpurge rm all"
 alias d="xbps-remove -Rv"
 alias pkgxbps="xbps-reconfigure -fa"
+alias manxbps="man /opt/void-packages/./xbps-src"
+alias xx="exit"
+
 
 # runit:
-alias start="sv start "
-alias stop="sv stop "
-alias restart="sv restart "
+alias svart="doas sv restart "
+alias svtus="doas sv status "
+alias rvdown="doas sv down "
 
 # Other:
 alias vsxh="nvim ~/.config/sxhkd/sxhkdrc"
@@ -76,7 +79,7 @@ alias lxz="tar -Jtvf"
 alias cxz="tar -cvJf"
 
 # android
-alias adbrootshell="adb root ; sleep 2 ; adb remount ; sleep 2 ; adb shell "
+alias adbrootshell="adb root && sleep 2 && adb remount && sleep 2 && adb shell "
 
 # cd
 alias cd..='cd ..'
@@ -97,42 +100,10 @@ alias duf="du -sh *"
 alias dud="du -d 1 -h"
 alias disk="du -h --max-depth=1 ~/ | sort -rh"
 
-# find
-alias fd="find ~/ -type d -name"
-alias ff="find ~/ -type f -name"
-
-# net wifi
-alias ping="ping voidlinux.org"
-alias myip="ip -f inet address | grep inet  | grep -v 'lo$' | cut -d ' ' -f 6,13 && curl ifconfig.me && echo ' external ip'"
-alias myipp='curl -s -m 5 https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
-alias wifilist="nmcli device wifi list | more"
-alias wifistatus="nmcli device status"
-alias wifishow="nmcli connection show | more"
-
 # tmux
 #alias qemu="qemu-system-x86_64"
 alias ta="tmux a"
 #alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
-
-# Download:
-alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
-alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
-alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
-alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
-alias yvpc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpc.conf '
-alias ya='yt-dlp --config-locations $HOME/.config/yt-dlp/ya.conf '
-alias yac='yt-dlp --config-locations $HOME/.config/yt-dlp/yac.conf '
-alias yap='yt-dlp --config-locations $HOME/.config/yt-dlp/yap.conf '
-alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
-alias yl='yt-dlp -F '
-#alias yt='yt-dlp --skip-download --write-thumbnail'
-#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
-
-# mpv
-alias mpvtor="torsocks mpv --no-config --no-video --term-osd-bar --ytdl-format="bestaudio" --loop=inf"
-alias mpvmp3="mpv --no-video --save-position-on-quit"
-alias vlcnv="prime-run vlc"
-alias mpvnv="prime-run mpv"
 
 # For recording
 alias ffmpeg="ffmpeg -hide_banner" 
@@ -141,30 +112,3 @@ alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 
 alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
 alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 
-# suckless
-alias nf='clear && neofetch'
-alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
-alias makesuckless="doas make -j 8 && doas make clean install"
-
-# python
-alias py="python"
-alias apy="source $HOME/env/bin/activate"
-alias ve="python -m venv" 
-alias va="source $HOME/.venv/devtool/bin/activate" 
-alias vd="deactivate"
-alias pipi="pip install"
-alias pipuni="pip uninstall"
-alias pipls="pip list"
-alias pips="pip search"
-alias pipshow="pip show"
-alias pipout="pip list --outdated"
-alias pipreq="pip freeze > requirements.txt"
-alias pipfrom="pip install -r requirements.txt" # -r , --requirement
-alias pipup="pip install --upgrade pip " # -U, --upgrade
-
-# ssd && hdd && microsd
-#alias mountssd="mkdir $HOME/ssd; doas blkid; sleep 1; doas mount -t ntfs-3g -o rw UUID=675902260822676E /home/sh/ssd/"
-#alias umountssd="doas umount $HOME/ssd; sleep 1; doas rm -rf $HOME/ssd"
-#alias monter_ssd='doas mkdir -p /mnt/mon_ssd_exfat && sleep 1 &&doas mount -t exfat -o uid=1000,gid=1000,umask=0022 UUID=052D-4755 /mnt/mon_ssd_exfat'
-#alias demonter_ssd='doas umount /mnt/mon_ssd_exfat && sleep 1 && doas rm -rf /mnt/mon_ssd_exfat'
-#alias mountmicrossd="mkdir $HOME/ssd ; sleep 1; doas mount -t ntfs-3g -o rw UUID=79B17F9A24153F42 /home/sh/ssd/"
