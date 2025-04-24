@@ -184,6 +184,7 @@ alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Geck
 # --------------------------------------------------------------------------------------- #
 alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
 alias yaria='yt-dlp --config-locations $HOME/.config/yt-dlp/yaria.conf '
+alias yvtik='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtik.conf '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
 alias yvtor='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtor.conf '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
