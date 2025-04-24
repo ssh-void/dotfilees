@@ -2,6 +2,7 @@
 https://qurango.net/radio/mishary_alafasi # mishary_alafasi
 https://qurango.net/radio/tafseer,https://qurango.net/radio/tafseer # ibn Ataymine
 https://qurango.net/radio/almukhtasar_fi_alsiyra  # mktasare Sira (algé)
+https://qurango.net/radio/sahabah  # sahabah
 
 #MR
 https://listen.radioking.com/radio/252934/stream/297385 # Radio Manarat
