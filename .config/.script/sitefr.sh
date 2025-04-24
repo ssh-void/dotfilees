@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
 x=$(xclip -o -selection primary) 
+
 #BROWSER="firefox"
 BROWSER="brave-browser-stable"
+
 $BROWSER "https://ar.forvo.com/search/$x"
 $BROWSER "https://www.larousse.fr/dictionnaires/francais/$x"
 $BROWSER "https://usito.usherbrooke.ca/d%C3%A9finitions/$x"
