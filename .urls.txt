@@ -1,10 +1,13 @@
 #islam
 https://qurango.net/radio/mishary_alafasi # mishary_alafasi
-https://qurango.net/radio/tafseer,https://qurango.net/radio/tafseer # ibn Ataymine
+https://qurango.net/radio/tafseer # ibn Ataymine
 https://qurango.net/radio/almukhtasar_fi_alsiyra  # mktasare Sira (algé)
-https://qurango.net/radio/sahabah  # sahabah
+https://qurango.net/radio/sahabah  # sahabah hadite
+https://qurango.net/radio/mukhtasartafsir #  mktasare tfsire (algé)
+https://qurango.net/radio/tarateel  # sware 9sira
+https://radio.mp3islam.com/listen/alshuraim/radio.mp3  # Saud Al-Shuraim
 
-#MR
+# MR
 https://listen.radioking.com/radio/252934/stream/297385 # Radio Manarat
 
 # France
@@ -16,3 +19,6 @@ http://direct.franceinter.fr/live/franceinter-hifi.aac # France Inter ( music )
 http://icecast.radiofrance.fr/francemusique-hifi.aac   # France Musique
 http://direct.franceinfo.fr/live/franceinfo-lofi.mp3   # france info lofi
 https://audio.bfmtv.com/bfmradio_128.mp3 # BFM radio
+
+# arabe
+https://live-hls-web-aja.getaj.net/AJA/06.m3u8 # jajira
