@@ -7,7 +7,7 @@ https://radio.mp3islam.com/listen/alshuraim/radio.mp3  # Saud Al-Shuraim
 https://radio.mp3islam.com/listen/sudais/radio.mp3	# Abdulrahman Alsudais 
 https://qurango.net/radio/tafseer # ibn Ataymine
 https://qurango.net/radio/almukhtasar_fi_alsiyra  # mktasare Sira (algé)
-https://qurango.net/radio/sahabah  # sahabah hadite
+https://qurango.net/radio/sahabah  # la vie de sahabah 
 https://qurango.net/radio/mukhtasartafsir #  mktasare tfsire (algé)
 https://qurango.net/radio/tarateel  # sware 9sira
 
@@ -27,7 +27,8 @@ https://audio.bfmtv.com/bfmradio_128.mp3 # BFM radio
 
 # usa 
 https://live.amperwave.net/direct/foxnewsradio-foxnewsradioaac-imc?source=fnr.web # Fox News Radio
-
+https://tunein.cdnstream1.com/2868_96.mp3 # cnn
+https://video.news.sky.com/snr/news/snrnews.mp3 # uk sky news
 
 # arabe
 https://live-hls-web-aja.getaj.net/AJA/06.m3u8 # jajira
