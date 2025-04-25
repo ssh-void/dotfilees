@@ -40,6 +40,7 @@ alias reload-sxhkd="pkill -USR1 -x sxhkd"
 alias reload-transmission="pkill -HUP transmission-daemon"
 alias taillog="tail -n 5 -v -f "
 alias fr="free -h"
+alias echo='echo -e'
 #alias qemu="qemu-system-x86_64"
 
 # --------------------------------------------------------------------------------------- #
