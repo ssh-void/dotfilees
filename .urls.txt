@@ -1,4 +1,4 @@
-#islam
+# Islam
 https://qurango.net/radio/mishary_alafasi # mishary_alafasi https://radio.mp3islam.com/listen/mishary/radio.mp3
 https://radio.mp3islam.com/listen/alhuthaifi/radio.mp3 # Ali Alhuthaifi
 https://radio.mp3islam.com/listen/maher/radio.mp3	 # Maher Al Mueaqly
@@ -12,7 +12,7 @@ https://qurango.net/radio/mukhtasartafsir #  mktasare tfsire (algé)
 https://qurango.net/radio/tarateel  # sware 9sira
 
 
-# MR
+# Mr
 https://listen.radioking.com/radio/252934/stream/297385 # Radio Manarat
 https://stream.zeno.fm/xzxaqh2w5rhvv #   Sada9a jaria
 
@@ -27,12 +27,12 @@ http://icecast.radiofrance.fr/francemusique-hifi.aac   # France Musique
 http://direct.franceinfo.fr/live/franceinfo-lofi.mp3   # france info lofi
 https://audio.bfmtv.com/bfmradio_128.mp3 # BFM radio
 
-# usa 
+# Usa
 https://live.amperwave.net/direct/foxnewsradio-foxnewsradioaac-imc?source=fnr.web # Fox News Radio
 https://tunein.cdnstream1.com/2868_96.mp3 # cnn
 https://video.news.sky.com/snr/news/snrnews.mp3 # uk sky news
 https://tunein.cdnstream1.com/3511_96.mp3 # MSNBC
 https://playerservices.streamtheworld.com/api/livestream-redirect/WRCAAMAAC.aac # Bloomberg Radio Boston
 
-# arabe
+# Arabe
 https://live-hls-web-aja.getaj.net/AJA/06.m3u8 # jajira
