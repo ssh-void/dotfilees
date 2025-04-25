@@ -32,7 +32,7 @@ alias rvdown="doas sv down "
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
 alias uuidl="ls -l /dev/disk/by-uuid/"
 alias font="fc-list : family | sort | uniq"
-alias cpp="rsync -rvphWP --info=progress2"
+alias rsynccpp="rsync -rvphWP --info=progress2"
 alias dtouch="doas touch"
 alias img="sxiv"
 alias neofetch="fastfetch"
@@ -56,13 +56,12 @@ alias chownuser="doas chown -R $(whoami):$(whoami) ."
 alias h='history | cut -c 8- | tac | fzy -l 20 | xclip -selection clipboard'
 alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
-alias pdf="zathura "
-alias ppt="loimpress "
-alias word="lowriter "
-alias exel="localc "
-alias tldr="tealdeer"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
+alias vimaliases="vim ~/.config/bash/.bash_aliases"
+alias zconf="nvim $HOME/.config/zsh/.zshrc"
+alias bconf="nvim $HOME/.bashrc"
 alias bmpsc="maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp"
+alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -78,10 +77,7 @@ alias cp='cp -iv'
 alias cal="cal --twelve"
 alias cl="clear"
 alias m="man"
-alias zconf="nvim $HOME/.config/zsh/.zshrc"
-alias bconf="nvim $HOME/.bashrc"
 alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
-alias vimaliases="vim ~/.config/bash/.bash_aliases"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
@@ -99,6 +95,11 @@ alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
 # --------------------------------------------------------------------------------------- #
 alias v="nvim" vim="nvim" vi="nvim"
 alias dvi='doas nvim' dvim='doas nvim' dv='doas nvim'
+alias pdf="zathura "
+alias ppt="loimpress "
+alias word="lowriter "
+alias exel="localc "
+alias tldr="tealdeer"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     shutdown     <---------------------------------- #
@@ -168,7 +169,7 @@ alias wifiwn="doas nmcli con down "
 alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
 alias curltor='curl -X POST --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --progress-bar -C - '
 alias curll='curl -X POST --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -L -O --progress-bar -C - '
-alias xmr='curl -X POST --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
+alias xmr='curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
 alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -r -np -nH --cut-dirs=1 -R index.html '
 #alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
 #alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
@@ -182,20 +183,20 @@ alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Geck
 # --------------------------------------------------------------------------------------- #
 # -------------------------------->     yt-dlp     <------------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
-alias yaria='yt-dlp --config-locations $HOME/.config/yt-dlp/yaria.conf '
-alias yvtik='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtik.conf '
+alias yl='yt-dlp -F '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
-alias yvtor='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtor.conf '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
 alias yvpc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpc.conf '
+alias yaria='yt-dlp --config-locations $HOME/.config/yt-dlp/yaria.conf '
+alias yvtik='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtik.conf '
+alias yu='yt-dlp --config-locations $HOME/.config/yt-dlp/yu.conf '
+alias yvtor='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtor.conf '
+alias ysplit='yt-dlp --config-locations $HOME/.config/yt-dlp/ysplit.conf '
 alias ya='yt-dlp --config-locations $HOME/.config/yt-dlp/ya.conf '
 alias yac='yt-dlp --config-locations $HOME/.config/yt-dlp/yac.conf '
 alias yap='yt-dlp --config-locations $HOME/.config/yt-dlp/yap.conf '
 alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
-alias yu='yt-dlp --config-locations $HOME/.config/yt-dlp/yu.conf '
-alias yl='yt-dlp -F '
 alias ytsupport='yt-dlp --list-extractors | grep -i '
 alias yt='yt-dlp --skip-download --write-thumbnail '
 
@@ -222,7 +223,6 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      suckless       <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
 alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 
