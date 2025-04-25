@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
-# Enable root mode on the Android device (if supported)
-adb root
-
 # Copy the local hosts file to the user's home directory
-cp /etc/hosts ~/hosts
+cd /etc/ && cp hosts  ~/
+
+# Enable root mode on the Android device (if supported)
+adb root && sleep 2 && adb remount
 
 # Push the hosts file to the Android device
-adb push ~/hosts /etc/hosts
+cd ~ && adb push hosts /etc/hosts
 
 # Delete the temporary local hosts file
-rm -rf ~/hosts
+cd ~ && rm -rf ~/hosts
