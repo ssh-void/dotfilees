@@ -15,6 +15,8 @@ https://qurango.net/radio/tarateel  # sware 9sira
 # MR
 https://listen.radioking.com/radio/252934/stream/297385 # Radio Manarat
 https://stream.zeno.fm/xzxaqh2w5rhvv #   Sada9a jaria
+https://streaming1.medi1tv.com/radio/radio_mag.stream_aac/media_w288669592_44130.aac # medi1tv
+
 
 # France
 https://stream.europe1.fr/europe1.aac  # Europe 1 
