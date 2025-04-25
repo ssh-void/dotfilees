@@ -31,8 +31,8 @@ https://audio.bfmtv.com/bfmradio_128.mp3 # BFM radio
 https://live.amperwave.net/direct/foxnewsradio-foxnewsradioaac-imc?source=fnr.web # Fox News Radio
 https://tunein.cdnstream1.com/2868_96.mp3 # cnn
 https://video.news.sky.com/snr/news/snrnews.mp3 # uk sky news
- https://tunein.cdnstream1.com/3511_96.mp3 # MSNBC
- https://playerservices.streamtheworld.com/api/livestream-redirect/WRCAAMAAC.aac # Bloomberg Radio Boston
+https://tunein.cdnstream1.com/3511_96.mp3 # MSNBC
+https://playerservices.streamtheworld.com/api/livestream-redirect/WRCAAMAAC.aac # Bloomberg Radio Boston
 
 # arabe
 https://live-hls-web-aja.getaj.net/AJA/06.m3u8 # jajira
