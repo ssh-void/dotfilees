@@ -84,7 +84,7 @@ alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
 # --------------------------------->     ls & eza     <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias l="eza -F -l --color=always --group-directories-first"  # long format
-alias ll="eza -F -dlg .* --group-directories-first --color=auto"
+alias ll="eza -F -dlg .* --group-directories-first --color=auto 2> /dev/null"
 alias lls="ls -F --color=auto -a --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
