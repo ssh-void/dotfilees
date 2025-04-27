@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+x=$(xclip -o -selection primary) 
+
+#BROWSER="firefox"
+BROWSER="brave-browser-stable"
+
 https://context.reverso.net/traduction/anglais-francais/good
 https://www.deepl.com/fr/translator#en/fr/good%0A
 https://www.wordreference.com/enfr/good
