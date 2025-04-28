@@ -6,7 +6,6 @@ x=$(xclip -o -selection primary)
 BROWSER="brave-browser-stable"
 
 $BROWSER "https://www.dictionnaire-academie.fr/article/A9P3914"
-$BROWSER "https://www.academie-francaise.fr/$x"
 $BROWSER "https://ar.forvo.com/search/$x"
 $BROWSER "https://www.larousse.fr/dictionnaires/francais/$x"
 $BROWSER "https://usito.usherbrooke.ca/d%C3%A9finitions/$x"
