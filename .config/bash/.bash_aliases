@@ -58,6 +58,7 @@ alias h='history | cut -c 8- | tac | fzy -l 20 | xclip -selection clipboard'
 alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
+alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias vimaliases="vim ~/.config/bash/.bash_aliases"
 alias zconf="nvim $HOME/.config/zsh/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
