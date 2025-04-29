@@ -1,6 +1,8 @@
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP="XDG_CACHE_HOME/zsh"
+export HISTFILE="$XDG_STATE_HOME/zsh/history"
+
 
 # Enable colors and change prompt:
 autoload -U colors && colors
@@ -10,8 +12,7 @@ autoload -U colors && colors
 ZSH_THEME="sorin" # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-zstyle ':omz:update' frequency 3
-plugins=(git)
+plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh # Source
 
@@ -133,17 +134,10 @@ setopt HIST_IGNORE_SPACE     # Commands starting with space don't go into histor
 setopt HIST_NO_STORE         # Don't save certain commands (like `fc -l`) in history
 setopt HIST_LEX_WORDS        # Parse history from file as if it were on the command line
 
+# i zsh-syntax-highlighting zsh-autosuggestions.zsh zsh-history-substring-search
 # Load zsh-syntax-highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  &> /dev/null 
 # Load zsh-autosuggestions.zsh
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh &> /dev/null
+#source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh &> /dev/null
 # Load zsh-history-substring-search
-source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search &> /dev/null
-
-umask 0027
-unset HISTFILE
-export HISTFILE="$XDG_STATE_HOME/zsh/history"
-ZSH_COMPDUMP="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/zcompdump"
-autoload -Uz compinit
-compinit
-ZDOTDIR="$HOME/.config/zsh" zsh
+#source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search &> /dev/null
