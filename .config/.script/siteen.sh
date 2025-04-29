@@ -5,6 +5,7 @@ x=$(xclip -o -selection primary)
 #BROWSER="firefox"
 BROWSER="brave-browser-stable"
 
+$BROWSER "https://www.oxfordlearnersdictionaries.com/definition/english/$x_1?q=$x"
 $BROWSER "https://context.reverso.net/traduction/anglais-francais/$x"
 $BROWSER "https://www.deepl.com/fr/translator#en/fr/$x%0A"
 $BROWSER "https://translate.google.com/?hl=fr&sl=en&tl=fr&text=$x%0A&op=translate"
@@ -21,10 +22,7 @@ $BROWSER "https://dictzone.com/english-arabic-dictionary/$x"
 $BROWSER "https://laratranslate.com/traduction?source=en&target=fr&text=$x&style=Faithful"
 $BROWSER "https://www.dictionary.com/browse/$x"
 $BROWSER "https://www.thesaurus.com/browse/$x"
-$BROWSER https://dictionary.cambridge.org/dictionary/english-arabic/shame?q=+shame
 $BROWSER "https://www.merriam-webster.com/dictionary/$x"
-$BROWSER https://www.the-conjugation.com/english/verb/do.php
-$BROWSER https://www.oxfordlearnersdictionaries.com/
-$BROWSER https://www.linguee.com/english-french/search?source=auto&query=good
+$BROWSER "https://www.the-conjugation.com/english/verb/$x.php"
 $BROWSER "https://www.quodb.com/search/$x?advance-search=false&keywords=$x"
 
