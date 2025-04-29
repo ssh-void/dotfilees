@@ -25,4 +25,3 @@ $BROWSER "https://www.thesaurus.com/browse/$x"
 $BROWSER "https://www.merriam-webster.com/dictionary/$x"
 $BROWSER "https://www.the-conjugation.com/english/verb/$x.php"
 $BROWSER "https://www.quodb.com/search/$x?advance-search=false&keywords=$x"
-
