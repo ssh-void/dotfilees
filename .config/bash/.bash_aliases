@@ -41,7 +41,7 @@ alias reload-transmission="pkill -HUP transmission-daemon"
 alias taillog="tail -n 5 -v -f "
 alias fr="free -h"
 alias echo='echo -e'
-#alias qemu="qemu-system-x86_64"
+alias qemux8664="qemu-system-x86_64"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
@@ -159,7 +159,7 @@ alias disk='doas du -h --max-depth=1 ~/ | sort -rh '
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias ping="ping voidlinux.org"
+alias pingvoid='ping -c 5 voidlinux.org'
 alias ssgrep='doas ss -atpu | grep -i'
 alias myip='curl -X POST -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias myiptor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
@@ -247,6 +247,7 @@ alias pipup="pip install --upgrade pip " # -U, --upgrade
 # ----------------------------------------------------------------------------------------#
 # --------------------------------------- ssh --------------------------------------------#
 # ----------------------------------------------------------------------------------------#
+alias ppicom='pkill -f picom'
 alias rpi="ssh -tX pi@raspberrypi"
 alias ufwl="doas ufw status numbered"
 alias ufwr="doas ufw reload"
