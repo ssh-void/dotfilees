@@ -33,6 +33,8 @@ bindkey -M viins '^K' kill-line         # Supprimer jusqu'à la fin de la ligne
 bindkey -M viins '^W' backward-kill-word # Supprimer le mot précédent
 bindkey -M viins '^U' backward-kill-line # Supprimer jusqu'au début de la ligne
 bindkey "^R" history-incremental-pattern-search-backward
+bindkey -s '^F' 'cd ~/.config\n' 
+bindkey -s '^Y' 'cd ~/Downloads/yt-dlp/video/'
 
 # Basic auto/tab complete:
 autoload -U compinit && compinit -u
