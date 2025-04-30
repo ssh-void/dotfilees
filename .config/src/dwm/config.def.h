@@ -35,6 +35,7 @@ static const Rule rules[] = {
 	{ "Blueman-manager",       "blueman-manager",          NULL,             0,            1,           1,           -1 },
 	{ "Zathura",               "org.pwmt.zathura",         NULL,             0,            1,           1,           -1 },
 	{ "Rhythmbox",             "rhythmbox",                NULL,             0,            1,           1,           -1 },
+	{ "Nsxiv",                 "nsxiv",                    NULL,             0,            1,           1,           -1 },
 
 };
 /* layout(s) */
