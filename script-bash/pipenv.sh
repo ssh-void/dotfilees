@@ -7,5 +7,5 @@ pip install --upgrade instaloader
 pip install -U --pre "yt-dlp[default]"
 pip install --upgrade telethon
 pip install --upgrade gTTS
-sudo ln -s $HOME/.env/bin/yt-dlp $HOME/.local/bin/
-sudo ln -s $HOME/.env/bin/instaloader $HOME/.local/bin/
+ln -s $HOME/.env/bin/yt-dlp $HOME/.local/bin/
+ln -s $HOME/.env/bin/instaloader $HOME/.local/bin/
