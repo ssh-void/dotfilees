@@ -1,2 +1,2 @@
-/home/void/myHOMe
+/home/void/programming
 /home/void/.config/
