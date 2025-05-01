@@ -3,3 +3,16 @@
 function mcd() {
   mkdir -p "$1" && cd "$1";
 }
+
+ffmpegytdlp() {
+    local url="$1"  # URL of the video stream
+    local output="$2"  # Output file name (e.g., output.mp4)
+
+    # Download and process with ffmpeg
+    ffmpeg -timeout 10000000 \
+           -reconnect 1 \
+           -reconnect_streamed 1 \
+           -reconnect_delay_max 5 \
+           -user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" \
+           -i "$url" -c copy "$output"
+}
