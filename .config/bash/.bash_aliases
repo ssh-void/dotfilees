@@ -229,7 +229,7 @@ alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      suckless       <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm config.h"
+alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm *.rej ; doas rm config.h"
 alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 
 # --------------------------------------------------------------------------------------- #
