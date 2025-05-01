@@ -216,7 +216,9 @@ alias vlcfzy='vlc "$(find /home/${USER}/Downloads/yt-dlp/video/ -type f -name "*
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->      ffmpeg       <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias ffmpeg="ffmpeg -hide_banner" 
+alias ffmpeg='ffmpeg —hide_banner'
+alias ffplay='ffplay —hide_banner'
+alias ffprobe='ffprobe -hide_banner'
 alias ffmpegcodel="ffmpeg -encoders | grep -i"
 #alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
 alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
