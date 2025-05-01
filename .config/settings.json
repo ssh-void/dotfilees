@@ -1,0 +1,17 @@
+{
+    "workbench.iconTheme": "vscode-icons",
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "files.autoSave": "afterDelay",
+    "window.customTitleBarVisibility": "auto",
+    "workbench.colorTheme": "Monokai Dimmed",
+    "workbench.activityBar.location": "top",
+    "[shellscript]": {
+
+        "files.eol": "\n",
+        "editor.defaultColorDecorators": "never"
+    },
+    "chat.commandCenter.enabled": false,
+    "workbench.sideBar.location": "right"
+}
