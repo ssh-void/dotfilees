@@ -59,10 +59,12 @@ alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
-alias vimaliases="vim ~/.config/bash/.bash_aliases"
-alias zconf="nvim $HOME/.config/zsh/.zshrc"
-alias bconf="nvim $HOME/.bashrc"
-alias bmpsc="maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp"
+alias vimaliases='vim ~/.config/bash/.bash_aliases'
+alias vimfunc='vim ~/.config/bash/.bash_function'
+alias vimtmux='vim ~/.config/tmux/tmux.conf'
+alias zconf='nvim $HOME/.config/zsh/.zshrc'
+alias bconf='nvim $HOME/.bashrc'
+alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 
 # --------------------------------------------------------------------------------------- #
@@ -70,7 +72,7 @@ alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:S
 # --------------------------------------------------------------------------------------- #
 alias rm="rm -vI"
 alias drm="rm -rf"
-alias rmyt="rm *.m4a-Frag* ; rm *.mp4.* ; rm *.aria2 ; rm *.mp4-*"
+alias rmyt='rm *.m4a-Frag* ; rm *.mp4.* ; rm *.aria2 ; rm *.mp4-*'
 alias mv='mv -iv'
 alias dcp='doas cp -iv'
 alias dmv='doas mv -iv'
