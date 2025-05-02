@@ -61,7 +61,6 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias vimaliases='vim ~/.config/bash/.bash_aliases'
 alias vimfunc='vim ~/.config/bash/.bash_function'
-alias vimtmux='vim ~/.config/tmux/tmux.conf'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
@@ -184,6 +183,7 @@ alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Geck
 # --------------------------------->     tmux     <-------------------------------------- #
 # --------------------------------------------------------------------------------------- #
 #alias ta="tmux a"
+alias vimtmux='vim ~/.config/tmux/tmux.conf'
 
 # --------------------------------------------------------------------------------------- #
 # -------------------------------->     yt-dlp     <------------------------------------- #
