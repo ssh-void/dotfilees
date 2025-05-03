@@ -13,6 +13,6 @@ tmuxgo() { # select_tmux_window
 }
 
 tms() {
-  local session=$(tmux list-sessions -F "#{session_name}" | fzy)
+  local session=$(tmux list-sessions -F "#{session_name}" | fzy -l 7)
   [[ -n "$session" ]] && tmux switch-client -t "$session" || tmux attach -t "$session"
 }
