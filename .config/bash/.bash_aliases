@@ -185,6 +185,7 @@ alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Geck
 #alias ta="tmux a"
 alias vimtmux='vim ~/.config/tmux/tmux.conf'
 alias tmuxreload='tmux source-file ~/.config/tmux/tmux.conf && echo " ✅ tmux.conf is reloaded"'
+alias tml='tmux list-sessions'
 
 
 # --------------------------------------------------------------------------------------- #
