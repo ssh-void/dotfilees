@@ -80,7 +80,7 @@ alias cp='cp -iv'
 alias cal="cal --twelve"
 alias cl="clear"
 alias m="man"
-alias vf='vim "$(find ~/ -type f | fzy -l 20)"'
+alias vf='vim "$(find ~/ -type f 2> /dev/null | fzy -l 20)"'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
