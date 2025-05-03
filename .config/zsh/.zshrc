@@ -17,6 +17,11 @@ plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-searc
 source $ZSH/oh-my-zsh.sh # Source
 
 [ -f $HOME/.config/bash/.bash_aliases ] && . $HOME/.config/bash/.bash_aliases
+[ -f $HOME/.config/bash/.bash_function ] && . $HOME/.config/bash/.bash_function
+
+# mode vi
+bindkey -v
+export K
 
 # mode vi
 bindkey -v
