@@ -36,6 +36,8 @@ static const Rule rules[] = {
 	{ "Zathura",               "org.pwmt.zathura",         NULL,             0,            1,           1,           -1 },
 	{ "Rhythmbox",             "rhythmbox",                NULL,             0,            1,           1,           -1 },
 	{ "Nsxiv",                 "nsxiv",                    NULL,             0,            1,           1,           -1 },
+	{ "org.cryptomator.launcher.Cryptomator$MainApp", "org.cryptomator.launcher.Cryptomator$MainApp", NULL, 0, 1, 1, -1 },
+	{ "TelegramDesktop",       "telegram-desktop",         NULL,             0,            1,           1,           -1 },
 
 };
 /* layout(s) */
