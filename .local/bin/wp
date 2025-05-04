@@ -1,3 +1,3 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
-find ~/Images -type f | shuf | sxiv - -t 
+find ~/Images -type f  2> /dev/null | shuf | nsxiv - -t &> /dev/null
