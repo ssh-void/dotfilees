@@ -1,3 +1,6 @@
+super + s
+        exec $HOME/.config/.script/scratchpad.sh &> /dev/null 
+
 super+ KP_Enter
               st &> /dev/null 
 
@@ -6,9 +9,6 @@ super + x
 
 super + c
         exec $HOME/.config/.script/img_txt.sh  &> /dev/null 
-
-super + s
-        exec $HOME/.config/.script/scratchpad.sh &> /dev/null 
 
 alt + {Up,Down}
               exec $HOME/.config/.script/brightnessctl.sh {up,down}
@@ -31,48 +31,49 @@ alt + b
 alt + p 
       pavucontrol &> /dev/null 
 
-super + l 
-        xset dpms force suspend && slock  &> /dev/null 
+super + alt + l
+               bash -c '~/.local/bin/lock'
 
 super + e
         thunar &>/dev/null 
 
-super + shift + p
-                $HOME/.config/.script/screenshot_region.sh &> /dev/null 
-
-super + ctrl + y
-               firefox https://www.youtube.com/ &> /dev/null 
-
-super + ctrl + t
-               firefox https://chat.openai.com/ 
-super +ctrl + d
-              firefox https://chat.deepseek.com/
-
-super + ctrl + a
-               exec $HOME/.config/.script/translate.sh
-super + ctrl + i
-               firefox https://www.instagram.com/?hl=en
-
 # firfox fr && En
 super + ctrl + f
                $HOME/.config/.script/sitefr.sh &> /dev/null
+               
 super + ctrl + e
                $HOME/.config/.script/siteen.sh &> /dev/null
 
+#super + shift + p
+#                $HOME/.config/.script/screenshot_region.sh &> /dev/null 
+              
+super + ctrl + d
+              firefox https://chat.deepseek.com/ && firefox https://chat.openai.com/ 
+
+super + ctrl + a
+               exec $HOME/.config/.script/translate.sh
+
+super + ctrl + i
+               firefox https://www.instagram.com/?hl=en
+
 super + ctrl + o
                firefox https://outlook.live.com/mail/0/
+
 super + ctrl + l
                firefox https://www.linkedin.com/feed/
+
 super + ctrl + u
                firefox https://www.udemy.com/home/my-courses/learning/
+
 super + ctrl + n
                firefox https://www.notion.so
+               
 super + ctrl + r
                firefox https://www.reddit.com/
 
 super + ctrl + p
-              $HOME/.config/.script/projects.sh &> /dev/null
+               $HOME/.config/.script/projects.sh &> /dev/null
+
 super + ctrl + v
                $HOME/.config/.script/voidlinuxpackages.sh &> /dev/null
-super + ctrl + m 
-               firefox https://mega.nz/login
+

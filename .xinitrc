@@ -23,6 +23,7 @@ xrandr --output eDP1 --primary --mode 1920x1080 --rate 60 --rotate normal --brig
 xrandr --setprovideroutputsource NVIDIA-0 modesetting
 xrandr --auto
 xrandr --output eDP1 --set "PRIME Synchronization" 1
+echo "Xft.dpi: 105" | xrdb -merge
 brightnessctl set 75% &
 #xcompmgr -n &
 while true; do picom --backend glx --glx-no-stencil --xrender-sync-fence --no-vsync --glx-no-rebind-pixmap --no-ewmh-fullscreen --no-use-damage --no-fading-openclose --no-fading-destroyed-argb ; done &
