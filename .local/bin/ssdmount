@@ -1,0 +1,1 @@
+cd ~/.config/mount && ./$(ls mount*.sh umount*.sh | fzy)
