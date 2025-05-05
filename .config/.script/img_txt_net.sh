@@ -8,10 +8,9 @@ maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2  | tesseract-ocr stdin stdout | xc
 
 x=$(xclip -o -selection secondary) 
 
-BROWSER="firefox"
+#BROWSER="firefox"
 #BROWSER="brave-browser-stable"
 
-#$BROWSER  "https://context.reverso.net/traduction/anglais-francais/$x" 
-#$BROWSER  "https://context.reverso.net/traduction/anglais-francais/$x" 
-#$BROWSER  "https://www.deepl.com/fr/translator#en/fr/$x" 
+$BROWSER  "https://context.reverso.net/traduction/anglais-francais/$x" 
+$BROWSER  "https://context.reverso.net/traduction/anglais-francais/$x" 
 $BROWSER "https://www.deepl.com/fr/translator#en/fr/$x" 

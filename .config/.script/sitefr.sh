@@ -3,7 +3,7 @@
 x=$(xclip -o -selection primary) 
 
 #BROWSER="firefox"
-BROWSER="brave-browser-stable"
+#BROWSER="brave-browser-stable"
 
 $BROWSER "https://www.dictionnaire-academie.fr/article/A9P3914"
 $BROWSER "https://ar.forvo.com/search/$x"

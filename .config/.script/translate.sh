@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #BROWSER="firefox"
-BROWSER="brave-browser-stable"
+#BROWSER="brave-browser-stable"
 
 x=$(xclip -o sel)
 
