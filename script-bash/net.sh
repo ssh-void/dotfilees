@@ -10,4 +10,4 @@
 #sudo ln -s /etc/sv/dnsmasq /var/service/
 #sudo sv restart /var/service/dnsmasq
 #sudo reboot
-sudo xbps-install -Syu NetworkManager inetutils-ifconfig firefox firefox-i18n-ar firefox-i18n-en-US firefox-i18n-fr speech-dispatcher obfs4proxy tor curl tor torsocks qbittorrent
+sudo xbps-install -Syu NetworkManager inetutils-ifconfig

@@ -5,8 +5,7 @@ bsdtar chrony cloc colordiff cronie cryptsetup  dnsmasq
 dunst eclipse exfat-utils eza fastfetch ffmpeg  flameshot font-sil-doulos fontmanager
 fribidi-devel fzy gawk gcc gcolor2 gdb git grub-i386-efi grub-x86_64-efi
 gtkedit gufw harfbuzz-devel htop intel-ucode intel-video-accel
-inxi jq libX11-devel libXft-devel libXinerama-devel libXrandr-devel
-libinput-gestures libjack-pipewire libselinux libspa-bluetooth
+inxi jq libinput-gestures libjack-pipewire libselinux libspa-bluetooth
 libvirt lm_sensors lvm2 lxappearance lynis maim man-db mdadm mdocml
 megatools mesa-intel-dri mesa-vaapi mesa-vdpau mesa-vulkan-intel most mpv vlc
 neovim notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
@@ -17,10 +16,9 @@ python3-pip qt5ct qt6ct readline rhythmbox rsync slock socklog
 spice-protocol spice-vdagent sublime-text4 sxhkd noto-fonts-ttf-extra
 sxiv sysfsutils tealdeer terminus-font tesseract-ocr tesseract-ocr-ara tesseract-ocr-fra
 tesseract-ocr-eng tesseract-ocr-rus thunar-archive-plugin tmux
- tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
+tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
 vde2 virt-manager void-docs-browse void-live-audio void-repo-nonfree
 vscode wget wireplumber wireplumber-devel wmname xarchiver xbanish xclip
-xdo xf86-video-intel xf86-video-qxl xfce4-appfinder xorg xorg-server-devel
-xrectsel xtools xtools-minimal xz yaru zathura zathura-pdf-mupdf
+xdo xf86-video-intel xf86-video-qxl xfce4-appfinder xz yaru zathura zathura-pdf-mupdf
 zip zramen zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
 python-pip python virtualbox-ose virtualbox-ose-dkms rclone
