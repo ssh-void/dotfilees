@@ -30,14 +30,17 @@ sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
 
 # root user 
-sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc' # tested
+#sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc' # tested
 sudo mkdir -p /root/.config/nvim
 sudo cp ~/dotfilees/.config/nvim/init.vim /root/.config/nvim/init.vim
 
 sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
 
-sudo sv down dhcpcd && sudo rm /var/service/agetty-tty{3,4,5,6} && sudo rm /var/service/wpa_supplicant
-sudo rm /var/service/dhcpcd && sudo ln -s /etc/sv/crond /var/service && sudo ln -s /etc/sv/acpid/ /var/service/
+#sudo sv down dhcpcd 
+sudo rm /var/service/agetty-tty{3,4,5,6} 
+#sudo rm /var/service/wpa_supplicant
+#sudo rm /var/service/dhcpcd 
+sudo ln -s /etc/sv/crond /var/service && sudo ln -s /etc/sv/acpid/ /var/service/
 sudo ln -s /etc/sv/bluetoothd/ /var/service/ && sudo ln -s /etc/sv/chronyd/ /var/service/ && sudo ln -s /etc/sv/crond/ /var/service/
 sudo ln -s /etc/sv/dbus/ /var/service/ && sudo ln -s /etc/sv/libvirtd/ /var/service/ && sudo ln -s /etc/sv/NetworkManager/ /var/service/
 sudo ln -s /etc/sv/sshd/ /var/service/ && sudo ln -s /etc/sv/tor/ /var/service/ && sudo ln -s /etc/sv/udevd/ /var/service/

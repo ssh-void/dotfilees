@@ -1,0 +1,1 @@
+doas xbps-install -Syu libreoffice # 109 pckage

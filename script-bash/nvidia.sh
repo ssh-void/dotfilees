@@ -1,0 +1,1 @@
+sudo xbps-install -Syu nv-codec-headers nvidia nvidia-opencl 
