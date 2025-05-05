@@ -11,14 +11,13 @@ megatools mesa-intel-dri mesa-vaapi mesa-vdpau mesa-vulkan-intel most mpv vlc
 neovim notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
 ntfs-3g numlockx 
 octave openbsd-netcat opendoas 7zip pamixer patch pavucontrol picom
-pipewire pipewire-devel pkg-config pnpm python2 python3 python3-dbus python3-devel
-python3-pip qt5ct qt6ct readline rhythmbox rsync slock socklog
+pipewire pipewire-devel pkg-config pnpm qt5ct qt6ct readline rhythmbox rsync slock socklog
 spice-protocol spice-vdagent sublime-text4 sxhkd noto-fonts-ttf-extra
 sxiv sysfsutils tealdeer terminus-font tesseract-ocr tesseract-ocr-ara tesseract-ocr-fra
 tesseract-ocr-eng tesseract-ocr-rus thunar-archive-plugin tmux
 tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
 vde2 virt-manager void-docs-browse void-live-audio void-repo-nonfree
-vscode wget wireplumber wireplumber-devel wmname xarchiver xbanish xclip
+vscode wireplumber wireplumber-devel wmname xarchiver xbanish xclip
 xdo xf86-video-intel xf86-video-qxl xfce4-appfinder xz yaru zathura zathura-pdf-mupdf
 zip zramen zsh zsh-autosuggestions zsh-completions zsh-syntax-highlighting
-python-pip python virtualbox-ose virtualbox-ose-dkms rclone
+virtualbox-ose virtualbox-ose-dkms rclone

@@ -1,0 +1,1 @@
+sudo xbps-install -Syu base-devel xorg-server xinit xorg-input-drivers xrandr xrdb noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf

@@ -10,4 +10,5 @@
 #sudo ln -s /etc/sv/dnsmasq /var/service/
 #sudo sv restart /var/service/dnsmasq
 #sudo reboot
-sudo xbps-install -Syu NetworkManager inetutils-ifconfig
+#sudo xbps-install -Syu NetworkManager inetutils-ifconfig
+sudo xbps-install -Syu wget aria2 tor torsocks arp-scan  obfs4proxy tor curl tor torsocks qbittorrent

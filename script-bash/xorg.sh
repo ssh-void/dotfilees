@@ -1,1 +1,0 @@
-sudo xbps-install -Syu xorg xorg-server-devel xrectsel xtools xtools-minimal 

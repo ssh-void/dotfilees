@@ -1,1 +1,1 @@
-sudo xbps-install -Syu firefox firefox-i18n-ar firefox-i18n-en-US firefox-i18n-fr speech-dispatcher obfs4proxy tor curl tor torsocks qbittorrent
+sudo xbps-install -Syu firefox firefox-i18n-ar firefox-i18n-en-US firefox-i18n-fr speech-dispatcher

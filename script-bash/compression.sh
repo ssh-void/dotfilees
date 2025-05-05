@@ -1,0 +1,1 @@
+sudo xbps-install -Syu 7zip unrar unzip zip 

@@ -1,4 +1,4 @@
-sudo xbps-install git base-devel xtools python3
+sudo xbps-install git base-devel xtools-minimal python3
 #===================================================================================#
 cd /opt/
 sudo git clone --depth=1 https://github.com/void-linux/void-packages.git
