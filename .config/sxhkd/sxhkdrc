@@ -16,8 +16,10 @@ alt + {Up,Down}
 XF86Audio{RaiseVolume,LowerVolume,Mute}
                                       exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
-super + p
-        flameshot gui &> /dev/null
+alp + p
+      maim -m 10 -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png
+
+#        flameshot gui &> /dev/null
 
 super + v
       	virt-manager &> /dev/null
@@ -25,8 +27,8 @@ super + v
 super + {f,t,b}
               {firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null }
 
-alt + b
-      blueman-manager &> /dev/null 
+#alt + b
+#      blueman-manager &> /dev/null 
 
 alt + p 
       pavucontrol &> /dev/null 
