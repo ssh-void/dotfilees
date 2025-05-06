@@ -1,5 +1,6 @@
 brightnessctl
-tealdeer terminus-font
+tealdeer 
+Thunar
 xbanish numlockx
 zathura zathura-pdf-mupdf
 readline 
