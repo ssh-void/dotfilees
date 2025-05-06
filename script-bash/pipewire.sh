@@ -7,8 +7,8 @@ sudo mkdir -p /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/50-pipewire.conf /etc/alsa/conf.d
 sudo ln -s /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf /etc/alsa/conf.d
 # bluetooth
-sudo xbps-install -Syu rfkill util-linux bluez libspa-bluetooth blueman
-sudo rfkill unblock bluetooth
-sudo useradd -G bluetooth ${USER}
-sudo ln -s /etc/sv/bluetoothd/ /var/service/
+#sudo xbps-install -Syu rfkill util-linux bluez libspa-bluetooth blueman
+#sudo rfkill unblock bluetooth
+#sudo useradd -G bluetooth ${USER}
+#sudo ln -s /etc/sv/bluetoothd/ /var/service/
 #sudo shutdown -r now
