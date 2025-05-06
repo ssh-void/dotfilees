@@ -6,4 +6,4 @@ yaru readline
 ufw apparmor
 sxhkd 
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
-
+fuse-exfat 
