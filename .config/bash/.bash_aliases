@@ -35,8 +35,8 @@ alias font="fc-list : family | sort | uniq"
 alias rsynccpp="rsync -rvphWP --info=progress2"
 alias dtouch="doas touch"
 alias img="nsxiv"
-alias reload-sxhkd="pkill -USR1 -x sxhkd"
-alias reload-transmission="pkill -HUP transmission-daemon"
+alias sxhkdreload="pkill -USR1 -x sxhkd"
+alias transmissionreload="pkill -HUP transmission-daemon"
 alias taillog="tail -n 5 -v -f "
 alias fr="free -h"
 alias echo='echo -e'
@@ -58,8 +58,8 @@ alias xp="xclip -selection clipboard"
 alias fontlist="fc-list : family | sort | uniq"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
-alias vimaliases='vim ~/.config/bash/.bash_aliases'
-alias vimfunc='vim ~/.config/bash/.bash_function'
+alias vimaliases='nvim ~/.config/bash/.bash_aliases'
+alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
@@ -80,20 +80,21 @@ alias cp='cp -iv'
 alias cal="cal --twelve"
 alias cl="clear"
 alias m="man"
-alias vf='vim "$(find ~/ -type f 2> /dev/null | fzy -l 20)"'
+alias vf='nvim "$(find ~/ -type f 2> /dev/null | fzy -l 20)"'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias l="eza -F -l --color=always --group-directories-first"  # long format
-alias li=" eza -F -l --color=always --group-directories-first --icons" # long format with icons
-alias ll="eza -F -dlg .* --group-directories-first --color=auto 2> /dev/null"
-alias lls="ls -F --color=auto -a --group-directories-first"
+alias l="ls -Flh --color=always --group-directories-first"  # long format
+alias ll="ls -Fh -dlg .* --group-directories-first --color=auto 2> /dev/null"
+alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
-alias lsg='ls -l | grep -i'
-#alias l="ls -Flh --group-directories-first --color=auto"
-#alias ll="ls -F -dlh .* --group-directories-first --color=auto"
+alias lsgrep='ls -l | grep -i'
+# eza (color icons ...)
+#alias l="eza -Fl --color=always --group-directories-first"  # long format
+#alias li="eza -Fl --color=always --group-directories-first --icons" # long format with icons
+#alias ll="eza -F -dlg .* --group-directories-first --color=auto 2> /dev/null"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->      neovim      <---------------------------------- #
