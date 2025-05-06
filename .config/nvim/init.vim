@@ -50,7 +50,6 @@ set shiftwidth=4
 set diffopt+=iwhite
 set autoindent
 set smartindent
-set go=a
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
