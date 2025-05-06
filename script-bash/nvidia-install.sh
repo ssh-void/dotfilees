@@ -1,4 +1,4 @@
-# nvidia
+sudo xbps-install -Syu void-repo-nonfree 
 sudo xbps-install -Syu nvidia  # nonfree 
 sudo xbps-install -Syu nvidia-opencl # nonfree 
 sudo xbps-install -Syu vulkan-loader # free  
