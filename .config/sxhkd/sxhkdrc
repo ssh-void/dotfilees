@@ -17,7 +17,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
                                       exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
 alp + p
-      maim -m 10 -s -c 0,0,1,1 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png
+      maim -m 10 -s -c 0,0,1,1 -n 2 -b 1.2 -f png | xclip -selection clipboard -target image/png
 
 
 #lameshot gui &> /dev/null
