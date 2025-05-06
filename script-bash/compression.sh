@@ -1,1 +1,1 @@
-sudo xbps-install -Syu bsdtar 7zip unrar unzip zip 
+sudo xbps-install -Syu xz bsdtar 7zip unrar unzip zip 
