@@ -35,7 +35,6 @@ alias font="fc-list : family | sort | uniq"
 alias rsynccpp="rsync -rvphWP --info=progress2"
 alias dtouch="doas touch"
 alias img="sxiv"
-alias neofetch="fastfetch"
 alias reload-sxhkd="pkill -USR1 -x sxhkd"
 alias reload-transmission="pkill -HUP transmission-daemon"
 alias taillog="tail -n 5 -v -f "
@@ -64,7 +63,8 @@ alias vimfunc='vim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
-alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
+#alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
+alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
