@@ -31,6 +31,7 @@ static const Rule rules[] = {
 	{ "Thunar",                "thunar",                   NULL,             0,            1,           1,           -1 },
 	{ "qBittorrent",           "qbittorrent",              NULL,             0,            1,           1,           -1 },
 	{ "Xfce4-appfinder",       "xfce4-appfinder",          NULL,             0,            1,           1,           -1 },
+	{ "Nvidia-settings",       "nvidia-settings",          NULL,             0,            1,           1,           -1 },
 	{ "pavucontrol",           "pavucontrol",              NULL,             0,            1,           1,           -1 },
 	{ "Blueman-manager",       "blueman-manager",          NULL,             0,            1,           1,           -1 },
 	{ "Zathura",               "org.pwmt.zathura",         NULL,             0,            1,           1,           -1 },
