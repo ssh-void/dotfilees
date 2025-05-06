@@ -2,8 +2,9 @@ brightnessctl
 tealdeer terminus-font
 xbanish numlockx
 zathura zathura-pdf-mupdf
-yaru readline 
+readline 
+yaru
 ufw apparmor
 sxhkd 
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
-fuse-exfat 
+fuse-exfat ntfs-3g 
