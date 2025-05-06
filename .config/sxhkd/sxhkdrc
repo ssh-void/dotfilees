@@ -21,8 +21,8 @@ alp + p
 
 #lameshot gui &> /dev/null
 
-super + v
-      	virt-manager &> /dev/null
+#super + v
+#      	virt-manager &> /dev/null
 
 super + {f,t,b}
               {firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null }
