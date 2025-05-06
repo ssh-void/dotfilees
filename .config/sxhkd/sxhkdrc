@@ -17,7 +17,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
                                       exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
 alp + p
-      maim -m 10 -s -c 0,0,1,1 -n 2 -b 1.2 -f png | xclip -selection clipboard -target image/png
+      maim -m 10 -s -c 0,0,1,1 -n 2 -b 1.2 -f png | xclip -selection clipboard -target image/png &>/dev/null
 
 
 #lameshot gui &> /dev/null
@@ -31,8 +31,8 @@ super + {f,t,b}
 #alt + b
 #      blueman-manager &> /dev/null 
 
-alt + p 
-      pavucontrol &> /dev/null 
+#alt + p 
+#      pavucontrol &> /dev/null 
 
 super + alt + l
                bash -c '~/.local/bin/lock'
