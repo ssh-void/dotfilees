@@ -69,7 +69,7 @@ static const struct arg args[] = {
     { run_command, "%s","nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk '{ printf \"GPU:%d%% %d°C|\", $1, $2 }'" },
     { ram_perc,"RAM:%s%%|",NULL},
     { disk_perc,"/:%s%%;","/"},
-    { run_command, "Vol:%s|", "amixer get Master | awk -F'[][]' 'END{print $2}'" },
+    { run_command ,"vol:%s|","pamixer --get-volume-human"}, 
     { run_command, "Brightness:%s|", "brightnessctl get | awk -v max=$(brightnessctl max) '{printf \"%d%%\\n\", ($1*100)/max}'" },
     { run_command ,"pKg:%s|","doas xbps-query -l | wc -l"},
     { battery_perc,"Bat:%s%%","BAT1"}, /*hp bat1*/
