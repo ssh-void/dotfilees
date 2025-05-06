@@ -19,7 +19,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 alp + p
       maim -m 10 -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png
 
-#        flameshot gui &> /dev/null
+#lameshot gui &> /dev/null
 
 super + v
       	virt-manager &> /dev/null
