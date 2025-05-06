@@ -1,1 +1,2 @@
-neovim pnpm 
+neovim 
+pnpm 
