@@ -43,7 +43,7 @@ set nobackup
 set scrolloff=5
 set splitright
 set cursorline
-set cursorcolumn
+"set cursorcolumn
 set backupcopy=yes
 set bg=dark
 set shiftwidth=4
@@ -57,18 +57,18 @@ set nocompatible
 set encoding=utf-8
 "set rnu
 set wildmode=longest,list,full
-set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
+"set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set undofile
 set undodir=/tmp
 set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
-" Recherche incrémentielle
+"Recherche incrémentielle
 set number
 set incsearch
 set hlsearch
-" Désactiver 
+"Désactiver 
 set noswapfile
 set nobackup
 set nowritebackup
