@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+sudo xbps-install -Syu python-pip 
 cd ~ && python3 -m venv .env
 source /home/${USER}/.env/bin/activate
 pip install --upgrade pip
