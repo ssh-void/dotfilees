@@ -1,8 +1,11 @@
 sudo xbps-install git base-devel xtools-minimal python3
 #===================================================================================#
-cd /opt/
-sudo git clone --depth=1 https://github.com/void-linux/void-packages.git
+cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git
+cd /opt/ && sudo git clone --depth=1 https://github.com/void-linux/void-packages.git
 cd /opt/ && sudo chown -R $(whoami):$(whoami) .
+cd grc/
+sudo ./install.sh
+sudo cp /etc/profile.d/grc.sh /etc/
 #git clean -fd && git reset --hard && git pull
 #====================================================================================#
 cd /opt/void-packages && ./xbps-src binary-bootstrap # xbps-src cannot be used as root
