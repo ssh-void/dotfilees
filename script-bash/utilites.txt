@@ -3,7 +3,6 @@ tealdeer terminus-font
 xbanish numlockx
 zathura zathura-pdf-mupdf
 yaru readline 
-qt5ct qt6ct 
 ufw apparmor
 sxhkd 
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
