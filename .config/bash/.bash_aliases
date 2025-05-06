@@ -266,3 +266,10 @@ alias ufwr="doas ufw reload"
 alias ufws="doas ufw status verbose"
 alias nvop="nvidia-settings -q all | grep -i "
 alias uzsh="zsh -i -c 'omz update'"
+
+# ----------------------------------------------------------------------------------------#
+# --------------------------------------- git --------------------------------------------#
+# ----------------------------------------------------------------------------------------#
+alias gcommitfirst='git log --reverse --format="%ad" --date=iso | head -n 1'
+alias gnombrecommit='git rev-list --count ' # gnombrecommit branchnume
+gmailcommit(){git log --oneline --graph --decorate --author="$1"}
