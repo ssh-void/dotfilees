@@ -46,10 +46,10 @@ export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
 export EDITOR="nvim"
 export VISUAL="nvim"
-export MANPAGER="nvim +Man!" # manpages
+export MANPAGER="less -R --use-color -Dd+g -Du+b" # manpages
 export PAGER="most" 
-export IMGVIEWER="sxiv"
-export IMAGE="sxiv"
+export IMGVIEWER="nsxiv"
+export IMAGE="nsxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -58,7 +58,7 @@ export XBPS_DISTDIR="/opt/void-packages"
 # make
 export MAKEFLAGS="-j4"
 
-echo "Xft.dpi: 102" | xrdb -merge
+echo "Xft.dpi: 105" | xrdb -merge
 
 # startx 
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
