@@ -1,5 +1,4 @@
 
-highlight Comment cterm=italic
 highlight CursorLine ctermbg=Black cterm=NONE
 highlight CursorLineNr ctermbg=Black cterm=bold ctermfg=Green
 
@@ -102,4 +101,4 @@ augroup ManPage
     autocmd FileType man setlocal colorcolumn=        " Pas de colonne de repère
     autocmd FileType man silent! colorscheme torte    " Appliquer un thème adapté (éviter les erreurs)
     autocmd FileType man colorscheme elflord
-augroup END 
+augroup END
