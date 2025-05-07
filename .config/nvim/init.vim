@@ -1,34 +1,32 @@
-
+" my config
 highlight CursorLine ctermbg=Black cterm=NONE
 highlight CursorLineNr ctermbg=Black cterm=bold ctermfg=Green
 
-nnoremap <leader>s :source ~/.config/nvim/init.vim<CR>
-
-nnoremap <C-l> 		:vertical resize -2<CR>
-nnoremap <C-k> 		:vertical resize +2<CR>
+"namp
 nmap J <C-w>h
 nmap M <C-w>l
 
-" k vers le bas L vers haut m vers le droit j vers la gouch
+"noremap
 noremap <silent> l k
 noremap <silent> k j
 noremap <silent> m l
 noremap <silent> j h
 
-" jk or kj echap
+"inoremap
 inoremap jk <Esc>
 inoremap kj <Esc>
 
+"vnoremap
 vnoremap < <gv
 vnoremap > >gv
 :vmap <Tab> >
 :vmap <S-Tab> <
 
 syntax enable
+"set
 set title
 set ruler
 set showmatch
-" color
 set t_Co=256        " Enable 256 colors
 set termguicolors   " Enable GUI colors for the terminal to get truecolor
 set ignorecase
@@ -60,23 +58,24 @@ set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
-" Recherche incrémentielle
 set number
-set incsearch
+set incsearch "Recherche incrémentielle
 set hlsearch
-" Désactiver
 set noswapfile
 set nobackup
 set nowritebackup
 set noundofile
 set laststatus=0
 
+"color
 colorscheme koehler
 
-"nnoremap <C-t> :NERDTreeToggle<CR>
+"nnoremap
 nnoremap <C-s> :vsplit<CR> "ctrl +s
-nnoremap <C-m> :make<CR>   "ctrl +m => $ make
-let mapleader =":" " touche leader à ! au lieu de la valeur par défaut espace
+
+"leader
+let mapleader = "!"
+nnoremap <leader>s :source ~/.config/nvim/init.vim<CR>
 
 "xclip
 vnoremap <C-c> "+y
@@ -99,6 +98,5 @@ augroup ManPage
     autocmd FileType man setlocal signcolumn=no       " Cacher la colonne de signes
     autocmd FileType man setlocal nocursorline        " Pas de surlignage de la ligne du curseur
     autocmd FileType man setlocal colorcolumn=        " Pas de colonne de repère
-    autocmd FileType man silent! colorscheme torte    " Appliquer un thème adapté (éviter les erreurs)
-    autocmd FileType man colorscheme elflord
+    autocmd FileType man silent! colorscheme elflord   " Appliquer un thème adapté (éviter les erreurs)
 augroup END
