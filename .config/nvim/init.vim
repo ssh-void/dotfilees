@@ -65,11 +65,12 @@ set signcolumn=yes
 set number
 set incsearch
 set hlsearch
-" Désactiver 
+" Désactiver
 set noswapfile
 set nobackup
 set nowritebackup
 set noundofile
+set laststatus=0
 
 colorscheme koehler
 
