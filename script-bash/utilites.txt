@@ -2,9 +2,7 @@ brightnessctl
 tealdeer 
 Thunar
 xbanish numlockx
-zathura zathura-pdf-mupdf
-readline 
-yaru
+zathura zathura-pdf-mupdf 
 ufw apparmor
 sxhkd 
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
