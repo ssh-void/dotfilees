@@ -1,3 +1,4 @@
+
 [ "$BASH" ] && [ -f $HOME/.bashrc ] && . $HOME/.bashrc
 [ -f $XDG_CONFIG_HOME/X11/Xresources ] && xrdb -merge $XDG_CONFIG_HOME/X11/Xresources
 
@@ -29,12 +30,14 @@ export USER=$(id -un)
 #export SHELL="bash"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/config"
+
 # QT5 Fix
-export GDK_DPI_SCALE=1.02
-export QT_QPA_PLATFORMTHEME="qt5ct"
-export QT_PLATFORM_PLUGIN="qt5ct"
+export GDK_DPI_SCALE=1.00
+export QT_QPA_PLATFORMTHEME="qt6ct"
+export QT_PLATFORM_PLUGIN="qt6ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
+
 # TERMINAL
 export TERMINAL="st"
 export TERM="xterm-256color" # getting proper colors
@@ -46,9 +49,10 @@ export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
 export EDITOR="nvim"
 export VISUAL="nvim"
+#man
 #export MANPAGER="less -R --use-color -Dd+g -Du+b" # manpages
 export MANPAGER="nvim +Man!" # manpages
-export PAGER="most" 
+export PAGER="most"
 export IMGVIEWER="nsxiv"
 export IMAGE="nsxiv"
 export WM_NAME="LG3D" # contourner certains bogues matlab
@@ -58,10 +62,12 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export XBPS_DISTDIR="/opt/void-packages"
 # make
 export MAKEFLAGS="-j4"
+# xorg-server-devel (sudo nvidia-xconfig)  pkg-config
+export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 
 echo "Xft.dpi: 105" | xrdb -merge
 
-# startx 
+# startx
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
   exec startx
 fi
