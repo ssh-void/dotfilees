@@ -10,7 +10,6 @@ alias c="xbps-remove -RoO && vkpurge rm all"
 alias d="xbps-remove -Rv"
 alias pkgxbps="xbps-reconfigure -fa"
 alias manxbps="man /opt/void-packages/./xbps-src"
-alias xx="exit"
 
 
 # runit:
@@ -19,14 +18,11 @@ alias svtus="doas sv status "
 alias rvdown="doas sv down "
 
 # Other:
-alias vsxh="nvim ~/.config/sxhkd/sxhkdrc"
 alias uuidl="ls -l /dev/disk/by-uuid/"
 alias font="fc-list : family | sort | uniq"
 alias cpp="rsync -rvphWP --info=progress2"
-alias img="sxiv "
-alias neofetch="fastfetch"
-#alias xhkd="pkill -USR1 -x sxhkd"
-alias taillog="tail -n 5 -v -f "
+alias img="nsxiv "
+alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 alias fr="free -h"
 
 # log ...
@@ -34,10 +30,8 @@ alias blkidl="blkid -o list"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias logk="dmesg --clear &&  dmesg --ctime --follow"
 alias perms="chmod 664"
-alias chownuser="chown -R $(whoami):$(whoami) ."
 alias h='history | cut -c 8- | tac | fzy -l 15 | xclip -selection clipboard'
 alias xp="xclip -selection clipboard"
-alias fontlist="fc-list : family | sort | uniq"
 alias pdf="zathura"
 alias tldr="tealdeer"
 
@@ -54,13 +48,12 @@ alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
 
 # ls
-alias l="eza -F -l --color=always --group-directories-first"  # long format
-alias ll="eza -F -dlg .* --group-directories-first --color=auto"
-alias lls="ls --color=auto -a --group-directories-first"
+alias l="ls -Flh --color=always --group-directories-first"  # long format
+alias ll="ls -Fh -dlg .* --group-directories-first --color=auto 2> /dev/null"
+alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
-alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ "
-#alias l="ls -Flh --group-directories-first --color=auto"
-#alias ll="ls -F -dlh .* --group-directories-first --color=auto"
+alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
+alias lsgrep='ls -l | grep -i'
 
 # neovim
 alias v="nvim" vim="nvim" vi="nvim"
@@ -70,16 +63,6 @@ alias pweroff="shutdown -P now"
 alias rboot="shutdown -r now"
 alias tfi="shutdown -h "
 
-# Archives
-alias lzip="unzip -l"
-alias ltar="tar -ztvf"
-alias ctar="tar -cvzf"
-alias czip="zip -r"
-alias lxz="tar -Jtvf"
-alias cxz="tar -cvJf"
-
-# android
-alias adbrootshell="adb root && sleep 2 && adb remount && sleep 2 && adb shell "
 
 # cd
 alias cd..='cd ..'
@@ -98,17 +81,4 @@ alias trees="tree -s -h --du -a "
 alias T="du -sh"
 alias duf="du -sh *"
 alias dud="du -d 1 -h"
-alias disk="du -h --max-depth=1 ~/ | sort -rh"
-
-# tmux
-#alias qemu="qemu-system-x86_64"
-alias ta="tmux a"
-#alias darknet="torsocks w3m -o  auto_image=FALSE .w3m/bookmark.html"
-
-# For recording
-alias ffmpeg="ffmpeg -hide_banner" 
-#alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
-alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
-alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
-alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
-
+alias disk="du -h --max-depth=1 /root/ | sort -rh"
