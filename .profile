@@ -49,7 +49,7 @@ export BROWSER="firefox"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
 export EDITOR="nvim"
 export VISUAL="nvim"
-#man
+# man
 #export MANPAGER="less -R --use-color -Dd+g -Du+b" # manpages
 export MANPAGER="nvim +Man!" # manpages
 export PAGER="most"
@@ -62,7 +62,7 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 export XBPS_DISTDIR="/opt/void-packages"
 # make
 export MAKEFLAGS="-j4"
-# xorg-server-devel (sudo nvidia-xconfig)  pkg-config
+#xorg-server-devel (sudo nvidia-xconfig)  pkg-config
 export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 
 echo "Xft.dpi: 105" | xrdb -merge
