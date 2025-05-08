@@ -25,7 +25,7 @@ alias svtus="doas sv status "
 alias rvdown="doas sv down "
 #alias svup="doas sv up "
 #alias svtop="doas sv stop "
-	
+
 # -------------------------------------------------------------------------------------- #
 # --------------------------------->     Other     <------------------------------------ #
 # -------------------------------------------------------------------------------------- #
@@ -41,6 +41,7 @@ alias taillog="tail -n 5 -v -f "
 alias fr="free -h"
 alias echo='echo -e'
 alias qemux8664="qemu-system-x86_64"
+alias vscode="code-oss --disable-gpu --log off . 2> /dev/null"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
@@ -124,7 +125,7 @@ alias cxz="tar -cvJf "
 alias ctar="tar -cvzf "
 alias czip="zip -r "
 alias lrar="unrar l "
-alias l7z="7z l"      
+alias l7z="7z l"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     android     <----------------------------------- #
@@ -245,7 +246,7 @@ alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 # --------------------------------------------------------------------------------------- #
 alias py="python3"
 alias apy="source $HOME/.env/bin/activate"
-alias ve="python3 -m venv" 
+alias ve="python3 -m venv"
 alias vd="deactivate"
 alias pipi="pip install"
 alias pipuni="pip uninstall"
@@ -272,4 +273,4 @@ alias uzsh="zsh -i -c 'omz update'"
 # ----------------------------------------------------------------------------------------#
 alias gcommitfirst='git log --reverse --format="%ad" --date=iso | head -n 1'
 alias gnombrecommit='git rev-list --count ' # gnombrecommit branchnume
-gmailcommit() { git log --oneline --graph --decorate --author="$1", }
+gmailcommit() { git log --oneline --graph --decorate --author="$1"; }
