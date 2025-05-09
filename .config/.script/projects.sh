@@ -21,5 +21,5 @@ elif [[ $selected_value == "rm" ]]; then
         echo "$data" >~/.projects.txt
     fi
 elif [[ -n $selected_value ]]; then
-     code-oss --disable-gpu --log off . 2> /dev/null "$selected_value" &> /dev/null
+     code-oss --disable-gpu --log off  2> /dev/null "$selected_value" &> /dev/null
 fi
