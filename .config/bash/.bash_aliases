@@ -64,8 +64,8 @@ alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
-#alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 alias nf='clear && neofetch --colors 4 6 1 3 7 5'
+#alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -84,7 +84,7 @@ alias m="man"
 alias vf='nvim "$(find ~/ -type f 2> /dev/null | fzy -l 20)"'
 
 # --------------------------------------------------------------------------------------- #
-# --------------------------------->     ls & eza     <---------------------------------- #
+# --------------------------------->    ls & eza     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias l="ls -Flh --color=always --group-directories-first"  # long format
 alias ll="ls -Fh -dlg .* --group-directories-first --color=auto 2> /dev/null"
@@ -92,7 +92,7 @@ alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
 alias lsgrep='ls -l | grep -i'
-# eza (color icons ...)
+#eza 
 #alias l="eza -Fl --color=always --group-directories-first"  # long format
 #alias li="eza -Fl --color=always --group-directories-first --icons" # long format with icons
 #alias ll="eza -F -dlg .* --group-directories-first --color=auto 2> /dev/null"
