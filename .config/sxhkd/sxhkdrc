@@ -1,14 +1,14 @@
 super + s
-        exec $HOME/.config/.script/scratchpad.sh &> /dev/null 
+        exec $HOME/.config/.script/scratchpad.sh &> /dev/null
 
 super+ KP_Enter
-              st &> /dev/null 
+              st &> /dev/null
 
 super + x
-        exec $HOME/.config/.script/img_txt_net.sh &> /dev/null  
+        exec $HOME/.config/.script/img_txt_net.sh &> /dev/null
 
 super + c
-        exec $HOME/.config/.script/img_txt.sh  &> /dev/null 
+        exec $HOME/.config/.script/img_txt.sh  &> /dev/null
 
 alt + {Up,Down}
               exec $HOME/.config/.script/brightnessctl.sh {up,down}
@@ -16,67 +16,64 @@ alt + {Up,Down}
 XF86Audio{RaiseVolume,LowerVolume,Mute}
                                       exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
-alp + p
-      maim -m 10 -s -c 0,0,1,1 -n 2 -b 1.2 -f png | xclip -selection clipboard -target image/png &>/dev/null
-
-
-#lameshot gui &> /dev/null
+alt + p
+      flameshot gui &> /dev/null
+super + alt + p
+              maim -m 10 -s -c 0,0,1,1 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png &> /dev/null
 
 #super + v
-#      	virt-manager &> /dev/null
+#        virt-manager &> /dev/null
 
 super + {f,t,b}
               {firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null }
 
 #alt + b
-#      blueman-manager &> /dev/null 
+#      blueman-manager &> /dev/null
 
-#alt + p 
-#      pavucontrol &> /dev/null 
+#alt + p
+#      pavucontrol &> /dev/null
 
 super + alt + l
-               bash -c '~/.local/bin/lock'
+              bash -c '~/.local/bin/lock'
 
-super + e
-        thunar &>/dev/null 
+#super + e
+#        nnn &>/dev/null
 
-# firfox fr && En
 super + ctrl + f
                $HOME/.config/.script/sitefr.sh &> /dev/null
-               
+
 super + ctrl + e
                $HOME/.config/.script/siteen.sh &> /dev/null
 
-#super + shift + p
-#                $HOME/.config/.script/screenshot_region.sh &> /dev/null 
-              
+# super + shift + p
+#                 $HOME/.config/.script/screenshot_region.sh &> /dev/null
+
 super + ctrl + d
-              firefox https://chat.deepseek.com/ && firefox https://chat.openai.com/ 
+               $BRAWSER https://claude.ai/new && $BRAWSER https://chat.deepseek.com/ && $BRAWSER https://chat.openai.com/
 
 super + ctrl + a
                exec $HOME/.config/.script/translate.sh
 
 super + ctrl + i
-               firefox https://www.instagram.com/?hl=en
+               $BROWSER https://www.instagram.com/?hl=en
 
 super + ctrl + o
-               firefox https://outlook.live.com/mail/0/
+               $BROWSER https://outlook.live.com/mail/0/
 
 super + ctrl + l
-               firefox https://www.linkedin.com/feed/
+               $BROWSER https://www.linkedin.com/feed/
 
 super + ctrl + u
-               firefox https://www.udemy.com/home/my-courses/learning/
+               $BROWSER https://www.udemy.com/home/my-courses/learning/
 
 super + ctrl + n
-               firefox https://www.notion.so
-               
+               $BROWSER https://www.notion.so
+
 super + ctrl + r
-               firefox https://www.reddit.com/
+               $BROWSER https://www.reddit.com/
 
 super + ctrl + p
                $HOME/.config/.script/projects.sh &> /dev/null
 
 super + ctrl + v
                $HOME/.config/.script/voidlinuxpackages.sh &> /dev/null
-
