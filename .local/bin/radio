@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Fichier contenant les URLs avec commentaires
-FILE=~/.urls.txt
+FILE=~/.config/.urls.txt
 
 # Associe chaque ligne à une URL + commentaire
 selection=$(awk '{print $0}' "$FILE" | fzy --lines=8)
