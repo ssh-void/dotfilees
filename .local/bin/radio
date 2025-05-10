@@ -4,7 +4,7 @@
 FILE=~/.urls.txt
 
 # Associe chaque ligne à une URL + commentaire
-selection=$(awk '{print $0}' "$FILE" | fzy)
+selection=$(awk '{print $0}' "$FILE" | fzy --lines=8)
 
 # Si rien n'est sélectionné, quitter proprement
 [ -z "$selection" ] && exit
@@ -13,4 +13,4 @@ selection=$(awk '{print $0}' "$FILE" | fzy)
 url=$(echo "$selection" | cut -d'#' -f1 | awk '{print $1}')
 
 # Lancer mpv
-[ -n "$url" ] && torsocks mpv --no-config --no-video --af-add=volume=2 --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0' "$url"
+[ -n "$url" ] && torsocks mpv --no-config --no-video --af-add=volume=2 --term-osd-bar --ytdl-format=bestaudio --loop=inf --cache=no --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:138.0) Gecko/20100101 Firefox/138.0' "$url"
