@@ -1,0 +1,4 @@
+gtk-theme-name="Yaru-red-dark"
+gtk-font-name="DejaVu Sans 12"
+gtk-toolbar-style=GTK_TOOLBAR_ICONS # ou GTK_TOOLBAR_BOTH, GTK_TOOLBAR_TEXT
+gtk-toolbar-icon-size=GTK_ICON_SIZE_SMALL_TOOLBAR

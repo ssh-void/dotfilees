@@ -20,7 +20,7 @@ static const char *colors[][3]      = {
 	[SchemeSel]  = { evening, col_gray3, col_gray2},
 };
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7","8","9"};
 static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
@@ -39,6 +39,8 @@ static const Rule rules[] = {
 	{ "Nsxiv",                 "nsxiv",                    NULL,             0,            1,           1,           -1 },
 	{ "org.cryptomator.launcher.Cryptomator$MainApp", "org.cryptomator.launcher.Cryptomator$MainApp", NULL, 0, 1, 1, -1 },
 	{ "TelegramDesktop",       "telegram-desktop",         NULL,             0,            1,           1,           -1 },
+	{ "Firefox",               "Places",                   NULL,             0,            1,           1,           -1 },
+	{ "Gcolor2",               "gcolor2",                  NULL,             0,            1,           1,           -1 },
 
 };
 /* layout(s) */
