@@ -7,7 +7,9 @@ bypass() {
 		kill -0 "$$" || exit
 	done 2>/dev/null &
 }
-sudo chsh -s /bin/bash void
+USERNAME=$(logname)
+
+sudo chsh -s /bin/bash "$USERNAME"
 sudo chsh -s /bin/bash root
 sleep 3s
 bypass
@@ -20,6 +22,8 @@ clear
 
 # firefox
 sudo ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
+sudo xbps-reconfigure -f fontconfig
+
 
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
 sudo  xbps-install -Suyf $(cat pkg_list.txt)
@@ -32,9 +36,13 @@ sudo cp /etc/profile.d/grc.sh /etc/
 # root user 
 #sudo sh -c 'test -f /root/.bashrc && > /root/.bashrc && wget -c https://raw.githubusercontent.com/ssh-void/dotfilees/main/.bashrcrot -O /root/.bashrc' # tested
 sudo mkdir -p /root/.config/nvim
-sudo cp ~/dotfilees/.config/nvim/init.vim /root/.config/nvim/init.vim
+sudo cp ~/dotfilees/.config/nvim/init.vimroot /root/.config/nvim/init.vim
 
-sudo xbps-reconfigure -fa && fc-cache -fv && sudo xbps-reconfigure -f fontconfig
+# Reconfigure all packages
+sudo xbps-reconfigure -fa
+
+# Update font cache
+fc-cache -fv
 
 #sudo sv down dhcpcd 
 sudo rm /var/service/agetty-tty{3,4,5,6} 
@@ -57,5 +65,5 @@ sudo apparmor_parser -R /etc/apparmor.d/usr.lib.libvirt.virt-aa-helper
 sudo sed -i 's|^GRUB_CMDLINE_LINUX_DEFAULT=".*"|GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 i915.enable_guc=3 apparmor=1 security=apparmor"|' /etc/default/grub
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 sudo update-grub
-#echo "permit nopass $(whoami) as root" | sudo tee /etc/doas.conf > /dev/null
+echo "permit nopass "$USERNAME" as root" | sudo tee /etc/doas.conf > /dev/null
 #sudo shutdown -r now # reboot   
