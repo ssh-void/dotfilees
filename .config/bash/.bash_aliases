@@ -227,7 +227,7 @@ alias vlcfzy='vlc "$(find /home/${USER}/Downloads/yt-dlp/video/ -type f -name "*
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->      ffmpeg       <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias ffmpeg='ffmpeg —hide_banner'
+#alias ffmpeg='ffmpeg —hide_banner'
 alias ffplay='ffplay —hide_banner'
 alias ffprobe='ffprobe -hide_banner'
 alias ffmpegcodel='ffmpeg -encoders | grep -i'
