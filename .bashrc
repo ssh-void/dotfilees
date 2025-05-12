@@ -41,8 +41,8 @@ bind '"\e[1;5C": forward-word'               # Right Arrow key move by word
 bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
 bind 'TAB:menu-complete'                     # cycle through all matches with 'TAB' key
 bind '"\C-o": alias-expand-line'             # expand an alias
-# bind -x '"\C-f":cd ~/.config' 
-bind '"\C-f":"cd ~/.config/"'
+bind -x '"\C-f":cd ~/.config' 
+#bind '"\C-f":"cd ~/.config/"'
 bind '"\C-y":"cd ~/Downloads/yt-dlp/video/"'
 
 ### SHOPT  ###

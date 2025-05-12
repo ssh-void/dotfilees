@@ -1,6 +1,10 @@
 # .bashrc
 export PS1="\[\e[33m\]\u\[\e[m\][\[\e[36m\]\w\[\e[m\]\]]$ "
 
+echo -e -n "\x1b[\x35 q"
+
+bind 'set completion-ignore-case on'
+
 # XBPS-*
 alias qi="xbps-query -vs"
 alias q="xbps-query -Rs"
@@ -81,4 +85,4 @@ alias trees="tree -s -h --du -a "
 alias T="du -sh"
 alias duf="du -sh *"
 alias dud="du -d 1 -h"
-alias disk="du -h --max-depth=1 /root/ | sort -rh"
+alias usage='du -h -d1'
