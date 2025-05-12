@@ -16,7 +16,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 super + alt + p
               maim -m 10 -s -c 0,0,1,1 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png &> /dev/null
 
-super + p
+alt + p
               flameshot gui &> /dev/null
 
 #super + v
@@ -75,4 +75,3 @@ super + ctrl + v
 
 super + ctrl + y
                $HOME/.config/.script/youtube.sh &> /dev/null
-
