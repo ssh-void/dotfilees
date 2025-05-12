@@ -6,11 +6,10 @@ nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=0" &
 #Antialiasing Settings
 nvidia-settings -a FSAAAppControlled=0 & # Override Application Settings
 nvidia-settings -a FSAA=5 & # 5 MSAA | 10 CSAA
-numlockx on &
 xbanish -t 1 &
 pipewire &
 pipewire-pulse &
-sxhkd &
+#sxhkd &
 #dunst &
 slstatus &
 xset -dpms && xset s off &
@@ -24,6 +23,8 @@ xrandr --auto && xrandr --output eDP1 --set "PRIME Synchronization" 1 &
 echo "Xft.dpi: 107" | xrdb -merge
 xrdb -load $HOME/.config/X11/Xresources &
 brightnessctl set 80% &
+while true; do numlockx on ; sleep 1 ; done &
+while true; do sxhkd ; sleep 1 ; done &
 while true; do picom --backend glx --glx-no-stencil --xrender-sync-fence --no-vsync --glx-no-rebind-pixmap --no-ewmh-fullscreen --no-use-damage --no-fading-openclose --no-fading-destroyed-argb ; done &
 #while true; do picom --backend glx --glx-no-stencil --vsync --use-damage &>/dev/null ; done &
 exec dbus-run-session dwm
