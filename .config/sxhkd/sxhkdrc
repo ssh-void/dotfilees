@@ -1,1 +1,78 @@
-²
+super + s
+        exec $HOME/.config/.script/scratchpad.sh &> /dev/null
+
+super+ KP_Enter
+              exec $HOME/.config/.script/translate.sh
+
+super + {x,c}
+        {exec $HOME/.config/.script/img_txt_net.sh &> /dev/null,exec $HOME/.config/.script/img_txt.sh &> /dev/null}
+
+alt + {Up,Down}
+              exec $HOME/.config/.script/brightnessctl.sh {up,down}
+
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+                                      exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
+
+super + alt + p
+              maim -m 10 -s -c 0,0,1,1 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png &> /dev/null
+
+super + p
+              flameshot gui &> /dev/null
+
+#super + v
+#        virt-manager &> /dev/null
+
+super + {f,t,b}
+              {firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null}
+
+#alt + b
+#      blueman-manager &> /dev/null
+
+#alt + p
+#      pavucontrol &> /dev/null
+
+super + alt + l
+              bash -c '~/.local/bin/lock'
+
+#super + e
+#        nnn &>/dev/null
+
+super + ctrl + {f,e}
+               {$HOME/.config/.script/sitefr.sh &> /dev/null, $HOME/.config/.script/siteen.sh &> /dev/null}
+
+alt + Tab
+        pkill -USR1 -x sxhkd
+
+#super + shift + p
+#                 $HOME/.config/.script/screenshot_region.sh &> /dev/null
+
+super + ctrl + d
+               $BROWSER https://claude.ai/new && $BROWSER https://chat.openai.com/ && $BROWSER https://chat.deepseek.com/
+
+super + ctrl + i
+               $BROWSER https://www.instagram.com/?hl=en
+
+super + ctrl + o
+               $BROWSER https://outlook.live.com/mail/0/
+
+super + ctrl + l
+               $BROWSER https://www.linkedin.com/feed/
+
+super + ctrl + u
+               $BROWSER https://www.udemy.com/home/my-courses/learning/
+
+super + ctrl + n
+               $BROWSER https://www.notion.so
+
+super + ctrl + r
+               $BROWSER https://www.reddit.com/
+
+super + ctrl + p
+               $HOME/.config/.script/projects.sh &> /dev/null
+
+super + ctrl + v
+               $HOME/.config/.script/voidlinuxpackages.sh &> /dev/null
+
+super + ctrl + y
+               $HOME/.config/.script/youtube.sh &> /dev/null
+
