@@ -7,10 +7,10 @@ x=$(xclip -o -selection primary)
 
 $BROWSER "https://www.dictionnaire-academie.fr/article/A9P3914"
 $BROWSER "https://ar.forvo.com/search/$x"
+$BROWSER "https://langue-francaise.tv5monde.com/decouvrir/dictionnaire/m/$x"
 $BROWSER "https://www.larousse.fr/dictionnaires/francais/$x"
 $BROWSER "https://usito.usherbrooke.ca/d%C3%A9finitions/$x"
 $BROWSER "https://www.le-dictionnaire.com/definition/$x"
-$BROWSER "https://langue-francaise.tv5monde.com/decouvrir/dictionnaire/m/$x"
 $BROWSER "https://www.synonymes.com/synonyme.php?mot=$x"
 $BROWSER "https://www.kikiladi.com/citation/$x.html"
 $BROWSER "https://dictionnaire.lerobert.com/definition/$x"
