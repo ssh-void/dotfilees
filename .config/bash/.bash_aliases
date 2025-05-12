@@ -49,7 +49,7 @@ alias vscode="code-oss --disable-gpu --log off . 2> /dev/null"
 alias xx='exit'
 alias blkidl="doas blkid -o list"
 alias lsblkl=" lsblk -rno size,name,label,mountpoint,fstype,uuid"
-alias randompw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
+alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias logk="doas dmesg --clear &&  doas dmesg --ctime --follow"
 alias pls='doas $(fc -ln -1)' # Runs the last command with doas
 alias perms="doas chmod 664"
@@ -64,8 +64,8 @@ alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
-alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
+alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -84,7 +84,7 @@ alias m="man"
 alias vf='nvim "$(find ~/ -type f 2> /dev/null | fzy -l 20)"'
 
 # --------------------------------------------------------------------------------------- #
-# --------------------------------->    ls & eza     <----------------------------------- #
+# --------------------------------->     ls & eza     <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias l="ls -Flh --color=always --group-directories-first"  # long format
 alias ll="ls -Fh -dlg .* --group-directories-first --color=auto 2> /dev/null"
@@ -92,7 +92,7 @@ alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
 alias lsgrep='ls -l | grep -i'
-#eza 
+# eza (color icons ...)
 #alias l="eza -Fl --color=always --group-directories-first"  # long format
 #alias li="eza -Fl --color=always --group-directories-first --icons" # long format with icons
 #alias ll="eza -F -dlg .* --group-directories-first --color=auto 2> /dev/null"
@@ -156,44 +156,43 @@ alias trees="tree -s -h --du -a "
 # ---------------------------------->      du       <------------------------------------ #
 # --------------------------------------------------------------------------------------- #
 alias T='du -sh' 
-alias usage='du -h -d1'
 alias duf='du -sh * '
+alias usage='du -d 1 -h | sort -rh  '
 alias duone='du -h --max-depth=1 '
 alias disk='doas du -h --max-depth=1 ~/ | sort -rh '
-alias grep='grep --color=auto -n'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias pingvoid='ping -c 5 voidlinux.org'
 alias ssgrep='doas ss -atpu | grep -i'
-alias myips="ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'"
 alias myip='curl -X POST -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias myiptor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias wifilist="nmcli device wifi list | more"
+alias wifitus="nmcli device status"
+alias wifishow="nmcli connection show | more"
+alias wifiup="doas nmcli con up "
+alias wifiwn="doas nmcli con down "
 alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
 alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --progress-bar -C - '
 alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -L -O --progress-bar -C - '
 alias xmr='curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
 alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -r -np -nH --cut-dirs=1 -R index.html '
+alias vimfirefox='vim "/tmp/firefox$(date +%Y-%m-%d_%I-%M_%p).txt"'
+#alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
+#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
+
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     tmux     <-------------------------------------- #
 # --------------------------------------------------------------------------------------- #
 #alias ta="tmux a"
 alias vimtmux='vim ~/.config/tmux/tmux.conf'
-alias tmuxreload='tmux source-file ~/.config/tmux/tmux.conf && echo " ✅ tmux.conf is reloaded"'
+alias tmuxreload='tmux source-file ~/.config/tmux/tmux.conf && echo "tmux.conf is reloaded"'
 alias tmsl='tmux list-sessions'
 #alias tmsgo='tmux attach-session -t'
 alias tmkill='tmux kill-server'
 
-# --------------------------------------------------------------------------------------- #
-# --------------------------->      NetworkManager    <---------------------------------- #
-# --------------------------------------------------------------------------------------- #
-alias wifilist="nmcli device wifi list | more"
-alias wifitus="nmcli device status"
-alias wifishow="nmcli connection show | more"
-alias wifiup="doas nmcli con up "
-alias wifiwn="doas nmcli con down "
 
 # --------------------------------------------------------------------------------------- #
 # -------------------------------->     yt-dlp     <------------------------------------- #
@@ -218,30 +217,29 @@ alias yt='yt-dlp --skip-download --write-thumbnail '
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->     mpv & vlc     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias mpvtormp3='torsocks mpv --no-config --cache=no --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
-alias mpvmp3='mpv --no-config --cache=no --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
-alias vlcnv='prime-run vlc'
-alias mpvnv='prime-run mpv'
+alias mpvtormp3='torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
+alias mpvmp3='mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
+alias vlcnv="prime-run vlc "
+alias mpvnv="prime-run mpv "
 alias vlcfzy='vlc "$(find /home/${USER}/Downloads/yt-dlp/video/ -type f -name "*.mp4" | fzy)" 2> /dev/null'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->      ffmpeg       <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
 #alias ffmpeg='ffmpeg —hide_banner'
-alias ffplay='ffplay —hide_banner'
-alias ffprobe='ffprobe -hide_banner'
+#alias ffplay='ffplay —hide_banner'
+#alias ffprobe='ffprobe -hide_banner'
 alias ffmpegcodel='ffmpeg -encoders | grep -i'
 alias ffmpegprotocol='ffmpeg -protocols | grep -i'
 #alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
 alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
 alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
-alias cam='ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0'
+alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      suckless       <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm *.rej ; doas rm config.h"
-alias makeclean="make clean"
+alias rmsuckless="doas rm *.o ; doas rm *.orig ; doas rm *.rej ; doas rm config.h ; make clean"
 alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 
 # --------------------------------------------------------------------------------------- #
@@ -264,6 +262,7 @@ alias pipup="pip install --upgrade pip " # -U, --upgrade
 # --------------------------------------- ssh --------------------------------------------#
 # ----------------------------------------------------------------------------------------#
 alias ppicom='pkill -f picom'
+alias psxhkd='pkill -f sxhkd'
 alias rpi="ssh -tX pi@raspberrypi"
 alias ufwl="doas ufw status numbered"
 alias ufwr="doas ufw reload"
@@ -277,3 +276,11 @@ alias uzsh="zsh -i -c 'omz update'"
 alias gcommitfirst='git log --reverse --format="%ad" --date=iso | head -n 1'
 alias gnombrecommit='git rev-list --count ' # gnombrecommit branchnume
 gmailcommit() { git log --oneline --graph --decorate --author="$1"; }
+
+# ----------------------------------------------------------------------------------------#
+# ------------------------------------- gtts-cli -----------------------------------------#
+# ----------------------------------------------------------------------------------------#
+alias gttsFrslow="gtts-cli -l fr --slow --file"
+alias gtttsFrnormal="gtts-cli -l fr --file"
+alias gttsEnlow="gtts-cli -l en --slow --file"
+alias gttsEnnormal="gtts-cli -l en --file"
