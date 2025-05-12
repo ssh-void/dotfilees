@@ -157,7 +157,7 @@ alias trees="tree -s -h --du -a "
 # --------------------------------------------------------------------------------------- #
 alias T='du -sh' 
 alias duf='du -sh * '
-alias usage='du -d 1 -h | sort -rh  '
+alias usage='du -d 1 -h | sort -rh '
 alias duone='du -h --max-depth=1 '
 alias disk='doas du -h --max-depth=1 ~/ | sort -rh '
 
