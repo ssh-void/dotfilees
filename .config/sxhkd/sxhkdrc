@@ -25,8 +25,8 @@ alt + p
 super + {f,t,b}
               {firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null}
 
-#alt + b
-#      blueman-manager &> /dev/null
+alt + b
+      blueman-manager &> /dev/null
 
 #alt + p
 #      pavucontrol &> /dev/null
@@ -53,8 +53,10 @@ super + ctrl + i
                $BROWSER https://www.instagram.com/?hl=en
 
 super + ctrl + o
-               $BROWSER https://www.linkedin.com/feed/ && $BROWSER https://outlook.live.com/mail/0/ 
+               $BROWSER https://outlook.live.com/mail/0/
 
+super + ctrl + l
+               $BROWSER https://www.linkedin.com/feed/
 
 super + ctrl + u
                $BROWSER https://www.udemy.com/home/my-courses/learning/
@@ -73,3 +75,4 @@ super + ctrl + v
 
 super + ctrl + y
                $HOME/.config/.script/youtube.sh &> /dev/null
+
