@@ -65,7 +65,6 @@ setopt HIST_IGNORE_ALL_DUPS  # Don't record duplicate entries in history
 # History in cache directory:
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.cache/zsh/history
 
 # ============================
 # COMPLETION

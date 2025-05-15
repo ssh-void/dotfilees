@@ -3,6 +3,7 @@
 # Installing zsh
 sudo xbps-install -Syu zsh zsh-completions 
 mkdir ~/.oh-my-zsh &> /dev/null
+mkdir -p "${XDG_STATE_HOME:-$HOME/.local/state}/zsh" &> /dev/null
 git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh &> /dev/null
 
 # Cloning some awesome plugins 
