@@ -6,7 +6,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim       = ";";       /* Character used for separating status */
-static const char *fonts[]          = {"Ubuntu Mono:size=10:weight=SemiBold:pixelsize=22:antialias=true:autohint=true",
+static const char *fonts[]          = {"Ubuntu Mono:size=12:weight=SemiBold:pixelsize=22:antialias=true:autohint=true",
                                        "JoyPixels:style=Bold:pixelsize=15:antialias=true:autohint=true"};
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#2067B0";
@@ -41,7 +41,9 @@ static const Rule rules[] = {
 	{ "TelegramDesktop",       "telegram-desktop",         NULL,             0,            1,           1,           -1 },
 	{ "Firefox",               "Places",                   NULL,             0,            1,           1,           -1 },
 	{ "Gcolor2",               "gcolor2",                  NULL,             0,            1,           1,           -1 },
-
+	{ "Lxappearance",          "lxappearance",             NULL,             0,            1,           1,           -1 },
+	{ "Tor Browser",           "Navigator",                NULL,             0,            1,           1,           -1 },
+	{ "vlc",                   "vlc",                      NULL,             0,            1,           1,           -1 },
 };
 /* layout(s) */
 static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
@@ -65,12 +67,13 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = {"dmenu_run","-i","-fn","Ubuntu Font:style=Medium:size=15","-nb","#333333","-nf","#ffffff","-sb","#c61169","-sf","#f9f102",NULL};
+static const char *dmenucmd[] = {"dmenu_run","-i","-p","Run: ","-fn","Ubuntu Font:style=Medium:size=15","-nb","#333333","-nf","#ffffff","-sb","#c61169","-sf","#f9f102",NULL};
 static const char *termcmd[]  = {"alacritty",NULL};
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} }, /* bat off or on */
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
