@@ -1,2 +1,0 @@
-/home/void/programming
-/home/void/.config/
