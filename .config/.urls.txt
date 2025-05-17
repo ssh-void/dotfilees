@@ -17,15 +17,17 @@ https://stream.zeno.fm/xzxaqh2w5rhvv #   Sada9a jaria
 
 # France
 https://stream.europe1.fr/europe1.aac  # Europe 1
-https://ice.creacast.com/sudradio # Sud Radio
+https://ice.creacast.com/sudradio_aac # Sud Radio
 http://direct.franceinfo.fr/live/franceinfo-midfi.mp3  # France Info
 http://icecast.radiofrance.fr/franceculture-hifi.aac   # France Culture
 http://direct.franceinter.fr/live/franceinter-hifi.aac # France Inter ( music )
 http://icecast.radiofrance.fr/francemusique-hifi.aac   # France Musique
 http://direct.franceinfo.fr/live/franceinfo-lofi.mp3   # france info lofi
 https://audio.bfmtv.com/bfmradio_128.mp3 # BFM radio
+https://radios.rtbf.be/laprem1ere-64.aac # RTBF La Première
 
 # Usa
+https://playerservices.streamtheworld.com/api/livestream-redirect/CSPANRADIO.mp3 # C-SPAN
 https://live.amperwave.net/direct/foxnewsradio-foxnewsradioaac-imc?source=fnr.web # Fox News Radio
 https://tunein.cdnstream1.com/2868_96.mp3 # cnn
 https://video.news.sky.com/snr/news/snrnews.mp3 # uk sky news
