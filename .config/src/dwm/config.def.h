@@ -68,7 +68,8 @@ static const Layout layouts[] = {
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {"dmenu_run","-i","-p","Run: ","-fn","Ubuntu Font:style=Medium:size=15","-nb","#333333","-nf","#ffffff","-sb","#c61169","-sf","#f9f102",NULL};
-static const char *termcmd[]  = {"alacritty",NULL};
+//static const char *termcmd[]  = {"alacritty",NULL};
+static const char *termcmd[]  = {"sakura",NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -120,3 +121,4 @@ static const Button buttons[] = {
 //	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 //	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
