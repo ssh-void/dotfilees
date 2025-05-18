@@ -516,8 +516,9 @@ DataDirectory /var/lib/tor
 ## Can not be changed while tor is running.
 User tor
 ContactInfo draklinux@protonmail.com
-EntryNodes {dk}{es}{de}{sk}{ch}{se}{no}{nl}{lu}{at}{is}
-ExitNodes  {ch} # Suisse, nl de se is
+EntryNodes {dk}{es}{de}{sk}{ch}{se}{no}{nl}{lu}{at}{is} # es Spain | dk Denmark | sk Slovakia | no Norway | at Autriche | lu Luxembourg
+#ExitNodes  {ch}{de}{fi} # ch Switzerland, nl Netherlands, de Germany, se Sweden, is Islande 
+ExitNodes  {ch}
 StrictNodes 1
 AvoidDiskWrites 1  # ne pas écr sur disque
 # Bridge
