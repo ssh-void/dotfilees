@@ -27,7 +27,7 @@ export ZDOTDIR="$HOME/.config/zsh"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export USER=$(id -un)
-#export SHELL="bash"
+export SHELL="bash"
 export WGETRC="$HOME/.config/wget/wgetrc"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/.gtkrc-2.0"
 # QT5 Fix
