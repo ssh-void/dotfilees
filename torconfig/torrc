@@ -515,11 +515,11 @@ DataDirectory /var/lib/tor
 ## On startup, setuid to this user and setgid to their primary group.
 ## Can not be changed while tor is running.
 User tor
-ContactInfo draklinux@protonmail.com
-EntryNodes {dk}{es}{de}{sk}{ch}{se}{no}{nl}{lu}{at}{is} # es Spain | dk Denmark | sk Slovakia | no Norway | at Autriche | lu Luxembourg
-#ExitNodes  {ch}{de}{fi} # ch Switzerland, nl Netherlands, de Germany, se Sweden, is Islande 
-ExitNodes  {ch}
-StrictNodes 1
+
+# es Spain | dk Denmark | sk Slovakia | no Norway | at Autriche | lu Luxembourg
+EntryNodes {dk}{es}{de}{sk}{ch}{se}{no}{nl}{lu}{at}{is} StrictNodes 1 
+#ExitNodes  {ch}{de}{fi} StrictNodes 1 # ch Switzerland, nl Netherlands, de Germany, se Sweden, is Islande 
+ExitNodes  {ch} StrictNodes 1
 AvoidDiskWrites 1  # ne pas écr sur disque
 # Bridge
 BridgeRelay 1
