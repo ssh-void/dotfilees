@@ -44,6 +44,7 @@ export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
 export INPUTRC="$HOME/.inputrc"
 export FILE="Thunar"
 export BROWSER="firefox"
+#export BROWSER="brave-browser-stable"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -67,6 +68,6 @@ echo "Xft.dpi: 105" | xrdb -merge
 export NNN_OPENER="nsxiv"
 
 # startx
-if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
 fi
