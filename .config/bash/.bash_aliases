@@ -81,7 +81,8 @@ alias cp='cp -iv'
 alias cal="cal --twelve"
 alias cl="clear"
 alias m="man"
-alias vf='nvim "$(find ~/ -type f 2> /dev/null | fzy -l 20)"'
+alias cloc="cloc --timeout 0"
+vf() { nvim $(find ~/ /usr/ /etc/ /media/ -type f 2> /dev/null | fzy -l 20 -q "$1") ; }
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     ls & eza     <---------------------------------- #
@@ -155,11 +156,12 @@ alias trees="tree -s -h --du -a "
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->      du       <------------------------------------ #
 # --------------------------------------------------------------------------------------- #
-alias T='du -sh' 
+alias T='du -sh'
 alias duf='du -sh * '
 alias usage='du -d 1 -h | sort -rh '
 alias duone='du -h --max-depth=1 '
 alias disk='doas du -h --max-depth=1 ~/ | sort -rh '
+alias ncduhome='ncdu --one-file-system --exclude-caches --si --show-hidden --show-graph --show-percent --disable-delete --fast-ui-updates ~/'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>     net wifi ...     <--------------------------------- #
@@ -178,6 +180,7 @@ alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla
 alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -L -O --progress-bar -C - '
 alias xmr='curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
 alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -r -np -nH --cut-dirs=1 -R index.html '
+alias  ariacjxsk="aria2c -c -j 5 -x 3 -s 10 -k 5M"
 alias vimfirefox='vim "/tmp/firefox$(date +%Y-%m-%d_%I-%M_%p).txt"'
 #alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
 #alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
@@ -198,6 +201,7 @@ alias tmkill='tmux kill-server'
 # -------------------------------->     yt-dlp     <------------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias yl='yt-dlp -F '
+alias yltor='torsocks yt-dlp -F '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
@@ -213,6 +217,9 @@ alias yap='yt-dlp --config-locations $HOME/.config/yt-dlp/yap.conf '
 alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
 alias ytsupport='yt-dlp --list-extractors | grep -i '
 alias yt='yt-dlp --skip-download --write-thumbnail '
+alias yvlimit='yt-dlp --config-locations $HOME/.config/yt-dlp/yvlimit.conf'
+alias yturl="torsocks yt-dlp -g --skip-download"
+alias yvfscalecodec='yt-dlp --config-locations $HOME/.config/yt-dlp/yvfscalecodec.conf'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->     mpv & vlc     <----------------------------------- #
