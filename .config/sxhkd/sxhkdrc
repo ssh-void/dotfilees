@@ -2,7 +2,10 @@ super + s
         exec $HOME/.config/.script/scratchpad.sh &> /dev/null
 
 super+ KP_Enter
-              exec $HOME/.config/.script/translate.sh
+              exec $HOME/.config/.script/translate.sh &> /dev/null
+
+super + KP_Add
+            exec $HOME/.config/.script/translatefrar.sh &> /dev/null
 
 super + {x,c}
         {exec $HOME/.config/.script/img_txt_net.sh &> /dev/null,exec $HOME/.config/.script/img_txt.sh &> /dev/null}
@@ -41,31 +44,31 @@ super + ctrl + {f,e}
                {$HOME/.config/.script/sitefr.sh &> /dev/null, $HOME/.config/.script/siteen.sh &> /dev/null}
 
 alt + Tab
-        pkill -USR1 -x sxhkd
+        pkill -USR1 -x sxhkd 
 
 #super + shift + p
 #                 $HOME/.config/.script/screenshot_region.sh &> /dev/null
 
 super + ctrl + d
-               $BROWSER https://claude.ai/new && $BROWSER https://chat.openai.com/ && $BROWSER https://chat.deepseek.com/
+               $BROWSER https://claude.ai/new $> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://chat.deepseek.com/ &> /dev/null
 
 super + ctrl + i
-               $BROWSER https://www.instagram.com/?hl=en
+               $BROWSER https://www.instagram.com/?hl=en &> /dev/null
 
 super + ctrl + o
-               $BROWSER https://outlook.live.com/mail/0/
+               $BROWSER https://outlook.live.com/mail/0/ &> /dev/null
 
 super + ctrl + l
-               $BROWSER https://www.linkedin.com/feed/
+               $BROWSER https://www.linkedin.com/feed/ &> /dev/null
 
 super + ctrl + u
-               $BROWSER https://www.udemy.com/home/my-courses/learning/
+               $BROWSER https://www.udemy.com/home/my-courses/learning/ &> /dev/null
 
 super + ctrl + n
-               $BROWSER https://www.notion.so
+               $BROWSER https://www.notion.so &> /dev/null
 
 super + ctrl + r
-               $BROWSER https://www.reddit.com/
+               $BROWSER https://www.reddit.com/ &> /dev/null
 
 super + ctrl + p
                $HOME/.config/.script/projects.sh &> /dev/null
@@ -75,4 +78,3 @@ super + ctrl + v
 
 super + ctrl + y
                $HOME/.config/.script/youtube.sh &> /dev/null
-
