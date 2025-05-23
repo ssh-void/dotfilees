@@ -50,7 +50,7 @@ alt + Tab
 #                 $HOME/.config/.script/screenshot_region.sh &> /dev/null
 
 super + ctrl + d
-               $BROWSER https://claude.ai/new $> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://chat.deepseek.com/ &> /dev/null
+               $BROWSER https://claude.ai/new &> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://chat.deepseek.com/ &> /dev/null
 
 super + ctrl + i
                $BROWSER https://www.instagram.com/?hl=en &> /dev/null
@@ -78,3 +78,4 @@ super + ctrl + v
 
 super + ctrl + y
                $HOME/.config/.script/youtube.sh &> /dev/null
+
