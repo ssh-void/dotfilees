@@ -49,7 +49,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 set nocompatible
 set encoding=utf-8
-"set rnu
+set rnu
 set wildmode=longest,list,full
 set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set undofile
@@ -100,3 +100,8 @@ augroup ManPage
     autocmd FileType man setlocal colorcolumn=        " Pas de colonne de repère
     autocmd FileType man silent! colorscheme elflord   " Appliquer un thème adapté (éviter les erreurs)
 augroup END
+
+" Passer au buffer suivant avec Ctrl + →
+nnoremap <C-Right> :bn<CR>
+" Revenir au buffer précédent avec Ctrl + ←
+nnoremap <C-Left> :bp<CR>
