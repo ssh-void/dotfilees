@@ -1,18 +1,30 @@
-# my install
+#!/bin/bash
+set -e  # Exit on any error
+set -o pipefail
+
 USERNAME=$(logname)
 sudo chsh -s /bin/bash "$USERNAME"
 sudo chsh -s /bin/bash root
 
-echo "Updating The System========================="
-
+echo "Updating The System ... ========================="
 sudo xbps-install -S && sudo xbps-install -u xbps && sudo xbps-install -Syu
-mkdir $HOME/Images/
-mkdir -p $HOME/Downloads/{torrent,firefox,brave,ytdlp/{audio,video}}
+clear
 
+echo "mkdir Videos Image ... =========================="
+cd ~
+mkdir -p Videos Images Downloads Documents Music
+mkdir -p $HOME/Downloads/{torrent,firefox,brave,ytdlp/{audio,video}}
+clear
+
+echo "add void-repo-nonfree & installing... ========================="
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
 sudo  xbps-install -Suyf $(cat pkg_list.txt)
+clear
+
+echo "installing grc bash color... ========================="
 cd /opt/
 sudo git clone --depth=1 https://github.com/garabik/grc.git
+sudo chown -R "$USERNAME":"$USERNAME" grc
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
