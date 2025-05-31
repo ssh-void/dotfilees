@@ -7,7 +7,7 @@ lvm2
 chrony 
 cryptsetup
 dialog
-xinit xorg-input-drivers xorg-server
+xinit xorg-input-drivers xorg-server xrdb
 brightnessctl
 tealdeer
 Thunar
