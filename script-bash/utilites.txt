@@ -10,4 +10,4 @@ fuse-exfat ntfs-3g
 maim xclip
 wmname
 neovim
-htop
+htop neofetch
