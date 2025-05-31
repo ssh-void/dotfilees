@@ -1,3 +1,9 @@
+base-system
+lvm2
+chrony 
+cryptsetup
+dialog
+xinit xorg-input-drivers xorg-server
 brightnessctl
 tealdeer
 Thunar
@@ -11,3 +17,10 @@ maim xclip
 wmname
 neovim
 htop neofetch
+NetworkManager aria2 curl tor  
+firefox font-inconsolata-otf
+
+ docker dwm ffmpeg  fuse-exfat
+fzy git grub-i386-efi grub-x86_64-efi htop linux lvm2 maim mdadm mpv
+neovim ntfs-3g opendoas setxkbmap st sxhkd terminus-font tmux  vlc
+void-docs-browse void-live-audio vscode xclip  zramen zsh
