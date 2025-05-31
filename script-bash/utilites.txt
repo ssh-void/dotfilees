@@ -1,7 +1,6 @@
 base-system
 mdadm
 linux
-grub-i386-efi 
 grub-x86_64-efi
 void-docs-browse void-live-audio 
 lvm2
