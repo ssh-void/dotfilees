@@ -1,4 +1,9 @@
 base-system
+mdadm
+linux
+grub-i386-efi 
+grub-x86_64-efi
+void-docs-browse void-live-audio 
 lvm2
 chrony 
 cryptsetup
@@ -19,8 +24,17 @@ neovim
 htop neofetch
 NetworkManager aria2 curl tor  
 firefox font-inconsolata-otf
-
- docker dwm ffmpeg  fuse-exfat
-fzy git grub-i386-efi grub-x86_64-efi htop linux lvm2 maim mdadm mpv
-neovim ntfs-3g opendoas setxkbmap st sxhkd terminus-font tmux  vlc
-void-docs-browse void-live-audio vscode xclip  zramen zsh
+dwm st
+ffmpeg  
+fuse-exfat ntfs-3g 
+maim
+mpv vlc 
+fzy 
+neovim 
+opendoas 
+sxhkd
+sakura terminus-font
+vscode docker tmux
+xclip  
+zramen 
+zsh
