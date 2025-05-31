@@ -15,6 +15,7 @@ Thunar
 xbanish numlockx
 zathura zathura-pdf-mupdf
 ufw
+crond
 sxhkd
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
 fuse-exfat ntfs-3g
