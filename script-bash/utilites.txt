@@ -9,13 +9,11 @@ cryptsetup
 dialog
 xinit xorg-input-drivers xorg-server xrdb
 brightnessctl
-tealdeer
+tealdeer crond
 Thunar
-xbanish numlockx
+xbanish numlockx sxhkd
 zathura zathura-pdf-mupdf
 ufw
-crond
-sxhkd
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
 fuse-exfat ntfs-3g
 maim xclip
