@@ -3,10 +3,11 @@ tealdeer
 Thunar
 xbanish numlockx
 zathura zathura-pdf-mupdf
-ufw apparmor
+ufw
 sxhkd
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
 fuse-exfat ntfs-3g
 maim xclip
 wmname
 neovim
+htop
