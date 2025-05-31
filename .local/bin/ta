@@ -1,9 +1,9 @@
 #!/usr/bin/sh
 
-isRunning=$(pgrep tmux | head -1)
-
-if [ "$isRunning" ]; then
-  tmux a
+# Si une session existe, on s'y attache. Sinon, on en crée une.
+if tmux list-sessions >/dev/null 2>&1; then
+  tmux attach
 else
-  tmux
+  tmux new-session
 fi
+

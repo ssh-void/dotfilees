@@ -1,6 +1,6 @@
 sudo xbps-install -Syu apparmor zramen
-sudo ln -s /etc/sv/zramen/ /var/service/ 
-# zram 
+sudo ln -s /etc/sv/zramen/ /var/service/
+# zram
 echo "zram" | sudo tee /etc/modules-load.d/zram.conf > /dev/null
 sudo sed -i 's|^#\?FONT=.*|FONT="ter-v20b"|' /etc/rc.conf
 sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub

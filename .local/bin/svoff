@@ -5,8 +5,8 @@ service=$(ls /var/service | sort | fzy -l 20)
 # If a service was selected (non-empty)
 if [ -n "$service" ]; then
     # Remove the symlink to disable the service via runit
-    doas rm "/var/service/$service" && echo "❌ Service $service disabled."
+    doas rm "/var/service/$service" && echo "Service $service disabled."
 else
     # If no service selected, cancel the operation
-    echo "⏹️  Operation cancelled."
+    echo "Operation cancelled."
 fi

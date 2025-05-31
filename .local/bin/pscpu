@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#ps -C $@ -o pid,%cpu,cmd
+# Vérifie qu'au moins un nom de programme est fourni
+if [ "$#" -eq 0 ]; then
+    echo "Usage: $0 <nom_programme1> [nom_programme2] ..."
+    exit 1
+fi
+
+# En-tête de sortie
+printf "%-8s %-6s %s\n" "PID" "%CPU" "COMMAND"
+
+# Pour chaque nom de programme
+for prog in "$@"; do
+    # Utilise pgrep pour trouver les PID
+    for pid in $(pgrep "$prog"); do
+        # Affiche PID, %CPU, et commande associée
+        ps -p "$pid" -o pid,%cpu,cmd --no-headers
+    done
+done
+
+
+
+
+
+
+

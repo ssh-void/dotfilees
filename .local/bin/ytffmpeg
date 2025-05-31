@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
-#python3 -m pip install https://github.com/yt-dlp/yt-dlp/archive/master.tar.gz --break-system-packages
-#python3 -m pip install --force-reinstall https://github.con/yt-dlp/yt-dlp/archive/master.tar.qgz --break-system-packages
+
 url=$1
 [ -d youtube ] || mkdir youtube
 cd youtube || exit
-yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" --rm-cache-dir --no-warnings --no-mtime --no-part --no-embed-info-json --no-overwrites --no-abort-on-error --no-config --sponsorblock-mark all --sponsorblock-remove all --embed-thumbnail --embed-chapters --embed-metadata --ignore-errors --continue --retries 20 --retry-sleep exp=1:20 --download-archive "$HOME/archive.txt" --geo-bypass-country US --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --downloader "m3u8:native" --concurrent-fragments 5 --trim-filenames 150 --prefer-ffmpeg --downloader-args ffmpeg:"-loglevel error -stats" --id --merge-output-format mp4 "$url"
+yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" --no-warnings --no-mtime --no-part --no-embed-info-json --no-overwrites --no-abort-on-error --no-config --rm-cache-dir --ignore-errors --continue --retries 20 --retry-sleep exp=1:20 --download-archive $HOME/archive.txt --embed-thumbnail --embed-metadata --geo-bypass-country US --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:138.0) Gecko/20100101 Firefox/138.0"  150 --prefer-ffmpeg --downloader-args ffmpeg:"-loglevel error -stats -vf scale=1280:720"  --id --recode-video mp4 "$url"
 for i in *; do
    echo "file '$i'" >> list.txt
 done
@@ -12,3 +11,4 @@ ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4
 ls | grep -v output.mp4 | xargs -I  _ rm '_'
 shopt -s extglob
 rm !(output.mp4)
+
