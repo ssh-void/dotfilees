@@ -22,7 +22,7 @@ maim xclip
 wmname
 neovim
 htop neofetch
-NetworkManager aria2 curl tor  
+NetworkManager aria2 curl tor torsocksw
 firefox font-inconsolata-otf
 dwm st
 ffmpeg  
