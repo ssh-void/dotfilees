@@ -27,4 +27,5 @@ sakura terminus-font
 vscode docker tmux
 xclip  
 zramen 
-zsh
+zsh zsh-completions
+bash bash-completion
