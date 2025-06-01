@@ -25,6 +25,6 @@ brightnessctl set 80% &
 while true; do numlockx on ; sleep 1 ; done &
 while true; do sxhkd ; sleep 1 ; done &
 while true; do picom --backend glx --glx-no-stencil --xrender-sync-fence --no-vsync --glx-no-rebind-pixmap --no-ewmh-fullscreen --no-use-damage --no-fading-openclose --no-fading-destroyed-argb; sleep 1 ; done &
-#while true; do picom --backend glx --glx-no-stencil --vsync --use-damage &>/dev/null ; done &
+#while true; do picom --backend glx --glx-no-stencil --vsync --use-damage &>/dev/null ; sleep 1 ;done &
 st -f "Terminess Nerd Font Mono:style=Bold:pixelsize=24:antialias=true:autohint=true" -g "115x33+152+25" -n "scpad" -e "tmux" > /dev/null 2>&1 &
 exec dbus-run-session dwm
