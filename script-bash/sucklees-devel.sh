@@ -1,4 +1,4 @@
-sudo xbps-install -Syu libX11-devel libXft-devel libXinerama-devel libXrandr-devel make gcc
+sudo xbps-install -Syu libX11-devel libXft-devel libXinerama-devel libXrandr-devel make gcc pkg-config  #  pkg-config     !!   
 # sudo xbps-remove -Rv libXft-devel libXinerama-devel libXrandr-devel make gcc # (dwm )
 # nsxiv
 sudo xbps-install imlib2-devel
