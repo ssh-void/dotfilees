@@ -1,5 +1,5 @@
 base-system mdadm linux grub-x86_64-efi void-docs-browse void-live-audio lvm2 chrony cryptsetup dialog
-xinit xorg-input-drivers xorg-server xrdb xset
+xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool
 firefox font-inconsolata-otf
 neovim 
 brightnessctl 
