@@ -1,14 +1,8 @@
-base-system
-mdadm
-linux
-grub-x86_64-efi
-void-docs-browse void-live-audio 
-lvm2
-chrony 
-cryptsetup
-dialog
+base-system mdadm linux grub-x86_64-efi void-docs-browse void-live-audio lvm2 chrony cryptsetup dialog
 xinit xorg-input-drivers xorg-server xrdb xset
-brightnessctl
+firefox font-inconsolata-otf
+neovim 
+brightnessctl 
 tealdeer crond
 Thunar
 xbanish numlockx sxhkd
@@ -21,14 +15,12 @@ wmname
 neovim
 htop neofetch
 NetworkManager aria2 curl tor torsocksw
-firefox font-inconsolata-otf
 dwm st
 ffmpeg  
 fuse-exfat ntfs-3g 
 maim
 mpv vlc 
 fzy 
-neovim 
 opendoas 
 sakura terminus-font
 vscode docker tmux
