@@ -30,7 +30,6 @@ mpv vlc
 fzy 
 neovim 
 opendoas 
-sxhkd
 sakura terminus-font
 vscode docker tmux
 xclip  
