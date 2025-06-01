@@ -1,19 +1,17 @@
 # path : /var/spool/cron/
 # System update & cleanup
-SHELL=/bin/bash
-PATH=$HOME/.local/bin:$PATH
 
 @hourly doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Syu && doas xbps-remove -RoO && doas vkpurge rm all
 
 # Show folder sizes in home directory
-#5 * * * *  doas du -h --max-depth=1 $HOME | sort -rh > $HOME/sizefolder.txt
+#5 * * * *  doas du -h --max-depth=1 $HOME | sort -rh > /tmp/sizefolder.txt
 
 # Log of installed packages (fixed redirection)
-#10 * * * * xilog | sort -rh > $HOME/xilog.sh
+#10 * * * * xilog | sort -rh > /tmp/xilog.sh
 
 # Personal scripts
 15 * * * * $HOME/.local/bin/upip
 20 * * * * $HOME/.local/bin/uhosts
 25 * * * * $HOME/.local/bin/uxbps
-30 * * * * find ~/ -depth -type d -empty -delete
+#30 * * * * find ~/ -depth -type d -empty -delete
 35 * * * * doas find /usr/share/icons/ -depth -type d -empty -delete
