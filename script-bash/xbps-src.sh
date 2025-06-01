@@ -1,8 +1,9 @@
+USERNAME=$(logname)
 sudo xbps-install git base-devel xtools-minimal python3
 echo "#===================================================================================#"
 cd /opt/ && sudo git clone --depth=1 https://github.com/garabik/grc.git
 cd /opt/ && sudo git clone --depth=1 https://github.com/void-linux/void-packages.git
-cd /opt/ && sudo chown -R $(whoami):$(whoami) .
+cd /opt/ && sudo chown -R "$USERNAME":"$USERNAME" void-packages
 cd grc/
 sudo ./install.sh
 sudo cp /etc/profile.d/grc.sh /etc/
