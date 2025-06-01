@@ -2,12 +2,13 @@ xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool
 firefox font-inconsolata-otf
 neovim 
 brightnessctl 
-tealdeer crond
+tealdeer
+crond
 Thunar
 xbanish numlockx sxhkd
 zathura zathura-pdf-mupdf
 ufw
-rsync 
+rsync
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
 fuse-exfat ntfs-3g
 maim xclip
