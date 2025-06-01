@@ -13,5 +13,3 @@ sudo ln -s /etc/sv/tor/ /var/service/
 sudo ln -s /etc/sv/udevd/ /var/service/
 sudo ln -s /etc/sv/ufw/ /var/service/
 sudo ln -s /etc/sv/zramen/ /var/service/
-sudo ln -s /etc/sv/virtlogd/ /var/service/
-sudo ln -s /etc/sv/libvirtd/ /var/service/
