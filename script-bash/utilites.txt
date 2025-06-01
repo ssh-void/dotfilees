@@ -8,6 +8,7 @@ Thunar
 xbanish numlockx sxhkd
 zathura zathura-pdf-mupdf
 ufw
+rsync 
 esseract-ocr tesseract-ocr-ara tesseract-ocr-fra tesseract-ocr-eng
 fuse-exfat ntfs-3g
 maim xclip
@@ -15,7 +16,7 @@ wmname
 neovim
 htop neofetch
 NetworkManager aria2 curl tor torsocksw
-dwm st
+dwm st slock
 ffmpeg  
 fuse-exfat ntfs-3g 
 maim
