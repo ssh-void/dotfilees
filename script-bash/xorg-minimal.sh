@@ -1,1 +1,1 @@
-sudo xbps-install -Syu xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool
+sudo xbps-install -Syu xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool xauth
