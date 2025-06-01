@@ -1,4 +1,5 @@
-sudo xbps-install -Syu apparmor zramen
+sudo xbps-install -Syu zramen
+sudo xbps-install -Syu apparmor
 sudo ln -s /etc/sv/zramen/ /var/service/
 # zram
 echo "zram" | sudo tee /etc/modules-load.d/zram.conf > /dev/null
