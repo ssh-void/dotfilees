@@ -61,7 +61,7 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-    { datetime,"%s|","%A|%F|%r"},
+    { datetime,"%s|","%A %B %d-%m-%Y %I:%M %p"},
     { cpu_perc,"CPU:%s%% ",NULL },
 //  { run_command, "%s|","sensors coretemp-isa-0000 | awk '/+(.*)/ {print $3}' | awk 'NR==2'"},
 //  { run_command, "%s|","sensors coretemp-isa-0000 | awk '/^Core/ {print $3}' | sed 's/+//' | awk 'NR==1' | cut -d'.' -f1" },
@@ -69,7 +69,7 @@ static const struct arg args[] = {
     { run_command, "%s","nvidia-smi --query-gpu=utilization.gpu,temperature.gpu --format=csv,noheader,nounits | awk '{ printf \"GPU:%d%% %d°C|\", $1, $2 }'" },
     { ram_perc,"RAM:%s%%|",NULL},
     { disk_perc,"/:%s%%;","/"},
-    { run_command ,"vol:%s|","pamixer --get-volume-human"}, 
+    { run_command ,"vol:%s|","pamixer --get-volume-human"},
     { run_command, "Brightness:%s|", "brightnessctl get | awk -v max=$(brightnessctl max) '{printf \"%d%%\\n\", ($1*100)/max}'" },
     { run_command ,"pKg:%s|","doas xbps-query -l | wc -l"},
     { battery_perc,"Bat:%s%%","BAT1"}, /*hp bat1*/

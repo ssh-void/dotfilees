@@ -3,11 +3,13 @@
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
-static const int topbar             = 0;        /* 0 means bottom bar */
+static const int topbar             = 1;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim       = ";";       /* Character used for separating status */
-static const char *fonts[]          = {"Ubuntu Mono:size=12:weight=SemiBold:pixelsize=22:antialias=true:autohint=true",
-                                       "JoyPixels:style=Bold:pixelsize=15:antialias=true:autohint=true"};
+static const char *fonts[]             = {
+	"Terminess Nerd Font Mono:style=Bold Italic:pixelsize=22:antialias=true:autohint=true",
+	"JoyPixels:style=Bold:pixelsize=16:antialias=true:autohint=true"
+};
 static const char col_gray1[]       = "#222222";
 static const char col_gray2[]       = "#2067B0";
 static const char col_gray3[]       = "#bbbbbb";
