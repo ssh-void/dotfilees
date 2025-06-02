@@ -1,16 +1,11 @@
-print "### make clean install"
-# install make
+printf "make install ...\n"
 doas make -s -C ~/.config/src/dwm/ clean install &> /dev/null
-cd $HOME/.config/src/stt/ && sudo make -s clean install &> /dev/null
-cd $HOME/.config/src/slstatus/ && sudo make -s clean install &> /dev/null
-cd $HOME/.config/src/dmenu/ && sudo make -s clean install &> /dev/null
-cd $HOME/.config/src/nsxiv/ && sudo make -s clean install &> /dev/null
-clear
-print "### rm -f dwm ${OBJ} dwm-${VERSION}.tar.gz *.orig *.rej config.h ..."
-# clean make
-make clean -C ~/.config/src/st/ &> /dev/null
-make clean -C ~/.config/src/dwm/ &> /dev/null
-make clean -C ~/.config/src/slstatus/ &> /dev/null
-make clean -C ~/.config/src/dmenu/ &> /dev/null
-make clean -C ~/.config/src/nsxiv/ &> /dev/null
-print "### fin ..."
+cd $HOME/.config/src/st/ && doas make -s clean install &> /dev/null
+cd $HOME/.config/src/slstatus/ && doas make -s clean install &> /dev/null
+cd $HOME/.config/src/dmenu/ && doas make -s clean install &> /dev/null
+cd $HOME/.config/src/nsxiv/ && doas make -s clean install &> /dev/null
+printf "make clean ...\n"
+doas make -s -C ~/.config/src/dwm/ clean &> /dev/null
+doas make -s -C ~/.config/src/dwm/ clean &> /dev/null
+doas make -s -C ~/.config/src/dwm/ clean &> /dev/null
+doas make -s -C ~/.config/src/dwm/ clean &> /dev/null
