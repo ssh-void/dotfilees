@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
-x=$(xclip -o -selection primary) 
+x=$(xclip -o -selection primary)
 
 #BROWSER="firefox"
 #BROWSER="brave-browser-stable"
 
+$BROWSER "https://youglish.com/pronounce/$x/english"
 $BROWSER "https://www.merriam-webster.com/dictionary/$x"
 $BROWSER "https://www.dictionary.com/browse/$x"
 $BROWSER "https://www.thesaurus.com/browse/$x"

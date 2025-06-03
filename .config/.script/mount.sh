@@ -6,7 +6,7 @@ gid=$(id -g)
 usbdev=$(ls -l /sys/dev/block | awk -F"/" '($7~"usb" && $15~"sd") {print "dev/"$15}')
 
 if [ "$usbdev" ]
-then 
+then
       selected=$( \
           lsblk -rno size,name,mountpoint $usbdev | \
 	  awk '($1!-"M" && $1!-"K") {printf "%s%8s%12s\n", $2, $1, $3}' | \
@@ -15,14 +15,14 @@ then
  
       if grep -qs $selected /proc/mounts
       then
-	    sync 
+	    sync
 	    doas umount /dev/$selected
 	    grep -qs /mnt/$selected /proc/mounts || doas rm -rf /mnt/$selected          
-      else  
+      else
 	  [ ! -d /mnt/$selected ] && doas mkdir /mnt/$selected
           doas mount -o uid=$uid,gid=$gid /dev/$selected /mnt/$selected
-      fi 
-else 
+      fi
+else
     echo "No drive connected" | dmenu -i -p "USB Drivers: "
     exit
 fi
