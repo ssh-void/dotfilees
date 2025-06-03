@@ -224,11 +224,11 @@ alias yvfscalecodec='yt-dlp --config-locations $HOME/.config/yt-dlp/yvfscalecode
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->     mpv & vlc     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias mpvtormp3='torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
-alias mpvmp3='mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
+alias mpvtormp3='torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
+alias mpvmp3='mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
 alias vlcnv="prime-run vlc "
 alias mpvnv="prime-run mpv "
-alias vlcfzy='vlc "$(find /home/${USER}/Downloads/yt-dlp/video/ -type f -name "*.mp4" | fzy)" 2> /dev/null'
+alias vlcfzy='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2> /dev/null'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->      ffmpeg       <----------------------------------- #
