@@ -202,7 +202,7 @@ alias tmkill='tmux kill-server'
 # --------------------------------------------------------------------------------------- #
 alias yl='yt-dlp -F '
 alias yltor='torsocks yt-dlp -F '
-alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf '
+alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf --restrict-filenames '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
 alias yvpc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpc.conf '
