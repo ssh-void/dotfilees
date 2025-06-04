@@ -32,12 +32,12 @@ export WGETRC="$HOME/.config/wget/wgetrc"
 export GTK2_RC_FILES="$HOME/.config/gtk-2.0/.gtkrc-2.0"
 # QT5 Fix
 export GDK_DPI_SCALE=1.00
-export QT_QPA_PLATFORMTHEME="qt6ct"
-export QT_PLATFORM_PLUGIN="qt6ct"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_PLATFORM_PLUGIN="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
 # TERMINAL
-export TERMINAL="st"
+export TERMINAL="sakura"
 export TERM="xterm-256color" # getting proper colors
 export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
