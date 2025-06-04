@@ -1,7 +1,7 @@
-sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
-sudo xbps-install -Syu xorg-server-devel pkg-config # !sudo nvidia-xconfig
-sudo xbps-install -Syu nvidia  # current
-sudo xbps-install -Syu nvidia-opencl # nonfree
-sudo xbps-install -Syu vulkan-loader # current
-sudo xbps-install -Syu mesa-vdpau  # current # video acceleration nv
-sudo xbps-install -Syu nvidia nvidia-opencl nvidia-vaapi-driver
+doas xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
+doas xbps-install -Syu xorg-server-devel pkg-config # !doas nvidia-xconfig
+doas xbps-install -Syu nvidia  # current
+doas xbps-install -Syu nvidia-opencl # nonfree
+doas xbps-install -Syu vulkan-loader # current
+doas xbps-install -Syu mesa-vdpau  # current # video acceleration nv
+doas xbps-install -Syu nvidia nvidia-opencl nvidia-vaapi-driver

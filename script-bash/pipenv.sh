@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-sudo xbps-install -Syu python-pip
+doas xbps-install -Syu python-pip
 mkdir -p ~/.local/share/tools/
 cd ~/.local/share/tools/ && python3 -m venv env
 source /home/${USER}/.local/share/tools/env/bin/activate

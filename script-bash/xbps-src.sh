@@ -9,7 +9,7 @@ cd /opt/void-packages && ./xbps-src binary-bootstrap # xbps-src cannot be used a
 echo XBPS_ALLOW_RESTRICTED=yes >> etc/conf
 echo XBPS_CHROOT_CMD=uchroot >> etc/conf
 echo XBPS_CHROOT_CMD_ARGS=-t >> etc/conf
-sudo usermod -a -G xbuilder void
+doas usermod -a -G xbuilder void
 echo "#===================================================================================#"
 cd /opt/void-packages && ./xbps-src pkg torbrowser-launcher && xi torbrowser-launcher
 #./xbps-src pkg google-chrome &&  xi google-chrome

@@ -1,7 +1,7 @@
 xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool
-firefox font-inconsolata-otf
-neovim 
-brightnessctl 
+firefox font-inconsolata-otf terminus-font
+neovim
+brightnessctl
 tealdeer
 crond
 Thunar
@@ -17,15 +17,15 @@ neovim
 htop neofetch
 NetworkManager aria2 curl tor torsocksw
 dwm st slock
-ffmpeg  
-fuse-exfat ntfs-3g 
+ffmpeg
+fuse-exfat ntfs-3g
 maim
-mpv vlc 
-fzy 
-opendoas 
-sakura terminus-font
+mpv vlc
+fzy
+opendoas
+sakura
 vscode docker tmux
-xclip  
-zramen 
+xclip
+zramen
 zsh zsh-completions
 bash bash-completion
