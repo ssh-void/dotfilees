@@ -61,7 +61,7 @@ static const char unknown_str[] = "n/a";
  * wifi_perc           WiFi signal in percent          interface name (wlan0)
  */
 static const struct arg args[] = {
-    { datetime,"%s|","%A %B %d-%m-%Y %I:%M %r"},
+    { datetime,"%s|","%A %B %d-%m-%Y %r"},
     { cpu_perc,"CPU:%s%% ",NULL },
 //  { run_command, "%s|","sensors coretemp-isa-0000 | awk '/+(.*)/ {print $3}' | awk 'NR==2'"},
 //  { run_command, "%s|","sensors coretemp-isa-0000 | awk '/^Core/ {print $3}' | sed 's/+//' | awk 'NR==1' | cut -d'.' -f1" },
