@@ -1,33 +1,6 @@
 #=============================[font]==================================#
 [font]
 size = 15
-[font.normal] # normal 
-#family = "Ubuntu Mono"
-family = "Iosevka"
-#family = "JetBrains"
-#family = "Cartograph CF"
-#family = "Anonymice Nerd Font"
-#family = "UbuntuSansMono Nerd Font"
-#style = "SemiBold"
+[font.normal] # normal
+family = "Terminess Nerd Font Mono"
 style = "Regular"
-[font.bold]
-family = "Ubuntu Mono"
-#family = "Anonymice Nerd Font"
-#family = "Cartograph CF"
-#family = "JetBrainsMono Nerd Font"
-#family = "UbuntuSansMono Nerd Font"
-style = "SemiBold"
-[font.italic]
-family = "Ubuntu Mono"
-#family = "JetBrainsMono Nerd Font"
-#family = "Anonymice Nerd Font"
-#family = "Cartograph CF"
-#family = "UbuntuSansMono Nerd Font"
-style = "SemiBold"
-[font.bold_italic]
-family = "Ubuntu Mono"
-#family = "JetBrainsMono Nerd Font"
-#family = "Anonymice Nerd Font"
-#family = "Cartograph CF"
-#family = "UbuntuSansMono Nerd Font"
-style = "SemiBold"	

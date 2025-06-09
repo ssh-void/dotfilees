@@ -8,7 +8,7 @@ import = [
 ]
 #working_directory = "C:\\"  # pour win
 [terminal.shell] #pour linux
-program = "/bin/bash"
+program = "/bin/zsh"
 args = ["-l"]
 #========================================================================#
 [terminal] # One variable
@@ -19,10 +19,10 @@ TERM = "xterm-256color"
 #TERM = "alacritty"
 #==============================[window]==================================#
 [window] # 14 variable
-decorations = "Full" 
+decorations = "Full"
 decorations_theme_variant = "dark" # "Dark"
-opacity = 1 
-padding = {x = 5, y = 5} 
+opacity = 1
+padding = {x = 5, y = 5}
 startup_mode = "Maximized"
 #===============================[cursor]=================================#
 [cursor] # 6variable
@@ -54,7 +54,7 @@ bindings = [
   {key = 'C', mods = 'Control|Shift', action = 'Copy'},
   {key = 'V', mods = 'Control', action = 'Paste'},
   {key = 'V', mods = 'Control|Shift', action = 'Paste'},
-  {key = '0', mods = 'Control', action = 'ResetFontSize'}, 
+  {key = '0', mods = 'Control', action = 'ResetFontSize'},
   {key = 'V', mods = "Alt", action = 'ToggleViMode' },
 ]
 #============================[selection]=================================#
@@ -64,7 +64,7 @@ semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 #==============================[debug]===================================#
 [debug] # 7 variable
 highlight_damage = false # by Default
-log_level = "Error" 
+log_level = "Error"
 persistent_logging = false # by Default
 prefer_egl = false # by Default
 print_events = false # by Default
