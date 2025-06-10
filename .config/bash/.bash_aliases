@@ -207,6 +207,8 @@ alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
 alias yvpc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpc.conf '
 alias yaria='yt-dlp --config-locations $HOME/.config/yt-dlp/yaria.conf '
+alias yariac='yt-dlp --config-locations $HOME/.config/yt-dlp/yariac.conf '
+alias yariap='yt-dlp --config-locations $HOME/.config/yt-dlp/yariap.conf '
 alias yvtik='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtik.conf '
 alias yu='yt-dlp --config-locations $HOME/.config/yt-dlp/yu.conf '
 alias yvtor='yt-dlp --config-locations $HOME/.config/yt-dlp/yvtor.conf '
@@ -253,7 +255,7 @@ alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 # ------------------------------>      python        <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias py="python3"
-alias apy="source $HOME/.env/bin/activate"
+alias apy="source /home/${USER}/.local/share/tools/env/bin/activate"
 alias ve="python3 -m venv"
 alias vd="deactivate"
 alias pipi="pip install"
