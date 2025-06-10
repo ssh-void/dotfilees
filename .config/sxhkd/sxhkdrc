@@ -44,7 +44,7 @@ super + ctrl + {f,e}
                {$HOME/.config/.script/sitefr.sh &> /dev/null, $HOME/.config/.script/siteen.sh &> /dev/null}
 
 alt + Tab
-        pkill -USR1 -x sxhkd 
+        pkill -USR1 -x sxhkd
 
 #super + shift + p
 #                 $HOME/.config/.script/screenshot_region.sh &> /dev/null
