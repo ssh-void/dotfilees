@@ -282,6 +282,8 @@ alias uzsh="zsh -i -c 'omz update'"
 # ----------------------------------------------------------------------------------------#
 # --------------------------------------- git --------------------------------------------#
 # ----------------------------------------------------------------------------------------#
+alias gitp="git clean -fd && git reset --hard && git pull"
+alias gita="git add * && git add ."
 alias gcommitfirst='git log --reverse --format="%ad" --date=iso | head -n 1'
 alias gnombrecommit='git rev-list --count ' # gnombrecommit branchnume
 gmailcommit() { git log --oneline --graph --decorate --author="$1"; }
