@@ -64,6 +64,7 @@ alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
+#alias screenshot='scrot -q 100 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images''
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 
@@ -148,9 +149,9 @@ alias cf='cd "$(find ~/ -type d -not -path "*/\.*" 2> /dev/null | fzy -l 25)"'
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->      tree       <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias td="tree -d -h --du "
-alias tf="tree -i -f -s -h "
-alias tsh='tree -P "*.sh" --prune -s -h '
+alias treed="tree -d -h --du "
+alias treef="tree -i -f -s -h "
+alias treesh='tree -P "*.sh" --prune -s -h '
 alias trees="tree -s -h --du -a "
 
 # --------------------------------------------------------------------------------------- #
