@@ -6,6 +6,7 @@ doas xbps-install -Syu qemu-img qemu-system-amd64 qemu-common qemu-firmware  #  
 doas xbps-install -Syu xf86-video-qxl spice-vdagent spice-protocol
 doas xbps-install -Syu NetworkManager virt-manager libvirt openbsd-netcat dnsmasq vde2 bridge-utils
 doas xbps-install -Syu qemu
+doas xbps-install -Syu polkit # Authorization Toolkit
 clear
 echo "### usermod ...\n"
 doas usermod -aG kvm "$USERNAME"
@@ -25,12 +26,12 @@ doas sed -i 's|^#\?group =.*|group = "libvirt"|' /etc/libvirt/qemu.conf # tested
 doas sed -i "s|^#\?user =.*|user = \"$USERNAME\"|" /etc/libvirt/qemu.conf # a teste ?
 clear
 echo "### sv on service ...\n"
-doas ln -s /etc/sv/libvirtd /var/service/
+doas ln -s /etc/sv/dbus /var/service/
+doas ln -s /etc/sv/polkitd /var/service/
+doas ln -s /etc/sv/virtlockd /var/service/
 doas ln -s /etc/sv/virtlogd /var/service/
-doas sv down dhcpcd # runit
-doas rm /var/service/dhcpcd
-doas ln -s /etc/sv/virtlogd/ /var/service/
-doas ln -s /etc/sv/libvirtd/ /var/service/
+doas ln -s /etc/sv/libvirtd /var/service/
+doas sv restart virtlockd virtlogd libvirtd
 
 doas mkdir -p ~/.config/libvirt/
 doas cp /etc/libvirt/libvirt.conf ~/.config/libvirt/

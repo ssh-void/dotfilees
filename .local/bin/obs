@@ -1,0 +1,11 @@
+#!/bin/bash
+
+read -r X Y W H < <(slop -f "%x %y %w %h")
+sleep 1
+filename="$HOME/Videos/output$(date '+%Y-%m-%d-%H-%M-%S').mp4"
+ffmpeg -hide_banner -loglevel error -stats -f x11grab \
+    -video_size "${W}x${H}" \
+    -i ":0.0+${X},${Y}" \
+    -framerate 30 \
+    -c:v libx264 -preset ultrafast -crf 18 \
+    -map_metadata -1 "$filename"
