@@ -63,6 +63,7 @@ alias vimaliases='nvim ~/.config/bash/.bash_aliases'
 alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
+alias vimsh='nvim $(find . -name "*.sh")'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 #alias screenshot='scrot -q 100 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images''
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
@@ -186,7 +187,6 @@ alias vimfirefox='vim "/tmp/firefox$(date +%Y-%m-%d_%I-%M_%p).txt"'
 #alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
 #alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
 
-
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     tmux     <-------------------------------------- #
 # --------------------------------------------------------------------------------------- #
@@ -196,7 +196,6 @@ alias tmuxreload='tmux source-file ~/.config/tmux/tmux.conf && echo "tmux.conf i
 alias tmsl='tmux list-sessions'
 #alias tmsgo='tmux attach-session -t'
 alias tmkill='tmux kill-server'
-
 
 # --------------------------------------------------------------------------------------- #
 # -------------------------------->     yt-dlp     <------------------------------------- #
@@ -241,10 +240,6 @@ alias vlcfzy='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2>
 #alias ffprobe='ffprobe -hide_banner'
 alias ffmpegcodel='ffmpeg -encoders | grep -i'
 alias ffmpegprotocol='ffmpeg -protocols | grep -i'
-#alias ff="ffmpeg -framerate 16 -f x11grab -s 1920x1080 -i :0.0+0,0 Output.mkv"
-alias rec="ffmpeg -framerate 24 -f x11grab -video_size 1920x1080 -i :0.0+1366,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
-alias f="ffmpeg -framerate 24 -f x11grab -video_size 1366x768 -i :0.0+0,0 -preset ultrafast -crf 8 ~/Recordings/Output.mkv"
-alias cam="ffplay -f v4l2 -framerate 29 -video_size 1280x720 /dev/video0"
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      suckless       <---------------------------------- #
