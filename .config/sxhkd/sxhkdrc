@@ -17,9 +17,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 		exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
 super + alt + p
-		#maim -m 10 -s -c 0,0,1,1 -n 2 -b 2 -f png | xclip -selection clipboard -target image/png &> /dev/null
-		#scrot -o -Z 0 -q 100 -a $(slop --highlight -q -c 0,0,1,0.8 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
-		scrot -o -Z 0 -q 100 -a $(slop -q -c 1,1,0,0.8 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
+		scrot -o -Z 0 -q 100 -a $(slop -n 2 -q -c 1,1,0,0.8 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
 
 
 alt + p
