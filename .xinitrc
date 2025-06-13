@@ -7,7 +7,7 @@ nvidia-settings -a "[gpu:0]/GpuPowerMizerMode=1" &
 #Antialiasing Settings
 nvidia-settings -a FSAAAppControlled=0 & # Override Application Settings
 nvidia-settings -a FSAA=5 & # 5 MSAA | 10 CSAA
-xbanish -t 1 &
+xbanish -t 2 &
 pipewire &
 pipewire-pulse &
 #dunst &
@@ -22,6 +22,7 @@ xrandr --setprovideroutputsource NVIDIA-0 modesetting &
 xrandr --auto && xrandr --output eDP1 --set "PRIME Synchronization" 1 &
 echo "Xft.dpi: 107" | xrdb -merge
 xrdb -load $HOME/.config/X11/Xresources &
+doas rm /var/service/agetty-tty{3,4,5,6} > /dev/null 2>&1
 brightnessctl set 70% &
 doas chronyc -a makestep &
 while true; do numlockx on ; sleep 1 ; done &

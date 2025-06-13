@@ -19,6 +19,7 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 super + alt + p
 		scrot -o -Z 0 -q 100 -a $(slop -n 2 -q -c 1,1,0,0.8 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
 
+
 alt + p
 		flameshot gui &> /dev/null
 
@@ -48,7 +49,7 @@ super + ctrl + {f,e}
 		{$HOME/.config/.script/sitefr.sh &> /dev/null, $HOME/.config/.script/siteen.sh &> /dev/null}
 
 super + ctrl + d
-		$BROWSER https://claude.ai/new &> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://chat.deepseek.com/ &> /dev/null
+		$BROWSER https://claude.ai/new &> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://chat.deepseek.com/ &> /dev/null && $BROWSER https://www.perplexity.ai &> /dev/null
 
 super + ctrl + i
 		$BROWSER https://www.instagram.com/?hl=en &> /dev/null
