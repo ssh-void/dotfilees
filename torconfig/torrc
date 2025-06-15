@@ -509,13 +509,16 @@ DataDirectory /var/lib/tor
 ## On startup, setuid to this user and setgid to their primary group.
 ## Can not be changed while tor is running.
 User tor
-# es Spain | dk Denmark | sk Slovakia | no Norway | at Autriche | lu Luxembourg
-EntryNodes {dk}{es}{de}{sk}{ch}{se}{no}{nl}{lu}{at}{is} StrictNodes 1 
-#ExitNodes  {ch}{de}{fi} StrictNodes 1 # ch Switzerland, nl Netherlands, de Germany, se Sweden, is Islande 
-ExitNodes  {ch} StrictNodes 1
-AvoidDiskWrites 1  # ne pas écr sur disque
+## de Germany  | dk Denmark | sk Slovakia | no Norway | at Autriche
+EntryNodes {dk}{es}{de}{sk}{fr}{se}{no}{nl}{lu}{at}{it} StrictNodes 1
+## ch Switzerland | nl Netherlands | se Sweden | is Islande | lu Luxembourg
+ExitNodes {de}{fr}{es}{sk}{dk}{se}{no}{nl}{lu}{at}{it} StrictNodes 1
+AvoidDiskWrites 1
 # Bridge
 BridgeRelay 1
-ORPort 443
-ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy
-ServerTransportListenAddr obfs4 0.0.0.0:4443
+## 1024-65535/{9001,9050,9051,443,80,22}
+ORPort 56854
+ServerTransportPlugin obfs4 exec /usr/bin/obfs4proxy ## i obfs4proxy
+ServerTransportListenAddr obfs4 0.0.0.0:43742
+ContactInfo draklinux@protonmail.com
+Nickname draklinux
