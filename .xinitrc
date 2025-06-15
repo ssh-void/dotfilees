@@ -22,7 +22,10 @@ xrandr --setprovideroutputsource NVIDIA-0 modesetting &
 xrandr --auto && xrandr --output eDP1 --set "PRIME Synchronization" 1 &
 echo "Xft.dpi: 107" | xrdb -merge
 xrdb -load $HOME/.config/X11/Xresources &
-doas rm /var/service/agetty-tty{3,4,5,6} > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty3 > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty4 > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty5 > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty6 > /dev/null 2>&1
 brightnessctl set 70% &
 doas chronyc -a makestep &
 while true; do numlockx on ; sleep 1 ; done &

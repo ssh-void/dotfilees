@@ -1,5 +1,5 @@
 doas xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
-doas xbps-install -Syu xorg-server-devel pkg-config # !doas nvidia-xconfig
+doas xbps-install -Syu xorg-server-devel pkg-config # !doas nvidia-xconfig //current
 doas xbps-install -Syu nvidia # current
 doas xbps-install -Syu nvidia-opencl # nonfree
 doas xbps-install -Syu vulkan-loader # current
