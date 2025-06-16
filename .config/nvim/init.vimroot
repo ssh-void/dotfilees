@@ -1,6 +1,4 @@
-"sudo mkdir -p /root/.config/nvim # testing
-"sudo cp ~/.config/nvim/init.vimroot /root/.config/nvim/init.vim # testing
-" my config
+"my config
 highlight CursorLine ctermbg=Black cterm=NONE
 highlight CursorLineNr ctermbg=Black cterm=bold ctermfg=Green
 
@@ -51,7 +49,7 @@ set nohlsearch
 set clipboard+=unnamedplus
 set nocompatible
 set encoding=utf-8
-"set rnu
+set rnu
 set wildmode=longest,list,full
 set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set undofile
@@ -86,7 +84,6 @@ map <C-v> "+v
 nnoremap <A-x> :s/^/\" /<CR>
 vnoremap <A-x> :s/^/\" /<CR>
 
-
 augroup ManPage
     autocmd!
     autocmd FileType man setlocal nowrap              " Désactiver le retour à la ligne automatique
@@ -101,4 +98,22 @@ augroup ManPage
     autocmd FileType man setlocal nocursorline        " Pas de surlignage de la ligne du curseur
     autocmd FileType man setlocal colorcolumn=        " Pas de colonne de repère
     autocmd FileType man silent! colorscheme elflord   " Appliquer un thème adapté (éviter les erreurs)
+    autocmd FileType man call s:SetManColors()
 augroup END
+
+" Passer au buffer suivant avec Ctrl + →
+nnoremap <C-Right> :bn<CR>
+" Revenir au buffer précédent avec Ctrl + ←
+nnoremap <C-Left> :bp<CR>
+
+function! s:SetManColors()
+"   highlight Normal guibg=#333333
+    highlight Normal guibg=#222222
+"   highlight Normal guibg=#45403D
+"   highlight Normal guibg=#300A24
+endfunction
+
+"highlight Normal guibg=#333333
+highlight Normal guibg=#222222
+"highlight Normal guibg=#45403D
+"highlight Normal guibg=#300A24
