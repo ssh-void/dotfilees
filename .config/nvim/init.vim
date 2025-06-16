@@ -1,4 +1,4 @@
-" my config
+"my config
 highlight CursorLine ctermbg=Black cterm=NONE
 highlight CursorLineNr ctermbg=Black cterm=bold ctermfg=Green
 
@@ -99,9 +99,23 @@ augroup ManPage
     autocmd FileType man setlocal nocursorline        " Pas de surlignage de la ligne du curseur
     autocmd FileType man setlocal colorcolumn=        " Pas de colonne de repère
     autocmd FileType man silent! colorscheme elflord   " Appliquer un thème adapté (éviter les erreurs)
+    autocmd FileType man call s:SetManColors()
 augroup END
 
 " Passer au buffer suivant avec Ctrl + →
 nnoremap <C-Right> :bn<CR>
 " Revenir au buffer précédent avec Ctrl + ←
 nnoremap <C-Left> :bp<CR>
+
+function! s:SetManColors()
+"   highlight Normal guibg=#333333
+    highlight Normal guibg=#222222
+"   highlight Normal guibg=#45403D
+"   highlight Normal guibg=#300A24
+endfunction
+
+"highlight Normal guibg=#333333
+highlight Normal guibg=#222222
+"highlight Normal guibg=#45403D
+"highlight Normal guibg=#300A24
+

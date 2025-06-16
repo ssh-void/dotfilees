@@ -84,6 +84,7 @@ map <C-v> "+v
 nnoremap <A-x> :s/^/\" /<CR>
 vnoremap <A-x> :s/^/\" /<CR>
 
+
 augroup ManPage
     autocmd!
     autocmd FileType man setlocal nowrap              " Désactiver le retour à la ligne automatique
@@ -117,3 +118,4 @@ endfunction
 highlight Normal guibg=#222222
 "highlight Normal guibg=#45403D
 "highlight Normal guibg=#300A24
+
