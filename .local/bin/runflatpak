@@ -1,2 +1,1 @@
-#!/usr/bin/env bash
 flatpak run "$(flatpak list --app --columns=application | fzy)" &> /dev/null

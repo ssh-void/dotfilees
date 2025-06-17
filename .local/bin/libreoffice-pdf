@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
-
 exec libreoffice --headless --convert-to pdf "$@" # all argument

@@ -17,10 +17,3 @@ for prog in "$@"; do
         ps -p "$pid" -o pid,%cpu,cmd --no-headers
     done
 done
-
-
-
-
-
-
-

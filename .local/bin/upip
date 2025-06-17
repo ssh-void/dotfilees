@@ -8,5 +8,5 @@ pip install -U --pre "yt-dlp[default]"
 pip install --upgrade telethon
 pip install --upgrade gTTS
 pip install git+https://github.com/openai/whisper.git
-pip install gradio-client
+#pip install gradio-client
 source $HOME/.profile

@@ -16,8 +16,8 @@ if [ -f "$1" ]; then
         *.deb)       bsdtar -xvf "$1" ;;
         *.tar.xz)    tar xvf "$1"    ;;
         *.tar.zst)   tar --use-compress-program=unzstd -xvf "$1" ;;
-        *.xz)        unxz -k -v "$1"   ;; 
-        *.img.xz)    xz -dv "$1"     ;;  
+        *.xz)        unxz -k -v "$1"   ;;
+        *.img.xz)    xz -dv "$1"     ;;
         *)           echo "'$1' cannot be extracted via extract" ;;
     esac
 else
