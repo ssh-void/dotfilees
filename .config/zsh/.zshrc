@@ -3,14 +3,13 @@ export ZSH="$HOME/.oh-my-zsh"
 export ZSH_COMPDUMP="XDG_CACHE_HOME/zsh"
 export HISTFILE="$XDG_STATE_HOME/zsh/history"
 
-
 # Enable colors and change prompt:
 autoload -U colors && colors
 
 #PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 ZSH_THEME="sorin" # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-
+zstyle ':omz:update' frequency 3
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 plugins=(zsh-autosuggestions zsh-syntax-highlighting zsh-history-substring-search)
 
@@ -18,10 +17,6 @@ source $ZSH/oh-my-zsh.sh # Source
 
 [ -f $HOME/.config/bash/.bash_aliases ] && . $HOME/.config/bash/.bash_aliases
 [ -f $HOME/.config/bash/.bash_function ] && . $HOME/.config/bash/.bash_function
-
-# mode vi
-bindkey -v
-export K
 
 # mode vi
 bindkey -v
@@ -96,7 +91,6 @@ setopt NO_BG_NICE            # Don't "nice" background tasks
 
 setopt AUTO_PARAM_KEYS       # Neater prompt, deletes spaces after complete
 setopt AUTO_PARAM_SLASH      # Append a `/` to directories in completion
-setopt NOAUTO_REMOVE_SLASH   # Don't remove a slash if I put it there
 setopt MAGIC_EQUAL_SUBST     # Allow `option=arg` to have path expansion
 setopt PROMPT_SUBST          # Allow variable substitution in the prompt
 
@@ -120,7 +114,6 @@ setopt NO_CORRECT_ALL        # Prevent asking to correct paths like `.git` at th
 setopt INTERACTIVE_COMMENTS  # Allow comments in interactive shells
 setopt NO_PRINT_EXIT_VALUE   # Don't display the exit value in the prompt
 setopt IGNORE_EOF            # Allow ^D to be bound, quit after 10 consecutive EOFs
-setopt NOFLOW_CONTROL        # Allow binding ^S and ^Q for flow control
 
 # ============================
 # FILE HANDLING AND SYSTEM SETTINGS
