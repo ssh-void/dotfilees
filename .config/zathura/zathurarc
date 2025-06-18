@@ -1,11 +1,20 @@
 include catppuccin-mocha
 set selection-clipboard clipboard
+set scroll-step 100
+
+# Mappings pour le mode normal
 map D set "first-page-column 1:2"
 map i zoom in
 map o zoom out
-set scroll-step 100
 map l scroll up
 map k scroll down
 map f toggle_fullscreen
-map [fullscreen] f toggle_fullscreen
 unmap j
+
+# Mappings pour le mode fullscreen
+map [fullscreen] D set "first-page-column 1:2"
+map [fullscreen] i zoom in
+map [fullscreen] o zoom out
+map [fullscreen] l scroll up
+map [fullscreen] k scroll down
+map [fullscreen] f toggle_fullscreen
