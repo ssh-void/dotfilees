@@ -1,3 +1,28 @@
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+		exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
+
+### Alt + X ... ###
+
+alt + {Up,Down}
+		exec $HOME/.config/.script/brightnessctl.sh {up,down}
+
+alt + Tab
+		pkill -USR1 -x sxhkd
+		
+alt + p
+		flameshot gui &> /dev/null
+
+alt + b
+		blueman-manager &> /dev/null		
+
+### Super + X ... ###
+
+super + {f,t,b}
+		{firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null}
+
+super + e
+		thunar &>/dev/null
+
 super + s
 		exec $HOME/.config/.script/scratchpad.sh &> /dev/null
 
@@ -10,46 +35,24 @@ super + KP_Add
 super + {x,c}
 		{exec $HOME/.config/.script/img_txt_net.sh &> /dev/null,exec $HOME/.config/.script/img_txt.sh &> /dev/null}
 
-alt + {Up,Down}
-		exec $HOME/.config/.script/brightnessctl.sh {up,down}
-
-XF86Audio{RaiseVolume,LowerVolume,Mute}
-		exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
-
-super + alt + p
-		scrot -o -Z 0 -q 100 -a $(slop -n 2 -q -c 1,1,0,0.8 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
-
-
-alt + p
-		flameshot gui &> /dev/null
-
 #super + v
 #		virt-manager &> /dev/null
 
-super + {f,t,b}
-		{firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable --incognito &> /dev/null}
-
-alt + b
-		blueman-manager &> /dev/null
+###  Super + Alt + X ... ###
 
 super + alt + l
 		bash -c '~/.local/bin/lock'
 
-super + e
-		thunar &>/dev/null
+super + alt + p
+		scrot -o -Z 0 -q 100 -a $(slop -n 2 -q -c 1,1,0,0.8 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
 
-### 
-
-alt + Tab
-		pkill -USR1 -x sxhkd
-
-###  Super + Ctrl + X ...
+###  Super + Ctrl + X ... ###
 
 super + ctrl + {f,e}
 		{$HOME/.config/.script/sitefr.sh &> /dev/null, $HOME/.config/.script/siteen.sh &> /dev/null}
 
 super + ctrl + d
-		$BROWSER https://claude.ai/new &> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://chat.deepseek.com/ &> /dev/null && $BROWSER https://www.perplexity.ai &> /dev/null
+		$BROWSER https://chat.deepseek.com/ &> /dev/null && $BROWSER https://chat.openai.com/ &> /dev/null && $BROWSER https://claude.ai/new &> /dev/null && $BROWSER https://www.perplexity.ai &> /dev/null
 
 super + ctrl + i
 		$BROWSER https://www.instagram.com/?hl=en &> /dev/null
