@@ -1,5 +1,5 @@
 
-HISTIGNORE="cd:&:ls:[bf]g:exit"
+HISTIGNORE="cd:&:ls:[bf]g:exit:pwd:rm:mv"
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -41,9 +41,11 @@ bind '"\e[1;5C": forward-word'               # Right Arrow key move by word
 bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
 bind 'TAB:menu-complete'                     # cycle through all matches with 'TAB' key
 bind '"\C-o": alias-expand-line'             # expand an alias
-bind -x '"\C-f":cd ~/.config' 
+#bind -x '"\C-f":cd ~/.config'  # -x imd...
+bind '"\C-f":cd ~/.config'
 #bind '"\C-f":"cd ~/.config/"'
-bind '"\C-y":"cd ~/Downloads/yt-dlp/video/"'
+bind '"\C-y":"cd ~/Videos/"'
+bind '"\C-t":"cd ~/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/Downloads/"'
 
 ### SHOPT  ###
 shopt -s cdspell        # autocorrects cd misspellings
