@@ -8,12 +8,12 @@ alt + {Up,Down}
 
 alt + Tab
 		pkill -USR1 -x sxhkd
-		
+
 alt + p
 		flameshot gui &> /dev/null
 
 alt + b
-		blueman-manager &> /dev/null		
+		blueman-manager &> /dev/null
 
 ### Super + X ... ###
 
