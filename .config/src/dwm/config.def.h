@@ -7,7 +7,7 @@ static const int topbar             = 1;        /* 0 means bottom bar */
 static const int splitstatus        = 1;        /* 1 for split status items */
 static const char *splitdelim       = ";";       /* Character used for separating status */
 static const char *fonts[]             = {
-	"Terminess Nerd Font Mono:style=Bold Italic:pixelsize=22:antialias=true:autohint=true",
+	"Terminess Nerd Font Mono:style=Bold:pixelsize=22:antialias=true:autohint=true",
 	"JoyPixels:style=Bold:pixelsize=16:antialias=true:autohint=true"
 };
 static const char col_gray1[]       = "#222222";
@@ -72,7 +72,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = {"dmenu_run","-i","-p","Run: ","-fn","Terminess Nerd Font Mono:style=Bold Italic:pixelsize=22:antialias=true:autohint=true","-nb","#333333","-nf","#ffffff","-sb","#c61169","-sf","#f9f102",NULL};
 //static const char *termcmd[]  = {"alacritty",NULL};
-static const char *termcmd[]  = {"sakura",NULL};
+static const char *termcmd[]  = {"alacritty","-e","tmux",NULL};
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
