@@ -11,7 +11,7 @@ set keymap vi
 alias qi="xbps-query -vs"
 alias q="xbps-query -Rs"
 alias u="doas xbps-install -S && doas xbps-install -u xbps && doas xbps-install -Su"
-alias i="doas xbps-install -S"
+alias i="doas xbps-install -Su"
 alias c="doas xbps-remove -RoO && doas vkpurge rm all"
 alias d="doas xbps-remove -Rv"
 alias pkgxbps="doas xbps-reconfigure -fa"
@@ -26,9 +26,9 @@ alias rvdown="doas sv down "
 #alias svup="doas sv up "
 #alias svtop="doas sv stop "
 
-# -------------------------------------------------------------------------------------- #
-# --------------------------------->     Other     <------------------------------------ #
-# -------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------------- #
+# --------------------------------->     Other     <------------------------------------- #
+# --------------------------------------------------------------------------------------- #
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
 alias uuidl="ls -l /dev/disk/by-uuid/"
 alias font="fc-list : family | sort | uniq"
@@ -69,6 +69,7 @@ alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 #alias screenshot='scrot -q 100 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images''
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 alias nf='clear && neofetch --colors 4 6 1 3 7 5'
+alias wcl='wc -l'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -147,7 +148,6 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 alias cf='cd "$(find ~/ -type d -not -path "*/\.*" 2> /dev/null | fzy -l 25)"'
 
-
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->      tree       <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
@@ -171,8 +171,8 @@ alias ncduhome='ncdu --one-file-system --exclude-caches --si --show-hidden --sho
 # --------------------------------------------------------------------------------------- #
 alias pingvoid='ping -c 5 voidlinux.org'
 alias ssgrep='doas ss -atpu | grep -i'
-alias myip='curl -X POST -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
-alias myiptor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
 alias wifitus="nmcli device status"
 alias wifishow="nmcli connection show | more"
@@ -221,17 +221,17 @@ alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
 alias ytsupport='yt-dlp --list-extractors | grep -i '
 alias yt='yt-dlp --skip-download --write-thumbnail '
 alias yvlimit='yt-dlp --config-locations $HOME/.config/yt-dlp/yvlimit.conf'
-alias yturl="torsocks yt-dlp -g --skip-download"
+alias yturl='torsocks yt-dlp -g --skip-download'
 alias yvfscalecodec='yt-dlp --config-locations $HOME/.config/yt-dlp/yvfscalecodec.conf'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->     mpv & vlc     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias mpvtormp3='torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
-alias mpvmp3='mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
+alias mpvtormp3='torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format="ba*[ext=m4a]/ba*/b[ext=mp4]/b" --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
+alias mpvmp3='mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format="ba*[ext=m4a]/ba*/b[ext=mp4]/b" --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
 alias vlcnv="prime-run vlc "
 alias mpvnv="prime-run mpv "
-alias vlcfzy='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2> /dev/null'
+alias fvlc='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2> /dev/null'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->      ffmpeg       <----------------------------------- #
@@ -274,6 +274,7 @@ alias ufwl="doas ufw status numbered"
 alias ufwr="doas ufw reload"
 alias ufws="doas ufw status verbose"
 alias nvop="nvidia-settings -q all | grep -i "
+alias nvidiawatch='watch -n 1 nvidia-smi'
 alias uzsh="zsh -i -c 'omz update'"
 
 # ----------------------------------------------------------------------------------------#
@@ -292,3 +293,4 @@ alias gttsFrslow="gtts-cli -l fr --slow --file"
 alias gtttsFrnormal="gtts-cli -l fr --file"
 alias gttsEnlow="gtts-cli -l en --slow --file"
 alias gttsEnnormal="gtts-cli -l en --file"
+

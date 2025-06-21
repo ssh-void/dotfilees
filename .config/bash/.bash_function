@@ -16,6 +16,11 @@ tms() {
   local session=$(tmux list-sessions -F "#{session_name}" | fzy -l 7)
   [[ -n "$session" ]] && tmux switch-client -t "$session" || tmux attach -t "$session"
 }
-gttslire() {
+
+gttslirefr() {
 gtts-cli -l fr --slow "$1" | torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
+}
+
+gttslireen() {
+gtts-cli -l en --slow "$1" | torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
 }
