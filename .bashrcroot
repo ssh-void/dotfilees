@@ -1,8 +1,6 @@
 # .bashrc
 export PS1="\[\e[33m\]\u\[\e[m\][\[\e[36m\]\w\[\e[m\]\]]$ "
-
 echo -e -n "\x1b[\x35 q"
-
 bind 'set completion-ignore-case on'
 
 # XBPS-*
@@ -14,7 +12,6 @@ alias c="xbps-remove -RoO && vkpurge rm all"
 alias d="xbps-remove -Rv"
 alias pkgxbps="xbps-reconfigure -fa"
 alias manxbps="man /opt/void-packages/./xbps-src"
-
 
 # runit:
 alias svart="doas sv restart "
@@ -46,7 +43,6 @@ alias rm="rm -vI"
 alias mv="mv -iv"
 alias mkdir="mkdir -pv"
 alias cl="clear"
-
 alias m="man"
 alias zconf="nvim $HOME/.zshrc"
 alias bconf="nvim $HOME/.bashrc"
@@ -67,7 +63,6 @@ alias pweroff="shutdown -P now"
 alias rboot="shutdown -r now"
 alias tfi="shutdown -h "
 
-
 # cd
 alias cd..='cd ..'
 alias .2="cd ../.."
@@ -81,7 +76,7 @@ alias tf="tree -i -f -s -h "
 alias tsh="tree -P "*.sh" --prune -s -h "
 alias trees="tree -s -h --du -a "
 
-# du 
+# du
 alias T="du -sh"
 alias duf="du -sh *"
 alias dud="du -d 1 -h"
