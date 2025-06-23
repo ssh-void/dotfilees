@@ -1,0 +1,3 @@
+for f in *; do
+  perl -e 'rename $ARGV[0], lc($ARGV[0])' "$f"
+done

@@ -35,6 +35,7 @@ alias font="fc-list : family | sort | uniq"
 alias rsynccpp="rsync -rvphWP --info=progress2"
 alias dtouch="doas touch"
 alias img="nsxiv"
+alias wp='find ~/Images -type f  2> /dev/null | shuf | nsxiv - -t &> /dev/null'
 alias sxhkdreload="pkill -USR1 -x sxhkd"
 alias transmissionreload="pkill -HUP transmission-daemon"
 alias taillog="tail -n 5 -v -f "
@@ -42,17 +43,23 @@ alias fr="free -h"
 alias echo='echo -e'
 alias qemux8664="qemu-system-x86_64"
 alias vscode="code-oss --disable-gpu --log off . 2> /dev/null"
+alias da='date "+%Y-%m-%d %A %T %Z"'
+alias week='date +%V'
+alias now="date +"%T""
+alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias p='pwd'
+alias chmox='chmod +x'
+alias perms="doas chmod 664"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias xx='exit'
+alias x='exit'
 alias blkidl="doas blkid -o list"
 alias lsblkl=" lsblk -rno size,name,label,mountpoint,fstype,uuid"
 alias pw='bash -c '"'"'echo `tr -dc $([ $# -gt 1 ] && echo $2 || echo "A-Za-z0-9") < /dev/urandom | head -c $([ $# -gt 0 ] && echo $1 || echo 30)`'"'"' --'
 alias logk="doas dmesg --clear &&  doas dmesg --ctime --follow"
 alias pls='doas $(fc -ln -1)' # Runs the last command with doas
-alias perms="doas chmod 664"
 alias chownuser="doas chown -R $(whoami):$(whoami) ."
 alias h='history | cut -c 8- | tac | fzy -l 20 | xclip -selection clipboard'
 alias xp="xclip -selection clipboard"
@@ -60,6 +67,7 @@ alias fontlist="fc-list : family | sort | uniq"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias vimaliases='nvim ~/.config/bash/.bash_aliases'
+alias vhosts='doas vim /etc/hosts'
 alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
@@ -69,7 +77,7 @@ alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 #alias screenshot='scrot -q 100 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images''
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 alias nf='clear && neofetch --colors 4 6 1 3 7 5'
-alias wcl='wc -l'
+alias lc='wc -l'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -93,10 +101,12 @@ vf() { nvim $(find ~/ /usr/ /etc/ /media/ -type f 2> /dev/null | fzy -l 20 -q "$
 # --------------------------------------------------------------------------------------- #
 alias l="ls -Flh --color=always --group-directories-first"  # long format
 alias ll="ls -Fh -dlg .* --group-directories-first --color=auto 2> /dev/null"
+alias lf="ls -l | egrep -v '^d'"
 alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
-alias lsgrep='ls -l | grep -i'
+alias lsg='ls -l | grep -i'
+alias ctf='echo $(ls -1 | wc -l)'
 # eza (color icons ...)
 #alias l="eza -Fl --color=always --group-directories-first"  # long format
 #alias li="eza -Fl --color=always --group-directories-first --icons" # long format with icons
@@ -105,7 +115,7 @@ alias lsgrep='ls -l | grep -i'
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->      neovim      <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias v="nvim" vim="nvim" vi="nvim"
+alias v="nvim" vim="nvim" vi="nvim" vm="nvim"
 alias dvi='doas nvim' dvim='doas nvim' dv='doas nvim'
 alias pdf="zathura "
 alias ppt="loimpress "
@@ -130,7 +140,7 @@ alias cxz="tar -cvJf "
 alias ctar="tar -cvzf "
 alias czip="zip -r "
 alias lrar="unrar l "
-alias l7z="7z l"
+alias l7z="7z l "
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     android     <----------------------------------- #
@@ -157,6 +167,13 @@ alias treesh='tree -P "*.sh" --prune -s -h '
 alias trees="tree -s -h --du -a "
 
 # --------------------------------------------------------------------------------------- #
+# --------------------------------->      tree       <----------------------------------- #
+# --------------------------------------------------------------------------------------- #
+alias pid='ps -f'
+alias ps='ps -ef'
+alias psa='ps -aux'
+
+# --------------------------------------------------------------------------------------- #
 # ---------------------------------->      du       <------------------------------------ #
 # --------------------------------------------------------------------------------------- #
 alias T='du -sh'
@@ -171,6 +188,7 @@ alias ncduhome='ncdu --one-file-system --exclude-caches --si --show-hidden --sho
 # --------------------------------------------------------------------------------------- #
 alias pingvoid='ping -c 5 voidlinux.org'
 alias ssgrep='doas ss -atpu | grep -i'
+alias localip="doas ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
 alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
