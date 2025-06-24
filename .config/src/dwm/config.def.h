@@ -70,7 +70,7 @@ static const Layout layouts[] = {
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = {"dmenu_run","-i","-p","Run: ","-fn","Terminess Nerd Font Mono:style=Bold Italic:pixelsize=22:antialias=true:autohint=true","-nb","#333333","-nf","#ffffff","-sb","#c61169","-sf","#f9f102",NULL};
+static const char *dmenucmd[] = {"dmenu_run","-i","-p","Run: ","-fn","Terminess Nerd Font Mono:style=Bold:pixelsize=22:antialias=true:autohint=true","-nb","#333333","-nf","#ffffff","-sb","#c61169","-sf","#f9f102",NULL};
 //static const char *termcmd[]  = {"alacritty",NULL};
 static const char *termcmd[]  = {"alacritty","-e","tmux",NULL};
 
