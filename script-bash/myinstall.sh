@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e  # Exit on any error
+set -e # exit on errors
 set -o pipefail
 
 echo "Updating The chsh ...\n"

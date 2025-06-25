@@ -39,7 +39,6 @@ set splitright
 set cursorline
 "set cursorcolumn
 set backupcopy=yes
-set bg=dark
 set shiftwidth=4
 set diffopt+=iwhite
 set autoindent
@@ -47,23 +46,17 @@ set smartindent
 set mouse=a
 set nohlsearch
 set clipboard+=unnamedplus
-set nocompatible
 set encoding=utf-8
 set rnu
 set wildmode=longest,list,full
 set list listchars=nbsp:¬,tab:»·,trail:·,extends:>
 set undofile
 set undodir=/tmp
-set nobackup
 set nowritebackup
 set updatetime=300
 set signcolumn=yes
 set number
-set incsearch "Recherche incrémentielle
-set hlsearch
 set noswapfile
-set nobackup
-set nowritebackup
 set noundofile
 set laststatus=0
 
@@ -83,7 +76,6 @@ map <C-v> "+v
 
 nnoremap <A-x> :s/^/\" /<CR>
 vnoremap <A-x> :s/^/\" /<CR>
-
 
 augroup ManPage
     autocmd!
