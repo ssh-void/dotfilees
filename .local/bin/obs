@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-read -r X Y W H < <(slop -f "%x %y %w %h")
+read -r X Y W H < <(slop -n 2 -q -c 1,1,0,0.8 -f "%x %y %w %h")
 sleep 1
 filename="$HOME/Videos/output$(date '+%Y-%m-%d-%H-%M-%S').mp4"
 ffmpeg -hide_banner -loglevel error -stats -f x11grab \

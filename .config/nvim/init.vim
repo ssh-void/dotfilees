@@ -65,6 +65,7 @@ colorscheme koehler
 
 "nnoremap
 nnoremap <C-s> :vsplit<CR> "ctrl +s
+nnoremap <A-l> :terminal<CR>
 
 "leader
 let mapleader = "!"

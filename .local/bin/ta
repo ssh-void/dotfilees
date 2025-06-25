@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 # Si une session existe, on s'y attache. Sinon, on en crée une.
 if tmux list-sessions >/dev/null 2>&1; then

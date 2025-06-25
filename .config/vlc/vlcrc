@@ -2918,7 +2918,7 @@ qt-privacy-ask=0
 #http-forward-cookies=1
 
 # User agent (string)
-#http-user-agent=
+http-user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0"
 
 [http] # HTTP input
 

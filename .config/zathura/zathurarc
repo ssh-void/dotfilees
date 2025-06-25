@@ -5,6 +5,9 @@ set scroll-step 100
 # Mappings pour le mode normal
 map D set "first-page-column 1:2"
 map i zoom in
+map 0xff99 zoom out   # KP_2
+map <Up> zoom in
+map <Down> zoom out
 map o zoom out
 map l scroll up
 map k scroll down

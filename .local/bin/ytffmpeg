@@ -11,4 +11,3 @@ ffmpeg -f concat -safe 0 -i list.txt -c copy output.mp4
 ls | grep -v output.mp4 | xargs -I  _ rm '_'
 shopt -s extglob
 rm !(output.mp4)
-
