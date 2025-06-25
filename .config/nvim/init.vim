@@ -65,7 +65,10 @@ colorscheme koehler
 
 "nnoremap
 nnoremap <C-s> :vsplit<CR> "ctrl +s
-nnoremap <A-l> :terminal<CR>
+" terminal
+nnoremap <A-l> :botright split<CR>:resize 10<CR>:terminal<CR>
+autocmd TermOpen * startinsert
+autocmd TermClose * close
 
 "leader
 let mapleader = "!"

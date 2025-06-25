@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+
+# List of browsers to use with sxhkd
+browsers="firefox
+brave-browser-stable"
+
+# Select browser using fzy
+selected=$(echo "$browsers" | fzy -l 7)
+
+# If a selection was made
+if [ -n "$selected" ]; then
+    pkill -x sxhkd
+    BROWSER="$selected" sxhkd &
+    echo "sxhkd restarted with BROWSER=$selected"
+else
+    echo "No browser selected."
+fi
