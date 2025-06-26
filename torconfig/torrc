@@ -510,7 +510,7 @@ DataDirectory /var/lib/tor
 ## Can not be changed while tor is running.
 User tor
 ## de Germany  | dk Denmark | sk Slovakia | no Norway | at Autriche
-EntryNodes {dk}{es}{de}{sk}{fr}{se}{no}{nl}{lu}{at}{it} StrictNodes 1
+EntryNodes {de}{es}{de}{sk}{fr}{se}{no}{nl}{lu}{at}{it} StrictNodes 1
 ## ch Switzerland | nl Netherlands | se Sweden | is Islande | lu Luxembourg
 ExitNodes {de}{fr}{es}{sk}{dk}{se}{no}{nl}{lu}{at}{it} StrictNodes 1
 AvoidDiskWrites 1
