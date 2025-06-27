@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # Fichier contenant les URLs avec commentaires
 FILE=~/.config/.urls.txt
@@ -13,4 +13,9 @@ selection=$(awk '{print $0}' "$FILE" | fzy --lines=8)
 url=$(echo "$selection" | cut -d'#' -f1 | awk '{print $1}')
 
 # Lancer mpv
-[ -n "$url" ] && torsocks mpv --no-config --no-video --af-add=volume=2 --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0' --cache=no "$url"
+[ -n "$url" ] &&  torsocks mpv --no-config --no-video \
+    --af-add="volume=2" \
+    --term-osd-bar \
+    --ytdl-raw-options=format='ba*[ext=m4a]/ba*/b[ext=mp4]/b',geo-bypass-country=FR,user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0',downloader-args='ffmpeg:-loglevel error -stats -timeout 10000000 -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',sponsorblock-mark=all,sponsorblock-remove=all \
+    --loop=inf \
+    --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" "$url"

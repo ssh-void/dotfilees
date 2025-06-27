@@ -67,7 +67,7 @@ alias fontlist="fc-list : family | sort | uniq"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias vimaliases='nvim ~/.config/bash/.bash_aliases'
-alias vhosts='doas vim /etc/hosts'
+alias vhosts='doas nvim /etc/hosts'
 alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
@@ -245,7 +245,6 @@ alias yvfscalecodec='yt-dlp --config-locations $HOME/.config/yt-dlp/yvfscalecode
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->     mpv & vlc     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias mpvtormp3='torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format="ba*[ext=m4a]/ba*/b[ext=mp4]/b" --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
 alias mpvmp3='mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format="ba*[ext=m4a]/ba*/b[ext=mp4]/b" --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1")'
 alias vlcnv="prime-run vlc "
 alias mpvnv="prime-run mpv "
