@@ -1,38 +1,49 @@
 # ~/.bash_functions
 
 function mcd() {
-  mkdir -p "$1" && cd "$1";
+	mkdir -p "$1" && cd "$1";
 }
 
 tmuxgo() { # select_tmux_window
-    if [[ -z "$1" ]]; then
-        echo "Usage: select_tmux_window <window_number>"
-        return 1
-    fi
-    tmux select-window -t "$1"
+	if [[ -z "$1" ]]; then
+	echo "Usage: select_tmux_window <window_number>"
+	return 1
+	fi
+	tmux select-window -t "$1"
 }
 
 tms() {
-  local session=$(tmux list-sessions -F "#{session_name}" | fzy -l 7)
-  [[ -n "$session" ]] && tmux switch-client -t "$session" || tmux attach -t "$session"
+	local session=$(tmux list-sessions -F "#{session_name}" | fzy -l 7)
+	[[ -n "$session" ]] && tmux switch-client -t "$session" || tmux attach -t "$session"
 }
 
 gttslirefr() {
-gtts-cli -l fr --slow "$1" | torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
+	gtts-cli -l fr --slow "$1" | torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
 }
 
 gttslireen() {
-gtts-cli -l en --slow "$1" | torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
+	gtts-cli -l en --slow "$1" | torsocks mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:139.0) Gecko/20100101 Firefox/139.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
 }
 
 mpvtormp3() {
-  torsocks mpv --no-config --no-video \
-    --af-add="volume=2" \
-    --term-osd-bar \
-    --ytdl-raw-options=format='ba*[ext=m4a]/ba*/b[ext=mp4]/b',geo-bypass-country=FR,user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0',downloader-args='ffmpeg:-loglevel error -stats -timeout 10000000 -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',sponsorblock-mark=all,sponsorblock-remove=all \
-    --loop=inf \
-    --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" \
-    --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") \
-    "$@"
+	torsocks mpv
+	--no-config --no-video \
+	--af-add="volume=2" \
+	--term-osd-bar \
+	--loop=inf \
+	--ytdl-raw-options=format='ba*[ext=m4a]/ba*/b[ext=mp4]/b',geo-bypass-country=FR,user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0',downloader-args='ffmpeg:-loglevel error -stats -timeout 10000000 -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',sponsorblock-mark=all,sponsorblock-remove=all \
+	--user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" \
+	--input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") \
+	"$@"
 }
-
+mpvmp3() {
+	mpv
+	--no-config --no-video \
+	--af-add="volume=2" \
+	--term-osd-bar \
+	--loop=inf \
+	--ytdl-raw-options=format='ba*[ext=m4a]/ba*/b[ext=mp4]/b',geo-bypass-country=FR,user-agent='Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0',downloader-args='ffmpeg:-loglevel error -stats -timeout 10000000 -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',sponsorblock-mark=all,sponsorblock-remove=all \
+	--user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" \
+	--input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") \
+	"$@"
+}
