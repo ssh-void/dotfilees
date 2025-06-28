@@ -24,8 +24,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-### SET VI MODE ###
-# Comment this line out to enable default emacs-like bindings
+###  bind  ###
 bind -m vi-command 'Control-l: clear-screen' # Clear the screen in vi-command mode
 bind -m vi-insert 'Control-l: clear-screen'  # Clear the screen in vi-insert mode
 bind -m vi-insert "\C-l":clear-screen        # Clear the screen
@@ -39,15 +38,14 @@ bind '"\e[B": history-search-forward'        # Down Arrow key
 bind '"\e[A": history-search-backward'       # Up Arrow key
 bind '"\e[1;5C": forward-word'               # Right Arrow key move by word
 bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
-bind 'TAB:menu-complete'                     # cycle through all matches with 'TAB' key
+#bind 'TAB:menu-complete'                    # cycle through all matches with 'TAB' key
 bind '"\C-o": alias-expand-line'             # expand an alias
-#bind -x '"\C-f":cd ~/.config'  # -x imd...
-bind '"\C-f":cd ~/.config'
-#bind '"\C-f":"cd ~/.config/"'
+bind -x '"\C-f":cd ~/.config'  # -x imd...
+bind '"\C-f":cd ~/.config'  # -x imd...
 bind '"\C-y":"cd ~/Videos/"'
 bind '"\C-t":"cd ~/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/Downloads/"'
 
-### SHOPT  ###
+###  SHOPT  ###
 shopt -s cdspell        # autocorrects cd misspellings
 shopt -s cmdhist        # save multi-line commands in history as single line
 shopt -s histappend     # do not overwrite history
@@ -62,10 +60,12 @@ shopt -s nocaseglob     # case insensitive,
 shopt -s checkhash
 
 umask 0027
-# PS1
+
+###  PS1  ###
 #export PS1="\[\e[38;5;207m\]\$(date +'%I:%M:%S') \[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
 export PS1="\[\e[38;5;118m\]\$(date +'%I:%M:%S') \[\e[38;5;212m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
 
+###  PS1 & TMUX  ###
 if [ -n "$TMUX" ]; then
   export PS1="\[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
 else
