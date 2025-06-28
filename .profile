@@ -24,6 +24,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 export ZDOTDIR="$HOME/.config/zsh"
 
 # UTF
+export XDG_SESSION_TYPE="x11"
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 export USER=$(id -un)
