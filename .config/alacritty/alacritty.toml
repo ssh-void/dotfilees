@@ -1,51 +1,73 @@
-[general]
-live_config_reload = true
-#===you would be seeing : https://alacritty.org/config-alacritty.html====#
+# you would be seeing : https://alacritty.org/config-alacritty.html 
+#===================================[general]==================================#
+[general] # four variable
 import = [
          #"C:/Users/hassa/AppData/Roaming/alacritty/color.toml",
          "~/.config/alacritty/color.toml",
          "~/.config/alacritty/fonts.toml",
 ]
-#working_directory = "C:\\"  # pour win
-[terminal.shell] #pour linux
+working_directory  = "$HOME/"
+live_config_reload = true
+ipc_socket         = true
+#working_directory = "C:\\"  # for win
+
+#==============================[env]================================#
+[env] # one variable
+WINIT_X11_SCALE_FACTOR = "1.0"
+TERM = "screen-256color"
+
+#==============================[window]==================================#
+[window] # fifteen variable
+dimensions = { columns = 0, lines = 0 }
+position   = "None"
+padding    = {x = 5, y = 2}
+dynamic_padding = false
+decorations     = "Full"
+opacity = 1
+blur = true
+startup_mode = "Maximized"
+title = "Alacritty"
+dynamic_title = false
+class = { instance = "Alacritty", general = "Alacritty" } # (Linux/BSD only)
+decorations_theme_variant = "dark" # "Dark"
+resize_increments = false
+option_as_alt = "None" # (macOS only)
+level = "Normal"
+
+#==============================[scrolling]=====================================#
+[scrolling]
+history = 20000
+multiplier = 3
+
+#==============================[terminal.shell]================================#
+[terminal.shell] # for linux
 program = "/bin/zsh"
 args = ["-l"]
-#========================================================================#
+
+#=================================[terminal]===================================#
 [terminal] # One variable
 osc52 = "CopyPaste"
-#========================================================================#
-[env]
-TERM = "xterm-256color"
-#TERM = "alacritty"
-#==============================[window]==================================#
-[window] # 14 variable
-decorations = "Full"
-decorations_theme_variant = "dark" # "Dark"
-opacity = 1
-padding = {x = 5, y = 5}
-startup_mode = "Maximized"
+
 #===============================[cursor]=================================#
 [cursor] # 6variable
-style = {shape = "Beam", blinking = "Always"}
-thickness = 0.23
-vi_mode_style = {shape = "Beam", blinking = "Always"}
-#========================================================================#
-[scrolling]
-history = 10000
-multiplier = 10
+style = {shape = "Block", blinking = "Always"}
+thickness = 0.15
+vi_mode_style = {shape = "Beam", blinking = "Off"}
+
 #================================[mouse]=================================#
 [mouse]
 bindings = [{mouse = "Left", mods = "Control", action = "Paste"}]
 hide_when_typing = true
+
 #==============================[keyboard]================================#
 [keyboard]
 bindings = [
 #  {key = 'Return', mods = 'Alt', action = 'ToggleFullscreen'},
 #  {key = 'Q', mods = 'Alt', action = 'Quit'},
 #  {key = 'N', mods = 'Command|Shift', action = 'SpawnNewInstance'}, # le meme peofi
-#  {key = 'N', mods = 'Control|Shift', action = 'CreateNewWindow'}, #{key = 'C', mods = 'Command|Shift', action = 'Quit'},  
+#  {key = 'N', mods = 'Control|Shift', action = 'CreateNewWindow'}, #{key = 'C', mods = 'Command|Shift', action = 'Quit'},
 #  {key = "Up", mods = "Control|Shift", action = "ScrollToTop" },  #{key = "Down", mods = "Control|Shift", action = "ScrollToBottom"},
-  {key = "Up",   mods= "Control|Shift", action="IncreaseFontSize" },
+  {key = "Up", mods= "Control|Shift", action="IncreaseFontSize" },
   {key = "Down", mods= " Control|Shift ", action= "DecreaseFontSize" },
   {key = "K", mods = "Control|Shift", mode = "Vi|~Search", action = "ScrollToTop"}, # aller a l=0
   {key = "J", mods = "Control|Shift", mode = "Vi|~Search", action = "ScrollToBottom"}, # aller a l=finale Mode vi
@@ -55,12 +77,14 @@ bindings = [
   {key = 'V', mods = 'Control', action = 'Paste'},
   {key = 'V', mods = 'Control|Shift', action = 'Paste'},
   {key = '0', mods = 'Control', action = 'ResetFontSize'},
-  {key = 'V', mods = "Alt", action = 'ToggleViMode' },
+  {key = 'V', mods = "Alt", action = 'ToggleViMode'},
 ]
+
 #============================[selection]=================================#
 [selection] # 2 variable
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
 #==============================[debug]===================================#
 [debug] # 7 variable
 highlight_damage = false # by Default

@@ -1,6 +1,7 @@
 #=============================[font]==================================#
-[font]
-size = 15
-[font.normal] # normal
-family = "Terminess Nerd Font Mono"
-style = "Regular"
+[font] # eight variable
+normal = { family = "Terminess Nerd Font Mono", style = "Regular" }
+size = 18
+offset = { x = 0, y = 1 }
+glyph_offset = { x = 1, y = 0 }
+builtin_box_drawing = true
