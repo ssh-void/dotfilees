@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # File where copied items will be stored
-output_file=$(mktemp /tmp/xlipsave-XXXX.txt)
+output_file=$(mktemp /tmp/xclipsave-XXXX.txt)
 
 # Initialize the clipboard with an empty value
 previous_clipboard=""
