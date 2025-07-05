@@ -104,14 +104,14 @@ nnoremap <C-Right> :bn<CR>
 nnoremap <C-Left> :bp<CR>
 
 function! s:SetManColors()
-"   highlight Normal guibg=#333333
-    highlight Normal guibg=#222222
+    highlight Normal guibg=#333333
+"   highlight Normal guibg=#222222
 "   highlight Normal guibg=#45403D
 "   highlight Normal guibg=#300A24
 endfunction
 
-"highlight Normal guibg=#333333
-highlight Normal guibg=#222222
+highlight Normal guibg=#333333
+"highlight Normal guibg=#222222
 "highlight Normal guibg=#45403D
 "highlight Normal guibg=#300A24
 
