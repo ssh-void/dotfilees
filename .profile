@@ -71,9 +71,8 @@ echo "Xft.dpi: 105" | xrdb -merge
 export NNN_OPENER="nsxiv"
 #  Forcer les applications GTK/Qt à utiliser Firefox
 export GTK_USE_PORTAL=1
-
+# nvim
 export DIFFPROG="nvim -d"
-
 # startx
 if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
