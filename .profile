@@ -45,10 +45,11 @@ export READER="zathura"
 export HISTCONTROL=ignoreboth:erasedups # no duplicate entries
 export INPUTRC="$HOME/.inputrc"
 export FILE="Thunar"
-export BROWSER="firefox"
-#export BROWSER="brave-browser-stable"
+#export BROWSER="firefox"
+export BROWSER="brave-browser-stable"
 export HISTORY_IGNORE="(ls|cd|aria2c|wget|pwd|exit|history|cd -|cd ..)"
 export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 export VISUAL="nvim"
 #export MANPAGER="less -R --use-color -Dd+g -Du+b" # manpages
 export MANPAGER="nvim +Man!" # manpages
@@ -68,6 +69,10 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 echo "Xft.dpi: 105" | xrdb -merge
 # nnn
 export NNN_OPENER="nsxiv"
+#  Forcer les applications GTK/Qt à utiliser Firefox
+export GTK_USE_PORTAL=1
+
+export DIFFPROG="nvim -d"
 
 # startx
 if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
