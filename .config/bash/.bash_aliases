@@ -76,7 +76,7 @@ alias vimex='nvim $(find . -type f -executable)'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 #alias screenshot='scrot -q 100 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images''
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
-alias nf='clear && neofetch --colors 4 6 1 3 7 5'
+#alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 alias lc='wc -l'
 
 # --------------------------------------------------------------------------------------- #
@@ -189,22 +189,20 @@ alias ncduhome='ncdu --one-file-system --exclude-caches --si --show-hidden --sho
 alias pingvoid='ping -c 5 voidlinux.org'
 alias ssgrep='doas ss -atpu | grep -i'
 alias localip="doas ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
-alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
-alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
+alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
 alias wifitus="nmcli device status"
 alias wifishow="nmcli connection show | more"
 alias wifiup="doas nmcli con up "
 alias wifiwn="doas nmcli con down "
-alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
-alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" --progress-bar -C - '
-alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -L -O --progress-bar -C - '
+alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
+alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" --progress-bar -C - '
+alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" -L -O --progress-bar -C - '
 alias xmr='curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
-alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:137.0) Gecko/20100101 Firefox/137.0" -r -np -nH --cut-dirs=1 -R index.html '
+alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" -r -np -nH --cut-dirs=1 -R index.html '
 alias  ariacjxsk="aria2c -c -j 5 -x 3 -s 10 -k 5M"
-alias vimfirefox='vim "/tmp/firefox$(date +%Y-%m-%d_%I-%M_%p).txt"'
-#alias darknet='torsocks w3m -o auto_image=FALSE .w3m/bookmark.html'
-#alias torrent="aria2c --follow-torrent=mem --seed-time=0 -j 10"
+alias vimfirefox='nvim $(mktemp -p /tmp firefox-XXX.txt)'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     tmux     <-------------------------------------- #
