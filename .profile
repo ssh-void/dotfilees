@@ -13,6 +13,9 @@ fi
 # ----------->  Exports  <----------- #
 # ----------------------------------- #
 
+# tmp
+export TMPDIR="/tmp"
+
 # bin
 export PATH="$HOME/.local/bin:$PATH"
 
