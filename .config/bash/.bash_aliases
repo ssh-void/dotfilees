@@ -47,6 +47,7 @@ alias da='date "+%Y-%m-%d %A %T %Z"'
 alias week='date +%V'
 alias now="date +"%T""
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
+alias cat='bat'
 alias p='pwd'
 alias chmox='chmod +x'
 alias perms="doas chmod 664"
@@ -78,6 +79,8 @@ alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
 #alias nf='clear && neofetch --colors 4 6 1 3 7 5'
 alias lc='wc -l'
+alias wcsh='find . -type f -name "*.sh" | wc -l'
+alias wcex='find . -type f -executable | wc -l'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -146,6 +149,7 @@ alias l7z="7z l "
 # --------------------------------->     android     <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias adbrootshell="adb root && sleep 2 && adb remount && sleep 2 && adb shell "
+alias adbrest="adb kill-server"
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->       cd        <----------------------------------- #
