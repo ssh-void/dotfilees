@@ -69,6 +69,7 @@ alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_prof
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias vimaliases='nvim ~/.config/bash/.bash_aliases'
 alias vhosts='doas nvim /etc/hosts'
+alias vtor='doas nvim /etc/tor/torrc'
 alias vimfunc='nvim ~/.config/bash/.bash_function'
 alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
