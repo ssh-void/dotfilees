@@ -1,11 +1,10 @@
-#include catppuccin-mocha
 #set recolor-lightcolor rgba(0,0,0,0)
 set default-bg rgba(0,0,0,0.7)
 set recolor-lightcolor rgba(255,255,255,0)
 set selection-clipboard clipboard
 set scroll-step 100
 set font "TerminessTTF Nerd Font bold 12"
-et zoom-step 1.2
+set zoom-step 1.2
 
 # Mappings pour le mode normal
 map D set "first-page-column 1:2"
@@ -18,7 +17,6 @@ map k scroll down
 map f toggle_fullscreen
 map L goto top
 map K goto bottom
-
 unmap j
 
 # Mappings pour le mode fullscreen
@@ -30,3 +28,11 @@ map [fullscreen] k scroll down
 map [fullscreen] f toggle_fullscreen
 map [fullscreen] L goto top
 map [fullscreen] K goto bottom
+
+
+
+# Couleurs & Thème
+set recolor true                # Mode nuit (inverser les couleurs)
+set recolor-lightcolor "#000000" # Couleur texte (noir)
+set recolor-darkcolor "#FFFFFF"  # Couleur fond (blanc)
+set default-bg "#2E3440"        # Arrière-plan (couleur hex)
