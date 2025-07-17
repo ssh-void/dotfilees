@@ -271,7 +271,7 @@ alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 # ------------------------------>      python        <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias py="python3"
-alias apy="source /home/${USER}/.local/share/tools/env/bin/activate"
+alias apy="source /home/${USER}/.local/share/tools/.env/bin/activate"
 alias ve="python3 -m venv"
 alias vd="deactivate"
 alias pipi="pip install"
