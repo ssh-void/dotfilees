@@ -1,18 +1,16 @@
 #!/usr/bin/env bash
-doas xbps-install -Syu python-pip
-mkdir -p ~/.local/share/tools/
-cd ~/.local/share/tools/ && python3 -m venv env
-source /home/${USER}/.local/share/tools/env/bin/activate
-sleep 1
-pip install --upgrade pip
-pip install --upgrade instaloader
-pip install -U --pre "yt-dlp[default]"
-pip install --upgrade telethon
-pip install --upgrade gTTS
-pip install git+https://github.com/openai/whisper.git
-#pip install coqui-tts
-#pip install gradio-client
-ln -s /home/${USER}/.local/share/tools/env/bin/yt-dlp $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/env/bin/instaloader $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/env/bin/gtts-cli $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/env/bin/whisper $HOME/.local/bin/
+doas xbps-install -Syu uv
+mkdir -p /home/${USER}/.local/share/tools/
+cd /home/${USER}/.local/share/tools/ && uv venv .env
+cd /home/${USER}/.local/share/tools/ && source .env/bin/activate
+uv pip install --upgrade pip
+uv pip install --upgrade instaloader
+uv pip install --upgrade --pre "yt-dlp[default]"
+uv pip install --upgrade telethon
+uv pip install --upgrade gTTS
+#uv pip install coqui-tts
+#uv pip install gradio-client
+ln -s /home/${USER}/.local/share/tools/.env/bin/yt-dlp $HOME/.local/bin/
+ln -s /home/${USER}/.local/share/tools/.env/bin/instaloader $HOME/.local/bin/
+ln -s /home/${USER}/.local/share/tools/.env/bin/gtts-cli $HOME/.local/bin/
+#ln -s /home/${USER}/.local/share/tools/.env/bin/whisper $HOME/.local/bin/

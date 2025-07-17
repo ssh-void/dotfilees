@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
-
-cd ~
-source /home/${USER}/.local/share/tools/env/bin/activate
-pip install --upgrade pip
-pip install --upgrade instaloader
-pip install -U --pre "yt-dlp[default]"
-pip install --upgrade telethon
-pip install --upgrade gTTS
-pip install git+https://github.com/openai/whisper.git
-#pip install gradio-client
-source $HOME/.profile
+mkdir -p /home/${USER}/.local/share/tools/
+cd /home/${USER}/.local/share/tools/ && uv venv .env
+cd /home/${USER}/.local/share/tools/ && source .env/bin/activate
+uv pip install --upgrade pip
+uv pip install --upgrade instaloader
+uv pip install --upgrade --pre "yt-dlp[default]"
+uv pip install --upgrade telethon
+uv pip install --upgrade gTTS
+#uv pip install --upgrade git+https://github.com/openai/whisper.git
+source "$HOME/.profile"
