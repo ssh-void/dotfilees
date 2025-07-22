@@ -3,7 +3,6 @@ doas xbps-install -Syu uv
 mkdir -p /home/${USER}/.local/share/tools/
 cd /home/${USER}/.local/share/tools/ && uv venv .env
 cd /home/${USER}/.local/share/tools/ && source .env/bin/activate
-uv pip install --upgrade pip
 uv pip install --upgrade instaloader
 uv pip install --upgrade --pre "yt-dlp[default]"
 uv pip install --upgrade telethon
