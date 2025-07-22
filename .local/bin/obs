@@ -1,11 +1,16 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 read -r X Y W H < <(slop -n 2 -q -c 1,1,0,0.8 -f "%x %y %w %h")
 sleep 1
+
 filename="$HOME/Videos/output$(date '+%Y-%m-%d-%H-%M-%S').mp4"
-ffmpeg -hide_banner -loglevel error -stats -f x11grab \
-    -video_size "${W}x${H}" \
-    -i ":0.0+${X},${Y}" \
-    -framerate 30 \
+
+ffmpeg -hide_banner -loglevel error -stats \
+    -f x11grab -video_size "${W}x${H}" -i ":0.0+${X},${Y}" \
+    #  pactl list sources short
+    -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor \
     -c:v libx264 -preset ultrafast -crf 18 \
+    -c:a aac -b:a 192k \
+    -map 0:v:0 -map 1:a:0 \
     -map_metadata -1 "$filename"
+

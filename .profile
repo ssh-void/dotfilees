@@ -16,6 +16,10 @@ fi
 # tmp
 export TMPDIR="/tmp"
 
+#uv
+export UV_LINK_MODE=copy
+export UV_VENV_CLEAR=1
+
 # bin
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -76,6 +80,8 @@ export NNN_OPENER="nsxiv"
 export GTK_USE_PORTAL=1
 # nvim
 export DIFFPROG="nvim -d"
+# bat theme
+#export BAT_THEME="Enki-Tokyo-Night"
 # startx
 if [ -z "$DISPLAY" ] && [ $(tty) = /dev/tty1 ]; then
   exec startx
