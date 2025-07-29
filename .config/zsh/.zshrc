@@ -35,7 +35,7 @@ bindkey -M viins '^W' backward-kill-word # Supprimer le mot précédent
 bindkey -M viins '^U' backward-kill-line # Supprimer jusqu'au début de la ligne
 bindkey "^R" history-incremental-pattern-search-backward
 bindkey -s '^F' 'cd ~/.config\n'
-bindkey -s '^Y' 'cd ~/Downloads/yt-dlp/video/'
+bindkey -s '^Y' 'cd ~/Videos'
 bindkey -s '^T' 'cd ~/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/Downloads\n'
 
 # Basic auto/tab complete:
@@ -139,3 +139,5 @@ setopt HIST_LEX_WORDS        # Parse history from file as if it were on the comm
 #source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh &> /dev/null
 # Load zsh-history-substring-search
 #source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search &> /dev/null
+
+eval "$(dircolors ~/.config/dircolors/.dircolors)"

@@ -1,4 +1,4 @@
-#files: 931	version: 5.9
+#files: 936	version: 5.9
 
 _comps=(
 '-' '_precommand'
@@ -96,6 +96,7 @@ _comps=(
 'bindkey' '_bindkey'
 'bison' '_bison'
 'bitcoin-cli' '_bitcoin-cli'
+'bluetoothctl' '_bluetoothctl'
 'bmake' '_make'
 'bogofilter' '_bogofilter'
 'bogotune' '_bogofilter'
@@ -130,6 +131,7 @@ _comps=(
 'bundle' '_bundle'
 'bunzip2' '_bzip2'
 'burst' '_mh'
+'bwrap' '_bwrap'
 'bzcat' '_bzip2'
 'bzegrep' '_grep'
 'bzfgrep' '_grep'
@@ -374,6 +376,7 @@ _comps=(
 'findmnt' '_findmnt'
 'finger' '_finger'
 'firefox' '_mozilla'
+'firejail' '_firejail'
 '-first-' '_first'
 'fixdlsrps' '_psutils'
 'fixfmps' '_psutils'
@@ -1063,6 +1066,7 @@ _comps=(
 'print' '_print'
 'printenv' '_printenv'
 'printf' '_print'
+'procs' '_procs'
 'prompt' '_prompt'
 'protoc' '_protoc'
 'prove' '_prove'
@@ -1441,6 +1445,7 @@ _comps=(
 'useradd' '_user_admin'
 'userdel' '_users'
 'usermod' '_user_admin'
+'uv' '_uv'
 'vacuumdb' '_pgsql_utils'
 'val' '_sccs'
 'valgrind' '_valgrind'
@@ -1833,36 +1838,37 @@ bindkey '^[/' _history-complete-older
 bindkey '^[~' _bash_complete-word
 
 autoload -Uz _afew _alacritty _android _archlinux-java _artisan \
-            _atach _avdmanager _bat _bitcoin-cli _bower \
-            _bundle _cap _cask _ccache _cf \
-            _choc _chromium _clang-check _clang-format _clang-tidy \
-            _cmake _coffee _conan _concourse _console \
-            _cppcheck _curl _dad _dart _dget \
-            _dhcpcd _diana _direnv _dkms _docker \
-            _docpad _drush _ecdsautil _emacs _emacsclient \
-            _emulator _envdir _exportfs _fab _fail2ban-client \
-            _ffind _flameshot _fleetctl _flutter _fvm \
-            _fwupdmgr _gas _ghc _gist _git-flow \
-            _git-pulls _git-revise _git-wtf _glances _golang \
-            _google _gpgconf _grpcurl _gtk-launch _hello \
-            _hledger _homestead _httpie _ibus _include-what-you-use \
-            _inxi _jmeter _jmeter-plugins _jonas _jrnl \
-            _kak _kitchen _knife _language_codes _libinput \
-            _lilypond _lunchy _mc _middleman _mina \
-            _mix _mkcert _mpv _mssh _mussh \
-            _mvn _nano _nanoc _neofetch _networkQuality \
-            _nftables _nnn _node _nvm _openssl \
-            _openvpn3 _optirun _pass _patool _periscope \
-            _pgsql_utils _phing _pixz _pkcon _play \
-            _pm2 _port _protoc _pulseaudio _pygmentize \
-            _qmk _rails _ralio _redis-cli _rfkill \
-            _rg _rkt _rmlint _rslsync _rspec \
-            _rsvm _rubocop _sbt _scala _screencapture \
-            _scrot _scrub _sdd _sdkmanager _setcap \
-            _setup.py _sfdx _shellcheck _showoff _srm \
-            _stack _subliminal _supervisorctl _svm _tealdeer \
-            _teamocil _thor _tmuxp _tox _tsc \
-            _ts-node _udisksctl _ufw _virtualbox _vkpurge \
+            _atach _avdmanager _bat _bitcoin-cli _bluetoothctl \
+            _bower _bundle _bwrap _cap _cask \
+            _ccache _cf _choc _chromium _clang-check \
+            _clang-format _clang-tidy _cmake _coffee _conan \
+            _concourse _console _cppcheck _curl _dad \
+            _dart _dget _dhcpcd _diana _direnv \
+            _dkms _docker _docpad _drush _ecdsautil \
+            _emacs _emacsclient _emulator _envdir _exportfs \
+            _fab _fail2ban-client _ffind _firejail _flameshot \
+            _fleetctl _flutter _fvm _fwupdmgr _gas \
+            _ghc _gist _git-flow _git-pulls _git-revise \
+            _git-wtf _glances _golang _google _gpgconf \
+            _grpcurl _gtk-launch _hello _hledger _homestead \
+            _httpie _ibus _include-what-you-use _inxi _jmeter \
+            _jmeter-plugins _jonas _jrnl _kak _kitchen \
+            _knife _language_codes _libinput _lilypond _lunchy \
+            _mc _middleman _mina _mix _mkcert \
+            _mpv _mssh _mussh _mvn _nano \
+            _nanoc _neofetch _networkQuality _nftables _nnn \
+            _node _nvm _openssl _openvpn3 _optirun \
+            _pass _patool _periscope _pgsql_utils _phing \
+            _pixz _pkcon _play _pm2 _port \
+            _procs _protoc _pulseaudio _pygmentize _qmk \
+            _rails _ralio _redis-cli _rfkill _rg \
+            _rkt _rmlint _rslsync _rspec _rsvm \
+            _rubocop _sbt _scala _screencapture _scrot \
+            _scrub _sdd _sdkmanager _setcap _setup.py \
+            _sfdx _shellcheck _showoff _srm _stack \
+            _subliminal _supervisorctl _svm _tealdeer _teamocil \
+            _thor _tmuxp _tox _tsc _ts-node \
+            _udisksctl _ufw _uv _virtualbox _vkpurge \
             _vnstat _wemux _wg-quick _wpctl _xbps \
             _xbps_src _xsel _xtools _yarn _yt-dlp \
             _zathura _zcash-cli _cdr _all_labels _all_matches \

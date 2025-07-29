@@ -41,7 +41,7 @@ bind '"\e[1;5D": backward-word'              # Left Arrow key move by word
 #bind 'TAB:menu-complete'                    # cycle through all matches with 'TAB' key
 bind '"\C-o": alias-expand-line'             # expand an alias
 bind -x '"\C-f":cd ~/.config'  # -x imd...
-bind '"\C-f":cd ~/.config'  # -x imd...
+#bind '"\C-f":cd ~/.config'  # -x imd...
 bind '"\C-y":"cd ~/Videos/"'
 bind '"\C-t":"cd ~/.local/share/torbrowser/tbb/x86_64/tor-browser/Browser/Downloads/"'
 
@@ -60,6 +60,7 @@ shopt -s nocaseglob     # case insensitive,
 shopt -s checkhash
 
 umask 0027
+eval "$(dircolors ~/.config/dircolors/.dircolors)"
 
 ###  PS1  ###
 #export PS1="\[\e[38;5;207m\]\$(date +'%I:%M:%S') \[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
