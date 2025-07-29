@@ -1,5 +1,5 @@
 # Islam
-https://qurango.net/radio/mishary_alafasi # mishary_alafasi https://radio.mp3islam.com/listen/mishary/radio.mp3
+https://radio.mp3islam.com/listen/mishary/radio.mp3 # Mishary bin Rashid Alafasy
 https://radio.mp3islam.com/listen/alhuthaifi/radio.mp3 # Ali Alhuthaifi
 https://radio.mp3islam.com/listen/maher/radio.mp3 # Maher Al Mueaqly
 http://stream.radiojar.com/0tpy1h0kxtzuv # curan saudi
@@ -35,4 +35,4 @@ https://tunein.cdnstream1.com/3511_96.mp3 # MSNBC
 https://playerservices.streamtheworld.com/api/livestream-redirect/WRCAAMAAC.aac # Bloomberg Radio Boston
 
 # Arabe
-https://live-hls-web-aja.getaj.net/AJA/06.m3u8 # jajira
+https://live-hls-web-aja.getaj.net/AJA/06.m3u8 # al jazeera
