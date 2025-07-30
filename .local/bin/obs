@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 read -r X Y W H < <(slop -n 2 -q -c 1,1,0,0.8 -f "%x %y %w %h")
 sleep 1
