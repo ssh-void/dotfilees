@@ -14,10 +14,11 @@ if [ -f "$1" ]; then
         *.Z)         uncompress -v "$1";;
         *.7z)        7z e "$1"      ;;
         *.deb)       bsdtar -xvf "$1" ;;
-        *.tar.xz)    tar xvf "$1"    ;;
+        *.tar.xz)    tar --use-compress-program="xz -d -T0" -xvf "$1"    ;;
         *.tar.zst)   tar --use-compress-program=unzstd -xvf "$1" ;;
         *.xz)        unxz -k -v "$1"   ;;
         *.img.xz)    xz -dv "$1"     ;;
+        *.jar)       unzip "$1"      ;;
         *)           echo "'$1' cannot be extracted via extract" ;;
     esac
 else
