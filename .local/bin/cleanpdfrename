@@ -1,0 +1,15 @@
+#!/bin/bash
+
+shopt -s nullglob
+for f in *.pdf; do
+    [ -f "$f" ] || continue
+    base="${f%.pdf}"
+    # Ponctuation => tiret, groupes d'espaces => tiret, compresse tirets
+    newname=$(echo "$base" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
+    # Enlève tirets début/fin
+    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
+    finalname="${newname}.pdf"
+    if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
+        mv -- "$f" "$finalname"
+    fi
+done

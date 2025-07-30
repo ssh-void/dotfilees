@@ -1,0 +1,13 @@
+#!/bin/bash
+
+for d in */; do
+    dir="${d%/}"
+    # Remplace la ponctuation par tiret, les espaces/groupes d'espaces par un tiret, compresse les tirets
+    newname=$(echo "$dir" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
+    # Supprime les tirets en début et en fin
+    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
+    # Renomme seulement si le nom change et la cible n'existe pas déjà
+    if [[ "$dir" != "$newname" && ! -e "$newname" ]]; then
+        mv -- "$dir" "$newname"
+    fi
+done
