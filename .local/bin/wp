@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-find ~/Images -type f  2> /dev/null | shuf | nsxiv - -t &> /dev/null
