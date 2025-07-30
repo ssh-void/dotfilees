@@ -12,4 +12,4 @@ uv pip install --upgrade gTTS
 ln -s /home/${USER}/.local/share/tools/.env/bin/yt-dlp $HOME/.local/bin/
 ln -s /home/${USER}/.local/share/tools/.env/bin/instaloader $HOME/.local/bin/
 ln -s /home/${USER}/.local/share/tools/.env/bin/gtts-cli $HOME/.local/bin/
-#ln -s /home/${USER}/.local/share/tools/.env/bin/whisper $HOME/.local/bin/
+ln -s /home/${USER}/.local/share/tools/.env/bin/whisper $HOME/.local/bin/
