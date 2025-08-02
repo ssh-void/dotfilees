@@ -1,5 +1,19 @@
 !pip install yt-dlp # tested!
-!apt update && apt upgrade -y && apt install git aria2 ffmpeg inxi nvtop htop tor -y # tested!
+!apt update
+!apt upgrade -y
+!apt install git aria2 inxi nvtop htop tor -y # tested!
+#!apt install ffmpeg
+#!apt install -y nvidia-driver-525 nvidia-cuda-toolkit
+git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git
+cd nv-codec-headers && sudo make install && cd –
+git clone https://git.ffmpeg.org/ffmpeg.git ffmpeg/
+sudo apt-get install build-essential yasm cmake libtool libc6 libc6-dev unzip wget libnuma1 libnuma-dev
+./configure --enable-nonfree --enable-cuda-nvcc --enable-libnpp --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared
+make -j 8
+# https://docs.nvidia.com/video-technologies/video-codec-sdk/12.0/ffmpeg-with-nvidia-gpu/index.html
+ffmpeg -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda -i input.mp4 -c:a copy -c:v h264_nvenc -b:v 5M output.mp4
+ffmpeg -y -vsync 0 -hwaccel cuda -hwaccel_output_format cuda –resize 1280x720 -i input.mp4 -c:a copy -c:v h264_nvenc -b:v 5M output.mp4
+sudo make install
 !nvidia-smi
 !nvidia-xconfig --query-gpu-info
 !yt-dlp --yes-playlist \
