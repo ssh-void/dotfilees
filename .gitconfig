@@ -16,7 +16,7 @@
 [alias]
 	a = "!git add * ; git add ."
 	aa = "!git status --short | fzy | awk '{print $2}' | xargs git add"
-	s= status
+	s = status -b -s
 	d = diff
 	co = checkout
 	ci = commit
