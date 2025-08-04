@@ -78,6 +78,9 @@ echo "Xft.dpi: 105" | xrdb -merge
 export NNN_OPENER="nsxiv"
 #  Forcer les applications GTK/Qt à utiliser Firefox
 export GTK_USE_PORTAL=1
+# xbps-fetch
+export HTTP_USER_AGENT="Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0"
+
 # nvim
 export DIFFPROG="nvim -d"
 # bat theme

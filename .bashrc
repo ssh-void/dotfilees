@@ -60,7 +60,7 @@ shopt -s nocaseglob     # case insensitive,
 shopt -s checkhash
 
 umask 0027
-eval "$(dircolors ~/.config/dircolors/.dircolors)"
+eval "$(dircolors -b ~/.config/dircolors/.dircolors)"
 
 ###  PS1  ###
 #export PS1="\[\e[38;5;207m\]\$(date +'%I:%M:%S') \[\e[92m\]\w\[\e[0m\] \[\e[91m\]>\[\e[0m\] "
