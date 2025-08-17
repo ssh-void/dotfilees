@@ -1,4 +1,4 @@
-# you would be seeing : https://alacritty.org/config-alacritty.html 
+# you would be seeing : https://alacritty.org/config-alacritty.html
 #===================================[general]==================================#
 [general] # four variable
 import = [
