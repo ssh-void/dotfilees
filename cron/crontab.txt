@@ -15,3 +15,5 @@
 25 * * * * $HOME/.local/bin/uxbps
 #30 * * * * find ~/ -depth -type d -empty -delete
 35 * * * * doas find /usr/share/icons/ -depth -type d -empty -delete
+40 * * * * uv cache clean
+
