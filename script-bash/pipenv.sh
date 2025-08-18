@@ -31,10 +31,6 @@ uv pip install --upgrade autosub
 uv pip install --upgrade browser-cookie3
 uv pip install --upgrade git+https://github.com/openai/whisper.git
 
-# Show the dependency tree
-cd "$TOOLS_DIR"
-uv tree
-
 # Reload profile if needed
 source "$HOME/.profile"
 
