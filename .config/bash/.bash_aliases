@@ -275,14 +275,14 @@ alias py="python3"
 alias apy="source /home/${USER}/.local/share/tools/.env/bin/activate"
 alias ve="python3 -m venv"
 alias vd="deactivate"
-alias pipi="pip install"
-alias pipuni="pip uninstall"
+alias pipi="uv pip install"
+alias pipuni="uv pip uninstall"
 alias pipls="pip list"
 alias pipshow="pip show"
 alias pipout="pip list --outdated"
 alias pipreq="pip freeze > requirements.txt"
 alias pipfrom="pip install -r requirements.txt" # -r , --requirement
-alias pipup="pip install --upgrade pip " # -U, --upgrade
+alias pipup="uv pip install --upgrade pip " # -U, --upgrade
 
 # ----------------------------------------------------------------------------------------#
 # --------------------------------------- ssh --------------------------------------------#
@@ -302,8 +302,7 @@ alias uzsh="zsh -i -c 'omz update'"
 # ----------------------------------------------------------------------------------------#
 # --------------------------------------- git --------------------------------------------#
 # ----------------------------------------------------------------------------------------#
-alias gitp="git clean -fd && git reset --hard && git pull"
-alias gita="git add * && git add ."
+alias gitinfo='du -sh --exclude=".git" && du -sh && gcommitfirst && git log --format="%ad" --date=iso | head -n 1 && gnombrecommit master'
 alias gcommitfirst='git log --reverse --format="%ad" --date=iso | head -n 1'
 alias gnombrecommit='git rev-list --count ' # gnombrecommit branchnume
 gmailcommit() { git log --oneline --graph --decorate --author="$1"; }
@@ -316,3 +315,8 @@ alias gtttsFrnormal="gtts-cli -l fr --file"
 alias gttsEnlow="gtts-cli -l en --slow --file"
 alias gttsEnnormal="gtts-cli -l en --file"
 
+# ----------------------------------------------------------------------------------------#
+# ------------------------------------ gallery-dl ----------------------------------------#
+# ----------------------------------------------------------------------------------------#
+alias gallerysite='gallery-dl --list-modules | grep -i'
+alias gallerysite='gallery-dl --list-modules | grep -i'
