@@ -29,6 +29,8 @@ alias svdown="doas sv down "
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     Other     <------------------------------------- #
 # --------------------------------------------------------------------------------------- #
+alias nnn="nnn -a -Pp" n=nnn
+alias f="nnn -a -Pf"
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
 alias uuidl="ls -l /dev/disk/by-uuid/"
 alias font="fc-list : family | sort | uniq"

@@ -42,6 +42,7 @@ export GTK2_RC_FILES="$HOME/.config/gtk-2.0/.gtkrc-2.0"
 # QT5 Fix
 export GDK_DPI_SCALE=1.00
 export QT_QPA_PLATFORMTHEME="qt5ct"
+export QT_QPA_PLATFORM="xcb"
 export QT_PLATFORM_PLUGIN="qt5ct"
 export QT_AUTO_SCREEN_SCALE_FACTOR=0
 export QT_SCALE_FACTOR=1
@@ -76,6 +77,8 @@ export PKG_CONFIG_PATH=/usr/lib/pkgconfig:$PKG_CONFIG_PATH
 echo "Xft.dpi: 105" | xrdb -merge
 # nnn
 export NNN_OPENER="nsxiv"
+export NNN_COLORS="2134"
+export NNN_BMS="d:~/Documents;t:~/Downloads"
 #  Forcer les applications GTK/Qt à utiliser Firefox
 export GTK_USE_PORTAL=1
 # xbps-fetch
