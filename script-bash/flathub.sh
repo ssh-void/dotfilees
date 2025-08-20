@@ -6,6 +6,8 @@ flatpak remote-add --user --if-not-exists flathub https://flathub.org/repo/flath
 flatpak --user install flathub org.kde.kdenlive -y
 #install Cryptomator
 flatpak --user install flathub org.cryptomator.Cryptomator -y
+#install FreeTube [The Private YouTube Client]
+flatpak --user install flathub io.freetubeapp.FreeTube
 # update
 doas flatpak update
 #for run use the export $(dbus-launch)
