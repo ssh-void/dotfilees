@@ -6,6 +6,7 @@ sleep 1
 filename="$HOME/Videos/output$(date '+%Y-%m-%d-%H-%M-%S').mp4"
 
 #pactl list sources short
+# -crf 0 (sans perte) & -crf 18  (recommadé)
 
 ffmpeg -hide_banner -loglevel error -stats \
     -r 59 \
