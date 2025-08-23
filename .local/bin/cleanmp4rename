@@ -13,3 +13,17 @@ for f in *.mp4; do
         mv -- "$f" "$finalname"
     fi
 done
+
+shopt -s nullglob
+for f in *.vtt; do
+    [ -f "$f" ] || continue
+    base="${f%.vtt}"
+    # Ponctuation => tiret, groupes d'espaces => tiret, compresse tirets
+    newname=$(echo "$base" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
+    # Enlève tirets début/fin
+    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
+    finalname="${newname}.vtt"
+    if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
+        mv -- "$f" "$finalname"
+    fi
+done
