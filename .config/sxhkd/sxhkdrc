@@ -44,7 +44,14 @@ super + alt + l
 		bash -c '~/.local/bin/lock'
 
 super + alt + p
-		scrot -o -Z 0 -q 100 -a $(slop -n 2 -q -c 1,1,0,1 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
+		scrot -o -Z 0 -q 100 -a $(slop -n 2 -q -c 0,0,1,2 -f "%x,%y,%w,%h") - | xclip -selection clipboard -target image/png
+
+super + alt + f
+		$HOME/.config/.script/gtfr_clip.sh
+
+super + alt + e
+		$HOME/.config/.script/gten_clip.sh
+
 
 ###  Super + Ctrl + X ... ###
 
