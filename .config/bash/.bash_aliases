@@ -29,8 +29,8 @@ alias svdown="doas sv down "
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     Other     <------------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias nnn="nnn -a -Pp" n=nnn
-alias f="nnn -a -Pf"
+alias nnn="nnn -e -a -Pp" n=nnn
+alias f="nnn -e -a -Pf"
 alias vsxh="vim ~/.config/sxhkd/sxhkdrc"
 alias uuidl="ls -l /dev/disk/by-uuid/"
 alias font="fc-list : family | sort | uniq"
@@ -53,6 +53,9 @@ alias cat='bat'
 alias p='pwd'
 alias chmox='chmod +x'
 alias perms="doas chmod 664"
+alias xargs="xargs -r"
+alias cdbin="cd ~/.local/bin/"
+alias cdvideos="cd ~/Videos"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
@@ -89,6 +92,7 @@ alias wcex='find . -type f -executable | wc -l'
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
+alias rmsecure="shred -u"
 alias rm="rm -vI"
 alias drm="rm -rf"
 alias rmyt='rm *.m4a-Frag* ; rm *.mp4.* ; rm *.aria2 ; rm *.mp4-*'
@@ -204,11 +208,11 @@ alias wifitus="nmcli device status"
 alias wifishow="nmcli connection show | more"
 alias wifiup="doas nmcli con up "
 alias wifiwn="doas nmcli con down "
-alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
-alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" --progress-bar -C - '
-alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" -L -O --progress-bar -C - '
+alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
+alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --progress-bar -C - '
+alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" -L -O --progress-bar -C - '
 alias xmr='curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
-alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" -r -np -nH --cut-dirs=1 -R index.html '
+alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" -r -np -nH --cut-dirs=1 -R index.html '
 alias  ariacjxsk="aria2c -c -j 5 -x 3 -s 10 -k 5M"
 alias vimfirefox='nvim $(mktemp -p /tmp firefox-XXX.txt)'
 
@@ -230,6 +234,7 @@ alias yltor='torsocks yt-dlp -F '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf --restrict-filenames '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
+alias yvpk='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpk.conf '
 alias yvpc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpc.conf '
 alias yaria='yt-dlp --config-locations $HOME/.config/yt-dlp/yaria.conf '
 alias yariac='yt-dlp --config-locations $HOME/.config/yt-dlp/yariac.conf '
@@ -261,8 +266,15 @@ alias fvlc='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2> /
 #alias ffmpeg='ffmpeg —hide_banner'
 #alias ffplay='ffplay —hide_banner'
 #alias ffprobe='ffprobe -hide_banner'
-alias ffmpegcodel='ffmpeg -encoders | grep -i'
-alias ffmpegprotocol='ffmpeg -protocols | grep -i'
+alias ffmpegcodel='ffmpeg -hide_banner -encoders | grep -i'
+alias ffmpegprotocol='ffmpeg -protocols -hide_banner | grep -i'
+alias ffmpeghw="ffmpeg -hwaccels -hide_banner"
+alias ffmpeginfo="ffmpeg -hide_banner -h full | grep -i "
+alias ffmpegfiltre="ffmpeg -hide_banner -filters | grep -i"
+alias videoinfo="mediainfo "
+videotest () { ffmpeg -v error -i "$1" -f null - 2>&1; }
+viddur () { ffprobe -i "$1" -show_entries format=duration -v quiet -of csv="p=0" | awk '{printf "%dm%06.4fs\n", int($1/60), $1%60}'; }
+
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      suckless       <---------------------------------- #
@@ -321,4 +333,10 @@ alias gttsEnnormal="gtts-cli -l en --file"
 # ------------------------------------ gallery-dl ----------------------------------------#
 # ----------------------------------------------------------------------------------------#
 alias gallerysite='gallery-dl --list-modules | grep -i'
-alias gallerysite='gallery-dl --list-modules | grep -i'
+
+# ----------------------------------------------------------------------------------------#
+# --------------------------------------flatpak-------------------------------------------#
+# ----------------------------------------------------------------------------------------#
+alias flatinfo="flatpak info"
+alias flatupdate="flatpak update --ostree-verbose"
+alias flatps="flatpak ps"
