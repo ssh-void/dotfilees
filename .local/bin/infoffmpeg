@@ -1,12 +1,28 @@
 #!/usr/bin/env bash
-for f in *.mp4; do
-  codec=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of default=nokey=1:noprint_wrappers=1 "$f")
-  width=$(ffprobe -v error -select_streams v:0 -show_entries stream=width -of default=nokey=1:noprint_wrappers=1 "$f")
-  height=$(ffprobe -v error -select_streams v:0 -show_entries stream=height -of default=nokey=1:noprint_wrappers=1 "$f")
-  fps=$(ffprobe -v error -select_streams v:0 -show_entries stream=r_frame_rate -of default=nokey=1:noprint_wrappers=1 "$f")
 
-  # Calcul fps float
-  fps_float=$(echo "scale=2; $(echo $fps | bc -l)" | bc)
+echo -e "File\tVCodec\tACodec\tResolution\tFPS\tContainer"
 
-  echo -e "$f\t$codec\t${width}x${height}\t$fps_float fps"
-done | sort -k3,3 -k2,2 -k4,4
+for f in "$@"; do
+  # Extraction video: codec, width, height, fps
+  readarray -t vprops < <(
+    ffprobe -v error -select_streams v:0 \
+      -show_entries stream=codec_name,width,height,r_frame_rate \
+      -of default=noprint_wrappers=1:nokey=1 "$f"
+  )
+  vcodec="${vprops[0]}"
+  width="${vprops[1]}"
+  height="${vprops[2]}"
+  fps="${vprops[3]}"
+  fps_float=$(awk -F'/' '{printf "%.2f", $1/($2?$2:1)}' <<< "$fps")
+
+  # Extraction audio: codec audio
+  acodec=$(ffprobe -v error -select_streams a:0 \
+    -show_entries stream=codec_name \
+    -of default=noprint_wrappers=1:nokey=1 "$f")
+
+  # Extraction container (format)
+  container=$(ffprobe -v error -show_entries format=format_name \
+    -of default=noprint_wrappers=1:nokey=1 "$f" | cut -d',' -f1)
+
+  echo -e "$f\t$vcodec\t$acodec\t${width}x${height}\t${fps_float} fps\t$container"
+done | sort -k4,4 -k2,2 -k3,3 -k5,5

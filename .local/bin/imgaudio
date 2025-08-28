@@ -1,0 +1,54 @@
+#!/bin/bash
+
+# Usage : ./audio_to_video.sh audio.mp3
+set -e
+
+# Vérification arguments
+if [ $# -ne 1 ]; then
+  echo "Utilisation: $0 audio.mp3|audio.m4a"
+  exit 1
+fi
+
+audio="$1"
+
+# Recherche des images (*.png, *.jpg)
+images=( *.jpg  )
+n=${#images[@]}
+
+if [ "$n" -eq 0 ]; then
+  echo "Aucune image trouvée (*.png, *.jpg)"
+  exit 2
+fi
+
+# Récupère la durée de l'audio
+duree_audio=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "$audio")
+if [[ ! "$duree_audio" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
+  echo "Impossible de lire la durée de $audio"
+  exit 3
+fi
+
+# Calcul durée par image
+duree_par_image=$(printf "%.3f" "$(echo "$duree_audio / $n" | bc -l)")
+
+# Construction du fichier concat
+concat_file="images_concat.txt"
+: > "$concat_file"
+for img in "${images[@]}"; do
+  echo "file '$img'" >> "$concat_file"
+  echo "duration $duree_par_image" >> "$concat_file"
+done
+# Le dernier : ffmpeg bug
+echo "file '${images[-1]}'" >> "$concat_file"
+
+# Création vidéo
+#ffmpeg -hide_banner -loglevel error -f concat -safe 0 -i "$concat_file" -vsync vfr -pix_fmt yuv420p -y video.mp4
+ffmpeg -hide_banner -loglevel error -f concat -safe 0 -i "$concat_file" -vf "scale=720:1280" -pix_fmt yuv420p -y video.mp4
+# Ajout audio (MOV)
+ffmpeg -hide_banner -loglevel error -i video.mp4 -r 30 -i "$audio" -c:v copy -c:a aac -ar 48000 -shortest -y output.mp4
+
+# Nettoyage
+rm "$concat_file"
+rm video.mp4
+
+echo "✅ output.mov généré avec $n images et audio $audio"
+

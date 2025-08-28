@@ -1,2 +1,1 @@
-#!/usr/bin/env bash
-flatpak run "$(flatpak list --app --columns=application | fzy -l 20)" &> /dev/null
+flatpak run --user --ostree-verbose "$(flatpak list --app --columns=application | fzy)" &> /dev/null

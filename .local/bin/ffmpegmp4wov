@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+for input in "$@"
+do
+    # Générer le nom de fichier de sortie en remplaçant l'extension par .mov .mp4 ...
+    output=`echo "$input" | sed -e 's/\..*$//g'`
+    # Afficher le processus de conversion
+    echo "Converting $input to $output.mov ...."
+    # Exécuter la conversion avec ffmpeg
+    # pas fois ne résuit pas  542x962 for exemple
+    #ffmpeg -y -i "$input" -vf "scale=-2:1280:force_original_aspect_ratio=decrease,pad=720:1280:(ow-iw)/2:(oh-ih)/2" \
+    #-r 30 -c:v libx265 -pix_fmt yuv420p -preset medium -crf 18 -c:a aac -ar 48000 "FF$output.mp4"
+    # résuit pour  542x962 for exemple
+    ffmpeg -y -i "$input" -vf "scale=720:-2:force_original_aspect_ratio=decrease,pad=720:1280:(ow-iw)/2:(oh-ih)/2"  \
+    -r 30 -c:v libx265 -pix_fmt yuv420p -preset medium -crf 18 -c:a aac -ar 48000 "FF$output.mp4"
+done

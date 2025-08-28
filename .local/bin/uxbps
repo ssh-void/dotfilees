@@ -4,7 +4,7 @@ cd /opt/void-packages && ./xbps-src binary-bootstrap
 # git clean -fd && git reset --hard && git pull (My files will be deleted)
 git pull --autostash --rebase
 ./xbps-src show-sys-updates # update
-#./xbps-src update-sys
+#./xbps-src update-sys 
 ./xbps-src clean  # clean
 ./xbps-src clean-repocache
 rm -rvf /opt/void-packages/hostdir/sources/*

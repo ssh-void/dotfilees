@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 # List available runit services in /etc/sv, sort them, and select one with fzy
-service=$(ls /etc/sv | sort | fzy -l 20)
+service=$(ls /etc/sv | sort | fzy -l 20 )
 
 # Check if a service was selected (i.e., not empty)
 if [ -n "$service" ]; then

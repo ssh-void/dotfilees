@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 mkdir -p /home/${USER}/.local/share/tools/
-cd /home/${USER}/.local/share/tools/ && uv venv .env
 cd /home/${USER}/.local/share/tools/ && source .env/bin/activate
 uv pip install --upgrade instaloader
 uv pip install --upgrade gallery-dl

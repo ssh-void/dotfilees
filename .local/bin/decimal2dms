@@ -1,0 +1,32 @@
+#!/bin/sh
+# Convertit latitude et longitude décimales en DMS
+
+decimal_to_dms() {
+    value=$1
+    hemi_pos=$2
+    hemi_neg=$3
+
+    deg=$(echo "$value" | awk '{printf "%d", $1}')
+    min_sec=$(echo "scale=10; ($value - $deg) * 60" | bc)
+    min=$(echo "$min_sec" | awk '{printf "%d", $1}')
+    sec=$(echo "scale=2; ($min_sec - $min) * 60" | bc)
+
+    # Si négatif -> hémisphère Sud ou Ouest
+    if [ $(echo "$value < 0" | bc) -eq 1 ]; then
+        hemi=$hemi_neg
+        deg=$(echo "$deg" | sed 's/-//')
+    else
+        hemi=$hemi_pos
+    fi
+
+    echo "${deg}°${min}'${sec}\"$hemi"
+}
+
+lat=$1
+lon=$2
+
+lat_dms=$(decimal_to_dms $lat "N" "S")
+lon_dms=$(decimal_to_dms $lon "E" "W")
+
+echo "$lat_dms , $lon_dms"
+

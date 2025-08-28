@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Création du dossier fps/ s'il n'existe pas
+mkdir -p fps
+
+for video in "$@"; do
+    # Récupérer le framerate
+    fps=$(ffprobe -v 0 -of csv=p=0 -select_streams v:0 -show_entries stream=r_frame_rate "$video" | awk -F'/' '{if ($2) print $1/$2; else print $1}')
+    # Si ffprobe échoue ou ne trouve rien, fps sera vide
+    fps_val=$(printf "%.0f" "${fps:-0}")
+
+    if [ "$fps_val" -eq 0 ] || [ "$fps_val" -eq 90000 ]; then
+        echo "Déplacement de $video dans fps/ (fps=$fps_val)"
+        mv "$video" fps/
+    fi
+done

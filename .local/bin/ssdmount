@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-cd ~/.config/mount && ./$(ls mount*.sh umount*.sh | fzy -l 20)
+cd ~/.config/mount && ./$(ls mount*.sh umount*.sh | fzy)

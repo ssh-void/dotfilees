@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+echo -e "File\tCodec\tResolution\tFPS"
+
+for f in *.mp4; do
+  # Un seul appel à ffprobe pour tout extraire, résultat sur 4 lignes
+  readarray -t props < <(
+    ffprobe -v error -select_streams v:0 \
+      -show_entries stream=codec_name,width,height,r_frame_rate \
+      -of default=noprint_wrappers=1:nokey=1 "$f"
+  )
+  codec="${props[0]}"
+  width="${props[1]}"
+  height="${props[2]}"
+  fps="${props[3]}"
+  # Conversion rationnelle vers float (ex: 30000/1001 => 29.97)
+  fps_float=$(awk -F'/' '{printf "%.2f", $1/($2?$2:1)}' <<< "$fps")
+  echo -e "$f\t$codec\t${width}x${height}\t${fps_float} fps"
+done | sort -k3,3 -k2,2 -k4,4
