@@ -7,9 +7,11 @@ flatpak --user install --or-update flathub org.kde.kdenlive -y
 #install Cryptomator
 flatpak --user install --or-update flathub org.cryptomator.Cryptomator -y
 #install FreeTube [The Private YouTube Client]
-flatpak --user install --or-update flathub io.freetubeapp.FreeTube
+flatpak --user install --or-update flathub io.freetubeapp.FreeTube -y
 #install brave-Browser
 #flatpak --user install --or-update flathub com.brave.Browser
+# KDE Ebook
+flatpak --user install --or-update flathub org.kde.arianna -y
 # update
 doas flatpak update -y
 #for run use the export $(dbus-launch)
