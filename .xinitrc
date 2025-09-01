@@ -1,4 +1,10 @@
 #doas mount -a &
+if [ -d /etc/X11/xinit/xinitrc.d ]; then
+    for f in /etc/X11/xinit/xinitrc.d/*; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
 ### i xorg-server-devel
 #OpenGL Settings | 0 High Quality | 1 Quality | 2 Performance | 3 High Performance
 nvidia-settings -a OpenGLImageSettings=2 &
@@ -32,6 +38,6 @@ while true; do numlockx on ; sleep 1 ; done &
 while true; do sxhkd ; sleep 1 ; done &
 while true; do picom --backend glx --glx-no-stencil --xrender-sync-fence --no-vsync --glx-no-rebind-pixmap --no-ewmh-fullscreen --no-use-damage --no-fading-openclose --no-fading-destroyed-argb; sleep 1 ; done &
 st -f "Terminess Nerd Font Mono:style=Bold:pixelsize=24:antialias=true:autohint=true" -g "115x33+152+25" -n "scpad" -e "tmux" > /dev/null 2>&1 &
-eval `ssh-agent`
+eval "$(ssh-agent -s)"
 eval $(gpg-agent --daemon)
 exec dbus-run-session dwm
