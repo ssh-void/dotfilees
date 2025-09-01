@@ -51,3 +51,48 @@ nettoie_texte() {
     sed 's/\[[^]]*\]//g; s/"//g'
 }
 
+rename_random() {
+    for f in "$@"; do
+        # Vérifie que le fichier existe
+        [ -f "$f" ] || { echo "Fichier introuvable: $f"; continue; }
+
+        num=$(echo "$f" | cut -d'-' -f1 | tr -d ' ')   # extrait le numéro avant '-'
+        ext="${f##*.}"                                # extension
+        rand=$(head -c 100 /dev/random | tr -dc 'a-zA-Z0-9' | head -c7)  # 7 chars aléatoires
+
+        newname="${num}-${rand}.${ext}"
+        mv -- "$f" "$newname"
+        echo "Renommé: $f -> $newname"
+    done
+}
+##############
+# nwipedod ...
+##############
+
+nwipedod () {
+ doas nwipe --method dod522022m --rounds 2 --autonuke --logfile ~/nwipessd.log "$1"
+}
+
+nwipeops2 () {
+ doas nwipe --method ops2 --rounds 2 --autonuke --logfile ~/nwipessd.log "$1"
+}
+
+#############
+# whisper ...
+#############
+
+whisperEntiny () {
+whisper "$@" --model tiny.en --threads 8 --language English -f vtt --device cpu
+}
+
+whisperFrtiny () {
+whisper "$@" --model tiny --threads 8 --language French -f vtt --device cpu
+}
+
+whisperEnsmall () {
+whisper "$@" --model small.en --threads 8 --language English -f vtt --device cpu
+}
+
+whisperFrsmall () {
+whisper "$@" --model small --threads 8 --language French -f vtt --device cpu
+}

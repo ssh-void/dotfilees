@@ -15,7 +15,14 @@ alias i="doas xbps-install -Su"
 alias c="doas xbps-remove -RoO && doas vkpurge rm all"
 alias d="doas xbps-remove -Rv"
 alias pkgxbps="doas xbps-reconfigure -fa"
+
+# # -------------------------------------------------------------------------------------- #
+# ----------------------------------->     XBPS-SRC     <--------------------------------- #
+# -------------------------------------------------------------------------------------- #
 alias manxbps="man /opt/void-packages/./xbps-src"
+alias cdvoid="cd /opt/void-packages"
+alias tbrave='cd /opt/void-packages && mkdir -p /opt/void-packages/srcpkgs/brave/ && cd /opt/void-packages/srcpkgs/brave/ && vim template'
+alias ibrave="cd /opt/void-packages && ./xbps-src pkg brave && xi brave"
 
 # -------------------------------------------------------------------------------------- #
 # ---------------------------------->     runit     <----------------------------------- #
@@ -55,7 +62,10 @@ alias chmox='chmod +x'
 alias perms="doas chmod 664"
 alias xargs="xargs -r"
 alias cdbin="cd ~/.local/bin/"
+alias cdprog="cd ~/programming/"
 alias cdvideos="cd ~/Videos"
+alias cdtmp="cd /tmp"
+alias cdimg="cd ~/Images/"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
@@ -92,7 +102,7 @@ alias wcex='find . -type f -executable | wc -l'
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias rmsecure="shred -u"
+alias rmsecure="shred -u -v -z -n 7 "
 alias rm="rm -vI"
 alias drm="rm -rf"
 alias rmyt='rm *.m4a-Frag* ; rm *.mp4.* ; rm *.aria2 ; rm *.mp4-*'
@@ -116,6 +126,7 @@ alias lf="ls -l | egrep -v '^d'"
 alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
+alias ldh='ls -lahd --color=auto --group-directories-first .[!.]*/ ..?*/ 2>/dev/null'
 alias lsg='ls -l | grep -i'
 alias ctf='echo $(ls -1 | wc -l)'
 # eza (color icons ...)
@@ -193,7 +204,7 @@ alias duf='du -sh * '
 alias usage='du -d 1 -h | sort -rh '
 alias duone='du -h --max-depth=1 '
 alias disk='doas du -h --max-depth=1 . | sort -rh '
-alias ncduhome='ncdu --one-file-system --exclude-caches --si --show-hidden --show-graph --show-percent --disable-delete --fast-ui-updates ~/'
+alias ncduhome='ncdu --one-file-system --si --show-graph --show-percent --disable-delete --fast-ui-updates ~/'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>     net wifi ...     <--------------------------------- #
@@ -229,9 +240,11 @@ alias tmkill='tmux kill-server'
 # --------------------------------------------------------------------------------------- #
 # -------------------------------->     yt-dlp     <------------------------------------- #
 # --------------------------------------------------------------------------------------- #
+alias vimarchive="nvim ~/.archive.txt"
 alias yl='yt-dlp -F '
 alias yltor='torsocks yt-dlp -F '
 alias yv='yt-dlp --config-locations $HOME/.config/yt-dlp/yv.conf --restrict-filenames '
+alias yvk='yt-dlp --config-locations $HOME/.config/yt-dlp/yvk.conf --restrict-filenames '
 alias yvc='yt-dlp --config-locations $HOME/.config/yt-dlp/yvc.conf '
 alias yvp='yt-dlp --config-locations $HOME/.config/yt-dlp/yvp.conf '
 alias yvpk='yt-dlp --config-locations $HOME/.config/yt-dlp/yvpk.conf '
@@ -258,7 +271,8 @@ alias yvfscalecodec='yt-dlp --config-locations $HOME/.config/yt-dlp/yvfscalecode
 # --------------------------------------------------------------------------------------- #
 alias vlcnv="prime-run vlc "
 alias mpvnv="prime-run mpv "
-alias fvlc='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2> /dev/null'
+alias pmpv="pkill -f mpv"
+alias fvlc='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy -l 8)" 2> /dev/null'
 
 # --------------------------------------------------------------------------------------- #
 # ------------------------------->      ffmpeg       <----------------------------------- #
@@ -266,7 +280,9 @@ alias fvlc='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy)" 2> /
 #alias ffmpeg='ffmpeg —hide_banner'
 #alias ffplay='ffplay —hide_banner'
 #alias ffprobe='ffprobe -hide_banner'
-alias ffmpegcodel='ffmpeg -hide_banner -encoders | grep -i'
+alias mffmpeg='man ffmpeg-all'
+alias ffmpegcodec='ffmpeg -hide_banner -encoders | grep -i'
+alias codecinfo="ffmpeg -h encoder=h264_qsv"
 alias ffmpegprotocol='ffmpeg -protocols -hide_banner | grep -i'
 alias ffmpeghw="ffmpeg -hwaccels -hide_banner"
 alias ffmpeginfo="ffmpeg -hide_banner -h full | grep -i "
@@ -274,6 +290,10 @@ alias ffmpegfiltre="ffmpeg -hide_banner -filters | grep -i"
 alias videoinfo="mediainfo "
 videotest () { ffmpeg -v error -i "$1" -f null - 2>&1; }
 viddur () { ffprobe -i "$1" -show_entries format=duration -v quiet -of csv="p=0" | awk '{printf "%dm%06.4fs\n", int($1/60), $1%60}'; }
+alias filetxt='ls *.mp4 | sed "s/^/file '\''/;s/$/'\''/" > file.txt'
+alias ffmpegconcat='ffmpeg -f concat -safe 0 -i file.txt -c copy output.mp4'
+alias outputrename='[ -f output.mp4 ] && mv output.mp4 "$(basename "$PWD").mp4" && echo "Renamed output.mp4 -> $(basename "$PWD").mp4" || echo "output.mp4 not found"'
+
 
 
 # --------------------------------------------------------------------------------------- #
@@ -285,7 +305,7 @@ alias makesuckless="doas make -s -j 4 && doas make -s clean install"
 # --------------------------------------------------------------------------------------- #
 # ------------------------------>      python        <----------------------------------- #
 # --------------------------------------------------------------------------------------- #
-alias py="python3"
+alias py="python3.13"
 alias apy="source /home/${USER}/.local/share/tools/.env/bin/activate"
 alias ve="python3 -m venv"
 alias vd="deactivate"
@@ -338,5 +358,14 @@ alias gallerysite='gallery-dl --list-modules | grep -i'
 # --------------------------------------flatpak-------------------------------------------#
 # ----------------------------------------------------------------------------------------#
 alias flatinfo="flatpak info"
-alias flatupdate="flatpak update --ostree-verbose"
+alias flatupdate="flatpak update -y --ostree-verbose"
 alias flatps="flatpak ps"
+alias flatkill="flatpak list --app --columns=application | fzy -l 20 | xargs flatpak kill --ostree-verbose"
+
+# ----------------------------------------------------------------------------------------#
+# ------------------------------------instaloader-----------------------------------------#
+# ----------------------------------------------------------------------------------------#
+alias insthighlights='instaloader --load-cookies firefox --load-cookies brave --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --highlights --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json  '
+alias instreel='instaloader --load-cookies firefox --no-captions --no-pictures --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
+alias instimg='instaloader --load-cookies firefox --post-filter="not is_video" -no-captions --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
+alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --no-profile-pic --no-captions --no-metadata-json --no-video-thumbnails ":saved" '
