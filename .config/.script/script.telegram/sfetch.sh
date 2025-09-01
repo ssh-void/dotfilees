@@ -4,21 +4,21 @@
 # simplefetch by @root.sti
 
 OS=$(awk -F '"' '/PRETTY_NAME/ {print $2}' /etc/os-release)
-read -r KERNEL < /proc/sys/kernel/osrelease
+read -r KERNEL </proc/sys/kernel/osrelease
 ARCH=$(getconf LONG_BIT)
-read -r HOSTNAME < /etc/hostname
+read -r HOSTNAME </etc/hostname
 UPTIME=$(uptime -p)
 INIT=$(if [ -f /sbin/runit ]; then echo runit; else echo openrc; fi)
 CPU=$(awk -F ":" 'NR==5 {print $2}' /proc/cpuinfo)
 GPU=$(lspci 2>/dev/null | awk -F ":" '/VGA/ {print $3}' | cut -c 1-62)
 
 if [ -n "$DISPLAY" ]; then
-    SCREEN=$(sed 's/,/x/' < /sys/class/graphics/fb0/virtual_size)
-    WE=$(xprop -root WM_NAME | cut -d\" -f 2)
+	SCREEN=$(sed 's/,/x/' </sys/class/graphics/fb0/virtual_size)
+	WE=$(xprop -root WM_NAME | cut -d\" -f 2)
 else
-    SCREEN=$(stty size | awk '{print $1 " rows " $2 " columns"}')
-    tty=$(tty)
-    WE=tty${tty##*/}
+	SCREEN=$(stty size | awk '{print $1 " rows " $2 " columns"}')
+	tty=$(tty)
+	WE=tty${tty##*/}
 fi
 
 MEM=$(awk '/MemFree/ {print $2/1024}' /proc/meminfo)

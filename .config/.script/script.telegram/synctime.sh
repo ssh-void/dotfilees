@@ -5,6 +5,7 @@
 
 Pausa=$1
 
-sleep $Pausa; curl -s --head https://tuservidor.com | grep '^Date:' | cut -d' ' -f 2- | xargs -I {} date -s "{}"
+sleep $Pausa
+curl -s --head https://tuservidor.com | grep '^Date:' | cut -d' ' -f 2- | xargs -I {} date -s "{}"
 
 #hwclock --systohc           # La sincroniza con la BIOS

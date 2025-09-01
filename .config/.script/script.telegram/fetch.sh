@@ -4,9 +4,9 @@
 # simplefetch by @root.sti
 
 os=$(awk -F '"' '/PRETTY_NAME/ {print $2}' /etc/os-release)
-read -r kernel < /proc/sys/kernel/osrelease
+read -r kernel </proc/sys/kernel/osrelease
 arch=$(getconf LONG_BIT)
-read -r hostname < /etc/hostname
+read -r hostname </etc/hostname
 uptime=$(uptime -p)
 init=$(if /sbin/openrc --version 1>/dev/null; then if /sbin/init --version 1>/dev/null; then echo sysvinit; else echo openrc; fi; fi)
 cpu=$(awk -F ":" 'NR==5 {print $2}' /proc/cpuinfo)

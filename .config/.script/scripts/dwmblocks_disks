@@ -6,10 +6,10 @@ ICONS=("󰣇 " " ")
 
 # Define a file to save current disk and format, and initialize if not found
 DISKS_FILE="/tmp/dwmblocks_disk_info"
-[ -f "$DISKS_FILE" ] || echo "0 0" > "$DISKS_FILE"
+[ -f "$DISKS_FILE" ] || echo "0 0" >"$DISKS_FILE"
 
 # Read INDEX number and FORMAT number from the file
-read INDEX FORMAT < "$DISKS_FILE"
+read INDEX FORMAT <"$DISKS_FILE"
 
 # Set the current disk and icon per INDEX #
 CURRENT_DISK="${DISKS[$INDEX]}"
@@ -29,10 +29,10 @@ SPACE=$(df -h "$CURRENT_DISK" | awk 'NR==2 {print $4}')
 # If middle-clicked, change format
 # Modulo used to wrap around when it reaches end of disks array or format #s
 case $BLOCK_BUTTON in
-		1) echo "$(( ($INDEX + 1) % ${#DISKS[@]} )) $FORMAT" > "$DISKS_FILE" ;;
-		3) echo "$(( ($INDEX - 1) % ${#DISKS[@]} )) $FORMAT" > "$DISKS_FILE" ;;
-		2) echo "$INDEX $(( ($FORMAT + 1) % 2 ))" > "$DISKS_FILE" ;;
-		6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
+1) echo "$((($INDEX + 1) % ${#DISKS[@]})) $FORMAT" >"$DISKS_FILE" ;;
+3) echo "$((($INDEX - 1) % ${#DISKS[@]})) $FORMAT" >"$DISKS_FILE" ;;
+2) echo "$INDEX $((($FORMAT + 1) % 2))" >"$DISKS_FILE" ;;
+6) setsid -f "$TERMINAL" -e "$EDITOR" "$0" ;;
 esac
 
 # Send to bar

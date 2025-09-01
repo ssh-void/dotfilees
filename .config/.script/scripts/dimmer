@@ -6,14 +6,14 @@
 export DISPLAY=:0
 
 notif() {
-notify-send -t 3000 -h string:bgcolor:#ebcb8b "Brightness adjusted!"
+	notify-send -t 3000 -h string:bgcolor:#ebcb8b "Brightness adjusted!"
 }
 
 dimm() {
-mon=$(xrandr | grep " connected" | cut -d ' ' -f 1)
-while read m; do
-xrandr --output $m --brightness $percent --gamma $gamma
-done <<<"$mon"
+	mon=$(xrandr | grep " connected" | cut -d ' ' -f 1)
+	while read m; do
+		xrandr --output $m --brightness $percent --gamma $gamma
+	done <<<"$mon"
 }
 
 dimm && notif

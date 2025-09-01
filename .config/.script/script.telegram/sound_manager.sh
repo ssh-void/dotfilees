@@ -12,25 +12,21 @@ MUTE="pulsemixer --mute"
 
 UNMUTE="pulsemixer --unmute"
 
-
-option=`echo -e $OPTIONS | $LAUNCHER | awk '{print $1}' | tr -d '\r\n'`
-if [ ${#option} -gt 0 ]
-then
-    case $option in
-      -speaker)
-      $SPEAKER
-        ;;
-     -headphones)
-        $HEADPHONES
-        ;;
-     -mute)
-	 $MUTE
-	 ;;
-     -unmute)
-	 $UNMUTE
-	 ;;
-      *)
-        ;;
-    esac
+option=$(echo -e $OPTIONS | $LAUNCHER | awk '{print $1}' | tr -d '\r\n')
+if [ ${#option} -gt 0 ]; then
+	case $option in
+	-speaker)
+		$SPEAKER
+		;;
+	-headphones)
+		$HEADPHONES
+		;;
+	-mute)
+		$MUTE
+		;;
+	-unmute)
+		$UNMUTE
+		;;
+	*) ;;
+	esac
 fi
-

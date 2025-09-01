@@ -13,21 +13,19 @@ VERSION='0.37+'
 
 trap 'exit_cleanup' EXIT
 trap '_warn "interrupted, cleaning up..."; exit_cleanup; exit 1' INT
-exit_cleanup()
-{
+exit_cleanup() {
 	# cleanup the temp decompressed config & kernel image
 	[ -n "$dumped_config" ] && [ -f "$dumped_config" ] && rm -f "$dumped_config"
-	[ -n "$kerneltmp"     ] && [ -f "$kerneltmp"     ] && rm -f "$kerneltmp"
-	[ -n "$kerneltmp2"    ] && [ -f "$kerneltmp2"    ] && rm -f "$kerneltmp2"
+	[ -n "$kerneltmp" ] && [ -f "$kerneltmp" ] && rm -f "$kerneltmp"
+	[ -n "$kerneltmp2" ] && [ -f "$kerneltmp2" ] && rm -f "$kerneltmp2"
 	[ "$mounted_debugfs" = 1 ] && umount /sys/kernel/debug 2>/dev/null
-	[ "$mounted_procfs"  = 1 ] && umount "$procfs" 2>/dev/null
-	[ "$insmod_cpuid"    = 1 ] && rmmod cpuid 2>/dev/null
-	[ "$insmod_msr"      = 1 ] && rmmod msr 2>/dev/null
-	[ "$kldload_cpuctl"  = 1 ] && kldunload cpuctl 2>/dev/null
+	[ "$mounted_procfs" = 1 ] && umount "$procfs" 2>/dev/null
+	[ "$insmod_cpuid" = 1 ] && rmmod cpuid 2>/dev/null
+	[ "$insmod_msr" = 1 ] && rmmod msr 2>/dev/null
+	[ "$kldload_cpuctl" = 1 ] && kldunload cpuctl 2>/dev/null
 }
 
-show_usage()
-{
+show_usage() {
 	# shellcheck disable=SC2086
 	cat <<EOF
 	Usage:
@@ -79,8 +77,7 @@ show_usage()
 EOF
 }
 
-show_disclaimer()
-{
+show_disclaimer() {
 	cat <<EOF
 Disclaimer:
 
@@ -151,19 +148,18 @@ elif which echo >/dev/null 2>&1; then
 	echo_cmd=$(which echo)
 else
 	# which command is broken?
-	[ -x /bin/echo        ] && echo_cmd=/bin/echo
+	[ -x /bin/echo ] && echo_cmd=/bin/echo
 	# for Android
 	[ -x /system/bin/echo ] && echo_cmd=/system/bin/echo
 fi
 # still empty ? fallback to builtin
 [ -z "$echo_cmd" ] && echo_cmd=echo
-__echo()
-{
+__echo() {
 	opt="$1"
 	shift
 	_msg="$*"
 
-	if [ "$opt_no_color" = 1 ] ; then
+	if [ "$opt_no_color" = 1 ]; then
 		# strip ANSI color codes
 		# some sed versions (i.e. toybox) can't seem to handle
 		# \033 aka \x1B correctly, so do it for them.
@@ -187,79 +183,68 @@ __echo()
 	fi
 }
 
-_echo()
-{
+_echo() {
 	if [ "$opt_verbose" -ge "$1" ]; then
 		shift
 		__echo '' "$*"
 	fi
 }
 
-_echo_nol()
-{
+_echo_nol() {
 	if [ "$opt_verbose" -ge "$1" ]; then
 		shift
 		__echo -n "$*"
 	fi
 }
 
-_warn()
-{
+_warn() {
 	_echo 0 "\033[31m$*\033[0m" >&2
 }
 
-_info()
-{
+_info() {
 	_echo 1 "$*"
 }
 
-_info_nol()
-{
+_info_nol() {
 	_echo_nol 1 "$*"
 }
 
-_verbose()
-{
+_verbose() {
 	_echo 2 "$*"
 }
 
-_verbose_nol()
-{
+_verbose_nol() {
 	_echo_nol 2 "$*"
 }
 
-_debug()
-{
+_debug() {
 	_echo 3 "\033[34m(debug) $*\033[0m"
 }
 
-explain()
-{
-	if [ "$opt_no_explain" != 1 ] ; then
+explain() {
+	if [ "$opt_no_explain" != 1 ]; then
 		_info ''
 		_info "> \033[41m\033[30mHow to fix:\033[0m $*"
 	fi
 }
 
 is_cpu_vulnerable_cached=0
-_is_cpu_vulnerable_cached()
-{
+_is_cpu_vulnerable_cached() {
 	# shellcheck disable=SC2086
-	[ "$1" = 1  ] && return $variant1
+	[ "$1" = 1 ] && return $variant1
 	# shellcheck disable=SC2086
-	[ "$1" = 2  ] && return $variant2
+	[ "$1" = 2 ] && return $variant2
 	# shellcheck disable=SC2086
-	[ "$1" = 3  ] && return $variant3
+	[ "$1" = 3 ] && return $variant3
 	# shellcheck disable=SC2086
 	[ "$1" = 3a ] && return $variant3a
 	# shellcheck disable=SC2086
-	[ "$1" = 4  ] && return $variant4
+	[ "$1" = 4 ] && return $variant4
 	echo "$0: error: invalid variant '$1' passed to is_cpu_vulnerable()" >&2
 	exit 255
 }
 
-is_cpu_vulnerable()
-{
+is_cpu_vulnerable() {
 	# param: 1, 2, 3, 3a or 4 (variant)
 	# returns 0 if vulnerable, 1 if not vulnerable
 	# (note that in shell, a return of 0 is success)
@@ -315,7 +300,7 @@ is_cpu_vulnerable()
 		# https://www.amd.com/en/corporate/speculative-execution
 		variant1=vuln
 		variant2=vuln
-		[ -z "$variant3"  ] && variant3=immune
+		[ -z "$variant3" ] && variant3=immune
 		# https://www.amd.com/en/corporate/security-updates
 		# "We have not identified any AMD x86 products susceptible to the Variant 3a vulnerability in our analysis to-date."
 		[ -z "$variant3a" ] && variant3a=immune
@@ -329,9 +314,8 @@ is_cpu_vulnerable()
 		# some devices (phones or other) have several ARMs and as such different part numbers,
 		# an example is "bigLITTLE". we shouldn't rely on the first CPU only, so we check the whole list
 		i=0
-		for cpupart in $cpu_part_list
-		do
-			i=$(( i + 1 ))
+		for cpupart in $cpu_part_list; do
+			i=$((i + 1))
 			# do NOT quote $cpu_arch_list below
 			# shellcheck disable=SC2086
 			cpuarch=$(echo $cpu_arch_list | awk '{ print $'$i' }')
@@ -345,7 +329,7 @@ is_cpu_vulnerable()
 				# part   ?  ? c08 c09 c0d c0f c0e d07 d08 d09 d0a d0b?
 				# arch  7? 7? 7   7   7   7   7   8   8   8   8   8
 				#
-				# Whitelist identified non-vulnerable processors, use vulnerability information from 
+				# Whitelist identified non-vulnerable processors, use vulnerability information from
 				# https://developer.arm.com/support/arm-security-updates/speculative-processor-vulnerability
 				#
 				# Maintain cumulative check of vulnerabilities -
@@ -412,19 +396,18 @@ is_cpu_vulnerable()
 		done
 	fi
 	_debug "is_cpu_vulnerable: temp results are <$variant1> <$variant2> <$variant3> <$variant3a> <$variant4>"
-	[ "$variant1"  = "immune" ] && variant1=1  || variant1=0
-	[ "$variant2"  = "immune" ] && variant2=1  || variant2=0
-	[ "$variant3"  = "immune" ] && variant3=1  || variant3=0
+	[ "$variant1" = "immune" ] && variant1=1 || variant1=0
+	[ "$variant2" = "immune" ] && variant2=1 || variant2=0
+	[ "$variant3" = "immune" ] && variant3=1 || variant3=0
 	[ "$variant3a" = "immune" ] && variant3a=1 || variant3a=0
-	[ "$variant4"  = "immune" ] && variant4=1  || variant4=0
+	[ "$variant4" = "immune" ] && variant4=1 || variant4=0
 	_debug "is_cpu_vulnerable: final results are <$variant1> <$variant2> <$variant3> <$variant3a> <$variant4>"
 	is_cpu_vulnerable_cached=1
 	_is_cpu_vulnerable_cached "$1"
 	return $?
 }
 
-is_cpu_specex_free()
-{
+is_cpu_specex_free() {
 	# return true (0) if the CPU doesn't do speculative execution, false (1) if it does.
 	# if it's not in the list we know, return false (1).
 	# source: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/x86/kernel/cpu/common.c#n882
@@ -440,11 +423,11 @@ is_cpu_specex_free()
 	parse_cpu_details
 	if is_intel; then
 		if [ "$cpu_family" = 6 ]; then
-			if [ "$cpu_model" = "$INTEL_FAM6_ATOM_CEDARVIEW"  ]      || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_CLOVERVIEW" ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_LINCROFT"   ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_PENWELL"    ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_PINEVIEW"   ]; then
+			if [ "$cpu_model" = "$INTEL_FAM6_ATOM_CEDARVIEW" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_CLOVERVIEW" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_LINCROFT" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_PENWELL" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_PINEVIEW" ]; then
 				return 0
 			fi
 		elif [ "$cpu_family" = 5 ]; then
@@ -455,8 +438,7 @@ is_cpu_specex_free()
 	return 1
 }
 
-is_cpu_ssb_free()
-{
+is_cpu_ssb_free() {
 	# return true (0) if the CPU isn't affected by speculative store bypass, false (1) if it does.
 	# if it's not in the list we know, return false (1).
 	# source1: https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/x86/kernel/cpu/common.c#n945
@@ -476,38 +458,36 @@ is_cpu_ssb_free()
 	parse_cpu_details
 	if is_intel; then
 		if [ "$cpu_family" = 6 ]; then
-			if [ "$cpu_model" = "$INTEL_FAM6_ATOM_AIRMONT"          ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_SILVERMONT1" ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_SILVERMONT2" ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_ATOM_MERRIFIELD"  ]; then
+			if [ "$cpu_model" = "$INTEL_FAM6_ATOM_AIRMONT" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_SILVERMONT1" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_SILVERMONT2" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_ATOM_MERRIFIELD" ]; then
 				return 0
-			elif [ "$cpu_model" = "$INTEL_FAM6_CORE_YONAH"          ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_XEON_PHI_KNL"     ] || \
-				[ "$cpu_model" = "$INTEL_FAM6_XEON_PHI_KNM"     ]; then
+			elif [ "$cpu_model" = "$INTEL_FAM6_CORE_YONAH" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_XEON_PHI_KNL" ] ||
+				[ "$cpu_model" = "$INTEL_FAM6_XEON_PHI_KNM" ]; then
 				return 0
 			fi
 		fi
 	fi
 	if is_amd; then
-		if [ "$cpu_family" = "18" ] || \
-			[ "$cpu_family" = "17" ] || \
-			[ "$cpu_family" = "16" ] || \
-			[ "$cpu_family" = "15" ]; then 
+		if [ "$cpu_family" = "18" ] ||
+			[ "$cpu_family" = "17" ] ||
+			[ "$cpu_family" = "16" ] ||
+			[ "$cpu_family" = "15" ]; then
 			return 0
 		fi
-	fi			
+	fi
 	[ "$cpu_family" = 4 ] && return 0
 	return 1
 }
 
-show_header()
-{
+show_header() {
 	_info "Spectre and Meltdown mitigation detection tool v$VERSION"
 	_info
 }
 
-parse_opt_file()
-{
+parse_opt_file() {
 	# parse_opt_file option_name option_value
 	option_name="$1"
 	option_value="$2"
@@ -535,17 +515,20 @@ parse_opt_file()
 
 while [ -n "$1" ]; do
 	if [ "$1" = "--kernel" ]; then
-		opt_kernel=$(parse_opt_file kernel "$2"); ret=$?
+		opt_kernel=$(parse_opt_file kernel "$2")
+		ret=$?
 		[ $ret -ne 0 ] && exit 255
 		shift 2
 		opt_live=0
 	elif [ "$1" = "--config" ]; then
-		opt_config=$(parse_opt_file config "$2"); ret=$?
+		opt_config=$(parse_opt_file config "$2")
+		ret=$?
 		[ $ret -ne 0 ] && exit 255
 		shift 2
 		opt_live=0
 	elif [ "$1" = "--map" ]; then
-		opt_map=$(parse_opt_file map "$2"); ret=$?
+		opt_map=$(parse_opt_file map "$2")
+		ret=$?
 		[ $ret -ne 0 ] && exit 255
 		shift 2
 		opt_live=0
@@ -588,17 +571,20 @@ while [ -n "$1" ]; do
 		opt_verbose=0
 		shift
 		case "$1" in
-			text|nrpe|json|prometheus) opt_batch_format="$1"; shift;;
-			--*) ;;    # allow subsequent flags
-			'') ;;     # allow nothing at all
-			*)
-				echo "$0: error: unknown batch format '$1'" >&2
-				echo "$0: error: --batch expects a format from: text, nrpe, json" >&2
-				exit 255
-				;;
+		text | nrpe | json | prometheus)
+			opt_batch_format="$1"
+			shift
+			;;
+		--*) ;; # allow subsequent flags
+		'') ;;  # allow nothing at all
+		*)
+			echo "$0: error: unknown batch format '$1'" >&2
+			echo "$0: error: --batch expects a format from: text, nrpe, json" >&2
+			exit 255
+			;;
 		esac
 	elif [ "$1" = "-v" ] || [ "$1" = "--verbose" ]; then
-		opt_verbose=$(( opt_verbose + 1 ))
+		opt_verbose=$((opt_verbose + 1))
 		shift
 	elif [ "$1" = "--variant" ]; then
 		if [ -z "$2" ]; then
@@ -606,15 +592,30 @@ while [ -n "$1" ]; do
 			exit 255
 		fi
 		case "$2" in
-			1)  opt_variant1=1;  opt_allvariants=0;;
-			2)  opt_variant2=1;  opt_allvariants=0;;
-			3)  opt_variant3=1;  opt_allvariants=0;;
-			3a) opt_variant3a=1; opt_allvariants=0;;
-			4)  opt_variant4=1;  opt_allvariants=0;;
-			*)
-				echo "$0: error: invalid parameter '$2' for --variant, expected either 1, 2, 3, 3a or 4" >&2;
-				exit 255
-				;;
+		1)
+			opt_variant1=1
+			opt_allvariants=0
+			;;
+		2)
+			opt_variant2=1
+			opt_allvariants=0
+			;;
+		3)
+			opt_variant3=1
+			opt_allvariants=0
+			;;
+		3a)
+			opt_variant3a=1
+			opt_allvariants=0
+			;;
+		4)
+			opt_variant4=1
+			opt_allvariants=0
+			;;
+		*)
+			echo "$0: error: invalid parameter '$2' for --variant, expected either 1, 2, 3, 3a or 4" >&2
+			exit 255
+			;;
 		esac
 		shift 2
 	elif [ "$1" = "-h" ] || [ "$1" = "--help" ]; then
@@ -650,17 +651,16 @@ if [ "$opt_no_hw" = 1 ] && [ "$opt_hw_only" = 1 ]; then
 fi
 
 # print status function
-pstatus()
-{
+pstatus() {
 	if [ "$opt_no_color" = 1 ]; then
 		_info_nol "$2"
 	else
 		case "$1" in
-			red)    col="\033[41m\033[30m";;
-			green)  col="\033[42m\033[30m";;
-			yellow) col="\033[43m\033[30m";;
-			blue)   col="\033[44m\033[30m";;
-			*)      col="";;
+		red) col="\033[41m\033[30m" ;;
+		green) col="\033[42m\033[30m" ;;
+		yellow) col="\033[43m\033[30m" ;;
+		blue) col="\033[44m\033[30m" ;;
+		*) col="" ;;
 		esac
 		_info_nol "$col $2 \033[0m"
 	fi
@@ -671,40 +671,39 @@ pstatus()
 
 # Print the final status of a vulnerability (incl. batch mode)
 # Arguments are: CVE UNK/OK/VULN description
-pvulnstatus()
-{
+pvulnstatus() {
 	pvulnstatus_last_cve="$1"
 	if [ "$opt_batch" = 1 ]; then
 		case "$1" in
-			CVE-2017-5753) aka="SPECTRE VARIANT 1";;
-			CVE-2017-5715) aka="SPECTRE VARIANT 2";;
-			CVE-2017-5754) aka="MELTDOWN";;
-			CVE-2018-3640) aka="VARIANT 3A";;
-			CVE-2018-3639) aka="VARIANT 4";;
+		CVE-2017-5753) aka="SPECTRE VARIANT 1" ;;
+		CVE-2017-5715) aka="SPECTRE VARIANT 2" ;;
+		CVE-2017-5754) aka="MELTDOWN" ;;
+		CVE-2018-3640) aka="VARIANT 3A" ;;
+		CVE-2018-3639) aka="VARIANT 4" ;;
 		esac
 
 		case "$opt_batch_format" in
-			text) _echo 0 "$1: $2 ($3)";;
-			json)
-				case "$2" in
-					UNK)  is_vuln="null";;
-					VULN) is_vuln="true";;
-					OK)   is_vuln="false";;
-				esac
-				json_output="${json_output:-[}{\"NAME\":\"$aka\",\"CVE\":\"$1\",\"VULNERABLE\":$is_vuln,\"INFOS\":\"$3\"},"
-				;;
+		text) _echo 0 "$1: $2 ($3)" ;;
+		json)
+			case "$2" in
+			UNK) is_vuln="null" ;;
+			VULN) is_vuln="true" ;;
+			OK) is_vuln="false" ;;
+			esac
+			json_output="${json_output:-[}{\"NAME\":\"$aka\",\"CVE\":\"$1\",\"VULNERABLE\":$is_vuln,\"INFOS\":\"$3\"},"
+			;;
 
-			nrpe)	[ "$2" = VULN ] && nrpe_vuln="$nrpe_vuln $1";;
-			prometheus)
-				prometheus_output="${prometheus_output:+$prometheus_output\n}specex_vuln_status{name=\"$aka\",cve=\"$1\",status=\"$2\",info=\"$3\"} 1"
-				;;
+		nrpe) [ "$2" = VULN ] && nrpe_vuln="$nrpe_vuln $1" ;;
+		prometheus)
+			prometheus_output="${prometheus_output:+$prometheus_output\n}specex_vuln_status{name=\"$aka\",cve=\"$1\",status=\"$2\",info=\"$3\"} 1"
+			;;
 		esac
 	fi
 
 	# always fill global_* vars because we use that do decide the program exit code
 	case "$2" in
-		UNK)  global_unknown="1";;
-		VULN) global_critical="1";;
+	UNK) global_unknown="1" ;;
+	VULN) global_critical="1" ;;
 	esac
 
 	# display info if we're not in quiet/batch mode
@@ -712,12 +711,11 @@ pvulnstatus()
 	shift 2
 	_info_nol "> \033[46m\033[30mSTATUS:\033[0m "
 	case "$vulnstatus" in
-		UNK)  pstatus yellow 'UNKNOWN'        "$@";;
-		VULN) pstatus red    'VULNERABLE'     "$@";;
-		OK)   pstatus green  'NOT VULNERABLE' "$@";;
+	UNK) pstatus yellow 'UNKNOWN' "$@" ;;
+	VULN) pstatus red 'VULNERABLE' "$@" ;;
+	OK) pstatus green 'NOT VULNERABLE' "$@" ;;
 	esac
 }
-
 
 # The 3 below functions are taken from the extract-linux script, available here:
 # https://github.com/torvalds/linux/blob/master/scripts/extract-vmlinux
@@ -737,13 +735,13 @@ pvulnstatus()
 
 kernel=''
 kernel_err=''
-check_kernel()
-{
+check_kernel() {
 	_file="$1"
 	_desperate_mode="$2"
 	# checking the return code of readelf -h is not enough, we could get
 	# a damaged ELF file and validate it, check for stderr warnings too
-	_readelf_warnings=$("${opt_arch_prefix}readelf" -S "$_file" 2>&1 >/dev/null | tr "\n" "/"); ret=$?
+	_readelf_warnings=$("${opt_arch_prefix}readelf" -S "$_file" 2>&1 >/dev/null | tr "\n" "/")
+	ret=$?
 	_readelf_sections=$("${opt_arch_prefix}readelf" -S "$_file" 2>/dev/null | grep -c -e data -e text -e init)
 	_kernel_size=$(stat -c %s "$_file" 2>/dev/null || stat -f %z "$_file" 2>/dev/null || echo 10000)
 	_debug "check_kernel: ret=$? size=$_kernel_size sections=$_readelf_sections warnings=$_readelf_warnings"
@@ -769,15 +767,13 @@ check_kernel()
 	return 1
 }
 
-try_decompress()
-{
+try_decompress() {
 	# The obscure use of the "tr" filter is to work around older versions of
 	# "grep" that report the byte offset of the line instead of the pattern.
 
 	# Try to find the header ($1) and decompress from here
 	_debug "try_decompress: looking for $3 magic in $6"
-	for     pos in $(tr "$1\n$2" "\n$2=" < "$6" | grep -abo "^$2")
-	do
+	for pos in $(tr "$1\n$2" "\n$2=" <"$6" | grep -abo "^$2"); do
 		_debug "try_decompress: magic for $3 found at offset $pos"
 		if ! which "$3" >/dev/null 2>&1; then
 			kernel_err="missing '$3' tool, please install it, usually it's in the '$5' package"
@@ -785,7 +781,8 @@ try_decompress()
 		fi
 		pos=${pos%%:*}
 		# shellcheck disable=SC2086
-		tail -c+$pos "$6" 2>/dev/null | $3 $4 > "$kerneltmp" 2>/dev/null; ret=$?
+		tail -c+$pos "$6" 2>/dev/null | $3 $4 >"$kerneltmp" 2>/dev/null
+		ret=$?
 		if [ ! -s "$kerneltmp" ]; then
 			# don't rely on $ret, sometimes it's != 0 but worked
 			# (e.g. gunzip ret=2 just means there was trailing garbage)
@@ -797,7 +794,7 @@ try_decompress()
 		elif [ "$3" != "cat" ]; then
 			_debug "try_decompress: decompression with $3 worked but result is not a kernel, trying with an offset"
 			[ -z "$kerneltmp2" ] && kerneltmp2=$(mktemp /tmp/kernel-XXXXXX)
-			cat "$kerneltmp" > "$kerneltmp2"
+			cat "$kerneltmp" >"$kerneltmp2"
 			try_decompress '\177ELF' xxy 'cat' '' cat "$kerneltmp2" && return 0
 		else
 			_debug "try_decompress: decompression with $3 worked but result is not a kernel"
@@ -806,28 +803,27 @@ try_decompress()
 	return 1
 }
 
-extract_kernel()
-{
+extract_kernel() {
 	[ -n "$1" ] || return 1
 	# Prepare temp files:
 	kerneltmp="$(mktemp /tmp/kernel-XXXXXX)"
 
 	# Initial attempt for uncompressed images or objects:
 	if check_kernel "$1"; then
-		cat "$1" > "$kerneltmp"
+		cat "$1" >"$kerneltmp"
 		kernel=$kerneltmp
 		return 0
 	fi
 
 	# That didn't work, so retry after decompression.
 	for mode in '' 'desperate'; do
-		try_decompress '\037\213\010'     xy    gunzip  ''      gunzip      "$1" "$mode" && return 0
-		try_decompress '\3757zXZ\000'     abcde unxz    ''      xz-utils    "$1" "$mode" && return 0
-		try_decompress 'BZh'              xy    bunzip2 ''      bzip2       "$1" "$mode" && return 0
-		try_decompress '\135\0\0\0'       xxx   unlzma  ''      xz-utils    "$1" "$mode" && return 0
-		try_decompress '\211\114\132'     xy    'lzop'  '-d'    lzop        "$1" "$mode" && return 0
-		try_decompress '\002\041\114\030' xyy   'lz4'   '-d -l' liblz4-tool "$1" "$mode" && return 0
-		try_decompress '\177ELF'          xxy   'cat'   ''      cat         "$1" "$mode" && return 0
+		try_decompress '\037\213\010' xy gunzip '' gunzip "$1" "$mode" && return 0
+		try_decompress '\3757zXZ\000' abcde unxz '' xz-utils "$1" "$mode" && return 0
+		try_decompress 'BZh' xy bunzip2 '' bzip2 "$1" "$mode" && return 0
+		try_decompress '\135\0\0\0' xxx unlzma '' xz-utils "$1" "$mode" && return 0
+		try_decompress '\211\114\132' xy 'lzop' '-d' lzop "$1" "$mode" && return 0
+		try_decompress '\002\041\114\030' xyy 'lz4' '-d -l' liblz4-tool "$1" "$mode" && return 0
+		try_decompress '\177ELF' xxy 'cat' '' cat "$1" "$mode" && return 0
 	done
 	_verbose "Couldn't extract the kernel image, accuracy might be reduced"
 	return 1
@@ -835,23 +831,21 @@ extract_kernel()
 
 # end of extract-vmlinux functions
 
-mount_debugfs()
-{
+mount_debugfs() {
 	if [ ! -e /sys/kernel/debug/sched_features ]; then
 		# try to mount the debugfs hierarchy ourselves and remember it to umount afterwards
 		mount -t debugfs debugfs /sys/kernel/debug 2>/dev/null && mounted_debugfs=1
 	fi
 }
 
-load_msr()
-{
+load_msr() {
 	if [ "$os" = Linux ]; then
 		if ! grep -e msr /proc/modules 2>/dev/null; then
 			modprobe msr 2>/dev/null && insmod_msr=1
 			_debug "attempted to load module msr, insmod_msr=$insmod_msr"
 		else
 			_debug "msr module already loaded"
-		fi	
+		fi
 	else
 		if ! kldstat -q -m cpuctl; then
 			kldload cpuctl 2>/dev/null && kldload_cpuctl=1
@@ -862,15 +856,14 @@ load_msr()
 	fi
 }
 
-load_cpuid()
-{
+load_cpuid() {
 	if [ "$os" = Linux ]; then
 		if ! grep -e cpuid /proc/modules 2>/dev/null; then
 			modprobe cpuid 2>/dev/null && insmod_cpuid=1
 			_debug "attempted to load module cpuid, insmod_cpuid=$insmod_cpuid"
 		else
 			_debug "cpuid module already loaded"
-		fi	
+		fi
 	else
 		if ! kldstat -q -m cpuctl; then
 			kldload cpuctl 2>/dev/null && kldload_cpuctl=1
@@ -883,10 +876,12 @@ load_cpuid()
 
 # shellcheck disable=SC2034
 {
-EAX=1; EBX=2; ECX=3; EDX=4;
+	EAX=1
+	EBX=2
+	ECX=3
+	EDX=4
 }
-read_cpuid()
-{
+read_cpuid() {
 	# leaf is the value of the eax register when calling the cpuid instruction:
 	_leaf="$1"
 	# eax=1 ebx=2 ecx=3 edx=4:
@@ -908,7 +903,7 @@ read_cpuid()
 	if [ -e /dev/cpu/0/cpuid ]; then
 		# Linux
 		# we need _leaf to be converted to decimal for dd
-		_leaf=$(( _leaf ))
+		_leaf=$((_leaf))
 		_cpuid=$(dd if=/dev/cpu/0/cpuid bs=16 skip="$_leaf" iflag=skip_bytes count=1 2>/dev/null | od -A n -t u4)
 	elif [ -e /dev/cpuctl0 ]; then
 		# BSD
@@ -923,13 +918,13 @@ read_cpuid()
 	# get the value of the register we want
 	_reg=$(echo "$_cpuid" | awk '{print $'"$_register"'}')
 	# Linux returns it as decimal, BSD as hex, normalize to decimal
-	_reg=$(( _reg ))
+	_reg=$((_reg))
 	# shellcheck disable=SC2046
 	_debug "cpuid: wanted register ($_register) has value $_reg aka "$(printf "%08x" "$_reg")
-	_reg_shifted=$(( _reg >> _shift ))
+	_reg_shifted=$((_reg >> _shift))
 	# shellcheck disable=SC2046
 	_debug "cpuid: shifted value by $_shift is $_reg_shifted aka "$(printf "%x" "$_reg_shifted")
-	read_cpuid_value=$(( _reg_shifted & _mask ))
+	read_cpuid_value=$((_reg_shifted & _mask))
 	# shellcheck disable=SC2046
 	_debug "cpuid: after AND $_mask, final value is $read_cpuid_value aka "$(printf "%x" "$read_cpuid_value")
 	if [ -n "$_wanted" ]; then
@@ -944,12 +939,11 @@ read_cpuid()
 	return 0
 }
 
-dmesg_grep()
-{
+dmesg_grep() {
 	# grep for something in dmesg, ensuring that the dmesg buffer
 	# has not been truncated
 	dmesg_grepped=''
-	if ! dmesg | grep -qE -e '(^|\] )Linux version [0-9]' -e '^FreeBSD is a registered' ; then
+	if ! dmesg | grep -qE -e '(^|\] )Linux version [0-9]' -e '^FreeBSD is a registered'; then
 		# dmesg truncated
 		return 2
 	fi
@@ -960,18 +954,16 @@ dmesg_grep()
 	return 0
 }
 
-is_coreos()
-{
+is_coreos() {
 	which coreos-install >/dev/null 2>&1 && which toolbox >/dev/null 2>&1 && return 0
 	return 1
 }
 
-parse_cpu_details()
-{
+parse_cpu_details() {
 	[ "$parse_cpu_details_done" = 1 ] && return 0
 
 	if [ -e "$procfs/cpuinfo" ]; then
-		cpu_vendor=$(  grep '^vendor_id'  "$procfs/cpuinfo" | awk '{print $3}' | head -1)
+		cpu_vendor=$(grep '^vendor_id' "$procfs/cpuinfo" | awk '{print $3}' | head -1)
 		cpu_friendly_name=$(grep '^model name' "$procfs/cpuinfo" | cut -d: -f2- | head -1 | sed -e 's/^ *//')
 		# special case for ARM follows
 		if grep -qi 'CPU implementer[[:space:]]*:[[:space:]]*0x41' "$procfs/cpuinfo"; then
@@ -991,10 +983,10 @@ parse_cpu_details()
 			[ -n "$cpu_part" ] && cpu_friendly_name="$cpu_friendly_name model $cpu_part"
 		fi
 
-		cpu_family=$(  grep '^cpu family' "$procfs/cpuinfo" | awk '{print $4}' | grep -E '^[0-9]+$' | head -1)
-		cpu_model=$(   grep '^model'      "$procfs/cpuinfo" | awk '{print $3}' | grep -E '^[0-9]+$' | head -1)
-		cpu_stepping=$(grep '^stepping'   "$procfs/cpuinfo" | awk '{print $3}' | grep -E '^[0-9]+$' | head -1)
-		cpu_ucode=$(  grep '^microcode'   "$procfs/cpuinfo" | awk '{print $3}' | head -1)
+		cpu_family=$(grep '^cpu family' "$procfs/cpuinfo" | awk '{print $4}' | grep -E '^[0-9]+$' | head -1)
+		cpu_model=$(grep '^model' "$procfs/cpuinfo" | awk '{print $3}' | grep -E '^[0-9]+$' | head -1)
+		cpu_stepping=$(grep '^stepping' "$procfs/cpuinfo" | awk '{print $3}' | grep -E '^[0-9]+$' | head -1)
+		cpu_ucode=$(grep '^microcode' "$procfs/cpuinfo" | awk '{print $3}' | head -1)
 	else
 		cpu_friendly_name=$(sysctl -n hw.model)
 	fi
@@ -1016,94 +1008,91 @@ parse_cpu_details()
 			# read MSR
 			cpu_ucode=$(cpucontrol -m 0x8b /dev/cpuctl0 | awk '{print $3}')
 			# convert to decimal
-			cpu_ucode=$(( cpu_ucode ))
+			cpu_ucode=$((cpu_ucode))
 			# convert back to hex
 			cpu_ucode=$(printf "0x%x" "$cpu_ucode")
 		fi
 	fi
 
-	echo "$cpu_ucode" | grep -q ^0x && cpu_ucode_decimal=$(( cpu_ucode ))
+	echo "$cpu_ucode" | grep -q ^0x && cpu_ucode_decimal=$((cpu_ucode))
 	ucode_found=$(printf "model 0x%x family 0x%x stepping 0x%x ucode 0x%x cpuid 0x%x" "$cpu_model" "$cpu_family" "$cpu_stepping" "$cpu_ucode" "$cpuid")
 
 	# also define those that we will need in other funcs
 	# taken from ttps://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/tree/arch/x86/include/asm/intel-family.h
 	# shellcheck disable=SC2034
 	{
-	INTEL_FAM6_CORE_YONAH=$(( 0x0E ))
+		INTEL_FAM6_CORE_YONAH=$((0x0E))
 
-	INTEL_FAM6_CORE2_MEROM=$(( 0x0F ))
-	INTEL_FAM6_CORE2_MEROM_L=$(( 0x16 ))
-	INTEL_FAM6_CORE2_PENRYN=$(( 0x17 ))
-	INTEL_FAM6_CORE2_DUNNINGTON=$(( 0x1D ))
+		INTEL_FAM6_CORE2_MEROM=$((0x0F))
+		INTEL_FAM6_CORE2_MEROM_L=$((0x16))
+		INTEL_FAM6_CORE2_PENRYN=$((0x17))
+		INTEL_FAM6_CORE2_DUNNINGTON=$((0x1D))
 
-	INTEL_FAM6_NEHALEM=$(( 0x1E ))
-	INTEL_FAM6_NEHALEM_G=$(( 0x1F ))
-	INTEL_FAM6_NEHALEM_EP=$(( 0x1A ))
-	INTEL_FAM6_NEHALEM_EX=$(( 0x2E ))
+		INTEL_FAM6_NEHALEM=$((0x1E))
+		INTEL_FAM6_NEHALEM_G=$((0x1F))
+		INTEL_FAM6_NEHALEM_EP=$((0x1A))
+		INTEL_FAM6_NEHALEM_EX=$((0x2E))
 
-	INTEL_FAM6_WESTMERE=$(( 0x25 ))
-	INTEL_FAM6_WESTMERE_EP=$(( 0x2C ))
-	INTEL_FAM6_WESTMERE_EX=$(( 0x2F ))
+		INTEL_FAM6_WESTMERE=$((0x25))
+		INTEL_FAM6_WESTMERE_EP=$((0x2C))
+		INTEL_FAM6_WESTMERE_EX=$((0x2F))
 
-	INTEL_FAM6_SANDYBRIDGE=$(( 0x2A ))
-	INTEL_FAM6_SANDYBRIDGE_X=$(( 0x2D ))
-	INTEL_FAM6_IVYBRIDGE=$(( 0x3A ))
-	INTEL_FAM6_IVYBRIDGE_X=$(( 0x3E ))
+		INTEL_FAM6_SANDYBRIDGE=$((0x2A))
+		INTEL_FAM6_SANDYBRIDGE_X=$((0x2D))
+		INTEL_FAM6_IVYBRIDGE=$((0x3A))
+		INTEL_FAM6_IVYBRIDGE_X=$((0x3E))
 
-	INTEL_FAM6_HASWELL_CORE=$(( 0x3C ))
-	INTEL_FAM6_HASWELL_X=$(( 0x3F ))
-	INTEL_FAM6_HASWELL_ULT=$(( 0x45 ))
-	INTEL_FAM6_HASWELL_GT3E=$(( 0x46 ))
+		INTEL_FAM6_HASWELL_CORE=$((0x3C))
+		INTEL_FAM6_HASWELL_X=$((0x3F))
+		INTEL_FAM6_HASWELL_ULT=$((0x45))
+		INTEL_FAM6_HASWELL_GT3E=$((0x46))
 
-	INTEL_FAM6_BROADWELL_CORE=$(( 0x3D ))
-	INTEL_FAM6_BROADWELL_GT3E=$(( 0x47 ))
-	INTEL_FAM6_BROADWELL_X=$(( 0x4F ))
-	INTEL_FAM6_BROADWELL_XEON_D=$(( 0x56 ))
+		INTEL_FAM6_BROADWELL_CORE=$((0x3D))
+		INTEL_FAM6_BROADWELL_GT3E=$((0x47))
+		INTEL_FAM6_BROADWELL_X=$((0x4F))
+		INTEL_FAM6_BROADWELL_XEON_D=$((0x56))
 
-	INTEL_FAM6_SKYLAKE_MOBILE=$(( 0x4E ))
-	INTEL_FAM6_SKYLAKE_DESKTOP=$(( 0x5E ))
-	INTEL_FAM6_SKYLAKE_X=$(( 0x55 ))
-	INTEL_FAM6_KABYLAKE_MOBILE=$(( 0x8E ))
-	INTEL_FAM6_KABYLAKE_DESKTOP=$(( 0x9E ))
+		INTEL_FAM6_SKYLAKE_MOBILE=$((0x4E))
+		INTEL_FAM6_SKYLAKE_DESKTOP=$((0x5E))
+		INTEL_FAM6_SKYLAKE_X=$((0x55))
+		INTEL_FAM6_KABYLAKE_MOBILE=$((0x8E))
+		INTEL_FAM6_KABYLAKE_DESKTOP=$((0x9E))
 
-	# /* "Small Core" Processors (Atom) */
+		# /* "Small Core" Processors (Atom) */
 
-	INTEL_FAM6_ATOM_PINEVIEW=$(( 0x1C ))
-	INTEL_FAM6_ATOM_LINCROFT=$(( 0x26 ))
-	INTEL_FAM6_ATOM_PENWELL=$(( 0x27 ))
-	INTEL_FAM6_ATOM_CLOVERVIEW=$(( 0x35 ))
-	INTEL_FAM6_ATOM_CEDARVIEW=$(( 0x36 ))
-	INTEL_FAM6_ATOM_SILVERMONT1=$(( 0x37 ))
-	INTEL_FAM6_ATOM_SILVERMONT2=$(( 0x4D ))
-	INTEL_FAM6_ATOM_AIRMONT=$(( 0x4C ))
-	INTEL_FAM6_ATOM_MERRIFIELD=$(( 0x4A ))
-	INTEL_FAM6_ATOM_MOOREFIELD=$(( 0x5A ))
-	INTEL_FAM6_ATOM_GOLDMONT=$(( 0x5C ))
-	INTEL_FAM6_ATOM_DENVERTON=$(( 0x5F ))
-	INTEL_FAM6_ATOM_GEMINI_LAKE=$(( 0x7A ))
+		INTEL_FAM6_ATOM_PINEVIEW=$((0x1C))
+		INTEL_FAM6_ATOM_LINCROFT=$((0x26))
+		INTEL_FAM6_ATOM_PENWELL=$((0x27))
+		INTEL_FAM6_ATOM_CLOVERVIEW=$((0x35))
+		INTEL_FAM6_ATOM_CEDARVIEW=$((0x36))
+		INTEL_FAM6_ATOM_SILVERMONT1=$((0x37))
+		INTEL_FAM6_ATOM_SILVERMONT2=$((0x4D))
+		INTEL_FAM6_ATOM_AIRMONT=$((0x4C))
+		INTEL_FAM6_ATOM_MERRIFIELD=$((0x4A))
+		INTEL_FAM6_ATOM_MOOREFIELD=$((0x5A))
+		INTEL_FAM6_ATOM_GOLDMONT=$((0x5C))
+		INTEL_FAM6_ATOM_DENVERTON=$((0x5F))
+		INTEL_FAM6_ATOM_GEMINI_LAKE=$((0x7A))
 
-	# /* Xeon Phi */
+		# /* Xeon Phi */
 
-	INTEL_FAM6_XEON_PHI_KNL=$(( 0x57 ))
-	INTEL_FAM6_XEON_PHI_KNM=$(( 0x85 ))
+		INTEL_FAM6_XEON_PHI_KNL=$((0x57))
+		INTEL_FAM6_XEON_PHI_KNM=$((0x85))
 	}
 	parse_cpu_details_done=1
 }
 
-is_amd()
-{
+is_amd() {
 	[ "$cpu_vendor" = AuthenticAMD ] && return 0
 	return 1
 }
 
-is_intel()
-{
+is_intel() {
 	[ "$cpu_vendor" = GenuineIntel ] && return 0
 	return 1
 }
 
-is_cpu_smt_enabled()
-{
+is_cpu_smt_enabled() {
 	# SMT / HyperThreading is enabled if siblings != cpucores
 	if [ -e "$procfs/cpuinfo" ]; then
 		_siblings=$(awk '/^siblings/  {print $3;exit}' "$procfs/cpuinfo")
@@ -1120,8 +1109,7 @@ is_cpu_smt_enabled()
 	return 2
 }
 
-is_ucode_blacklisted()
-{
+is_ucode_blacklisted() {
 	parse_cpu_details
 	# if it's not an Intel, don't bother: it's not blacklisted
 	is_intel || return 1
@@ -1135,31 +1123,30 @@ is_ucode_blacklisted()
 		$INTEL_FAM6_KABYLAKE_DESKTOP,0x0B,0x80 \
 		$INTEL_FAM6_KABYLAKE_DESKTOP,0x0A,0x80 \
 		$INTEL_FAM6_KABYLAKE_DESKTOP,0x09,0x80 \
-		$INTEL_FAM6_KABYLAKE_MOBILE,0x0A,0x80  \
-		$INTEL_FAM6_KABYLAKE_MOBILE,0x09,0x80  \
-		$INTEL_FAM6_SKYLAKE_X,0x03,0x0100013e  \
-		$INTEL_FAM6_SKYLAKE_X,0x04,0x02000036  \
-		$INTEL_FAM6_SKYLAKE_X,0x04,0x0200003a  \
-		$INTEL_FAM6_SKYLAKE_X,0x04,0x0200003c  \
-		$INTEL_FAM6_BROADWELL_CORE,0x04,0x28   \
-		$INTEL_FAM6_BROADWELL_GT3E,0x01,0x1b   \
+		$INTEL_FAM6_KABYLAKE_MOBILE,0x0A,0x80 \
+		$INTEL_FAM6_KABYLAKE_MOBILE,0x09,0x80 \
+		$INTEL_FAM6_SKYLAKE_X,0x03,0x0100013e \
+		$INTEL_FAM6_SKYLAKE_X,0x04,0x02000036 \
+		$INTEL_FAM6_SKYLAKE_X,0x04,0x0200003a \
+		$INTEL_FAM6_SKYLAKE_X,0x04,0x0200003c \
+		$INTEL_FAM6_BROADWELL_CORE,0x04,0x28 \
+		$INTEL_FAM6_BROADWELL_GT3E,0x01,0x1b \
 		$INTEL_FAM6_BROADWELL_XEON_D,0x02,0x14 \
 		$INTEL_FAM6_BROADWELL_XEON_D,0x03,0x07000011 \
 		$INTEL_FAM6_BROADWELL_X,0x01,0x0b000023 \
 		$INTEL_FAM6_BROADWELL_X,0x01,0x0b000025 \
-		$INTEL_FAM6_HASWELL_ULT,0x01,0x21      \
-		$INTEL_FAM6_HASWELL_GT3E,0x01,0x18     \
-		$INTEL_FAM6_HASWELL_CORE,0x03,0x23     \
-		$INTEL_FAM6_HASWELL_X,0x02,0x3b        \
-		$INTEL_FAM6_HASWELL_X,0x04,0x10        \
-		$INTEL_FAM6_IVYBRIDGE_X,0x04,0x42a     \
-		$INTEL_FAM6_SANDYBRIDGE_X,0x06,0x61b   \
-		$INTEL_FAM6_SANDYBRIDGE_X,0x07,0x712
-	do
+		$INTEL_FAM6_HASWELL_ULT,0x01,0x21 \
+		$INTEL_FAM6_HASWELL_GT3E,0x01,0x18 \
+		$INTEL_FAM6_HASWELL_CORE,0x03,0x23 \
+		$INTEL_FAM6_HASWELL_X,0x02,0x3b \
+		$INTEL_FAM6_HASWELL_X,0x04,0x10 \
+		$INTEL_FAM6_IVYBRIDGE_X,0x04,0x42a \
+		$INTEL_FAM6_SANDYBRIDGE_X,0x06,0x61b \
+		$INTEL_FAM6_SANDYBRIDGE_X,0x07,0x712; do
 		model=$(echo $tuple | cut -d, -f1)
-		stepping=$(( $(echo $tuple | cut -d, -f2) ))
+		stepping=$(($(echo $tuple | cut -d, -f2)))
 		ucode=$(echo $tuple | cut -d, -f3)
-		echo "$ucode" | grep -q ^0x && ucode_decimal=$(( ucode ))
+		echo "$ucode" | grep -q ^0x && ucode_decimal=$((ucode))
 		if [ "$cpu_model" = "$model" ] && [ "$cpu_stepping" = "$stepping" ]; then
 			if [ "$cpu_ucode_decimal" = "$ucode_decimal" ] || [ "$cpu_ucode" = "$ucode" ]; then
 				_debug "is_ucode_blacklisted: we have a match! ($cpu_model/$cpu_stepping/$cpu_ucode)"
@@ -1171,8 +1158,7 @@ is_ucode_blacklisted()
 	return 1
 }
 
-is_skylake_cpu()
-{
+is_skylake_cpu() {
 	# is this a skylake cpu?
 	# return 0 if yes, 1 otherwise
 	#if (boot_cpu_data.x86_vendor == X86_VENDOR_INTEL &&
@@ -1187,18 +1173,17 @@ is_skylake_cpu()
 	parse_cpu_details
 	is_intel || return 1
 	[ "$cpu_family" = 6 ] || return 1
-	if [ "$cpu_model" = $INTEL_FAM6_SKYLAKE_MOBILE        ] || \
-		[ "$cpu_model" = $INTEL_FAM6_SKYLAKE_DESKTOP  ] || \
-		[ "$cpu_model" = $INTEL_FAM6_SKYLAKE_X        ] || \
-		[ "$cpu_model" = $INTEL_FAM6_KABYLAKE_MOBILE  ] || \
+	if [ "$cpu_model" = $INTEL_FAM6_SKYLAKE_MOBILE ] ||
+		[ "$cpu_model" = $INTEL_FAM6_SKYLAKE_DESKTOP ] ||
+		[ "$cpu_model" = $INTEL_FAM6_SKYLAKE_X ] ||
+		[ "$cpu_model" = $INTEL_FAM6_KABYLAKE_MOBILE ] ||
 		[ "$cpu_model" = $INTEL_FAM6_KABYLAKE_DESKTOP ]; then
 		return 0
 	fi
 	return 1
 }
 
-is_zen_cpu()
-{
+is_zen_cpu() {
 	# is this CPU from the AMD ZEN family ? (ryzen, epyc, ...)
 	parse_cpu_details
 	is_amd || return 1
@@ -1309,16 +1294,16 @@ if [ "$opt_live" = 1 ]; then
 		# Fedora:
 		[ -e "/lib/modules/$(uname -r)/vmlinuz" ] && opt_kernel="/lib/modules/$(uname -r)/vmlinuz"
 		# Slackare:
-		[ -e "/boot/vmlinuz"             ] && opt_kernel="/boot/vmlinuz"
+		[ -e "/boot/vmlinuz" ] && opt_kernel="/boot/vmlinuz"
 		# Arch:
-		[ -e "/boot/vmlinuz-linux"       ] && opt_kernel="/boot/vmlinuz-linux"
+		[ -e "/boot/vmlinuz-linux" ] && opt_kernel="/boot/vmlinuz-linux"
 		# Linux-Libre:
 		[ -e "/boot/vmlinuz-linux-libre" ] && opt_kernel="/boot/vmlinuz-linux-libre"
 		# pine64
-		[ -e "/boot/pine64/Image"        ] && opt_kernel="/boot/pine64/Image"
+		[ -e "/boot/pine64/Image" ] && opt_kernel="/boot/pine64/Image"
 		# generic:
 		[ -e "/boot/vmlinuz-$(uname -r)" ] && opt_kernel="/boot/vmlinuz-$(uname -r)"
-		[ -e "/boot/kernel-$( uname -r)" ] && opt_kernel="/boot/kernel-$( uname -r)"
+		[ -e "/boot/kernel-$(uname -r)" ] && opt_kernel="/boot/kernel-$(uname -r)"
 		[ -e "/boot/bzImage-$(uname -r)" ] && opt_kernel="/boot/bzImage-$(uname -r)"
 		# Gentoo:
 		[ -e "/boot/kernel-genkernel-$(uname -m)-$(uname -r)" ] && opt_kernel="/boot/kernel-genkernel-$(uname -m)-$(uname -r)"
@@ -1329,18 +1314,18 @@ if [ "$opt_live" = 1 ]; then
 	fi
 
 	# system.map
-	if [ -e /proc/kallsyms ] ; then
+	if [ -e /proc/kallsyms ]; then
 		opt_map=/proc/kallsyms
-	elif [ -e "/lib/modules/$(uname -r)/System.map" ] ; then
+	elif [ -e "/lib/modules/$(uname -r)/System.map" ]; then
 		opt_map="/lib/modules/$(uname -r)/System.map"
-	elif [ -e "/boot/System.map-$(uname -r)" ] ; then
+	elif [ -e "/boot/System.map-$(uname -r)" ]; then
 		opt_map="/boot/System.map-$(uname -r)"
 	fi
 
 	# config
-	if [ -e /proc/config.gz ] ; then
+	if [ -e /proc/config.gz ]; then
 		dumped_config="$(mktemp /tmp/config-XXXXXX)"
-		gunzip -c /proc/config.gz > "$dumped_config"
+		gunzip -c /proc/config.gz >"$dumped_config"
 		# dumped_config will be deleted at the end of the script
 		opt_config="$dumped_config"
 	elif [ -e "/lib/modules/$(uname -r)/config" ]; then
@@ -1437,8 +1422,7 @@ _info
 # now we define some util functions and the check_*() funcs, as
 # the user can choose to execute only some of those
 
-sys_interface_check()
-{
+sys_interface_check() {
 	[ "$opt_live" = 1 ] && [ "$opt_no_sysfs" = 0 ] && [ -r "$1" ] || return 1
 	_info_nol "* Mitigated according to the /sys interface: "
 	msg=$(cat "$1")
@@ -1462,8 +1446,7 @@ sys_interface_check()
 	return 0
 }
 
-number_of_cpus()
-{
+number_of_cpus() {
 	if echo "$os" | grep -q BSD; then
 		n=$(sysctl -n hw.ncpu 2>/dev/null || echo 1)
 	elif [ -e "$procfs/cpuinfo" ]; then
@@ -1477,42 +1460,43 @@ number_of_cpus()
 
 # $1 - msr number
 # $2 - cpu index
-write_msr()
-{
+write_msr() {
 	if [ "$os" != Linux ]; then
-		cpucontrol -m "$1=0" "/dev/cpuctl$2" >/dev/null 2>&1; ret=$?
+		cpucontrol -m "$1=0" "/dev/cpuctl$2" >/dev/null 2>&1
+		ret=$?
 	else
 		# convert to decimal
-		_msrindex=$(( $1 ))
+		_msrindex=$(($1))
 		if [ ! -w /dev/cpu/"$2"/msr ]; then
 			ret=200 # permission error
 		else
-			dd if=/dev/zero of=/dev/cpu/"$2"/msr bs=8 count=1 seek="$_msrindex" oflag=seek_bytes 2>/dev/null; ret=$?
+			dd if=/dev/zero of=/dev/cpu/"$2"/msr bs=8 count=1 seek="$_msrindex" oflag=seek_bytes 2>/dev/null
+			ret=$?
 		fi
 	fi
 	_debug "write_msr: for cpu $2 on msr $1 ($_msrindex), ret=$ret"
 	return $ret
 }
 
-read_msr()
-{
+read_msr() {
 	# _msr must be in hex, in the form 0x1234:
 	_msr="$1"
 	# cpu index, starting from 0:
 	_cpu="$2"
 	read_msr_value=''
 	if [ "$os" != Linux ]; then
-		_msr=$(cpucontrol -m "$_msr" "/dev/cpuctl$_cpu" 2>/dev/null); ret=$?
+		_msr=$(cpucontrol -m "$_msr" "/dev/cpuctl$_cpu" 2>/dev/null)
+		ret=$?
 		[ $ret -ne 0 ] && return 1
 		# MSR 0x10: 0x000003e1 0xb106dded
-		_msr_h=$(echo "$_msr" | awk '{print $3}');
-		_msr_h="$(( _msr_h >> 24 & 0xFF )) $(( _msr_h >> 16 & 0xFF )) $(( _msr_h >> 8 & 0xFF )) $(( _msr_h & 0xFF ))"
-		_msr_l=$(echo "$_msr" | awk '{print $4}');
-		_msr_l="$(( _msr_l >> 24 & 0xFF )) $(( _msr_l >> 16 & 0xFF )) $(( _msr_l >> 8 & 0xFF )) $(( _msr_l & 0xFF ))"
+		_msr_h=$(echo "$_msr" | awk '{print $3}')
+		_msr_h="$((_msr_h >> 24 & 0xFF)) $((_msr_h >> 16 & 0xFF)) $((_msr_h >> 8 & 0xFF)) $((_msr_h & 0xFF))"
+		_msr_l=$(echo "$_msr" | awk '{print $4}')
+		_msr_l="$((_msr_l >> 24 & 0xFF)) $((_msr_l >> 16 & 0xFF)) $((_msr_l >> 8 & 0xFF)) $((_msr_l & 0xFF))"
 		read_msr_value="$_msr_h $_msr_l"
 	else
 		# convert to decimal
-		_msr=$(( _msr ))
+		_msr=$((_msr))
 		if [ ! -r /dev/cpu/"$_cpu"/msr ]; then
 			return 200 # permission error
 		fi
@@ -1526,20 +1510,19 @@ read_msr()
 	return 0
 }
 
-check_cpu()
-{
+check_cpu() {
 	_info "\033[1;34mHardware check\033[0m"
 
 	if ! uname -m | grep -qwE 'x86_64|i[3-6]86|amd64'; then
 		return
 	fi
 
-	_info     "* Hardware support (CPU microcode) for mitigation techniques"
-	_info     "  * Indirect Branch Restricted Speculation (IBRS)"
+	_info "* Hardware support (CPU microcode) for mitigation techniques"
+	_info "  * Indirect Branch Restricted Speculation (IBRS)"
 	_info_nol "    * SPEC_CTRL MSR is available: "
 	number_of_cpus
 	ncpus=$?
-	idx_max_cpu=$((ncpus-1))
+	idx_max_cpu=$((ncpus - 1))
 	if [ ! -e /dev/cpu/0/msr ] && [ ! -e /dev/cpuctl0 ]; then
 		# try to load the module ourselves (and remember it so we can rmmod it afterwards)
 		load_msr
@@ -1554,9 +1537,9 @@ check_cpu()
 		# skip=9 because 8*9=72=0x48
 		val=0
 		cpu_mismatch=0
-		for i in $(seq 0 "$idx_max_cpu")
-		do
-			read_msr 0x48 "$i"; ret=$?
+		for i in $(seq 0 "$idx_max_cpu"); do
+			read_msr 0x48 "$i"
+			ret=$?
 			if [ "$i" -eq 0 ]; then
 				val=$ret
 			else
@@ -1589,14 +1572,16 @@ check_cpu()
 	# amd: https://developer.amd.com/wp-content/resources/Architecture_Guidelines_Update_Indirect_Branch_Control.pdf
 	# amd: 8000_0008 EBX[14]=1
 	if is_intel; then
-		read_cpuid 0x7 $EDX 26 1 1; ret=$?
+		read_cpuid 0x7 $EDX 26 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES "SPEC_CTRL feature bit"
 			cpuid_spec_ctrl=1
 			cpuid_ibrs='SPEC_CTRL'
 		fi
 	elif is_amd; then
-		read_cpuid 0x80000008 $EBX 14 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 14 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES "IBRS_SUPPORT feature bit"
 			cpuid_ibrs='IBRS_SUPPORT'
@@ -1615,7 +1600,8 @@ check_cpu()
 	if is_amd; then
 		_info_nol "    * CPU indicates preferring IBRS always-on: "
 		# amd
-		read_cpuid 0x80000008 $EBX 16 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 16 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES
 		else
@@ -1624,7 +1610,8 @@ check_cpu()
 
 		_info_nol "    * CPU indicates preferring IBRS over retpoline: "
 		# amd
-		read_cpuid 0x80000008 $EBX 18 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 18 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES
 		else
@@ -1633,7 +1620,7 @@ check_cpu()
 	fi
 
 	# IBPB
-	_info     "  * Indirect Branch Prediction Barrier (IBPB)"
+	_info "  * Indirect Branch Prediction Barrier (IBPB)"
 	_info_nol "    * PRED_CMD MSR is available: "
 	if [ ! -e /dev/cpu/0/msr ] && [ ! -e /dev/cpuctl0 ]; then
 		pstatus yellow UNKNOWN "is msr kernel module available?"
@@ -1643,9 +1630,9 @@ check_cpu()
 		# if we get a write error, the MSR is not there
 		val=0
 		cpu_mismatch=0
-		for i in $(seq 0 "$idx_max_cpu")
-		do
-			write_msr 0x49 "$i"; ret=$?
+		for i in $(seq 0 "$idx_max_cpu"); do
+			write_msr 0x49 "$i"
+			ret=$?
 			if [ "$i" -eq 0 ]; then
 				val=$ret
 			else
@@ -1683,7 +1670,8 @@ check_cpu()
 			pstatus yellow NO
 		fi
 	elif is_amd; then
-		read_cpuid 0x80000008 $EBX 12 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 12 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			cpuid_ibpb='IBPB_SUPPORT'
 			pstatus green YES "IBPB_SUPPORT feature bit"
@@ -1695,7 +1683,7 @@ check_cpu()
 	fi
 
 	# STIBP
-	_info     "  * Single Thread Indirect Branch Predictors (STIBP)"
+	_info "  * Single Thread Indirect Branch Predictors (STIBP)"
 	_info_nol "    * SPEC_CTRL MSR is available: "
 	if [ "$spec_ctrl_msr" = 1 ]; then
 		pstatus green YES
@@ -1709,13 +1697,15 @@ check_cpu()
 	# intel: A processor supports STIBP if it enumerates CPUID (EAX=7H,ECX=0):EDX[27] as 1
 	# amd: 8000_0008 EBX[15]=1
 	if is_intel; then
-		read_cpuid 0x7 $EDX 27 1 1; ret=$?
+		read_cpuid 0x7 $EDX 27 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES "Intel STIBP feature bit"
 			#cpuid_stibp='Intel STIBP'
 		fi
 	elif is_amd; then
-		read_cpuid 0x80000008 $EBX 15 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 15 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES "AMD STIBP feature bit"
 			#cpuid_stibp='AMD STIBP'
@@ -1730,10 +1720,10 @@ check_cpu()
 		pstatus yellow UNKNOWN "is cpuid kernel module available?"
 	fi
 
-
 	if is_amd; then
 		_info_nol "    * CPU indicates preferring STIBP always-on: "
-		read_cpuid 0x80000008 $EBX 17 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 17 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES
 		else
@@ -1743,17 +1733,20 @@ check_cpu()
 
 	# variant 4
 	if is_intel; then
-		_info     "  * Speculative Store Bypass Disable (SSBD)"
+		_info "  * Speculative Store Bypass Disable (SSBD)"
 		_info_nol "    * CPU indicates SSBD capability: "
-		read_cpuid 0x7 $EDX 31 1 1; ret=$?
+		read_cpuid 0x7 $EDX 31 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			cpuid_ssbd='Intel SSBD'
 		fi
 	elif is_amd; then
-		_info     "  * Speculative Store Bypass Disable (SSBD)"
+		_info "  * Speculative Store Bypass Disable (SSBD)"
 		_info_nol "    * CPU indicates SSBD capability: "
-		read_cpuid 0x80000008 $EBX 24 1 1; ret24=$?
-		read_cpuid 0x80000008 $EBX 25 1 1; ret25=$?
+		read_cpuid 0x80000008 $EBX 24 1 1
+		ret24=$?
+		read_cpuid 0x80000008 $EBX 25 1 1
+		ret25=$?
 		if [ $ret24 -eq 0 ]; then
 			cpuid_ssbd='AMD SSBD in SPEC_CTRL'
 			#cpuid_ssbd_spec_ctrl=1
@@ -1775,18 +1768,20 @@ check_cpu()
 
 	if is_amd; then
 		# similar to SSB_NO for intel
-		read_cpuid 0x80000008 $EBX 26 1 1; ret=$?
+		read_cpuid 0x80000008 $EBX 26 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			amd_ssb_no=1
 		fi
 	fi
 
 	if is_intel; then
-		_info     "  * Enhanced IBRS (IBRS_ALL)"
+		_info "  * Enhanced IBRS (IBRS_ALL)"
 		_info_nol "    * CPU indicates ARCH_CAPABILITIES MSR availability: "
 		cpuid_arch_capabilities=-1
 		# A processor supports the ARCH_CAPABILITIES MSR if it enumerates CPUID (EAX=7H,ECX=0):EDX[29] as 1
-		read_cpuid 0x7 $EDX 29 1 1; ret=$?
+		read_cpuid 0x7 $EDX 29 1 1
+		ret=$?
 		if [ $ret -eq 0 ]; then
 			pstatus green YES
 			cpuid_arch_capabilities=1
@@ -1816,9 +1811,9 @@ check_cpu()
 			val=0
 			val_cap_msr=0
 			cpu_mismatch=0
-			for i in $(seq 0 "$idx_max_cpu")
-			do
-				read_msr 0x10a "$i"; ret=$?
+			for i in $(seq 0 "$idx_max_cpu"); do
+				read_msr 0x10a "$i"
+				ret=$?
 				capabilities=$(echo "$read_msr_value" | awk '{print $8}')
 				if [ "$i" -eq 0 ]; then
 					val=$ret
@@ -1837,14 +1832,14 @@ check_cpu()
 			capabilities_ssb_no=0
 			if [ $val -eq 0 ]; then
 				_debug "capabilities MSR lower byte is $capabilities (decimal)"
-				[ $(( capabilities &  1 )) -eq 1  ] && capabilities_rdcl_no=1
-				[ $(( capabilities &  2 )) -eq 2  ] && capabilities_ibrs_all=1
-				[ $(( capabilities & 16 )) -eq 16 ] && capabilities_ssb_no=1
+				[ $((capabilities & 1)) -eq 1 ] && capabilities_rdcl_no=1
+				[ $((capabilities & 2)) -eq 2 ] && capabilities_ibrs_all=1
+				[ $((capabilities & 16)) -eq 16 ] && capabilities_ssb_no=1
 				_debug "capabilities says rdcl_no=$capabilities_rdcl_no ibrs_all=$capabilities_ibrs_all ssb_no=$capabilities_ssb_no"
 				if [ "$capabilities_ibrs_all" = 1 ]; then
 					if [ $cpu_mismatch -eq 0 ]; then
 						pstatus green YES
-					else:
+						else:
 						pstatus green YES "But not in all CPUs"
 					fi
 				else
@@ -1890,9 +1885,8 @@ check_cpu()
 	fi
 }
 
-check_cpu_vulnerabilities()
-{
-	_info     "* CPU vulnerability to the speculative execution attack variants"
+check_cpu_vulnerabilities() {
+	_info "* CPU vulnerability to the speculative execution attack variants"
 	for v in 1 2 3 3a 4; do
 		_info_nol "  * Vulnerable to Variant $v: "
 		if is_cpu_vulnerable $v; then
@@ -1903,8 +1897,7 @@ check_cpu_vulnerabilities()
 	done
 }
 
-check_redhat_canonical_spectre()
-{
+check_redhat_canonical_spectre() {
 	# if we were already called, don't do it again
 	[ -n "$redhat_canonical_spectre" ] && return
 
@@ -1931,11 +1924,9 @@ check_redhat_canonical_spectre()
 	fi
 }
 
-
 ###################
 # SPECTRE VARIANT 1
-check_variant1()
-{
+check_variant1() {
 	_info "\033[1;34mCVE-2017-5753 [bounds check bypass] aka 'Spectre Variant 1'\033[0m"
 	if [ "$os" = Linux ]; then
 		check_variant1_linux
@@ -1946,8 +1937,7 @@ check_variant1()
 	fi
 }
 
-check_variant1_linux()
-{
+check_variant1_linux() {
 	status=UNK
 	sys_interface_available=0
 	msg=''
@@ -1977,12 +1967,14 @@ check_variant1_linux()
 		elif ! which perl >/dev/null 2>&1; then
 			pstatus yellow UNKNOWN "missing 'perl' binary, please install it"
 		else
-			perl -ne '/\x0f\x83....\x48\x19\xd2\x48\x21\xd0/ and $found++; END { exit($found) }' "$kernel"; ret=$?
+			perl -ne '/\x0f\x83....\x48\x19\xd2\x48\x21\xd0/ and $found++; END { exit($found) }' "$kernel"
+			ret=$?
 			if [ $ret -gt 0 ]; then
 				pstatus green YES "$ret occurrence(s) found of 64 bits array_index_mask_nospec()"
 				v1_mask_nospec="64 bits array_index_mask_nospec"
 			else
-				perl -ne '/\x3b\x82..\x00\x00\x73.\x19\xd2\x21\xd0/ and $found++; END { exit($found) }' "$kernel"; ret=$?
+				perl -ne '/\x3b\x82..\x00\x00\x73.\x19\xd2\x21\xd0/ and $found++; END { exit($found) }' "$kernel"
+				ret=$?
 				if [ $ret -gt 0 ]; then
 					pstatus green YES "$ret occurrence(s) found of 32 bits array_index_mask_nospec()"
 					v1_mask_nospec="32 bits array_index_mask_nospec"
@@ -2030,7 +2022,8 @@ check_variant1_linux()
 		elif ! which "${opt_arch_prefix}objdump" >/dev/null 2>&1; then
 			pstatus yellow UNKNOWN "missing '${opt_arch_prefix}objdump' tool, please install it, usually it's in the binutils package"
 		else
-			"${opt_arch_prefix}objdump" -d "$kernel" | perl -ne 'push @r, $_; /\s(hint|csdb)\s/ && $r[0]=~/\ssub\s+(x\d+)/ && $r[1]=~/\sbic\s+$1,\s+$1,/ && $r[2]=~/\sand\s/ && exit(9); shift @r if @r>3'; ret=$?
+			"${opt_arch_prefix}objdump" -d "$kernel" | perl -ne 'push @r, $_; /\s(hint|csdb)\s/ && $r[0]=~/\ssub\s+(x\d+)/ && $r[1]=~/\sbic\s+$1,\s+$1,/ && $r[2]=~/\sand\s/ && exit(9); shift @r if @r>3'
+			ret=$?
 			if [ "$ret" -eq 9 ]; then
 				pstatus green YES "mask_nospec64 macro is present and used"
 				v1_mask_nospec="arm mask_nospec64"
@@ -2039,8 +2032,7 @@ check_variant1_linux()
 			fi
 		fi
 
-
-		if [ "$opt_verbose" -ge 2 ] || ( [ -z "$v1_mask_nospec" ] && [ "$redhat_canonical_spectre" != 1 ] && [ "$redhat_canonical_spectre" != 2 ] ); then
+		if [ "$opt_verbose" -ge 2 ] || ([ -z "$v1_mask_nospec" ] && [ "$redhat_canonical_spectre" != 1 ] && [ "$redhat_canonical_spectre" != 2 ]); then
 			# this is a slow heuristic and we don't need it if we already know the kernel is patched
 			# but still show it in verbose mode
 			_info_nol "* Checking count of LFENCE instructions following a jump in kernel... "
@@ -2110,8 +2102,7 @@ check_variant1_linux()
 	fi
 }
 
-check_variant1_bsd()
-{
+check_variant1_bsd() {
 	cve='CVE-2017-5753'
 	if ! is_cpu_vulnerable 1; then
 		# override status & msg in case CPU is not vulnerable after all
@@ -2121,11 +2112,9 @@ check_variant1_bsd()
 	fi
 }
 
-
 ###################
 # SPECTRE VARIANT 2
-check_variant2()
-{
+check_variant2() {
 	_info "\033[1;34mCVE-2017-5715 [branch target injection] aka 'Spectre Variant 2'\033[0m"
 	if [ "$os" = Linux ]; then
 		check_variant2_linux
@@ -2136,8 +2125,7 @@ check_variant2()
 	fi
 }
 
-check_variant2_linux()
-{
+check_variant2_linux() {
 	status=UNK
 	sys_interface_available=0
 	msg=''
@@ -2205,7 +2193,7 @@ check_variant2_linux()
 				if grep -q 'IBPB' "/sys/devices/system/cpu/vulnerabilities/spectre_v2"; then
 					_debug "ibpb: found enabled in sysfs"
 					[ -z "$ibpb_supported" ] && ibpb_supported='IBPB found enabled in sysfs'
-					[ -z "$ibpb_enabled"   ] && ibpb_enabled=1
+					[ -z "$ibpb_enabled" ] && ibpb_enabled=1
 				fi
 				# when IBRS_FW is enabled on 4.15+, we can see it in sysfs
 				if grep -q ', IBRS_FW' "/sys/devices/system/cpu/vulnerabilities/spectre_v2"; then
@@ -2217,7 +2205,7 @@ check_variant2_linux()
 				if grep -q -e 'IBRS' -e 'Indirect Branch Restricted Speculation' "/sys/devices/system/cpu/vulnerabilities/spectre_v2"; then
 					_debug "ibrs: found IBRS in sysfs"
 					[ -z "$ibrs_supported" ] && ibrs_supported='found IBRS in sysfs'
-					[ -z "$ibrs_enabled"   ] && ibrs_enabled=3
+					[ -z "$ibrs_enabled" ] && ibrs_enabled=3
 				fi
 			fi
 			# in live mode, if ibrs or ibpb is supported and we didn't find these are enabled, then they are not
@@ -2292,20 +2280,22 @@ check_variant2_linux()
 				# 2 is enabled for kernel and user space
 				# 3 is enabled
 				case "$ibrs_enabled" in
-					0)
-						if [ "$ibrs_fw_enabled" = 1 ]; then
-							pstatus blue YES "for firmware code only"
-						else
-							pstatus yellow NO
-						fi
-						;;
-					1)	if [ "$ibrs_fw_enabled" = 1 ]; then pstatus green YES "for kernel space and firmware code"; else pstatus green YES "for kernel space"; fi;;
-					2)	if [ "$ibrs_fw_enabled" = 1 ]; then pstatus green YES "for kernel, user space, and firmware code" ; else pstatus green YES "for both kernel and user space"; fi;;
-					3)	if [ "$ibrs_fw_enabled" = 1 ]; then pstatus green YES "for kernel and firmware code"; else pstatus green YES; fi;;
-					*)	if [ "$cpuid_ibrs" != 'SPEC_CTRL' ] && [ "$cpuid_ibrs" != 'IBRS_SUPPORT' ] && [ "$cpuid_spec_ctrl" != -1 ]; 
-							then pstatus yellow NO; _debug "ibrs: known cpu not supporting SPEC-CTRL or IBRS"; 
-						else 
-							pstatus yellow UNKNOWN; fi;;
+				0)
+					if [ "$ibrs_fw_enabled" = 1 ]; then
+						pstatus blue YES "for firmware code only"
+					else
+						pstatus yellow NO
+					fi
+					;;
+				1) if [ "$ibrs_fw_enabled" = 1 ]; then pstatus green YES "for kernel space and firmware code"; else pstatus green YES "for kernel space"; fi ;;
+				2) if [ "$ibrs_fw_enabled" = 1 ]; then pstatus green YES "for kernel, user space, and firmware code"; else pstatus green YES "for both kernel and user space"; fi ;;
+				3) if [ "$ibrs_fw_enabled" = 1 ]; then pstatus green YES "for kernel and firmware code"; else pstatus green YES; fi ;;
+				*) if [ "$cpuid_ibrs" != 'SPEC_CTRL' ] && [ "$cpuid_ibrs" != 'IBRS_SUPPORT' ] && [ "$cpuid_spec_ctrl" != -1 ]; then
+					pstatus yellow NO
+					_debug "ibrs: known cpu not supporting SPEC-CTRL or IBRS"
+				else
+					pstatus yellow UNKNOWN
+				fi ;;
 				esac
 			fi
 		else
@@ -2331,19 +2321,19 @@ check_variant2_linux()
 		_info_nol "    * IBPB enabled and active: "
 		if [ "$opt_live" = 1 ]; then
 			case "$ibpb_enabled" in
-				"")
-					if [ "$ibrs_supported" = 1 ]; then
-						pstatus yellow UNKNOWN
-					else
-						pstatus yellow NO
-					fi
-					;;
-				0)
+			"")
+				if [ "$ibrs_supported" = 1 ]; then
+					pstatus yellow UNKNOWN
+				else
 					pstatus yellow NO
-					;;
-				1) pstatus green YES;;
-				2) pstatus green YES "IBPB used instead of IBRS in all kernel entrypoints";;
-				*) pstatus yellow UNKNOWN;;
+				fi
+				;;
+			0)
+				pstatus yellow NO
+				;;
+			1) pstatus green YES ;;
+			2) pstatus green YES "IBPB used instead of IBRS in all kernel entrypoints" ;;
+			*) pstatus yellow UNKNOWN ;;
 			esac
 		else
 			pstatus blue N/A "not testable in offline mode"
@@ -2503,9 +2493,9 @@ check_variant2_linux()
 		# override status & msg in case CPU is not vulnerable after all
 		pvulnstatus $cve OK "your CPU vendor reported your CPU model as not vulnerable"
 	else
-		if [ "$retpoline" = 1 ] && [ "$retpoline_compiler" = 1 ] && [ "$retp_enabled" != 0 ] && [ -n "$ibpb_enabled" ] && [ "$ibpb_enabled" -ge 1 ] && ( ! is_skylake_cpu || [ -n "$rsb_filling" ] ); then
+		if [ "$retpoline" = 1 ] && [ "$retpoline_compiler" = 1 ] && [ "$retp_enabled" != 0 ] && [ -n "$ibpb_enabled" ] && [ "$ibpb_enabled" -ge 1 ] && (! is_skylake_cpu || [ -n "$rsb_filling" ]); then
 			pvulnstatus $cve OK "Full retpoline + IBPB are mitigating the vulnerability"
-		elif [ "$retpoline" = 1 ] && [ "$retpoline_compiler" = 1 ] && [ "$retp_enabled" != 0 ] && [ "$opt_paranoid" = 0 ] && ( ! is_skylake_cpu || [ -n "$rsb_filling" ] ); then
+		elif [ "$retpoline" = 1 ] && [ "$retpoline_compiler" = 1 ] && [ "$retp_enabled" != 0 ] && [ "$opt_paranoid" = 0 ] && (! is_skylake_cpu || [ -n "$rsb_filling" ]); then
 			pvulnstatus $cve OK "Full retpoline is mitigating the vulnerability"
 			if [ -n "$cpuid_ibpb" ]; then
 				_warn "You should enable IBPB to complete retpoline as a Variant 2 mitigation"
@@ -2559,7 +2549,7 @@ check_variant2_linux()
 		if [ "$opt_live" = 1 ] && [ "$vulnstatus" != "OK" ]; then
 			_explain_hypervisor="An updated CPU microcode will have IBRS/IBPB capabilities indicated in the Hardware Check section above. If you're running under an hypervisor (KVM, Xen, VirtualBox, VMware, ...), the hypervisor needs to be up to date to be able to export the new host CPU flags to the guest. You can run this script on the host to check if the host CPU is IBRS/IBPB. If it is, and it doesn't show up in the guest, upgrade the hypervisor. You may need to reconfigure your VM to use a CPU model that has IBRS capability; in Libvirt, such CPUs are listed with an IBRS suffix."
 			# IBPB (amd & intel)
-			if ( [ -z "$ibpb_enabled" ] || [ "$ibpb_enabled" = 0 ] ) && ( is_intel || is_amd ); then
+			if ([ -z "$ibpb_enabled" ] || [ "$ibpb_enabled" = 0 ]) && (is_intel || is_amd); then
 				if [ -z "$cpuid_ibpb" ]; then
 					explain "The microcode of your CPU needs to be upgraded to be able to use IBPB. This is usually done at boot time by your kernel (the upgrade is not persistent across reboots which is why it's done at each boot). If you're using a distro, make sure you are up to date, as microcode updates are usually shipped alongside with the distro kernel. Availability of a microcode update for you CPU model depends on your CPU vendor. You can usually find out online if a microcode update is available for your CPU by searching for your CPUID (indicated in the Hardware Check section). $_explain_hypervisor"
 				fi
@@ -2584,7 +2574,7 @@ check_variant2_linux()
 			# /IBPB
 
 			# IBRS (amd & intel)
-			if ( [ -z "$ibrs_enabled" ] || [ "$ibrs_enabled" = 0 ] ) && ( is_intel || is_amd ); then
+			if ([ -z "$ibrs_enabled" ] || [ "$ibrs_enabled" = 0 ]) && (is_intel || is_amd); then
 				if [ -z "$cpuid_ibrs" ]; then
 					explain "The microcode of your CPU needs to be upgraded to be able to use IBRS. This is usually done at boot time by your kernel (the upgrade is not persistent across reboots which is why it's done at each boot). If you're using a distro, make sure you are up to date, as microcode updates are usually shipped alongside with the distro kernel. Availability of a microcode update for you CPU model depends on your CPU vendor. You can usually find out online if a microcode update is available for your CPU by searching for your CPUID (indicated in the Hardware Check section). $_explain_hypervisor"
 				fi
@@ -2636,9 +2626,8 @@ check_variant2_linux()
 	# "Mitigation: IBP disabled",
 }
 
-check_variant2_bsd()
-{
-	_info     "* Mitigation 1"
+check_variant2_bsd() {
+	_info "* Mitigation 1"
 	_info_nol "  * Kernel supports IBRS: "
 	ibrs_disabled=$(sysctl -n hw.ibrs_disable 2>/dev/null)
 	if [ -z "$ibrs_disabled" ]; then
@@ -2655,7 +2644,7 @@ check_variant2_bsd()
 		pstatus yellow NO
 	fi
 
-	_info     "* Mitigation 2"
+	_info "* Mitigation 2"
 	_info_nol "  * Kernel compiled with RETPOLINE: "
 	if [ -n "$kernel_err" ]; then
 		pstatus yellow UNKNOWN "couldn't check ($kernel_err)"
@@ -2702,20 +2691,21 @@ check_variant2_bsd()
 # refs:
 # https://marc.info/?t=151532047900001&r=1&w=2
 # https://groups.google.com/forum/m/#!topic/mechanical-sympathy/L9mHTbeQLNU
-pti_performance_check()
-{
+pti_performance_check() {
 	_info_nol "  * Reduced performance impact of PTI: "
 	if [ -e "$procfs/cpuinfo" ] && grep ^flags "$procfs/cpuinfo" | grep -qw pcid; then
 		cpu_pcid=1
 	else
-		read_cpuid 0x1 $ECX 17 1 1; ret=$?
+		read_cpuid 0x1 $ECX 17 1 1
+		ret=$?
 		[ $ret -eq 0 ] && cpu_pcid=1
 	fi
 
 	if [ -e "$procfs/cpuinfo" ] && grep ^flags "$procfs/cpuinfo" | grep -qw invpcid; then
 		cpu_invpcid=1
 	else
-		read_cpuid 0x7 $EBX 10 1 1; ret=$?
+		read_cpuid 0x7 $EBX 10 1 1
+		ret=$?
 		[ $ret -eq 0 ] && cpu_invpcid=1
 	fi
 
@@ -2728,8 +2718,7 @@ pti_performance_check()
 	fi
 }
 
-check_variant3()
-{
+check_variant3() {
 	_info "\033[1;34mCVE-2017-5754 [rogue data cache load] aka 'Meltdown' aka 'Variant 3'\033[0m"
 	if [ "$os" = Linux ]; then
 		check_variant3_linux
@@ -2740,8 +2729,7 @@ check_variant3()
 	fi
 }
 
-check_variant3_linux()
-{
+check_variant3_linux() {
 	status=UNK
 	sys_interface_available=0
 	msg=''
@@ -2817,7 +2805,8 @@ check_variant3_linux()
 				_debug "kpti_enabled: file /sys/kernel/debug/x86/pti_enabled exists and says: $kpti_enabled"
 			fi
 			if [ -z "$kpti_enabled" ]; then
-				dmesg_grep "$dmesg_grep"; ret=$?
+				dmesg_grep "$dmesg_grep"
+				ret=$?
 				if [ $ret -eq 0 ]; then
 					_debug "kpti_enabled: found hint in dmesg: $dmesg_grepped"
 					kpti_enabled=1
@@ -2849,11 +2838,11 @@ check_variant3_linux()
 		status=UNK
 	fi
 
-
 	# Test if the current host is a Xen PV Dom0 / DomU
 	if [ -d "/proc/xen" ]; then
 		# XXX do we have a better way that relying on dmesg?
-		dmesg_grep 'Booting paravirtualized kernel on Xen$'; ret=$?
+		dmesg_grep 'Booting paravirtualized kernel on Xen$'
+		ret=$?
 		if [ $ret -eq 2 ]; then
 			_warn "dmesg truncated, Xen detection will be unreliable. Please reboot and relaunch this script"
 		elif [ $ret -eq 0 ]; then
@@ -2863,7 +2852,8 @@ check_variant3_linux()
 				xen_pv_domu=1
 			fi
 			# PVHVM guests also print 'Booting paravirtualized kernel', so we need this check.
-			dmesg_grep 'Xen HVM callback vector for event delivery is enabled$'; ret=$?
+			dmesg_grep 'Xen HVM callback vector for event delivery is enabled$'
+			ret=$?
 			if [ $ret -eq 0 ]; then
 				xen_pv_domu=0
 			fi
@@ -2950,8 +2940,7 @@ check_variant3_linux()
 	fi
 }
 
-check_variant3_bsd()
-{
+check_variant3_bsd() {
 	_info_nol "* Kernel supports Page Table Isolation (PTI): "
 	kpti_enabled=$(sysctl -n vm.pmap.pti 2>/dev/null)
 	if [ -z "$kpti_enabled" ]; then
@@ -2982,8 +2971,7 @@ check_variant3_bsd()
 	fi
 }
 
-check_variant3a()
-{
+check_variant3a() {
 	_info "\033[1;34mCVE-2018-3640 [rogue system register read] aka 'Variant 3a'\033[0m"
 
 	status=UNK
@@ -3011,8 +2999,7 @@ check_variant3a()
 	fi
 }
 
-check_variant4()
-{
+check_variant4() {
 	_info "\033[1;34mCVE-2018-3639 [speculative store bypass] aka 'Variant 4'\033[0m"
 
 	status=UNK
@@ -3031,7 +3018,7 @@ check_variant4()
 			fi
 		fi
 		if [ -z "$kernel_ssb" ] && [ -n "$kernel" ]; then
-			kernel_ssb=$("${opt_arch_prefix}strings" "$kernel" | grep spec_store_bypass | head -n1);
+			kernel_ssb=$("${opt_arch_prefix}strings" "$kernel" | grep spec_store_bypass | head -n1)
 			[ -n "$kernel_ssb" ] && _debug "found $kernel_ssb in kernel"
 		fi
 		if [ -z "$kernel_ssb" ] && [ -n "$opt_map" ]; then
@@ -3130,6 +3117,6 @@ if [ "$opt_batch" = 1 ] && [ "$opt_batch_format" = "prometheus" ]; then
 fi
 
 # exit with the proper exit code
-[ "$global_critical" = 1 ] && exit 2  # critical
-[ "$global_unknown"  = 1 ] && exit 3  # unknown
-exit 0  # ok
+[ "$global_critical" = 1 ] && exit 2 # critical
+[ "$global_unknown" = 1 ] && exit 3  # unknown
+exit 0                               # ok

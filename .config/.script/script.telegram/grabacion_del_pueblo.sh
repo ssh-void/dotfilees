@@ -15,6 +15,6 @@ DISPLAY=$(echo $DISPLAY)
 FPS="30"
 
 ffmpeg -f x11grab -s "$INRES" -r "$FPS" -i $DISPLAY.0 -f alsa -ac 2 \
--i default -vcodec libx264 -s "$OUTRES" \
--acodec libmp3lame -ab 128k -ar 44100 \
--threads 0 -f mp4 ~/Videos/PrestigiusVideus_$DATE.mp4
+	-i default -vcodec libx264 -s "$OUTRES" \
+	-acodec libmp3lame -ab 128k -ar 44100 \
+	-threads 0 -f mp4 ~/Videos/PrestigiusVideus_$DATE.mp4

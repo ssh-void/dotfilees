@@ -11,4 +11,3 @@ $BROWSER "https://www.deepl.com/fr/translator#en/fr/$x"
 $BROWSER "https://www.reverso.net/traduction-texte#sl=eng&tl=fra&text=$x"
 $BROWSER "https://translate.yandex.com/?source_lang=en&target_lang=fr&text=$x"
 $BROWSER "https://laratranslate.com/traduction?source=en&target=fr&text=$x"
-

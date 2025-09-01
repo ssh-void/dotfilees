@@ -1,12 +1,12 @@
 #!/bin/sh
 
-. $HOME/.nextcloud_data 
+. $HOME/.nextcloud_data
 
 help() {
-    echo "syntax: --------------------------------------------------------------------------
+	echo "syntax: --------------------------------------------------------------------------
     	  nextcurl.sh  <flag> <path_to_remote_file/folder> <name_of_the_download/upload_file>
 	  --------------------------------------------------------------------------"
-    echo "options:
+	echo "options:
        	  -u	updoad file.
     	  -d 	download file.
     	  -c 	create folder.
@@ -20,25 +20,25 @@ help() {
 echo "________________________________________________________________________________"
 
 case $1 in
-    -d)
+-d)
 	curl -X GET -u $USER:$PASS $URL/remote.php/dav/files/$USER/$2 --output $3
 	;;
-    -u)
+-u)
 	curl -X PUT -u $USER:$PASS $URL/remote.php/dav/files/$USER/$2 -T $3
 	;;
-    -c)
+-c)
 	curl -X MKCOL -u $USER:$PASS $URL/remote.php/dav/files/$USER/$2
 	;;
-    -r)
+-r)
 	curl -X DELETE -u $USER:$PASS $URL/remote.php/dav/files/$USER/$2
 	;;
-    -l)
+-l)
 	curl -X PROPFIND -u $USER:$PASS $URL/remote.php/dav/files/$USER/$2 | sed 's/<\//\n/g' | grep $USER | sed "s/${USER}/ /g" | cut -d ' ' -f 2
 	;;
-    -L)
+-L)
 	curl -X PROPFIND -u $USER:$PASS $URL/remote.php/dav/files/$USER | sed 's/<\//\n/g' | grep $USER | sed "s/${USER}/ /g" | cut -d ' ' -f 2
 	;;
-    -h)
+-h)
 	help
 	;;
 esac

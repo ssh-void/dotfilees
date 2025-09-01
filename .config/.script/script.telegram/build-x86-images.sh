@@ -4,12 +4,15 @@ ARCH=
 IMAGE=
 
 while getopts "a:b:hr:" opt; do
-case $opt in
-	a) ARCH="$OPTARG";;
-	b) IMAGE="$OPTARG";;
-	h) echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt|visone] [-r repo]" >&2; exit 1;;
-	r) REPO="-r $OPTARG $REPO";;
-esac
+	case $opt in
+	a) ARCH="$OPTARG" ;;
+	b) IMAGE="$OPTARG" ;;
+	h)
+		echo "${0#/*}: [-a arch] [-b base|e|xfce|mate|cinnamon|gnome|kde|lxde|lxqt|visone] [-r repo]" >&2
+		exit 1
+		;;
+	r) REPO="-r $OPTARG $REPO" ;;
+	esac
 done
 shift $((OPTIND - 1))
 

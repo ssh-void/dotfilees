@@ -2,60 +2,58 @@
 
 ## set modules ##
 timer() {
-    dwm_timer.sh
+	dwm_timer.sh
 }
 
 updates() {
-    dwm_updates.sh
+	dwm_updates.sh
 }
 
 mails() {
-    dwm_mail.sh
+	dwm_mail.sh
 }
 
 keys() {
-    dwm_keys.sh
+	dwm_keys.sh
 }
 
 memory() {
-    dwm_memory.sh
+	dwm_memory.sh
 }
 
 youtube() {
-    dwm_youtube.sh
+	dwm_youtube.sh
 }
 
 network() {
-    dwm_network.sh
+	dwm_network.sh
 }
 
 bat() {
-    dwm_bat.sh
+	dwm_bat.sh
 }
 
 vol() {
-    dwm_vol.sh
+	dwm_vol.sh
 }
 
 weather() {
-    dwm_weather.sh
+	dwm_weather.sh
 }
 
 date() {
-    dwm_date.sh
+	dwm_date.sh
 }
 
 ## output ##
 output() {
-    echo " $(keys)$(memory)$(timer)$(youtube)$(mails)$(updates)┋$(network)$(bat)$(vol)┋$(weather)$(date)"
+	echo " $(keys)$(memory)$(timer)$(youtube)$(mails)$(updates)┋$(network)$(bat)$(vol)┋$(weather)$(date)"
 }
 
 ## rootwindow ##
 while true; do
-     xsetroot -name "$(output)"
-     
-     sleep 1;
+	xsetroot -name "$(output)"
 
-     done
+	sleep 1
 
-
+done
