@@ -5,4 +5,8 @@ doas ln -s /etc/sv/docker /var/service/
 doas usermod -aG docker "$USERNAME"
 doas sv status docker
 doas docker pull alpine
+#CPU version
+#docker pull ghcr.io/idiap/coqui-tts-cpu
+#GPU version
+docker pull ghcr.io/idiap/coqui-tts
 #doas shutdown -r now
