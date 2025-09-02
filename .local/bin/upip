@@ -7,6 +7,7 @@ uv pip install --upgrade --pre "yt-dlp[default]"
 uv pip install --upgrade telethon
 uv pip install --upgrade gTTS
 uv pip install --upgrade autosub
-uv pip install browser-cookie3
+uv pip install --upgrade TTS
+uv pip install --upgrade browser-cookie3
 uv pip install --upgrade git+https://github.com/openai/whisper.git
 source "$HOME/.profile"

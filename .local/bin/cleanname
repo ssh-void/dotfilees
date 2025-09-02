@@ -71,6 +71,20 @@ for f in *.zip; do
 done
 
 shopt -s nullglob
+for f in *.rar; do
+    [ -f "$f" ] || continue
+    base="${f%.rar}"
+    # Ponctuation => tiret, groupes d'espaces => tiret, compresse tirets
+    newname=$(echo "$base" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
+    # Enlève tirets début/fin
+    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
+    finalname="${newname}.rar"
+    if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
+        mv -- "$f" "$finalname"
+    fi
+done
+
+shopt -s nullglob
 for f in *.pdf; do
     [ -f "$f" ] || continue
     base="${f%.pdf}"
@@ -121,6 +135,34 @@ for f in *.txt; do
     # Enlève tirets début/fin
     newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
     finalname="${newname}.txt"
+    if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
+        mv -- "$f" "$finalname"
+    fi
+done
+
+shopt -s nullglob
+for f in *.docx; do
+    [ -f "$f" ] || continue
+    base="${f%.docx}"
+    # Ponctuation => tiret, groupes d'espaces => tiret, compresse tirets
+    newname=$(echo "$base" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
+    # Enlève tirets début/fin
+    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
+    finalname="${newname}.docx"
+    if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
+        mv -- "$f" "$finalname"
+    fi
+done
+
+shopt -s nullglob
+for f in *.epub; do
+    [ -f "$f" ] || continue
+    base="${f%.epub}"
+    # Ponctuation => tiret, groupes d'espaces => tiret, compresse tirets
+    newname=$(echo "$base" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
+    # Enlève tirets début/fin
+    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
+    finalname="${newname}.epub"
     if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
         mv -- "$f" "$finalname"
     fi

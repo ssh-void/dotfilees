@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 # cd /etc/ && doas rm -rf hosts && doas wget -c https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts -O /etc/hosts
 # cd /etc/ && doas rm -rf hosts && doas curl -L -o /etc/hosts https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts
+#top for me!
 cd /etc/ && doas rm -rf hosts && doas xbps-fetch https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn/hosts -o hosts
+# si add social
+#cd /etc/ && doas rm -rf hosts && doas xbps-fetch https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts -o hosts
+# for my phone
+#cd /etc/ && doas rm -rf hosts && doas xbps-fetch https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-only/hosts -o hosts
