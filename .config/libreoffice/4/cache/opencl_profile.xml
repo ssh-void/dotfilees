@@ -5,12 +5,12 @@
   <type>opencl</type>
   <name>NVIDIA GeForce MX130</name>
   <driver>580.76.05</driver>
-  <time>144455</time>
+  <time>147308</time>
   <errors>false</errors>
  </device>
  <device>
   <type>native</type>
-  <time>5067264</time>
+  <time>4907520</time>
   <errors>false</errors>
  </device>
 </profile>
