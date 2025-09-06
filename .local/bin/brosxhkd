@@ -2,7 +2,8 @@
 
 # List of browsers to use with sxhkd
 browsers="firefox
-brave-browser-stable"
+brave-browser-stable
+vivaldi-stable"
 
 # Select browser using fzy
 selected=$(echo "$browsers" | fzy -l 7)
