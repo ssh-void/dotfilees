@@ -2,7 +2,7 @@
 # Récupère texte du presse-papier, nettoie et lit
 text=$(xclip -o -selection clipboard | sed 's/\[[^]]*\]//g; s/"//g')
 
-gtts-cli -l en --slow "$text" | oniux mpv --no-config \
+gtts-cli -l ar --slow "$text" | oniux mpv --no-config \
     --no-video \
     --speed=1.5 \
     --af-add="volume=2" \
