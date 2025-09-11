@@ -22,7 +22,7 @@ alias pkgxbps="doas xbps-reconfigure -fa"
 alias manxbps="man /opt/void-packages/./xbps-src"
 alias cdvoid="cd /opt/void-packages"
 alias tbrave='cd /opt/void-packages && mkdir -p /opt/void-packages/srcpkgs/brave/ && cd /opt/void-packages/srcpkgs/brave/ && vim template'
-alias ibrave="cd /opt/void-packages && ./xbps-src pkg brave && xi brave"
+alias ibrave="cd /opt/void-packages && ./xbps-src -A x86_64 pkg brave && xi brave"
 
 # -------------------------------------------------------------------------------------- #
 # ---------------------------------->     runit     <----------------------------------- #
@@ -44,6 +44,7 @@ alias font="fc-list : family | sort | uniq"
 alias rsynccpp="rsync -rvphWP --info=progress2"
 alias dtouch="doas touch"
 alias img="nsxiv"
+alias findd='doas find / -type d -name "*brave*" 2>/dev/null'
 alias wp='find ~/Images -type f  2> /dev/null | shuf | nsxiv - -t &> /dev/null'
 alias sxhkdreload="pkill -USR1 -x sxhkd"
 alias transmissionreload="pkill -HUP transmission-daemon"
@@ -65,7 +66,12 @@ alias cdbin="cd ~/.local/bin/"
 alias cdprog="cd ~/programming/"
 alias cdvideos="cd ~/Videos"
 alias cdtmp="cd /tmp"
+alias cdmnt='cd /mnt'
+alias cddev='cd /dev'
+alias cdconf="cd ~/.config"
+alias cdmedia='cd /media/'
 alias cdimg="cd ~/Images/"
+alias cddown="cd ~/Downloads"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
@@ -83,6 +89,7 @@ alias fontlist="fc-list : family | sort | uniq"
 alias sb="source $HOME/.bashrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias sz="source $HOME/.config/zsh/.zshrc ; source $HOME/.profile ; source $HOME/.bash_profile"
 alias vimaliases='nvim ~/.config/bash/.bash_aliases'
+alias vimgit='nvim ~/.gitconfig'
 alias vhosts='doas nvim /etc/hosts'
 alias vtor='doas nvim /etc/tor/torrc'
 alias vimfunc='nvim ~/.config/bash/.bash_function'

@@ -18,7 +18,11 @@ tms() {
 }
 
 gtfr() {
-	gtts-cli -l fr --slow "$1" | oniux mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
+	gtts-cli -l fr --slow "$1" | oniux mpv --no-config --speed=1.5 --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
+}
+
+gtar() {
+	gtts-cli -l ar --slow "$1" | oniux mpv --no-config --no-video --af-add="volume=2" --term-osd-bar --ytdl-format=bestaudio --loop=inf --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") -
 }
 
 gten() {
@@ -70,11 +74,11 @@ rename_random() {
 ##############
 
 nwipedod () {
- doas nwipe --method dod522022m --rounds 2 --autonuke --logfile ~/nwipessd.log "$1"
+ doas nwipe --method dod522022m --rounds 1 --autonuke --nosignals --logfile ~/nwipessd.log "$1"
 }
 
 nwipeops2 () {
- doas nwipe --method ops2 --rounds 2 --autonuke --logfile ~/nwipessd.log "$1"
+ doas nwipe --method ops2 --rounds 1 --autonuke --nosignals --logfile ~/nwipessd.log "$1"
 }
 
 #############
@@ -82,17 +86,35 @@ nwipeops2 () {
 #############
 
 whisperEntiny () {
-whisper "$@" --model tiny.en --threads 8 --language English -f vtt --device cpu
+whisper "$@" --fp32 --model tiny.en --threads 8 --language English -f vtt --device cpu
 }
 
 whisperFrtiny () {
-whisper "$@" --model tiny --threads 8 --language French -f vtt --device cpu
+whisper "$@" --fp32 --model tiny --threads 8 --language French -f vtt --device cpu
 }
 
 whisperEnsmall () {
-whisper "$@" --model small.en --threads 8 --language English -f vtt --device cpu
+whisper "$@" --fp32 --model small.en --threads 8 --language English -f vtt --device cpu
 }
 
 whisperFrsmall () {
-whisper "$@" --model small --threads 8 --language French -f vtt --device cpu
+whisper "$@" --fp32 --model small --threads 8 --language French -f vtt --device cpu
+}
+
+
+#############
+# zulucrypt ...
+#############
+
+zulucryptvera () {
+rand=$(head -c 100 /dev/random | tr -dc 'a-zA-Z0-9' | head -c7)
+truncate -s "$1" ~/vera-$rand.hc
+doas zuluCrypt-cli -c -t vera -d ~/vera-$rand.hc -z ntfs -g "/dev/urandom.aes:twofish:serpent.xts-plain64.512.sha512"
+}
+
+zuluopenvera () {
+    rand=$(head -c 100 /dev/random | tr -dc 'a-zA-Z0-9' | head -c5)
+    doas cryptsetup open --type tcrypt --veracrypt ~/$(ls vera*.hc | fzy -i -l 10) vera-$rand.hc
+    mkdir -p /media/vera-$rand.hc
+    doas mount -o rw /dev/mapper/vera-$rand.hc /media/vera-$rand.hc
 }
