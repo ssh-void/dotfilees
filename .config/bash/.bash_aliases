@@ -63,6 +63,7 @@ alias chmox='chmod +x'
 alias perms="doas chmod 664"
 alias xargs="xargs -r"
 alias cdbin="cd ~/.local/bin/"
+alias cdscript="cd ~/.config/.script/"
 alias cdprog="cd ~/programming/"
 alias cdvideos="cd ~/Videos"
 alias cdtmp="cd /tmp"
@@ -72,6 +73,7 @@ alias cdconf="cd ~/.config"
 alias cdmedia='cd /media/'
 alias cdimg="cd ~/Images/"
 alias cddown="cd ~/Downloads"
+alias cdvar="cd /var/service"
 
 # --------------------------------------------------------------------------------------- #
 # ---------------------------------->     log ...    <----------------------------------- #
@@ -105,6 +107,7 @@ alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 alias lc='wc -l'
 alias wcsh='find . -type f -name "*.sh" | wc -l'
 alias wcex='find . -type f -executable | wc -l'
+alias rmff='for f in FF*.mp4; do target="${f#FF}"; if [ -f "$target" ]; then echo "Suppression : $target"; rm "$target"; fi; done'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -376,3 +379,7 @@ alias insthighlights='instaloader --load-cookies firefox --load-cookies brave --
 alias instreel='instaloader --load-cookies firefox --no-captions --no-pictures --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
 alias instimg='instaloader --load-cookies firefox --post-filter="not is_video" -no-captions --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
 alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --no-profile-pic --no-captions --no-metadata-json --no-video-thumbnails ":saved" '
+
+alias ttslance=" docker run -it -p 5002:5002 --gpus all -v ~/coqui-tts-models:/root/.local/share/tts -v ~/tts-output:/root/tts-output -v ~/tmux.conf:/root/.tmux.conf:ro --entrypoint /bin/bash tts"
+alias drmall='docker rm -f $(docker ps -aq)'
+
