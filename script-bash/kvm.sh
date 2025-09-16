@@ -23,7 +23,8 @@ doas sed -i 's/^#\?auth_unix_ro = "polkit"/auth_unix_ro = "none"/' /etc/libvirt/
 doas sed -i 's/^#\?auth_unix_rw = "polkit"/auth_unix_rw = "none"/' /etc/libvirt/libvirtd.conf # tested
 doas sed -i 's/^#\?uri_default =.*$/uri_default = "qemu:\/\/\/system"/' /etc/libvirt/libvirt.conf # tested
 doas sed -i 's|^#\?group =.*|group = "libvirt"|' /etc/libvirt/qemu.conf # tested
-doas sed -i "s|^#\?user =.*|user = \"$USERNAME\"|" /etc/libvirt/qemu.conf # a teste ?
+#doas sed -i "s|^#\?user =.*|user = \"$USERNAME\"|" /etc/libvirt/qemu.conf # tested
+doas sed -i "s|^#\?user =.*|user = \"$(whoami)\"|" /etc/libvirt/qemu.conf #tested
 clear
 echo "### sv on service ...\n"
 doas ln -s /etc/sv/dbus /var/service/
