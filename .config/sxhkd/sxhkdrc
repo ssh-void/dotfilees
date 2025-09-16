@@ -35,8 +35,11 @@ super + KP_Add
 super + {x,c}
 		{exec $HOME/.config/.script/img_txt_net.sh &> /dev/null,exec $HOME/.config/.script/img_txt.sh &> /dev/null}
 
-#super + v
-#		virt-manager &> /dev/null
+super + i
+		alacritty
+
+super + v
+		virt-manager &> /dev/null
 
 ###  Super + Alt + X ... ###
 
@@ -51,6 +54,12 @@ super + alt + f
 
 super + alt + e
 		$HOME/.config/.script/gten_clip.sh
+
+super + alt + a
+		$HOME/.config/.script/gtar_clip.sh
+
+super + alt + {b,h}
+		{pkill -x sxhkd && BROWSER=brave-browser-stable sxhkd &,pkill -x sxhkd && BROWSER=firefox sxhkd &}
 
 
 ###  Super + Ctrl + X ... ###
@@ -87,3 +96,9 @@ super + ctrl + v
 
 super + ctrl + y
 		$HOME/.config/.script/youtube.sh &> /dev/null
+
+
+
+alt + space + b
+		pkill -x sxhkd && BROWSER=brave-browser-stable sxhkd &
+
