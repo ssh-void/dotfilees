@@ -21,7 +21,7 @@ clear
 
 echo "Add void-repo-nonfree & installing packages...\n"
 sudo xbps-install -Syu void-repo-nonfree # add void-repo-multilib-nonfree
-sudo xbps-install -Suyf $(cat voidlinuxqemu.txt)
+sudo xbps-install -Suyf $("cat" voidlinuxqemu.txt)
 clear
 
 echo "Reconfigure all packages & Update font cache ... \n"

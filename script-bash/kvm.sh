@@ -32,7 +32,7 @@ doas ln -s /etc/sv/polkitd /var/service/
 doas ln -s /etc/sv/virtlockd /var/service/
 doas ln -s /etc/sv/virtlogd /var/service/
 doas ln -s /etc/sv/libvirtd /var/service/
-doas sv restart virtlockd virtlogd libvirtd
+cd /var/service/ && doas sv restart virtlockd && doas sv restart virtlogd && doas sv restart libvirtd
 
 doas mkdir -p ~/.config/libvirt/
 doas cp /etc/libvirt/libvirt.conf ~/.config/libvirt/
