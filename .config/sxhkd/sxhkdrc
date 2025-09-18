@@ -1,7 +1,9 @@
 XF86Audio{RaiseVolume,LowerVolume,Mute}
 		exec $HOME/.config/.script/pamixer.sh {up,down,toggle}
 
-### Alt + X ... ###
+# -------------------------------------------------------------------------------------- #
+# --------------------------------->  Alt + X ...   <----------------------------------- #
+# -------------------------------------------------------------------------------------- #
 
 alt + {Up,Down}
 		exec $HOME/.config/.script/brightnessctl.sh {up,down}
@@ -15,7 +17,9 @@ alt + p
 alt + b
 		blueman-manager &> /dev/null
 
-### Super + X ... ###
+# -------------------------------------------------------------------------------------- #
+# --------------------------------->  Super + X ... <----------------------------------- #
+# -------------------------------------------------------------------------------------- #
 
 super + {f,t,b}
 		{firefox &> /dev/null ,torbrowser-launcher &> /dev/null ,brave-browser-stable &> /dev/null}
@@ -36,12 +40,14 @@ super + {x,c}
 		{exec $HOME/.config/.script/img_txt_net.sh &> /dev/null,exec $HOME/.config/.script/img_txt.sh &> /dev/null}
 
 super + i
-		alacritty
+		alacritty &> /dev/null
 
 super + v
 		virt-manager &> /dev/null
 
-###  Super + Alt + X ... ###
+# -------------------------------------------------------------------------------------------- #
+# --------------------------------->  Super + Alt + X ... <----------------------------------- #
+# -------------------------------------------------------------------------------------------- #
 
 super + alt + l
 		bash -c '~/.local/bin/lock'
@@ -61,8 +67,12 @@ super + alt + a
 super + alt + {b,h}
 		{pkill -x sxhkd && BROWSER=brave-browser-stable sxhkd &,pkill -x sxhkd && BROWSER=firefox sxhkd &}
 
+super + alt + m
+		pkill -f mpv
 
-###  Super + Ctrl + X ... ###
+# --------------------------------------------------------------------------------------------- #
+# --------------------------------->  Super + Ctrl + X ... <----------------------------------- #
+# --------------------------------------------------------------------------------------------- #
 
 super + ctrl + {f,e}
 		{$HOME/.config/.script/sitefr.sh &> /dev/null, $HOME/.config/.script/siteen.sh &> /dev/null}
@@ -97,8 +107,10 @@ super + ctrl + v
 super + ctrl + y
 		$HOME/.config/.script/youtube.sh &> /dev/null
 
+# ------------------------------------------------------------------------------------------ #
+# --------------------------------->  Alt + Ctrl + X... <----------------------------------- #
+# ------------------------------------------------------------------------------------------ #
 
-
-alt + space + b
-		pkill -x sxhkd && BROWSER=brave-browser-stable sxhkd &
+alt + ctrl + Left
+            zulu-clean
 
