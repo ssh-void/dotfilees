@@ -31,7 +31,7 @@ static const Rule rules[] = {
 	/* class                   instance                   title          tags mask     iscentered   isfloating   monitor */
 	{ "st",                    "scpad",                    NULL,             0,            1,           1,           -1 },
 	{ "Thunar",                "thunar",                   NULL,             0,            1,           1,           -1 },
-	{ "qBittorrent",           "qbittorrent",              NULL,             0,            1,           1,           -1 },
+	{ "qBittorrent",           "qbittorrent",              NULL,           1 << 8,         1,          1,           -1 },
 	{ "Xfce4-appfinder",       "xfce4-appfinder",          NULL,             0,            1,           1,           -1 },
 	{ "Nvidia-settings",       "nvidia-settings",          NULL,             0,            1,           1,           -1 },
 	{ "pavucontrol",           "pavucontrol",              NULL,             0,            1,           1,           -1 },
@@ -40,6 +40,7 @@ static const Rule rules[] = {
 	{ "Rhythmbox",             "rhythmbox",                NULL,             0,            1,           1,           -1 },
 	{ "Nsxiv",                 "nsxiv",                    NULL,             0,            1,           1,           -1 },
 	{ "org.cryptomator.launcher.Cryptomator$MainApp", "org.cryptomator.launcher.Cryptomator$MainApp", NULL, 0, 1, 1, -1 },
+	{ "VeraCrypt",             "veracrypt",                NULL,           1 << 7,         1,           1,           -1 },
 	{ "TelegramDesktop",       "telegram-desktop",         NULL,             0,            1,           1,           -1 },
 	{ "Firefox",               "Places",                   NULL,             0,            1,           1,           -1 },
 	{ "Gcolor2",               "gcolor2",                  NULL,             0,            1,           1,           -1 },
