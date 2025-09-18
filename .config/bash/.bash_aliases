@@ -49,7 +49,7 @@ alias wp='find ~/Images -type f  2> /dev/null | shuf | nsxiv - -t &> /dev/null'
 alias sxhkdreload="pkill -USR1 -x sxhkd"
 alias transmissionreload="pkill -HUP transmission-daemon"
 alias taillog="tail -n 5 -v -f "
-alias fr="free -h"
+alias freeh="free -h"
 alias echo='echo -e'
 alias qemux8664="qemu-system-x86_64"
 alias vscode="code-oss --disable-gpu --log off . 2> /dev/null"
@@ -58,6 +58,7 @@ alias week='date +%V'
 alias now="date +"%T""
 alias timer='echo "Timer started. Stop with Ctrl-D." && date && time cat && date'
 alias cat='bat'
+alias topegh="top -E g -H"
 alias p='pwd'
 alias chmox='chmod +x'
 alias perms="doas chmod 664"
@@ -100,6 +101,7 @@ alias zconf='nvim $HOME/.config/zsh/.zshrc'
 alias bconf='nvim $HOME/.bashrc'
 alias vimsh='nvim $(find . -type f -name "*.sh")'
 alias vimex='nvim $(find . -type f -executable)'
+alias vimxinitrc='nvim ~/.xinitrc'
 alias bmpsc='maim -s -c 0.2706,0.2510,0.2392,1.0 -n 2 -b 2 -f bmp'
 #alias screenshot='scrot -q 100 '%Y-%m-%d_%H-%M-%S.png' -e 'mv $f ~/Images''
 #alias nf='clear && fastfetch -s 'Title:OS:Host:Kernel:Packages:Uptime:Break:WM:Shell:Terminal:Break:CPU:GPU:CPUUsage:Memory:Swap:LocalIp:Break:Display:Disk:Break:Colors' --packages-disabled 'nix' --color-keys 'red' --color-title 'cyan' --title-color-user 'green' --logo-color-1 'blue' --logo-color-2 'white''
@@ -229,11 +231,11 @@ alias wifitus="nmcli device status"
 alias wifishow="nmcli connection show | more"
 alias wifiup="doas nmcli con up "
 alias wifiwn="doas nmcli con down "
-alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
-alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --progress-bar -C - '
-alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" -L -O --progress-bar -C - '
+alias ttor='curl -X POST --socks5-hostname 127.0.0.1:9050 -s --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" https://check.torproject.org/api/ip | jq -r '.IsTor''
+alias curltor='curl --socks5-hostname 127.0.0.1:9050 -L -O --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --progress-bar -C - '
+alias curll='curl --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" -L -O --progress-bar -C - '
 alias xmr='curl --socks5-hostname 127.0.0.1:9050 rate.sx/xmr'
-alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" -r -np -nH --cut-dirs=1 -R index.html '
+alias wgetall='wget --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" -r -np -nH --cut-dirs=1 -R index.html '
 alias  ariacjxsk="aria2c -c -j 5 -x 3 -s 10 -k 5M"
 alias vimfirefox='nvim $(mktemp -p /tmp firefox-XXX.txt)'
 
@@ -375,11 +377,15 @@ alias flatkill="flatpak list --app --columns=application | fzy -l 20 | xargs fla
 # ----------------------------------------------------------------------------------------#
 # ------------------------------------instaloader-----------------------------------------#
 # ----------------------------------------------------------------------------------------#
-alias insthighlights='instaloader --load-cookies firefox --load-cookies brave --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --highlights --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json  '
-alias instreel='instaloader --load-cookies firefox --no-captions --no-pictures --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
-alias instimg='instaloader --load-cookies firefox --post-filter="not is_video" -no-captions --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
-alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0" --no-profile-pic --no-captions --no-metadata-json --no-video-thumbnails ":saved" '
+alias insthighlights='instaloader --load-cookies firefox --load-cookies brave --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --highlights --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json  '
+alias instreel='instaloader --load-cookies firefox --no-captions --no-pictures --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
+alias instimg='instaloader --load-cookies firefox --post-filter="not is_video" -no-captions --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
+alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --no-profile-pic --no-captions --no-metadata-json --no-video-thumbnails ":saved" '
 
-alias ttslance=" docker run -it -p 5002:5002 --gpus all -v ~/coqui-tts-models:/root/.local/share/tts -v ~/tts-output:/root/tts-output -v ~/tmux.conf:/root/.tmux.conf:ro --entrypoint /bin/bash tts"
-alias drmall='docker rm -f $(docker ps -aq)'
+# ----------------------------------------------------------------------------------------#
+# -----------------------------------   docker   -----------------------------------------#
+# ----------------------------------------------------------------------------------------#
+
+alias ttslance="docker run -it --rm -p 5002:5002 --gpus all -v ~/programming/tts-models:/root/.local/share/tts -v ~/programming/tts-output:/root/tts-output -v ~/.config/docker/tmux.conf:/root/.tmux.conf:ro -v ~/.config/docker/.bashrc:/root/.bashrc:ro --entrypoint /bin/bash tts-gbu"
+alias dkrmall='docker rm -f $(docker ps -aq)' #  Force-remove all Docker containers (running or stopped)
 

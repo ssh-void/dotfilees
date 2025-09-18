@@ -108,13 +108,13 @@ whisper "$@" --fp32 --model small --threads 8 --language French -f vtt --device 
 
 zulucryptvera () {
 rand=$(head -c 100 /dev/random | tr -dc 'a-zA-Z0-9' | head -c7)
-truncate -s "$1" ~/vera-$rand.hc
-doas zuluCrypt-cli -c -t vera -d ~/vera-$rand.hc -z ntfs -g "/dev/urandom.aes:twofish:serpent.xts-plain64.512.sha512"
+truncate -s "$1" ~/verazulu-$rand.hc
+doas zuluCrypt-cli -c -t vera -d ~/verazulu-$rand.hc -z ntfs -g "/dev/urandom.aes:twofish:serpent.xts-plain64.512.sha512"
 }
 
 zuluopenvera () {
     rand=$(head -c 100 /dev/random | tr -dc 'a-zA-Z0-9' | head -c5)
-    doas cryptsetup open --type tcrypt --veracrypt ~/$(ls vera*.hc | fzy -i -l 10) vera-$rand.hc
-    mkdir -p /media/vera-$rand.hc
-    doas mount -o rw /dev/mapper/vera-$rand.hc /media/vera-$rand.hc
+    doas cryptsetup open --type tcrypt --veracrypt ~/$(ls verazulu*.hc | fzy -i -l 10) verazulu-$rand.hc
+    mkdir -p /media/verazulu-$rand.hc
+    doas mount -o rw /dev/mapper/verazulu-$rand.hc /media/verazulu-$rand.hc
 }

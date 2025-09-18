@@ -1,4 +1,4 @@
 #!/bin/bash
-for dev in $(ls /dev/mapper | grep zuluCrypt); do
+for dev in $(ls /dev/mapper | grep verazulu); do
     doas cryptsetup close "$dev"
 done
