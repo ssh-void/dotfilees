@@ -5,4 +5,4 @@ doas xbps-install -Syu firefox
 # firefox font
 doas ln -s /usr/share/fontconfig/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d/
 doas xbps-reconfigure -f fontconfig
-cp -rf ~/.config/mimeapps.list ~/.local/share/
+#cp -rf ~/.config/mimeapps.list ~/.local/share/

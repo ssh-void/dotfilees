@@ -127,6 +127,7 @@ alias cal="cal -m"
 alias cl="clear"
 alias m="man"
 alias cloc="cloc --timeout 0"
+alias grep="grep --color=always"
 vf() { nvim $(find ~/ /usr/ /etc/ /media/ -type f 2> /dev/null | fzy -l 20 -q "$1") ; }
 
 # --------------------------------------------------------------------------------------- #
@@ -139,7 +140,7 @@ alias lls="ls -Fa --color=auto --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias ld="ls --color=auto -d */ && ls --color=auto -d .*/ &> /dev/null "
 alias ldh='ls -lahd --color=auto --group-directories-first .[!.]*/ ..?*/ 2>/dev/null'
-alias lsg='ls -l | grep -i'
+alias lsg='ls -l | grep --color=always -i'
 alias ctf='echo $(ls -1 | wc -l)'
 # eza (color icons ...)
 #alias l="eza -Fl --color=always --group-directories-first"  # long format
@@ -222,8 +223,8 @@ alias ncduhome='ncdu --one-file-system --si --show-graph --show-percent --disabl
 # ------------------------------>     net wifi ...     <--------------------------------- #
 # --------------------------------------------------------------------------------------- #
 alias pingvoid='ping -c 5 voidlinux.org'
-alias ssgrep='doas ss -atpu | grep -i'
-alias localip="doas ifconfig | grep -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep -Eo '([0-9]*\\.){3}[0-9]*' | grep -v '127.0.0.1'"
+alias ssgrep='doas ss -atpu | grep --color=always -i'
+alias localip="doas ifconfig | grep --color=always -Eo 'inet (addr:)?([0-9]*\\.){3}[0-9]*' | grep --color=always -Eo '([0-9]*\\.){3}[0-9]*' | grep --color=always -v '127.0.0.1'"
 alias myip='curl -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias myiptor='curl --socks5-hostname 127.0.0.1:9050 -s -m 5 --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:140.0) Gecko/20100101 Firefox/140.0" https://ipleak.net/json/ | jq "{Country: .country_name, Region: .region_name, Continent: .continent_name, City: .city_name, TimeZone: .time_zone, IP: .query_text}"'
 alias wifilist="nmcli device wifi list | more"
@@ -272,7 +273,7 @@ alias ya='yt-dlp --config-locations $HOME/.config/yt-dlp/ya.conf '
 alias yac='yt-dlp --config-locations $HOME/.config/yt-dlp/yac.conf '
 alias yap='yt-dlp --config-locations $HOME/.config/yt-dlp/yap.conf '
 alias yapc='yt-dlp --config-locations $HOME/.config/yt-dlp/yapc.conf '
-alias ytsupport='yt-dlp --list-extractors | grep -i '
+alias ytsupport='yt-dlp --list-extractors | grep --color=always -i '
 alias yt='yt-dlp --skip-download --write-thumbnail '
 alias yvlimit='yt-dlp --config-locations $HOME/.config/yt-dlp/yvlimit.conf'
 alias yturl='torsocks yt-dlp -g --skip-download'
@@ -293,12 +294,12 @@ alias fvlc='vlc "$(find /home/${USER}/Videos/ -type f -name "*.mp4" | fzy -l 8)"
 #alias ffplay='ffplay —hide_banner'
 #alias ffprobe='ffprobe -hide_banner'
 alias mffmpeg='man ffmpeg-all'
-alias ffmpegcodec='ffmpeg -hide_banner -encoders | grep -i'
+alias ffmpegcodec='ffmpeg -hide_banner -encoders | grep --color=always -i'
 alias codecinfo="ffmpeg -h encoder=h264_qsv"
-alias ffmpegprotocol='ffmpeg -protocols -hide_banner | grep -i'
+alias ffmpegprotocol='ffmpeg -protocols -hide_banner | grep --color=always -i'
 alias ffmpeghw="ffmpeg -hwaccels -hide_banner"
-alias ffmpeginfo="ffmpeg -hide_banner -h full | grep -i "
-alias ffmpegfiltre="ffmpeg -hide_banner -filters | grep -i"
+alias ffmpeginfo="ffmpeg -hide_banner -h full | grep --color=always -i "
+alias ffmpegfiltre="ffmpeg -hide_banner -filters | grep --color=always -i"
 alias videoinfo="mediainfo "
 videotest () { ffmpeg -v error -i "$1" -f null - 2>&1; }
 viddur () { ffprobe -i "$1" -show_entries format=duration -v quiet -of csv="p=0" | awk '{printf "%dm%06.4fs\n", int($1/60), $1%60}'; }
@@ -341,7 +342,7 @@ alias ufwr="doas ufw reload"
 alias ufws="doas ufw status verbose"
 alias ufwe="doas ufw enable"
 alias ufwi="doas ufw app info"
-alias nvop="nvidia-settings -q all | grep -i "
+alias nvop="nvidia-settings -q all | grep --color=always -i "
 alias nvidiawatch='watch -n 1 nvidia-smi'
 alias uzsh="zsh -i -c 'omz update'"
 
@@ -364,7 +365,7 @@ alias gttsEnnormal="gtts-cli -l en --file"
 # ----------------------------------------------------------------------------------------#
 # ------------------------------------ gallery-dl ----------------------------------------#
 # ----------------------------------------------------------------------------------------#
-alias gallerysite='gallery-dl --list-modules | grep -i'
+alias gallerysite='gallery-dl --list-modules | grep --color=always -i'
 
 # ----------------------------------------------------------------------------------------#
 # --------------------------------------flatpak-------------------------------------------#
@@ -388,4 +389,4 @@ alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X1
 
 alias ttslance="docker run -it --rm -p 5002:5002 --gpus all -v ~/programming/tts-models:/root/.local/share/tts -v ~/programming/tts-output:/root/tts-output -v ~/.config/docker/tmux.conf:/root/.tmux.conf:ro -v ~/.config/docker/.bashrc:/root/.bashrc:ro --entrypoint /bin/bash tts-gbu"
 alias dkrmall='docker rm -f $(docker ps -aq)' #  Force-remove all Docker containers (running or stopped)
-
+alias dkrmimg='docker rmi -f '
