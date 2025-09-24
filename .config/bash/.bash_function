@@ -98,7 +98,7 @@ whisper "$@" --fp32 --model small.en --threads 8 --language English -f vtt --dev
 }
 
 whisperFrsmall () {
-whisper "$@" --fp32 --model small --threads 8 --language French -f vtt --device cpu
+whisper "$@" --model small --threads 8 --language French -f vtt --device cpu
 }
 
 

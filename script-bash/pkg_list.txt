@@ -12,7 +12,7 @@ neovim notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
 ntfs-3g numlockx
 octave openbsd-netcat opendoas 7zip pamixer patch pavucontrol picom
 pipewire pipewire-devel pkg-config pnpm qt5ct qt6ct readline rhythmbox rsync slock socklog
-spice-protocol spice-vdagent sublime-text4 sxhkd noto-fonts-ttf-extra
+spice-protocol spice-vdagent sxhkd noto-fonts-ttf-extra
 sxiv sysfsutils tealdeer terminus-font tesseract-ocr tesseract-ocr-ara tesseract-ocr-fra
 tesseract-ocr-eng tesseract-ocr-rus thunar-archive-plugin tmux
 tree ttf-ubuntu-font-family ufw umbrello unrar unzip util-linux
