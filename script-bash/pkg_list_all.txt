@@ -2,14 +2,14 @@ NetworkManager inetutils-ifconfig Thunar alacritty alsa-pipewire alsa-plugins-ff
 android-tools android-udev-rules apparmor arandr aria2 arp-scan base-devel
 base-system bash-completion blueman bluez bridge-utils brightnessctl
 bsdtar chrony cloc colordiff cronie cryptsetup curl dnsmasq
-dunst eclipse fuse-exfat eza ffmpeg flameshot font-sil-doulos fontmanager
+eclipse fuse-exfat eza ffmpeg flameshot font-sil-doulos fontmanager
 fribidi-devel fzy gawk gcc gcolor2 gdb git grub-i386-efi grub-x86_64-efi
 gtkedit gufw harfbuzz-devel htop intel-ucode intel-video-accel
 inxi jq libX11-devel libXft-devel libXinerama-devel libXrandr-devel
 libinput-gestures libjack-pipewire libreoffice libselinux libspa-bluetooth
 libvirt lm_sensors lvm2 lxappearance lynis maim man-db mdadm mdocml
 megatools mesa-intel-dri mesa-vaapi mesa-vdpau mesa-vulkan-intel most mpv vlc
-neovim notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
+neovim dunst notify-send.sh noto-fonts-cjk noto-fonts-emoji noto-fonts-ttf
 ntfs-3g numlockx nv-codec-headers nvidia nvidia-opencl obfs4proxy
 octave openbsd-netcat opendoas 7zip pamixer patch pavucontrol picom
 pipewire pipewire-devel pkg-config pnpm python2 python3 python3-dbus python3-devel
