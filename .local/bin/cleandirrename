@@ -1,13 +1,34 @@
 #!/bin/bash
+# Nettoyer noms de dossiers pour plusieurs dossiers ou dossier courant
 
-for d in */; do
-    dir="${d%/}"
-    # Remplace la ponctuation par tiret, les espaces/groupes d'espaces par un tiret, compresse les tirets
-    newname=$(echo "$dir" | tr '[:punct:]' '-' | tr -s '[:space:]' '-' | tr -s '-')
-    # Supprime les tirets en début et en fin
-    newname=$(echo "$newname" | sed 's/^-*//;s/-*$//')
-    # Renomme seulement si le nom change et la cible n'existe pas déjà
-    if [[ "$dir" != "$newname" && ! -e "$newname" ]]; then
-        mv -- "$dir" "$newname"
+# Si aucun argument → utiliser le dossier courant
+if [[ $# -eq 0 ]]; then
+    dirs=("$(pwd)")
+else
+    dirs=("$@")
+fi
+
+# Boucler sur tous les dossiers
+for DIR in "${dirs[@]}"; do
+    # Vérifier que le dossier existe
+    if [[ ! -d "$DIR" ]]; then
+        echo "Erreur: '$DIR' n'est pas un dossier valide."
+        continue
     fi
+
+    # Renommer dossiers (profondeur d'abord)
+    find "$DIR" -depth -type d ! -name ".*" | while read -r dir; do
+        parent=$(dirname "$dir")
+        base=$(basename "$dir")
+        newname=$(echo "$base" \
+            | tr '[:punct:]' '-' \
+            | tr -s '[:space:]' '-' \
+            | tr -s '-' \
+            | sed 's/^-*//;s/-*$//')
+        if [[ "$base" != "$newname" && ! -e "$parent/$newname" ]]; then
+            echo "Dossier : $dir -> $parent/$newname"
+            mv -- "$dir" "$parent/$newname"
+        fi
+    done
 done
+

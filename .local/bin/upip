@@ -6,8 +6,6 @@ uv pip install --upgrade gallery-dl
 uv pip install --upgrade --pre "yt-dlp[default]"
 uv pip install --upgrade telethon
 uv pip install --upgrade gTTS
-uv pip install --upgrade autosub
-uv pip install --upgrade TTS
 #uv pip install git+https://github.com/coqui-ai/TTS
 uv pip install --upgrade browser-cookie3
 uv pip install --upgrade git+https://github.com/openai/whisper.git

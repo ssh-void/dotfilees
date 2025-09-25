@@ -1,0 +1,36 @@
+#!/bin/bash
+# Nettoyer noms de fichiers pour plusieurs extensions dans un dossier donné
+
+# Vérifier argument
+DIR="${1:-.}"  # par défaut dossier courant si aucun argument
+if [[ ! -d "$DIR" ]]; then
+    echo "Erreur: '$DIR' n'est pas un dossier valide."
+    exit 1
+fi
+
+# Extensions à traiter
+extensions=(mp4 mp3 vtt srt zip rar pdf jpg png txt docx epub djvu html json irs)
+
+# Parcourir chaque extension
+for ext in "${extensions[@]}"; do
+    # find récursif
+    find "$DIR" -type f -name "*.$ext" | while read -r f; do
+        dir=$(dirname "$f")
+        base=$(basename "$f" ".$ext")
+
+        # Nettoyage du nom
+        newname=$(echo "$base" \
+            | tr '[:punct:]' '-' \
+            | tr -s '[:space:]' '-' \
+            | tr -s '-' \
+            | sed 's/^-*//;s/-*$//')
+
+        finalname="$dir/$newname.$ext"
+
+        if [[ "$f" != "$finalname" && ! -e "$finalname" ]]; then
+            echo "Renommage : $f -> $finalname"
+            mv -- "$f" "$finalname"
+        fi
+    done
+done
+
