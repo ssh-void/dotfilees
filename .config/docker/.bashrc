@@ -78,6 +78,7 @@ fi
 
 alias u='apt update -y;apt upgrade -y;clear'
 alias c='apt clean && apt autoremove'
+alias x="exit"
 alias i='apt install'
 alias l="ls -Flh --color=always --group-directories-first"  # long format
 alias ll="ls -Fh -dlg .* --group-directories-first --color=auto 2> /dev/null"
@@ -100,8 +101,8 @@ alias duf='du -sh * '
 alias usage='du -d 1 -h | sort -rh '
 alias duone='du -h --max-depth=1 '
 alias disk='doas du -h --max-depth=1 . | sort -rh '
-
-
+alias ttsxttsv2="tts-server --model_name tts_models/multilingual/multi-dataset/xtts_v2"
+bind '"\C-o": alias-expand-line'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

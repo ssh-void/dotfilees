@@ -1,1 +1,3 @@
-flatpak run --user --ostree-verbose "$(flatpak list --app --columns=application | fzy)" &> /dev/null
+export $(dbus-launch)
+flatpak run --user --ostree-verbose "$(flatpak list --app --columns=application | fzy -i -l 20 -p "run > ")" &> /dev/null
+
