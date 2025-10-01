@@ -40,6 +40,6 @@ sudo ln -s /etc/sv/cronie /var/service # crontab -e
 sudo ln -s /etc/sv/acpid/ /var/service/
 clear
 #sudo sed -i 's|^#\?FONT=.*|FONT="ter-v20b"|' /etc/rc.conf
-permit "### opendoas ..."
+printf "### opendoas ..."
 echo "permit nopass "$USERNAME" as root" | sudo tee /etc/doas.conf > /dev/null
 sudo shutdown -r now # reboot
