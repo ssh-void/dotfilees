@@ -3,7 +3,7 @@ firefox font-inconsolata-otf terminus-font
 neovim
 brightnessctl
 tealdeer
-crond
+cronie
 Thunar
 xbanish numlockx sxhkd
 zathura zathura-pdf-mupdf
