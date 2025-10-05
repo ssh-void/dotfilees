@@ -29,8 +29,8 @@ cp -rf .bash_profile .bashrc .gitconfig .lesskey .octaverc .profile .xinitrc0 .z
 doas cp -rf xbps.d/ /etc/
 doas cp -rf xorg.conf.d/ /etc/X11/
 
-cd $DIR 
-bash sucklees-devel.sh 
+cd $DIR
+bash sucklees-devel.sh
 doas xbps-install -Syu font-inconsolata-otf terminus-font
 
 # Build suckless programs
