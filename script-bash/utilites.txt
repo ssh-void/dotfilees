@@ -1,4 +1,4 @@
-xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool
+xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool xauth xkill
 firefox font-inconsolata-otf terminus-font
 neovim
 brightnessctl

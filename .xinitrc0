@@ -1,0 +1,25 @@
+#doas mount -a &
+xbanish -t 2 &
+pipewire &
+pipewire-pulse &
+#dunst &
+slstatus &
+xset -dpms && xset s off &
+xset +fp ~/.fonts && xset s noblank &
+xset fp rehash && xset r rate 225 75 &
+xset mouse 5 1 &
+doas zramen toss && doas zramen -a zstd -s 90 make &
+xrdb -load $HOME/.config/X11/Xresources &
+doas "rm" -rf /var/service/agetty-tty3 > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty4 > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty5 > /dev/null 2>&1
+doas "rm" -rf /var/service/agetty-tty6 > /dev/null 2>&1
+brightnessctl set 50% &
+doas chronyc -a makestep &
+while true; do numlockx on ; sleep 1 ; done &
+while true; do sxhkd ; sleep 1 ; done &
+while true; do picom --backend glx --glx-no-stencil --xrender-sync-fence --no-vsync --glx-no-rebind-pixmap --no-ewmh-fullscreen --no-use-damage --no-fading-openclose --no-fading-destroyed-argb; sleep 1 ; done &
+st -f "Terminess Nerd Font Mono:style=Bold:pixelsize=24:antialias=true:autohint=true" -g "115x33+152+25" -n "scpad" -e "tmux" > /dev/null 2>&1 &
+eval "$(ssh-agent -s)"
+eval $(gpg-agent --daemon)
+exec dbus-run-session dwm

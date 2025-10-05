@@ -15,5 +15,5 @@ doas xbps-install -Syu speedtest-cli
 # Set the MAC address for the Wi-Fi connection "xxx" to be randomized on each connection
 #doas nmcli connection modify xxx wifi.cloned-mac-address random
 doas xbps-install -Syu inetutils-ifconfig
-doas xbps-install -Syu wget aria2 tor torsocks arp-scan obfs4proxy tor curl tor oniux qbittorrent git
-doas xbps-install -Syu wireshark-qt
+doas xbps-install -Syu wget aria2 tor torsocks obfs4proxy tor curl tor oniux qbittorrent git
+#doas xbps-install -Syu wireshark-qt arp-scan
