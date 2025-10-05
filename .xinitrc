@@ -1,10 +1,12 @@
 #doas mount -a &
+
 if [ -d /etc/X11/xinit/xinitrc.d ]; then
     for f in /etc/X11/xinit/xinitrc.d/*; do
         [ -x "$f" ] && . "$f"
     done
     unset f
 fi
+
 ### i xorg-server-devel
 #OpenGL Settings | 0 High Quality | 1 Quality | 2 Performance | 3 High Performance
 nvidia-settings -a OpenGLImageSettings=2 &
@@ -22,7 +24,7 @@ xset -dpms && xset s off &
 xset +fp ~/.fonts && xset s noblank &
 xset fp rehash && xset r rate 225 75 &
 xset mouse 5 1 &
-doas zramen toss && doas zramen -a zstd -s 70 make &
+doas zramen toss && doas zramen -a zstd -s 90 make &
 xrandr --output eDP1 --primary --mode 1920x1080 --rate 60 --rotate normal --brightness 1 &
 xrandr --setprovideroutputsource NVIDIA-0 modesetting &
 xrandr --auto && xrandr --output eDP1 --set "PRIME Synchronization" 1 &
@@ -32,7 +34,7 @@ doas "rm" -rf /var/service/agetty-tty3 > /dev/null 2>&1
 doas "rm" -rf /var/service/agetty-tty4 > /dev/null 2>&1
 doas "rm" -rf /var/service/agetty-tty5 > /dev/null 2>&1
 doas "rm" -rf /var/service/agetty-tty6 > /dev/null 2>&1
-brightnessctl set 70% &
+brightnessctl set 50% &
 doas chronyc -a makestep &
 while true; do numlockx on ; sleep 1 ; done &
 while true; do sxhkd ; sleep 1 ; done &

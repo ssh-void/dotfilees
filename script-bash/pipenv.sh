@@ -16,18 +16,13 @@ fi
 # Activate the virtual environment
 source "$VENV_DIR/bin/activate"
 
-# (Optional) Initialize a uv project to use uv tree
-if [ ! -f "$TOOLS_DIR/pyproject.toml" ]; then
-    uv init "$TOOLS_DIR"
-fi
-
 # Install or upgrade packages
 uv pip install --upgrade instaloader
 uv pip install --upgrade gallery-dl
 uv pip install --upgrade --pre "yt-dlp[default]"
 uv pip install --upgrade telethon
 uv pip install --upgrade gTTS
-uv pip install --upgrade autosub
+#uv pip install --upgrade autosub
 uv pip install --upgrade browser-cookie3
 uv pip install --upgrade git+https://github.com/openai/whisper.git
 
