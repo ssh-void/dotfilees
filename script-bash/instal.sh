@@ -41,9 +41,7 @@ for prog in dwm dmenu st slstatus nsxiv; do
 	if [ -d "$PROG_PATH" ]; then
 		echo "Building $prog..."
 		cd "$PROG_PATH"
-        doas make -s -j 4 && doas make -s clean install
-		doas make clean install
-        doas rm *.o ; doas rm *.orig ; doas rm *.rej ; doas rm config.h ; make clean
+		doas make -s -j 4 && doas make -s clean install && doas make clean install
 	else
 		echo "Warning: $PROG_PATH does not exist, skipping."
 	fi
