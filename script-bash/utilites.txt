@@ -1,6 +1,5 @@
 xorg-server xinit xorg-input-drivers xrandr xrdb xset xdo xdotool xauth xkill
 firefox font-inconsolata-otf terminus-font
-neovim
 brightnessctl
 tealdeer
 cronie
@@ -14,9 +13,9 @@ fuse-exfat ntfs-3g
 maim xclip
 wmname
 neovim
-htop neofetch
+htop
 NetworkManager aria2 curl tor torsocksw oniux qbittorrent git
-dwm st slock
+slock
 ffmpeg
 fuse-exfat ntfs-3g
 maim
