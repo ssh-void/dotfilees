@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+# Fichier contenant la liste des projets
+PROJECT_FILE="$HOME/.config/.projects.txt"
+
+# Lire les valeurs
+mapfile -t values < "$PROJECT_FILE"
+
+# Menu de sélection avec fzy
+selected_value=$(printf '%s\n' "${values[@]}" | fzy --prompt="Open-Project: ")
+
+# Si l'utilisateur choisit "add"
+if [[ "$selected_value" == "add" ]]; then
+    # Demander une nouvelle entrée avec read (ou fzy si tu veux le garder uniforme)
+    echo "Enter something:" >&2
+    read -r result
+
+    # Remplacer ~ par /home/void si présent
+    if [[ "$result" == *"~"* ]]; then
+        tilda="${result//\~//home/void}"
+        echo "$tilda" >> "$PROJECT_FILE"
+    else
+        echo "$result" >> "$PROJECT_FILE"
+    fi
+
+# Si l'utilisateur choisit "rm"
+elif [[ "$selected_value" == "rm" ]]; then
+    # Sélectionner le projet à supprimer
+    selected_rm=$(printf '%s\n' "${values[@]}" | fzy --prompt="Select to remove: ")
+    if [[ -n "$selected_rm" ]]; then
+        grep -vFx "$selected_rm" "$PROJECT_FILE" > "$PROJECT_FILE.tmp" && mv "$PROJECT_FILE.tmp" "$PROJECT_FILE"
+    fi
+
+# Si une valeur valide a été choisie, ouvrir avec code-oss
+elif [[ -n "$selected_value" ]]; then
+    nohup code-oss --disable-gpu --log off "$selected_value" >/dev/null 2>&1 &
+fi
+
