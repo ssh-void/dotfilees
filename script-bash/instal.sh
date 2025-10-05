@@ -28,6 +28,7 @@ cp -rf .config/ .fonts/ .icons/ .local/ .themes/  $HOME/
 cp -rf .bash_profile .bashrc .gitconfig .lesskey .octaverc .profile .xinitrc0 .zshenv $HOME/
 doas cp -rf xbps.d/ /etc/
 doas cp -rf xorg.conf.d/ /etc/X11/
+cp -rf ~/.xinitrc0 ~/.xinitrc
 
 cd $DIR
 bash sucklees-devel.sh
