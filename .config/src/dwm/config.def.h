@@ -45,6 +45,8 @@ static const Rule rules[] = {
 	{ "Firefox",               "Places",                   NULL,             0,            1,           1,           -1 },
 	{ "Gcolor2",               "gcolor2",                  NULL,             0,            1,           1,           -1 },
 	{ "mpv",                   "mpvk",                     NULL,             0,            1,           1,           -1 },
+	{ "ffpaly",                "ffpaly",                   NULL,             0,            1,           1,           -1 },
+	{ "Brave-browser" "crx_nngceckbapebfimnlniiiahkandclblb", NULL,            0,            1,           1,           -1 },
 	{ "Lxappearance",          "lxappearance",             NULL,             0,            1,           1,           -1 },
 	{ "easyeffects" ,          "easyeffects",              NULL,             0,            1,           1,           -1 },
 	{ "Tor Browser",           "Navigator",                NULL,             0,            1,           1,           -1 },
