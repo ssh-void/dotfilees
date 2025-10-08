@@ -10,6 +10,8 @@ flatpak --user install --or-update flathub org.cryptomator.Cryptomator -y
 flatpak --user install --or-update flathub io.freetubeapp.FreeTube -y
 #install brave-Browser
 #flatpak --user install --or-update flathub com.brave.Browser
+# LibreWolf
+#flatpak --user install --or-update flathub io.gitlab.librewolf-community -y
 # JamesDSP
 flatpak --user install --or-update  me.timschneeberger.jdsp4linux -y
 # KDE Ebook
