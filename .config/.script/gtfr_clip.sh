@@ -3,7 +3,8 @@
 
 text=$(xclip -o -selection primary | xclip -i -f -selection clipboard | sed 's/\[[^]]*\]//g; s/"//g')
 
-torsocks gtts-cli -l fr --slow "$text" | mpv --no-config \
+#torsocks gtts-cli -l fr --slow "$text" | mpv --no-config \
+gtts-cli -l fr --slow "$text" | mpv --no-config \
     --no-video \
     --af-add="volume=2" \
     --speed=1.5 \

@@ -3,7 +3,7 @@
 url=$1
 [ -d youtube ] || mkdir youtube
 cd youtube || exit
-yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" --no-warnings --no-mtime --no-part --no-embed-info-json --no-overwrites --no-abort-on-error --no-config --rm-cache-dir --ignore-errors --continue --retries 20 --retry-sleep exp=1:20 --download-archive $HOME/archive.txt --embed-thumbnail --embed-metadata --geo-bypass-country US --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0" --prefer-ffmpeg --downloader-args ffmpeg:"-loglevel error -stats -vf scale=1280:720" --id --recode-video mp4 "$url"
+yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]/b" --no-warnings --no-mtime --no-part --no-embed-info-json --no-overwrites --no-abort-on-error --no-config --rm-cache-dir --ignore-errors --continue --retries 20 --retry-sleep exp=1:20 --download-archive $HOME/archive.txt --embed-thumbnail --embed-metadata --geo-bypass-country US --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --prefer-ffmpeg --downloader-args ffmpeg:"-loglevel error -stats -vf scale=1280:720" --id --recode-video mp4 "$url"
 for i in *; do
    echo "file '$i'" >> list.txt
 done

@@ -52,3 +52,5 @@
 	navigate = true
 	light = false
 	line-numbers = true
+[init]
+	defaultBranch = main
