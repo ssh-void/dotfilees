@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
-set -e  # Exit the script if any command fails
+set -e  # Exit immediately if any command fails
 
 TOOLS_DIR="$HOME/.local/share/tools"
 VENV_DIR="$TOOLS_DIR/.env"
 
-# Create the tools directory
+# Create the tools directory if it doesn't exist
 mkdir -p "$TOOLS_DIR"
 
-# Create a uv virtual environment if it doesn't exist
+# Create a uv virtual environment if it doesn't already exist
 if [ ! -d "$VENV_DIR" ]; then
     cd "$TOOLS_DIR"
     uv venv .env
@@ -16,23 +16,35 @@ fi
 # Activate the virtual environment
 source "$VENV_DIR/bin/activate"
 
-# Install or upgrade packages
-uv pip install --upgrade instaloader
-uv pip install --upgrade gallery-dl
-uv pip install --upgrade --pre "yt-dlp[default]"
-uv pip install --upgrade telethon
-uv pip install --upgrade gTTS
-#uv pip install --upgrade autosub
-uv pip install --upgrade browser-cookie3
-uv pip install --upgrade git+https://github.com/openai/whisper.git
+echo "[*] Updating Python tools..."
+pkgs=(
+  instaloader
+  gallery-dl
+  "yt-dlp[default]"
+  telethon
+  gTTS
+  streamlink
+  browser-cookie3
+  "git+https://github.com/openai/whisper.git"
+)
 
-# Reload profile if needed
+# Upgrade each package inside the virtual environment
+for pkg in "${pkgs[@]}"; do
+  echo "→ $pkg"
+  uv pip install --upgrade "$pkg"
+done
+echo "All Python packages are up to date."
+
+echo "Setup complete. To activate the virtual environment, run:"
+echo "source $VENV_DIR/bin/activate"
+
+# Create symlinks for the main command-line tools
+bins=(yt-dlp streamlink instaloader gtts-cli whisper gallery-dl)
+
+for bin in "${bins[@]}"; do
+    ln -sf "$HOME/.local/share/tools/.env/bin/$bin" "$HOME/.local/bin/"
+done
+
+# Reload user profile if necessary (to ensure $HOME/.local/bin is in PATH)
 source "$HOME/.profile"
 
-echo "Setup complete. Activate the virtual environment with: source $VENV_DIR/bin/activate"
-
-ln -s /home/${USER}/.local/share/tools/.env/bin/yt-dlp $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/.env/bin/instaloader $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/.env/bin/gtts-cli $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/.env/bin/whisper $HOME/.local/bin/
-ln -s /home/${USER}/.local/share/tools/.env/bin/gallery-dl $HOME/.local/bin/
