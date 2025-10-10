@@ -14,7 +14,7 @@ extensions=(mp4 mp3 vtt srt zip rar pdf jpg png txt docx epub djvu html json irs
 # Parcourir chaque extension
 for ext in "${extensions[@]}"; do
     # find récursif
-    find "$DIR" -type f -name "*.$ext" | while read -r f; do
+    find "$DIR" -type f -name "*.$ext" -not -path "*/.*/*" | while read -r f; do
         dir=$(dirname "$f")
         base=$(basename "$f" ".$ext")
 
