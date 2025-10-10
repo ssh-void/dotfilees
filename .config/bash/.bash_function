@@ -73,6 +73,7 @@ rename_random() {
 # nwipedod ...
 ##############
 
+# nwipedod  /dev/sdb
 nwipedod () {
  doas nwipe --method dod522022m --rounds 1 --autonuke --nosignals --logfile ~/nwipessd.log "$1"
 }
@@ -86,15 +87,15 @@ nwipeops2 () {
 #############
 
 whisperEntiny () {
-whisper "$@" --fp32 --model tiny.en --threads 8 --language English -f vtt --device cpu
+whisper "$@" --model tiny.en --threads 8 --language English -f vtt --device cpu
 }
 
 whisperFrtiny () {
-whisper "$@" --fp32 --model tiny --threads 8 --language French -f vtt --device cpu
+whisper "$@" --model tiny --threads 8 --language French -f vtt --device cpu
 }
 
 whisperEnsmall () {
-whisper "$@" --fp32 --model small.en --threads 8 --language English -f vtt --device cpu
+whisper "$@" --model small.en --threads 8 --language English -f vtt --device cpu
 }
 
 whisperFrsmall () {
@@ -117,4 +118,9 @@ zuluopenvera () {
     doas cryptsetup open --type tcrypt --veracrypt ~/$(ls verazulu*.hc | fzy -i -l 10) verazulu-$rand.hc
     mkdir -p /media/verazulu-$rand.hc
     doas mount -o rw /dev/mapper/verazulu-$rand.hc /media/verazulu-$rand.hc
+}
+
+vlcipt () {
+    streamlink "$1" best --player vlc
+
 }

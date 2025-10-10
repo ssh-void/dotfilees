@@ -63,6 +63,7 @@ alias p='pwd'
 alias chmox='chmod +x'
 alias perms="doas chmod 664"
 alias xargs="xargs -r"
+alias tl="tldr"
 alias cdbin="cd ~/.local/bin/"
 alias cdscript="cd ~/.config/.script/"
 alias cdprog="cd ~/programming/"
@@ -110,6 +111,7 @@ alias lc='wc -l'
 alias wcsh='find . -type f -name "*.sh" | wc -l'
 alias wcex='find . -type f -executable | wc -l'
 alias rmff='for f in FF*.mp4; do target="${f#FF}"; if [ -f "$target" ]; then echo "Suppression : $target"; rm "$target"; fi; done'
+alias rm0m='find . -type f -name "*.mp4" -size 0c -print && find . -type f -name "*.mp4" -size 0c -delete'
 
 # --------------------------------------------------------------------------------------- #
 # --------------------------------->     cp mv ...    <---------------------------------- #
@@ -120,6 +122,7 @@ alias drm="rm -rf"
 alias rmyt='rm *.m4a-Frag* ; rm *.mp4.* ; rm *.aria2 ; rm *.mp4-*'
 alias mv='mv -iv'
 alias dcp='doas cp -iv'
+alias cpr='cp -rf'
 alias dmv='doas mv -iv'
 alias mkdir="mkdir -pv"
 alias cp='cp -iv'
@@ -128,6 +131,7 @@ alias cl="clear"
 alias m="man"
 alias cloc="cloc --timeout 0"
 alias grep="grep --color=always"
+#vf() { nvim $(find ~/ /usr/ /etc/ /media/ -type f 2> /dev/null | fzy -l 20 -q "$1") ; } # slow
 vf() { nvim $(find ~/ /usr/ /etc/ /media/ -type f 2> /dev/null | fzy -l 20 -q "$1") ; }
 
 # --------------------------------------------------------------------------------------- #
@@ -152,6 +156,7 @@ alias ctf='echo $(ls -1 | wc -l)'
 # --------------------------------------------------------------------------------------- #
 alias v="nvim" vim="nvim" vi="nvim" vm="nvim"
 alias dvi='doas nvim' dvim='doas nvim' dv='doas nvim'
+alias dln='doas ln -s'
 alias pdf="zathura "
 alias ppt="loimpress "
 alias word="lowriter "
@@ -246,7 +251,7 @@ alias vimfirefox='nvim $(mktemp -p /tmp firefox-XXX.txt)'
 #alias ta="tmux a"
 alias vimtmux='vim ~/.config/tmux/tmux.conf'
 alias tmuxreload='tmux source-file ~/.config/tmux/tmux.conf && echo "tmux.conf is reloaded"'
-alias tmsl='tmux list-sessions'
+alias tmuxls='tmux list-sessions'
 #alias tmsgo='tmux attach-session -t'
 alias tmkill='tmux kill-server'
 
@@ -378,10 +383,11 @@ alias flatkill="flatpak list --app --columns=application | fzy -l 20 | xargs fla
 # ----------------------------------------------------------------------------------------#
 # ------------------------------------instaloader-----------------------------------------#
 # ----------------------------------------------------------------------------------------#
-alias insthighlights='instaloader --load-cookies firefox --load-cookies brave --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --highlights --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json  '
+alias insthighlights='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --highlights --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json  '
 alias instreel='instaloader --load-cookies firefox --no-captions --no-pictures --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
-alias instimg='instaloader --load-cookies firefox --post-filter="not is_video" -no-captions --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
+alias instimg='instaloader --load-cookies firefox --post-filter="not is_video" --no-captions --no-metadata-json --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --dirname-pattern "{profile}" --filename-pattern="{date_utc}" '
 alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --no-profile-pic --no-captions --no-metadata-json --no-video-thumbnails ":saved" '
+alias inststories='instaloader --load-cookies=firefox --stories --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json'
 
 # ----------------------------------------------------------------------------------------#
 # -----------------------------------   docker   -----------------------------------------#
@@ -390,3 +396,4 @@ alias instsave='instaloader --load-cookies firefox --user-agent "Mozilla/5.0 (X1
 alias ttslance="docker run -it --rm -p 5002:5002 --gpus all -v ~/programming/tts-models:/root/.local/share/tts -v ~/programming/tts-output:/root/tts-output -v ~/.config/docker/tmux.conf:/root/.tmux.conf:ro -v ~/.config/docker/.bashrc:/root/.bashrc:ro --entrypoint /bin/bash tts-gbu"
 alias dkrmall='docker rm -f $(docker ps -aq)' #  Force-remove all Docker containers (running or stopped)
 alias dkrmimg='docker rmi -f '
+alias dkinsect="docker image inspect"
