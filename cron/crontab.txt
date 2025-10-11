@@ -11,9 +11,11 @@
 
 # Personal scripts
 15 * * * * $HOME/.local/bin/upip
-20 * * * * $HOME/.local/bin/uhosts
+#20 * * * * $HOME/.local/bin/uhosts
 25 * * * * $HOME/.local/bin/uxbps
 #30 * * * * find ~/ -depth -type d -empty -delete
 35 * * * * doas find /usr/share/icons/ -depth -type d -empty -delete
 40 * * * * uv cache clean
-
+#55 * * * * /bin/bash -c 'source /home/void/.local/share/tools/.env/bin/activate && yt-dlp --config-locations /home/void/.config/yt-dlp/yvp.conf https://www.tiktok.com/XXXX >> /tmp/yt-dlp.log 2>&1'
+#47 * * * * flatpak update -y --ostree-verbose
+#50 * * * * /usr/bin/bash -c 'cd ~/ && source /home/void/.local/share/tools/.env/bin/activate && instaloader --load-cookies=firefox --stories --user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" --no-pictures --no-profile-pic --no-captions --no-resume --no-video-thumbnails --no-metadata-json --no-compress-json XXXXX'
