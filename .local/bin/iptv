@@ -9,16 +9,5 @@ selection=$(awk '{print $0}' "$FILE" | fzy -i -l 20 -p "iptv > ")
 url=$(echo "$selection" | cut -d'#' -f1 | awk '{print $1}')
 
 if [ -n "$url" ]; then
-    mpv --no-config \
-        --volume=100 \
-        --af-add="volume=2" \
-        --term-osd-bar \
-        --hwdec=auto \
-        --vd-lavc-dr=auto --vid=auto \
-        --loop=inf \
-        --msg-level=all=no --msg-level=ffmpeg/demuxer=no \
-        --input-conf=<(echo -e "UP add speed 0.1\nDOWN add speed -0.1") \
-        --ytdl-raw-options="format=ba*[ext=m4a]/ba*/b[ext=mp4]/b,geo-bypass-country=FR,user-agent=Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0,downloader-args=ffmpeg:-loglevel error -stats -timeout 10000000 -reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5,sponsorblock-mark=all,sponsorblock-remove=all" \
-        --user-agent="Mozilla/5.0 (X11; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0" \
-        "$url"
+   streamlink "$url" best --player vlc
 fi
