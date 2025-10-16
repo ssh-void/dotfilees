@@ -13,4 +13,5 @@ doas docker pull alpine # officelle
 #docker pull ghcr.io/idiap/coqui-tts-cpu
 #GPU version
 docker pull ghcr.io/idiap/coqui-tts
+docker pull  rclone/rclone
 #doas shutdown -r now
