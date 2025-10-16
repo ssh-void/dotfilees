@@ -1,0 +1,44 @@
+#!/bin/bash
+# Script to calculate the total size and count of .mp4, .pdf, and .rar ... files in ~/
+
+# Go to the home directory
+cd ~ || exit
+
+# Define file extensions
+extensions=("mp4" "pdf" "rar" "iso")
+
+# Initialize counters
+total_size=0
+total_files=0
+
+# Loop through each extension
+for ext in "${extensions[@]}"; do
+    echo "Scanning *.$ext files..."
+    
+    # Calculate size for current extension
+    size=$(find . -type f -iname "*.${ext}" -printf "%s\n" 2>/dev/null | awk '{sum+=$1} END {print sum+0}')
+    count=$(find . -type f -iname "*.${ext}" 2>/dev/null | wc -l)
+    
+    total_size=$((total_size + size))
+    total_files=$((total_files + count))
+    
+    readable_size=$(numfmt --to=iec --suffix=B "$size")
+    echo "→ Found $count *.$ext files, total size: $readable_size"
+    echo
+done
+
+# If no files were found
+if [ "$total_files" -eq 0 ]; then
+    echo "No .mp4, .pdf, or .rar files found in the ~/ directory."
+    exit 0
+fi
+
+# Convert total size to readable format
+readable_total=$(numfmt --to=iec --suffix=B "$total_size")
+
+# Display final summary
+echo "==========================================="
+echo "Total: $total_files files (.mp4, .pdf, .rar, .iso)"
+echo "Combined size: $readable_total"
+echo "==========================================="
+
