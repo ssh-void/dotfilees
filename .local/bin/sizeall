@@ -5,7 +5,7 @@
 cd ~ || exit
 
 # Define file extensions
-extensions=("mp4" "pdf" "rar" "iso")
+extensions=("mp4" "mp3" "pdf" "rar" "zip" "png" "iso")
 
 # Initialize counters
 total_size=0
@@ -38,7 +38,7 @@ readable_total=$(numfmt --to=iec --suffix=B "$total_size")
 
 # Display final summary
 echo "==========================================="
-echo "Total: $total_files files (.mp4, .pdf, .rar, .iso)"
+echo "Total: $total_files files (.mp4, .pdf, .rar, .iso, .mp3)"
 echo "Combined size: $readable_total"
 echo "==========================================="
 
